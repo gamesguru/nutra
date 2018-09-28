@@ -6,14 +6,18 @@ Created on Fri Sep 28 10:23:50 2018
 @author: shane
 """
 
-import os, sys
+import os
+import re
+import sys
 from colorama import Style, Fore, Back, init
 
 class rawtable:
     def __init__(self, file):
         print(f'{Back.RED}Processing:{Style.RESET_ALL} {file}')
+        #TODO: exit if config.txt exists, or prompt to overwrite
         with open(file, 'r') as f:
             lst = f.readlines()
+        self.dir = os.path.dirname(file)
         self.headers = lst[0].split('\t')
         self.pheaders = self.headers
         self.colspan = len(self.headers)
@@ -26,17 +30,16 @@ class rawtable:
                 print(f'Error: only {curspan} elements (expect {self.colspan}) in row #{n}\n\n{row}')
                 return None
         print(f'Verified {Fore.CYAN}{self.colspan * len(lst)} cells!{Style.RESET_ALL}')
-        os.makedirs(file.split('.')[0], 0o775, True)
         maxlength = 0
         for i, h in enumerate(self.headers):
             self.headers[i] = h.replace(' ', '_').rstrip()
             maxlength = maxlength if maxlength >= len(self.headers[i]) else len(self.headers[i])
         for i, h in enumerate(self.headers):
             self.pheaders[i] = h + ' ' * (maxlength - len(h) + 1)
-        with open(f"{file.split('.')[0]}/config.txt", 'w+') as f:
+        with open(f'{self.dir}/config.txt', 'w+') as f:
             for h in self.pheaders:
                 f.write(h + '=\n')
-        print(f'\n   A config file has been generated @ {Back.YELLOW}{Fore.BLUE}{file.split(".")[0]}/config.txt{Style.RESET_ALL}\n   Please assign nutrients and run this script with the "--test" switch to check progress.  Pass in the "--import" switch when ready to import.')
+        print(f'\n   A config file has been generated @ {Back.YELLOW}{Fore.BLUE}{self.dir}/config.txt{Style.RESET_ALL}\n   Please assign nutrients and run this script with the "--test" switch to check progress.  Pass in the "--import" switch when ready to import.')
 
 class test:
     def __init__(self, directory):
@@ -58,36 +61,51 @@ class test:
                 print(f'{Back.RED}Unknown field:{Style.RESET_ALL} {l}')
                 u += 1
             else:
-                print(f'{Back.GREEN}{Fore.BLACK}Configure:{Style.RESET_ALL} {f}={l.split("=")[0]}')
+                if ('(' in l and ')' in l) or ('[' in l and ']' in l):
+                    ls = re.split('\(|\)|\[|\]', l.split('=')[0])
+                    print(f'{Back.GREEN}{Fore.BLACK}Configure:{Style.RESET_ALL} {ls[0]}', end='')
+                    print(f'{Fore.RED}({ls[1]}){Style.RESET_ALL}', end='')
+                    print(f'{ls[2]}= {f}')
+                else:
+                    print(f'{Back.GREEN}{Fore.BLACK}Configure:{Style.RESET_ALL} {f}={l.split("=")[0]}')
                 c += 1
         print(f'\nYou have {c}/{len(lst)} configured, {u} unknown, and {b} blank fields.\nIf you are satisfied with that, run this script again with the "--import" switch.')
 
+class IMPORT:
+    def __init__(self, directory):
+        self.dir = directory
+
 def Process():
-    for f in os.listdir():
-        if f.endswith('.txt'):
-            rawtable(f)
+    for d in os.listdir():
+        if os.path.isdir(d) and not d.startswith('_'):
+            for f in os.listdir(d):
+                if f == 'data.txt':
+                    rawtable(f'{d}/{f}')
 def Test():
     for d in os.listdir():
         if os.path.isdir(d) and not d.startswith('_'):
             test(d)
 def Import():
-    
+    for d in os.listdir():
+        if os.path.isdir(d) and not d.startswith('_'):
+            IMPORT(d)
 
 def exc_main():
-    print('\nWelcome to the DB import tool!\n')
     if os.sep == '\\':
         init()
+    print(f'\n{Fore.CYAN}Welcome to the DB import tool!{Style.RESET_ALL}\n')
     for i, arg in enumerate(sys.argv):
         if arg == __file__:
-            continue
+            if len(sys.argv) == 1:
+                Process()
+                break
+            else:
+                continue
         elif arg == '--test':
             Test()
             break
         elif arg == '--import':
             Import()
-            break
-        else:
-            Process()
             break
 
 known_fields = [
