@@ -9,6 +9,7 @@ Created on Fri Sep 28 10:23:50 2018
 import os
 import re
 import sys
+import shutil
 from colorama import Style, Fore, Back, init
 
 class rawtable:
@@ -74,6 +75,12 @@ class test:
 class IMPORT:
     def __init__(self, directory):
         self.dir = directory
+        print(f'{Back.RED}Importing:{Style.RESET_ALL} {directory}..', end='')
+        #TODO: warn or abort if directory exists already, offer to rename?
+        os.makedirs(f'../usr/{self.dir}', 0o775, True)
+        shutil.copy(f'{self.dir}/config.txt', f'../usr/{self.dir}')
+        shutil.copy(f'{self.dir}/data.txt', f'../usr/{self.dir}')
+        print(' done!\n')
 
 def Process():
     for d in os.listdir():
@@ -97,8 +104,7 @@ def exc_main():
     for i, arg in enumerate(sys.argv):
         if arg == __file__:
             if len(sys.argv) == 1:
-                Process()
-                break
+                usage()
             else:
                 continue
         elif arg == '--test':
@@ -106,6 +112,12 @@ def exc_main():
             break
         elif arg == '--import':
             Import()
+            break
+        elif arg == '--process':
+            Process()
+            break
+        else:
+            usage()
             break
 
 known_fields = [
@@ -167,6 +179,9 @@ known_fields = [
             "Lipoic acid",
             "Aminos"
             ]
+
+def usage():
+    print('usage: \n   --process\textract headers/columns and prep data\n   --test\tcheck your work before importing\n   --import\tcopy the config and data over from the lib to the resource directory')
 
 if __name__ == "__main__":
     if os.getcwd() != os.path.dirname(os.path.realpath(__file__)):
