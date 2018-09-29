@@ -7,16 +7,19 @@ Created on Fri Sep 28 22:25:38 2018
 """
 
 import sys
-from core import nutri_db
+from core import db, user
 
 def exc_main():
     for i, arg in enumerate(sys.argv):
+        larg = sys.argv[i + 1:]
+        #sarg = ' '.join(larg)
         if arg == __file__:
             continue
         elif arg == 'db':
-            print(' '.join(sys.argv[i + 1:]))
-            nutri_db.exc_main(' '.join(sys.argv[i:]))
+            db.exc_main(larg)
             break
+        elif arg == 'user':
+            user.exc_main(larg)
 
 if __name__ == "__main__":
     exc_main()
