@@ -97,13 +97,18 @@ def Import():
         if os.path.isdir(d) and not d.startswith('_'):
             IMPORT(d)
 
-def exc_main():
+coredir = os.getcwd()
+def exc_main(args=None):
+    global coredir
+    coredir = os.path.dirname(os.path.realpath(__file__))
     if os.sep == '\\':
         init()
+    if args == None:
+        args = sys.argv
     print(f'\n{Fore.CYAN}Welcome to the DB import tool!{Style.RESET_ALL}\n')
-    for i, arg in enumerate(sys.argv):
+    for i, arg in enumerate(args):
         if arg == __file__:
-            if len(sys.argv) == 1:
+            if len(args) == 1:
                 usage()
             else:
                 continue
