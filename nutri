@@ -17,14 +17,16 @@ def main():
         arg = sys.argv[1]
         rarg = sys.argv[2:]
         if not arg in cmds:
-            exit(f"nutri: error: '{arg}' is not a nutri command.  See 'nutri --help.\n")
+            exit(f"nutri: error: '{arg}' is not a nutri command.  See 'nutri --help'.\n")
         elif arg == 'db':
             db.main(rarg)
         elif arg == 'user':
             user.main(rarg)
+        elif arg == 'help' or arg == '--help' or arg == '-h':
+            usage()
 
 
-cmds = ['db', 'user']
+cmds = ['help', '--help', '-h', 'db', 'user']
 
 
 def usage():
@@ -35,13 +37,14 @@ Usage: {fmt.BOLD}nutri <command>{fmt.END}
 
 Commands:
     {fmt.BOLD}user{fmt.END}                create, edit and switch users
-    {fmt.BOLD}add{fmt.END}                 add foods or items to daily log
-    {fmt.BOLD}search{fmt.END}              search databases or fields
     {fmt.BOLD}db{fmt.END}                  import, edit and verify databases
-    {fmt.BOLD}fields{fmt.END}              import, pair and manage fields
+    {fmt.BOLD}field{fmt.END}               import, pair and manage fields
+    {fmt.BOLD}recipe{fmt.END}              create, edit and view foods and recipes
+    {fmt.BOLD}search{fmt.END}              search databases or recipes
+    {fmt.BOLD}add{fmt.END}                 add foods or items to daily log
     {fmt.BOLD}log{fmt.END}                 show previous meals and summary
-    {fmt.BOLD}contrib{fmt.END}             rank contributions
     {fmt.BOLD}sync{fmt.END}                sync android device""")
+    #{fmt.BOLD}contrib{fmt.END}             rank contributions
 
 
 class fmt:
