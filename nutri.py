@@ -9,17 +9,45 @@ Created on Fri Sep 28 22:25:38 2018
 import sys
 from core import db, user
 
-def exc_main():
-    for i, arg in enumerate(sys.argv):
-        larg = sys.argv[i + 1:]
-        #sarg = ' '.join(larg)
-        if arg == __file__:
-            continue
+
+def main():
+    if len(sys.argv) == 1:
+        usage()
+    else:
+        arg = sys.argv[1]
+        rarg = sys.argv[2:]
+        if not arg in cmds:
+            exit(f"nutri: error: '{arg}' is not a nutri command.  See 'nutri --help.\n")
         elif arg == 'db':
-            db.exc_main(larg)
-            break
+            db.main(rarg)
         elif arg == 'user':
-            user.exc_main(larg)
+            user.main(rarg)
+
+
+cmds = ['db', 'user']
+
+
+def usage():
+    print(f"""Nutritracker helps you stay fit and healthy.
+Version 0.0.1
+
+Usage: {fmt.BOLD}nutri <command>{fmt.END}
+
+Commands:
+    {fmt.BOLD}user{fmt.END}                create, edit and switch users
+    {fmt.BOLD}add{fmt.END}                 add foods or items to daily log
+    {fmt.BOLD}search{fmt.END}              search databases or fields
+    {fmt.BOLD}db{fmt.END}                  import, edit and verify databases
+    {fmt.BOLD}fields{fmt.END}              import, pair and manage fields
+    {fmt.BOLD}log{fmt.END}                 show previous meals and summary
+    {fmt.BOLD}contrib{fmt.END}             rank contributions
+    {fmt.BOLD}sync{fmt.END}                sync android device""")
+
+
+class fmt:
+    BOLD = '\033[1m'
+    END = '\033[0m'
+
 
 if __name__ == "__main__":
-    exc_main()
+    main()

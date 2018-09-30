@@ -98,7 +98,7 @@ def Import():
             IMPORT(d)
 
 coredir = os.getcwd()
-def exc_main(args=None):
+def main(args=None):
     global coredir
     coredir = os.path.dirname(os.path.realpath(__file__))
     if os.sep == '\\':
@@ -191,4 +191,4 @@ def usage():
 if __name__ == "__main__":
     if os.getcwd() != os.path.dirname(os.path.realpath(__file__)):
         exit('Error: must run this script out of /lib directory, where it is located')
-    exc_main()
+    main()

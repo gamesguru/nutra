@@ -86,7 +86,7 @@ def add(name=''):
     u = USER(name, age, ht, wt, goal)
     grab_users()
 
-def exc_main(args):
+def main(args):
     grab_users()
     for i, arg in enumerate(args):
         sarg = ' '.join(args[i + 1:])
@@ -109,4 +109,4 @@ def exc_main(args):
             break
 
 if __name__ == "__main__":
-    exc_main()
+    main()
