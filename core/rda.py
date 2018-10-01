@@ -11,9 +11,9 @@ import datetime
 
 
 class Nutrient:
-    def __init__(self, field, rda, units=None, friendlyname=field):
-        self.friendlyname = friendlyname
+    def __init__(self, field, friendlyname=None, rda=None, units=None):
         self.field = field
+        self.friendlyname = field if friendlyname is None else friendlyname
         self.rda = rda
         self.units = units
         nutrients.append(self)
@@ -37,6 +37,21 @@ class Recipe:
     def __init__(self, name, foods=None):
         self.name = name
         self.foods = [] if foods is None else foods
+
+
+class Meal:
+    def __init__(self, name, time=None, foods=None, recipes=None):
+        self.name = name
+        self.time = datetime.datetime.now() if time is None else time
+        self.foods = [] if foods is None else foods
+        self.recipes = [] if recipes is None else recipes
+
+
+class Day:
+    def __init__(self, date, meals=None):
+        self.date = date
+        meals = [] if meals is None else meals
+
 
 # def main():
 #     pass
