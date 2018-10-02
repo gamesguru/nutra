@@ -16,44 +16,56 @@ class fmt:
     END = '\033[0m'
 
 
-parser = argparse.ArgumentParser()
-args = parser.parse_args()
-if len(args._get_args()) == 0:  # no arguments supplied
-    parser.print_help()
-
-# parser.description = 'hi'
-parser.usage = f"""Nutritracker helps you stay fit and healthy.
-Version 0.0.1
-
-Usage: {fmt.BOLD}nutri <command>{fmt.END}
-
-Commands:
-    {fmt.BOLD}user{fmt.END}                create, edit and switch users
-    {fmt.BOLD}db{fmt.END}                  import, edit and verify databases
-    {fmt.BOLD}field{fmt.END}               import, pair and manage fields
-    {fmt.BOLD}recipe{fmt.END}              create, edit and view foods and recipes
-    {fmt.BOLD}search{fmt.END}              search databases or recipes
-    {fmt.BOLD}add{fmt.END}                 add foods or items to daily log
-    {fmt.BOLD}log{fmt.END}                 show previous meals and summary
-    {fmt.BOLD}sync{fmt.END}                sync android device
-    {fmt.BOLD}contrib{fmt.END}             rank contributions"""
-
-
 def main():
-    if len(sys.argv) == 1:
-        pass
-        # usage()
-    else:
-        arg = sys.argv[1]
-        rarg = sys.argv[2:]
-        if not arg in cmds:
-            exit(f"nutri: error: '{arg}' is not a nutri command.  See 'nutri --help'.\n")
-        elif arg == 'db':
-            db.main(rarg)
-        elif arg == 'user':
-            user.main(rarg)
-        elif arg == 'help' or arg == '--help' or arg == '-h':
-            usage()
+
+    # Set up the parser
+    parser = argparse.ArgumentParser()
+    #parser.description = 'hi'
+    #parser.epilog = 'bye'
+
+    # Add arguments
+    parser.add_argument('--version', '-v', action='version', version='Nutritracker version 0.0.1')
+
+    # Subparser
+    subparsers = parser.add_subparsers()
+    parser_user = subparsers.add_parser('user', help='command help')
+    parser_user.add_argument('-u')
+    parser_db = subparsers.add_parser('db', help='command help')
+    # parser_user = subparsers.add_parser('user', help='user help')
+    # parser_db = subparsers.add_parser('db', help='db help')
+    parser_field = subparsers.add_parser('field', help='field help')
+    parser_recipe = subparsers.add_parser('recipe', help='recipe help')
+    parser_search = subparsers.add_parser('search', help='search help')
+    parser_add = subparsers.add_parser('add', help='add help')
+    parser_log = subparsers.add_parser('log', help='log help')
+    parser_sync = subparsers.add_parser('sync', help='sync help')
+
+    #parser.add_argument('command', nargs=1)
+
+    args = parser.parse_args()
+    print(args)
+    print(parser)
+    print(argparse.ArgumentParser())
+    if parser is argparse.ArgumentParser():
+    #if len(args._get_args()) == 0:
+        parser.print_help()  # no arguments supplied
+        print('kay')
+
+    parser.usage = f"""Nutritracker helps you stay fit and healthy.
+    Version 0.0.1
+
+    Usage: {fmt.BOLD}nutri <command>{fmt.END}
+
+    Commands:
+        {fmt.BOLD}user{fmt.END}                create, edit and switch users
+        {fmt.BOLD}db{fmt.END}                  import, edit and verify databases
+        {fmt.BOLD}field{fmt.END}               import, pair and manage fields
+        {fmt.BOLD}recipe{fmt.END}              create, edit and view foods and recipes
+        {fmt.BOLD}search{fmt.END}              search databases or recipes
+        {fmt.BOLD}add{fmt.END}                 add foods or items to daily log
+        {fmt.BOLD}log{fmt.END}                 show previous meals and summary
+        {fmt.BOLD}sync{fmt.END}                sync android device
+        {fmt.BOLD}contrib{fmt.END}             rank contributions"""
 
 
 # cmds = ['help', '--help', '-h', 'db', 'user']
