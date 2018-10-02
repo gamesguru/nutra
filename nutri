@@ -16,6 +16,24 @@ class fmt:
     END = '\033[0m'
 
 
+usage = f"""Nutritracker helps you stay fit and healthy.
+Version 0.0.1
+
+
+Usage: {fmt.BOLD}nutri <command> {fmt.END}
+
+Commands:
+    {fmt.BOLD}user{fmt.END}                create, edit and switch users
+    {fmt.BOLD}db{fmt.END}                  import, edit and verify databases
+    {fmt.BOLD}field{fmt.END}               import, pair and manage fields
+    {fmt.BOLD}recipe{fmt.END}              create, edit and view foods and recipes
+    {fmt.BOLD}search{fmt.END}              search databases or recipes
+    {fmt.BOLD}add{fmt.END}                 add foods or items to daily log
+    {fmt.BOLD}log{fmt.END}                 show previous meals and summary
+    {fmt.BOLD}sync{fmt.END}                sync android device
+    {fmt.BOLD}contrib{fmt.END}             rank contributions"""
+
+
 def main():
     """ Parses the args and hands off to submodules """
     for i, arg in enumerate(sys.argv):
@@ -28,39 +46,24 @@ def main():
             getattr(cmdmthds, arg).mthd()
             break
         else:
-            print(f"nutri: '{arg}' is not a nutri command.  See 'nutri --help'.")
+            print(f"nutri: '{arg}' is not a nutri command.  See 'nutri help'.")
             break
-
-
-cmds = []
-
-
-class cmd:
-    """ A list of known cmds to hand off to submodules """
-
-    def __init__(self, name, help):
-        self.name = name
-        self.help = help
-        if hasattr(cmdmthds, self.name):
-            self.method = getattr(cmdmthds, self.name)
-            self.method = self.method.mthd
-        else:
-            self.method = None
-        cmds.append(self)
 
 
 class cmdmthds:
     """ Where we keep the `cmd()` methods && help info"""
+
     class user:
-        help = 'user help'
+        _help = 'user help'
 
         def mthd():
             print('hi user()')
 
+    class help:
+        _help = usage
 
-cmd('user', 'create, edit and switch users')
-cmd('db', 'import, edit and verify databases')
-
+        def mthd():
+            print(usage)
 
 #<editor-fold desc="Description">
 #     # Set up the parser
@@ -86,28 +89,7 @@ cmd('db', 'import, edit and verify databases')
 #     parser_log = subparsers.add_parser('log', help='log help')
 #     parser_sync = subparsers.add_parser('sync', help='sync help')
 
-#     #parser.add_argument('command', nargs=1)
 
-#     args = parser.parse_args()
-#     if len(sys.argv) == 1:
-#         parser.print_help()  # no arguments supplied
-
-usage = f"""Nutritracker helps you stay fit and healthy.
-Version 0.0.1
-
-
-Usage: {fmt.BOLD}nutri <command> {fmt.END}
-
-Commands:
-    {fmt.BOLD}user{fmt.END}                create, edit and switch users
-    {fmt.BOLD}db{fmt.END}                  import, edit and verify databases
-    {fmt.BOLD}field{fmt.END}               import, pair and manage fields
-    {fmt.BOLD}recipe{fmt.END}              create, edit and view foods and recipes
-    {fmt.BOLD}search{fmt.END}              search databases or recipes
-    {fmt.BOLD}add{fmt.END}                 add foods or items to daily log
-    {fmt.BOLD}log{fmt.END}                 show previous meals and summary
-    {fmt.BOLD}sync{fmt.END}                sync android device
-    {fmt.BOLD}contrib{fmt.END}             rank contributions"""
 # endregion
 #</editor-fold>
 
