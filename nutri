@@ -17,41 +17,41 @@ class fmt:
 
 
 def main():
+    """ Parses the args and hands off to submodules """
     for i, arg in enumerate(sys.argv):
-        if arg == __name__:
+        if arg == __file__:
             if len(sys.argv) == 1:
-                usage()
+                print(usage)
             else:
                 continue
         elif arg == 'user':
             cmds.user()
 
 
-lcmds = []
+cmds = []
 
 
 class cmd:
+    """ A list of known cmds to hand off to submodules """
+
     def __init__(self, name, help):
         self.name = name
         self.help = help
-        if hasattr(cmds, self.name):
-            self.method = getattr(cmds, self.name)
+        if hasattr(cmdmthds, self.name):
+            self.method = getattr(cmdmthds, self.name)
         else:
             self.method = None
-        lcmds.append(self)
+        cmds.append(self)
 
 
-class cmds:
+class cmdmthds:
+    """ Where we keep the `cmd()` methods """
     def user():
         print('hi user()')
 
 
 cmd('user', 'create, edit and switch users')
 cmd('db', 'import, edit and verify databases')
-# print(lcmds[0].name)
-# print(lcmds[0].method)
-if __name__ == "__main__":
-    main()
 
 
 #<editor-fold desc="Description">
@@ -84,21 +84,24 @@ if __name__ == "__main__":
 #     if len(sys.argv) == 1:
 #         parser.print_help()  # no arguments supplied
 
-#     parser.usage = f"""Nutritracker helps you stay fit and healthy.
-#     Version 0.0.1
+usage = f"""Nutritracker helps you stay fit and healthy.
+    Version 0.0.1
 
 
-# Usage: {fmt.BOLD}nutri <command>{fmt.END}
+Usage: {fmt.BOLD}nutri < command > {fmt.END}
 
-# Commands:
-#     {fmt.BOLD}user{fmt.END}                create, edit and switch users
-#     {fmt.BOLD}db{fmt.END}                  import, edit and verify databases
-#     {fmt.BOLD}field{fmt.END}               import, pair and manage fields
-#     {fmt.BOLD}recipe{fmt.END}              create, edit and view foods and recipes
-#     {fmt.BOLD}search{fmt.END}              search databases or recipes
-#     {fmt.BOLD}add{fmt.END}                 add foods or items to daily log
-#     {fmt.BOLD}log{fmt.END}                 show previous meals and summary
-#     {fmt.BOLD}sync{fmt.END}                sync android device
-#     {fmt.BOLD}contrib{fmt.END}             rank contributions"""
+Commands:
+    {fmt.BOLD}user{fmt.END}                create, edit and switch users
+    {fmt.BOLD}db{fmt.END} import, edit and verify databases
+    {fmt.BOLD}field{fmt.END} import, pair and manage fields
+    {fmt.BOLD}recipe{fmt.END}              create, edit and view foods and recipes
+    {fmt.BOLD}search{fmt.END}              search databases or recipes
+    {fmt.BOLD}add{fmt.END}                 add foods or items to daily log
+    {fmt.BOLD}log{fmt.END}                 show previous meals and summary
+    {fmt.BOLD}sync{fmt.END}                sync android device
+    {fmt.BOLD}contrib{fmt.END}             rank contributions"""
 # endregion
 #</editor-fold>
+
+if __name__ == "__main__":
+    main()
