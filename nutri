@@ -7,7 +7,7 @@ Created on Fri Sep 28 22:25:38 2018
 """
 
 import sys
-import argparse
+import inspect
 from core import db, user
 
 
@@ -37,17 +37,26 @@ Commands:
 def main():
     """ Parses the args and hands off to submodules """
     for i, arg in enumerate(sys.argv):
+        # Ignore first argument, as that is filename
         if arg == __file__:
             if len(sys.argv) == 1:
                 print(usage)
             else:
                 continue
+        # Activate method for command, e.g. `help'
         elif hasattr(cmdmthds, arg):
             getattr(cmdmthds, arg).mthd()
             break
+        # Activate method for opt commands, e.g. `-h' or `--help'
         else:
-            print(f"nutri: '{arg}' is not a nutri command.  See 'nutri help'.")
-            break
+            for i in inspect.getmembers(cmdmthds):
+                for i2 in inspect.getmembers(i[1]):
+                    if i2[0] == 'opts' and arg in i2[1]:
+                        i[1].mthd()
+                        return
+        # Otherwise we don't know the arg
+        print(f"nutri: '{arg}' is not a nutri command.  See 'nutri help'.")
+        break
 
 
 class cmdmthds:
@@ -61,6 +70,7 @@ class cmdmthds:
 
     class help:
         _help = usage
+        opts = ['--help', '-h']
 
         def mthd():
             print(usage)
