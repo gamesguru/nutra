@@ -1,0 +1,14 @@
+[data]
+db -- just usda  --- ships with it
+rel -- flavs     --- ships with it
+field -- general add-on, pair manually by name --- ship with standards, BUT allow users to add their own
+
+[structs]
+ingredient
+food
+meal/snack
+recipe
+
+[form]
+desktop
+mobile

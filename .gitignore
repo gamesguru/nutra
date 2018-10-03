@@ -1,0 +1,8 @@
+#Keep only .py files, and /res folder
+*
+!*.py
+!*/
+!/res/*
+!nutri
+!README
+!.gitignore

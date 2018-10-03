@@ -1,0 +1,19 @@
+[vitD]
+    400IU   < 12 mos
+    600IU   1-70 yr
+    800IU   > 70 yr
+
+[calcium]
+    800mg   everyone
+
+[thiamin]
+    0.4mg   1-3 yr
+    0.5mg   4-8 yr
+    0.7mg   9-13 yr
+    0.9mg   >13 yr
+
+[riboflavin]
+    0.4
+    0.5
+    0.8
+    1.0
