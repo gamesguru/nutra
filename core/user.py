@@ -10,12 +10,13 @@ import os
 import sys
 from colorama import Style, Fore, Back, init
 
-cwd = os.path.dirname(os.path.realpath(__file__))
-cwd = f'{cwd}/../lib/users'
-os.makedirs(cwd, 0o775, True)
-os.chdir(cwd)
+users_dir = os.path.dirname(os.path.realpath(__file__))
+users_dir = f'{users_dir}/../lib/users'
+os.makedirs(users_dir, 0o775, True)
+os.chdir(users_dir)
 if os.sep == '\\':
     init()
+
 
 class USER:
     def __init__(self, name, age, ht, wt, goal):
@@ -27,6 +28,7 @@ class USER:
         self.goal = goal
         self.write()
         print(f'Created user "{name}"')
+
     def read(self, directory):
         self.dir = directory
         with open(f'{self.dir}/profile.txt', 'r') as f:
@@ -43,28 +45,38 @@ class USER:
                 elif s.startswith('goal='):
                     self.goal = int(s.split('=')[1])
         self.userstr = f'{self.name} {self.ht}cm / {self.wt}kg (self.gender)'
+
     def write(self):
         os.makedirs(self.dir, 0o775)
         with open(f'{self.dir}/profile.txt', 'w+') as f:
-            f.write(f'gender={self.name}' + '\n')
+            f.write(f'name={self.name}' + '\n')
+            f.write(f'gender={self.gender}' + '\n')
             f.write(f'age={self.age}' + '\n')
             f.write(f'ht={self.ht}' + '\n')
             f.write(f'wt={self.wt}' + '\n')
             f.write(f'goal={self.goal}' + '\n')
-            #f.write(f'activeness={self.activeness}' + '\n')
+            # f.write(f'activeness={self.activeness}' + '\n')
+
 
 users = []
+
+
 def grab_users():
     users = []
-    for d in os.listdir(cwd):
+    for d in os.listdir(users_dir):
         print(d)
         users.append(USER.read(d))
+
 
 def listusers():
     print('\nList of users')
     for u in users:
         print(u.userstr)
     print('')
+
+
+def user_info(name):
+
 
 def add(name=''):
     if name == '':
@@ -86,17 +98,17 @@ def add(name=''):
     u = USER(name, age, ht, wt, goal)
     grab_users()
 
+
 def main(args):
     grab_users()
     for i, arg in enumerate(args):
-        sarg = ' '.join(args[i + 1:])
         if arg == 'user':
             if len(args) == 1:
                 listusers()
             else:
                 continue
         elif arg in users:
-            user(arg, args[i + 1:])
+            user_info(arg, args[i + 1:])
             break
         elif arg == 'add':
             add(sarg)
@@ -107,6 +119,7 @@ def main(args):
         elif arg == 'remove':
             remove(args[i + 1:])
             break
+
 
 if __name__ == "__main__":
     main()
