@@ -68,6 +68,12 @@ class cmdmthds:
         def mthd():
             print('hi user()')
 
+    class db:
+        _help = 'db help'
+
+        def mthd():
+            print('hi db()')
+
     class help:
         _help = usage
         opts = ['--help', '-h']
