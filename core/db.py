@@ -12,10 +12,16 @@ import sys
 import shutil
 from colorama import Style, Fore, Back, init
 
+version = '0.0.1'
+
+work_dir = os.path.dirname(os.path.realpath(__file__))
+os.chdir(work_dir)
+
+
 class rawtable:
     def __init__(self, file):
         print(f'{Back.RED}Processing:{Style.RESET_ALL} {file}')
-        #TODO: exit if config.txt exists, or prompt to overwrite
+        # TODO: exit if config.txt exists, or prompt to overwrite
         with open(file, 'r') as f:
             lst = f.readlines()
         self.dir = os.path.dirname(file)
@@ -23,7 +29,7 @@ class rawtable:
         self.pheaders = self.headers
         self.colspan = len(self.headers)
         self.rows = []
-        print(f'Your data has {self.colspan} columns and {len(lst)} rows.') #, or {colspan * len(lst)} cells.')
+        print(f'Your data has {self.colspan} columns and {len(lst)} rows.')  # , or {colspan * len(lst)} cells.')
         for n, row in enumerate(lst):
             self.rows.append(row)
             curspan = len(row.split('\t'))
@@ -41,6 +47,7 @@ class rawtable:
             for h in self.pheaders:
                 f.write(h + '=\n')
         print(f'\n   A config file has been generated @ {Back.YELLOW}{Fore.BLUE}{self.dir}/config.txt{Style.RESET_ALL}\n   Please assign nutrients and run this script with the "--test" switch to check progress.  Pass in the "--import" switch when ready to import.')
+
 
 class test:
     def __init__(self, directory):
@@ -72,15 +79,17 @@ class test:
                 c += 1
         print(f'\nYou have {c}/{len(lst)} configured, {u} unknown, and {b} blank fields.\nIf you are satisfied with that, run this script again with the "--import" switch.')
 
+
 class IMPORT:
     def __init__(self, directory):
         self.dir = directory
         print(f'{Back.RED}Importing:{Style.RESET_ALL} {directory}..', end='')
-        #TODO: warn or abort if directory exists already, offer to rename?
+        # TODO: warn or abort if directory exists already, offer to rename?
         os.makedirs(f'../usr/{self.dir}', 0o775, True)
         shutil.copy(f'{self.dir}/config.txt', f'../usr/{self.dir}')
         shutil.copy(f'{self.dir}/data.txt', f'../usr/{self.dir}')
         print(' done!\n')
+
 
 def Process():
     for d in os.listdir():
@@ -88,19 +97,25 @@ def Process():
             for f in os.listdir(d):
                 if f == 'data.txt':
                     rawtable(f'{d}/{f}')
+
+
 def Test():
     for d in os.listdir():
         if os.path.isdir(d) and not d.startswith('_'):
             test(d)
+
+
 def Import():
     for d in os.listdir():
         if os.path.isdir(d) and not d.startswith('_'):
             IMPORT(d)
 
-coredir = os.getcwd()
+
+coredir = os.path.dirname(os.path.realpath(__file__))
+
+
 def main(args=None):
     global coredir
-    coredir = os.path.dirname(os.path.realpath(__file__))
     if os.sep == '\\':
         init()
     if args == None:
@@ -109,7 +124,7 @@ def main(args=None):
     for i, arg in enumerate(args):
         if arg == __file__:
             if len(args) == 1:
-                usage()
+                print(usage)
             else:
                 continue
         elif arg == '--test':
@@ -122,73 +137,79 @@ def main(args=None):
             Process()
             break
         else:
-            usage()
+            print(usage)
             break
 
-known_fields = [
-            "FoodName",
-            "NDBNo",
-            "OthPrimKey",
-            "OthPrimKey2",
-            "OthPrimKey3",
-            "Serv",
-            "Serv2",
-            "Weight",
-            "Weight2",
-            "ALA",
-            "EpaDha",
-            "Cals",
-            "CalsFat",
-            "FatTot",
-            "FatSat",
-            "FatTrans",
-            "FatMono",
-            "FatPoly",
-            "Cholest",
-            "Na",
-            "K",
-            "Carbs",
-            "Fiber",
-            "FiberSol",
-            "Sugar",
-            "Protein",
-            "VitA",
-            "VitC",
-            "Ca",
-            "Fe",
-            "VitD",
-            "VitE",
-            "VitK",
-            "B1",
-            "B2",
-            "B3",
-            "B5",
-            "B6",
-            "B7",
-            "B9",
-            "B12",
-            "Mg",
-            "Zn",
-            "Se",
-            "B",
-            "I",
-            "P",
-            "Mn",
-            "F",
-            "Cu",
-            "Cr",
-            "Mo",
-            "Choline",
-            "Inositol",
-            "Carnitine",
-            "Lipoic acid",
-            "Aminos"
-            ]
 
-def usage():
-    print('usage: \n   --process\textract headers/columns and prep data\n   --test\tcheck your work before importing\n   --import\tcopy the config and data over from the lib to the resource directory')
+known_fields = [
+    "FoodName",
+    "NDBNo",
+    "OthPrimKey",
+    "OthPrimKey2",
+    "OthPrimKey3",
+    "Serv",
+    "Serv2",
+    "Weight",
+    "Weight2",
+    "ALA",
+    "EpaDha",
+    "Cals",
+    "CalsFat",
+    "FatTot",
+    "FatSat",
+    "FatTrans",
+    "FatMono",
+    "FatPoly",
+    "Cholest",
+    "Na",
+    "K",
+    "Carbs",
+    "Fiber",
+    "FiberSol",
+    "Sugar",
+    "Protein",
+    "VitA",
+    "VitC",
+    "Ca",
+    "Fe",
+    "VitD",
+    "VitE",
+    "VitK",
+    "B1",
+    "B2",
+    "B3",
+    "B5",
+    "B6",
+    "B7",
+    "B9",
+    "B12",
+    "Mg",
+    "Zn",
+    "Se",
+    "B",
+    "I",
+    "P",
+    "Mn",
+    "F",
+    "Cu",
+    "Cr",
+    "Mo",
+    "Choline",
+    "Inositol",
+    "Carnitine",
+    "Lipoic acid",
+    "Aminos"
+]
+
+usage = f"""Database management tool
+Version {version}
+
+usage:
+    --process    extract headers/columns and prep data
+    --test       check your work before importing
+    --import     copy the config and data over from the lib to the resource directory
+"""
+
 
 if __name__ == "__main__":
-    if os.getcwd() != os.path.dirname(os.path.realpath(__file__)):
-        exit('Error: must run this script out of /lib directory, where it is located')
     main()

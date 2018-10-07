@@ -75,7 +75,7 @@ def listusers():
     print('')
 
 
-def user_info(name):
+# def user_info(name):
 
 
 def add(name=''):
