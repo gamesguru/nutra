@@ -141,6 +141,22 @@ def main(args=None):
             break
 
 
+class cmdmthds:
+    """ Where we keep the `cmd()` methods && opt args """
+
+    class import:
+        def mthd(rarg):
+            pass
+
+    class test:
+        def mthd(rarg):
+            pass
+
+    class process:
+        def mthd(rarg):
+            pass
+
+
 known_fields = [
     "FoodName",
     "NDBNo",
