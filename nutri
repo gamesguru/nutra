@@ -54,7 +54,7 @@ def main():
         else:
             for i in inspect.getmembers(cmdmthds):
                 for i2 in inspect.getmembers(i[1]):
-                    if i2[0] == 'opts' and arg in i2[1]:
+                    if i2[0] == 'altargs' and arg in i2[1]:
                         i[1].mthd(rarg)
                         return
         # Otherwise we don't know the arg
@@ -74,7 +74,7 @@ class cmdmthds:
             db.main(rarg)
 
     class help:
-        opts = ['--help', '-h']
+        altargs = ['--help', '-h']
 
         def mthd(rarg):
             print(usage)

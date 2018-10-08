@@ -10,6 +10,7 @@ import os
 import re
 import sys
 import shutil
+import inspect
 from colorama import Style, Fore, Back, init
 
 version = '0.0.1'
@@ -122,29 +123,34 @@ def main(args=None):
         args = sys.argv
     print(f'\n{Fore.CYAN}Welcome to the DB import tool!{Style.RESET_ALL}\n')
     for i, arg in enumerate(args):
+        rarg = args[i:]
+        # Ignore first argument, as that is filename
         if arg == __file__:
             if len(args) == 1:
                 print(usage)
             else:
                 continue
-        elif arg == '--test':
-            Test()
+        # Activate method for command, e.g. `help'
+        elif hasattr(cmdmthds, arg):
+            getattr(cmdmthds, arg).mthd(rarg)
             break
-        elif arg == '--import':
-            Import()
-            break
-        elif arg == '--process':
-            Process()
-            break
+        # Activate method for opt commands, e.g. `-h' or `--help'
+        elif []:  # if len() > 0:
+            for i in inspect.getmembers(cmdmthds):
+                for i2 in inspect.getmembers(i[1]):
+                    if i2[0] == 'altargs' and arg in i2[1]:
+                        i[1].mthd(rarg)
+                        return
+        # Otherwise we don't know the arg
         else:
-            print(usage)
+            print(f"error: unknown option `{arg}'.  See 'nutri db -h'.")
             break
 
 
 class cmdmthds:
     """ Where we keep the `cmd()` methods && opt args """
 
-    class import:
+    class stage:
         def mthd(rarg):
             pass
 
@@ -152,7 +158,7 @@ class cmdmthds:
         def mthd(rarg):
             pass
 
-    class process:
+    class add:
         def mthd(rarg):
             pass
 
