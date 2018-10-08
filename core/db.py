@@ -11,6 +11,7 @@ import re
 import sys
 import shutil
 import inspect
+import ntpath
 from colorama import Style, Fore, Back, init
 
 version = '0.0.1'
@@ -19,7 +20,7 @@ work_dir = os.path.dirname(os.path.realpath(__file__))
 os.chdir(work_dir)
 
 
-class rawtable:
+class RAWTABLE:
     def __init__(self, file):
         print(f'{Back.RED}Processing:{Style.RESET_ALL} {file}')
         # TODO: exit if config.txt exists, or prompt to overwrite
@@ -37,7 +38,7 @@ class rawtable:
             if not curspan == self.colspan:
                 print(f'Error: only {curspan} elements (expect {self.colspan}) in row #{n}\n\n{row}')
                 return None
-        print(f'Verified {Fore.CYAN}{self.colspan * len(lst)} cells!{Style.RESET_ALL}')
+            print(f'Verified {Fore.CYAN}{n}/{len(lst)} rows!{Style.RESET_ALL}')
         maxlength = 0
         for i, h in enumerate(self.headers):
             self.headers[i] = h.replace(' ', '_').rstrip()
@@ -50,7 +51,7 @@ class rawtable:
         print(f'\n   A config file has been generated @ {Back.YELLOW}{Fore.BLUE}{self.dir}/config.txt{Style.RESET_ALL}\n   Please assign nutrients and run this script with the "--test" switch to check progress.  Pass in the "--import" switch when ready to import.')
 
 
-class test:
+class TEST:
     def __init__(self, directory):
         print(f'{Back.RED}Testing:{Style.RESET_ALL} {directory}\n')
         self.dir = directory
@@ -81,35 +82,34 @@ class test:
         print(f'\nYou have {c}/{len(lst)} configured, {u} unknown, and {b} blank fields.\nIf you are satisfied with that, run this script again with the "--import" switch.')
 
 
-class IMPORT:
-    def __init__(self, directory):
-        self.dir = directory
-        print(f'{Back.RED}Importing:{Style.RESET_ALL} {directory}..', end='')
+class STAGE:
+    def __init__(self, configfile):
+        self.basename = os.path.splitext(configfile)[0]
+        print(f'{Back.RED}Importing:{Style.RESET_ALL} {configfile}..', end='')
         # TODO: warn or abort if directory exists already, offer to rename?
-        os.makedirs(f'../usr/{self.dir}', 0o775, True)
-        shutil.copy(f'{self.dir}/config.txt', f'../usr/{self.dir}')
-        shutil.copy(f'{self.dir}/data.txt', f'../usr/{self.dir}')
+        os.makedirs(f'staging/{self.basename}', 0o775, True)
+        shutil.copy(configfile, f'staging/{self.basename}/data.txt')
         print(' done!\n')
 
 
-def Process():
-    for d in os.listdir():
-        if os.path.isdir(d) and not d.startswith('_'):
+def Add():
+    for d in os.listdir('staging'):
+        if os.path.isfile(d) and not d.startswith('_'):
             for f in os.listdir(d):
                 if f == 'data.txt':
-                    rawtable(f'{d}/{f}')
+                    RAWTABLE(f'{d}/t{f}')
 
 
 def Test():
     for d in os.listdir():
         if os.path.isdir(d) and not d.startswith('_'):
-            test(d)
+            TEST(d)
 
 
-def Import():
+def Stage():
     for d in os.listdir():
-        if os.path.isdir(d) and not d.startswith('_'):
-            IMPORT(d)
+        if os.path.isfile(d) and d.endswith('.txt'):
+            STAGE(d)
 
 
 coredir = os.path.dirname(os.path.realpath(__file__))
@@ -135,32 +135,35 @@ def main(args=None):
             getattr(cmdmthds, arg).mthd(rarg)
             break
         # Activate method for opt commands, e.g. `-h' or `--help'
-        elif []:  # if len() > 0:
-            for i in inspect.getmembers(cmdmthds):
-                for i2 in inspect.getmembers(i[1]):
-                    if i2[0] == 'altargs' and arg in i2[1]:
-                        i[1].mthd(rarg)
-                        return
+        elif altcmd(i, arg) != None:
+            altcmd(i, arg)(rarg)
         # Otherwise we don't know the arg
         else:
             print(f"error: unknown option `{arg}'.  See 'nutri db -h'.")
             break
 
+def altcmd(i, arg):
+    for i in inspect.getmembers(cmdmthds):
+        for i2 in inspect.getmembers(i[1]):
+            if i2[0] == 'altargs' and arg in i2[1]:
+                return i[1].mthd
+    return None
+    
 
 class cmdmthds:
     """ Where we keep the `cmd()` methods && opt args """
 
     class stage:
         def mthd(rarg):
-            pass
+            Stage()
 
     class test:
         def mthd(rarg):
-            pass
+            Test()
 
     class add:
         def mthd(rarg):
-            pass
+            Add()
 
 
 known_fields = [
