@@ -1,7 +1,10 @@
 #Keep only .py files, and /res folder
 *
-!*.py
 !*/
+__pycache__/
+*.txt
+*.TXT
+!*.py
 !/res/*
 !nutri
 !README.md
