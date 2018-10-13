@@ -44,6 +44,7 @@ def main():
         if arg == __file__:
             if len(sys.argv) == 1:
                 print(usage)
+                continue
             else:
                 continue
         # Activate method for command, e.g. `help'
