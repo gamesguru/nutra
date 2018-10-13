@@ -8,7 +8,7 @@ Created on Fri Sep 28 22:25:38 2018
 
 import sys
 import inspect
-from core import db, user
+#from ..lib import db
 
 
 class fmt:

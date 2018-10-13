@@ -1,0 +1,111 @@
+#!/usr/bin/python3
+# -*- coding: utf-8 -*-
+"""
+Created on Fri Sep 28 22:25:38 2018
+
+@author: shane
+"""
+
+import sys
+import inspect
+#from ..lib import db
+
+
+class fmt:
+    BOLD = '\033[1m'
+    END = '\033[0m'
+
+
+version = '0.0.1'
+
+usage = f"""Nutritracker helps you stay fit and healthy.
+Version {version}
+
+
+Usage: {fmt.BOLD}nutri <command> {fmt.END}
+
+Commands:
+    {fmt.BOLD}user{fmt.END}                create, edit and switch users
+    {fmt.BOLD}db{fmt.END}                  import, edit and verify databases
+    {fmt.BOLD}field{fmt.END}               import, pair and manage fields
+    {fmt.BOLD}recipe{fmt.END}              create, edit and view foods and recipes
+    {fmt.BOLD}search{fmt.END}              search databases or recipes
+    {fmt.BOLD}add{fmt.END}                 add foods or items to daily log
+    {fmt.BOLD}log{fmt.END}                 show previous meals and summary
+    {fmt.BOLD}sync{fmt.END}                sync android device
+    {fmt.BOLD}contrib{fmt.END}             rank contributions"""
+
+
+def main():
+    """ Parses the args and hands off to submodules """
+    for i, arg in enumerate(sys.argv):
+        rarg = sys.argv[i:]
+        # Ignore first argument, as that is filename
+        if arg == __file__:
+            if len(sys.argv) == 1:
+                print(usage)
+            else:
+                continue
+        # Activate method for command, e.g. `help'
+        elif hasattr(cmdmthds, arg):
+            getattr(cmdmthds, arg).mthd(rarg)
+            break
+        # Activate method for opt commands, e.g. `-h' or `--help'
+        else:
+            for i in inspect.getmembers(cmdmthds):
+                for i2 in inspect.getmembers(i[1]):
+                    if i2[0] == 'altargs' and arg in i2[1]:
+                        i[1].mthd(rarg)
+                        return
+        # Otherwise we don't know the arg
+        print(f"nutri: '{arg}' is not a nutri command.  See 'nutri help'.")
+        break
+
+
+class cmdmthds:
+    """ Where we keep the `cmd()` methods && opt args """
+
+    class user:
+        def mthd(rarg):
+            print('hi user()')
+
+    class db:
+        def mthd(rarg):
+            db.main(rarg)
+
+    class help:
+        altargs = ['--help', '-h']
+
+        def mthd(rarg):
+            print(usage)
+
+#<editor-fold desc="Description">
+#     # Set up the parser
+#     parser = argparse.ArgumentParser()
+#     #parser.description = 'hi'
+#     #parser.epilog = 'bye'
+
+#     # Add arguments
+#     parser.add_argument('--version', '-v', action='version', version='Nutritracker version 0.0.1')
+
+#     # Subparser
+#     subparsers = parser.add_subparsers(title='subcommands')
+#     parser_user = subparsers.add_parser('user', help='user help')
+#     parser_user.add_usage
+#     parser_user.add_argument('-u', dest='user', help='user subcommand help')
+#     parser_db = subparsers.add_parser('db', help='db help')
+#     # parser_user = subparsers.add_parser('user', help='user help')
+#     # parser_db = subparsers.add_parser('db', help='db help')
+#     parser_field = subparsers.add_parser('field', help='field help')
+#     parser_recipe = subparsers.add_parser('recipe', help='recipe help')
+#     parser_search = subparsers.add_parser('search', help='search help')
+#     parser_add = subparsers.add_parser('add', help='add help')
+#     parser_log = subparsers.add_parser('log', help='log help')
+#     parser_sync = subparsers.add_parser('sync', help='sync help')
+
+
+# endregion
+#</editor-fold>
+
+if __name__ == "__main__":
+    main()
