@@ -2,8 +2,12 @@
 *
 !*/
 __pycache__/
-*.txt
-*.TXT
 !*.py
 !nutri
+*.TXT
+*.txt
+*.rst
 !.gitignore
+!LICENSE
+!NOTICE
+
