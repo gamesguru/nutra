@@ -10,12 +10,12 @@ import os
 import sys
 from colorama import Style, Fore, Back, init
 
-users_dir = os.path.dirname(os.path.realpath(__file__))
-users_dir = f'{users_dir}/../lib/users'
-os.makedirs(users_dir, 0o775, True)
-os.chdir(users_dir)
-if os.sep == '\\':
-    init()
+# users_dir = os.path.dirname(os.path.realpath(__file__))
+# users_dir = f'{users_dir}/../lib/users'
+# os.makedirs(users_dir, 0o775, True)
+# os.chdir(users_dir)
+# if os.sep == '\\':
+# init()
 
 
 class USER:
@@ -63,13 +63,13 @@ users = []
 
 def grab_users():
     users = []
-    for d in os.listdir(users_dir):
+    for d in os.listdir('.nutri/users'):
         print(d)
         users.append(USER.read(d))
 
 
 def listusers():
-    print('\nList of users')
+    # TODO: green asterik for current user
     for u in users:
         print(u.userstr)
     print('')
@@ -99,10 +99,12 @@ def add(name=''):
     grab_users()
 
 
-def main(args):
+def main(args=sys.argv):
+    os.chdir(os.path.expanduser("~"))
+    os.makedirs('.nutri/users', 0o755, True)
     grab_users()
     for i, arg in enumerate(args):
-        if arg == 'user':
+        if arg == 'user' or arg == __file__:
             if len(args) == 1:
                 listusers()
             else:
@@ -110,15 +112,29 @@ def main(args):
         elif arg in users:
             user_info(arg, args[i + 1:])
             break
-        elif arg == 'add':
-            add(sarg)
-            break
-        elif arg == 'edit':
-            edit(args[i + 1:])
-            break
-        elif arg == 'remove':
+        elif arg == '-d' or arg == '--delete':
             remove(args[i + 1:])
             break
+
+
+class cmdmthds:
+    """ Where we keep the `cmd()` methods && opt args """
+
+    class remove:
+        altargs = ['--delete', '-d']
+
+        def mthd(rarg):
+            remove(rarg)
+
+    class db:
+        def mthd(rarg):
+            db.main(rarg)
+
+    class help:
+        altargs = ['--help', '-h']
+
+        def mthd(rarg):
+            print(usage)
 
 
 if __name__ == "__main__":

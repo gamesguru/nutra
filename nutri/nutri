@@ -8,7 +8,7 @@ Created on Fri Sep 28 22:25:38 2018
 
 import sys
 import inspect
-#from ..lib import db
+from libnutri import db, rda, user
 
 
 class fmt:
@@ -68,7 +68,7 @@ class cmdmthds:
 
     class user:
         def mthd(rarg):
-            print('hi user()')
+            user.main(rarg)
 
     class db:
         def mthd(rarg):
