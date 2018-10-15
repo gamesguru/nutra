@@ -10,8 +10,7 @@ import sys
 import inspect
 from libnutri import db, rda, user
 
-# First thing's first
-print ('Checking Python version info...')
+# First thing's first, check Python version
 if sys.version_info < (3, 6, 5):
     exit("ERROR: nutri requires Python 3.6.5 or later to run.")
 
