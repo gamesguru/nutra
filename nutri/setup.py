@@ -40,7 +40,7 @@ setup(
     install_requires=['colorama'],
     long_description=long_description,
     long_description_content_type='text/markdown',
-    version='0.0.0.dev2',
+    version='0.0.0.dev3',
     url="https://github.com/gamesguru/nutri",
     classifiers=[
         'Programming Language :: Python :: 3',
