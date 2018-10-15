@@ -10,6 +10,11 @@ import sys
 import inspect
 from libnutri import db, rda, user
 
+# First thing's first
+print ('Checking Python version info...')
+if sys.version_info < (3, 6, 5):
+    exit("ERROR: nutri requires Python 3.6.5 or later to run.")
+
 
 class fmt:
     BOLD = '\033[1m'
@@ -80,33 +85,6 @@ class cmdmthds:
         def mthd(rarg):
             print(usage)
 
-#<editor-fold desc="Description">
-#     # Set up the parser
-#     parser = argparse.ArgumentParser()
-#     #parser.description = 'hi'
-#     #parser.epilog = 'bye'
-
-#     # Add arguments
-#     parser.add_argument('--version', '-v', action='version', version='Nutritracker version 0.0.1')
-
-#     # Subparser
-#     subparsers = parser.add_subparsers(title='subcommands')
-#     parser_user = subparsers.add_parser('user', help='user help')
-#     parser_user.add_usage
-#     parser_user.add_argument('-u', dest='user', help='user subcommand help')
-#     parser_db = subparsers.add_parser('db', help='db help')
-#     # parser_user = subparsers.add_parser('user', help='user help')
-#     # parser_db = subparsers.add_parser('db', help='db help')
-#     parser_field = subparsers.add_parser('field', help='field help')
-#     parser_recipe = subparsers.add_parser('recipe', help='recipe help')
-#     parser_search = subparsers.add_parser('search', help='search help')
-#     parser_add = subparsers.add_parser('add', help='add help')
-#     parser_log = subparsers.add_parser('log', help='log help')
-#     parser_sync = subparsers.add_parser('sync', help='sync help')
-
-
-# endregion
-#</editor-fold>
 
 if __name__ == "__main__":
     main()
