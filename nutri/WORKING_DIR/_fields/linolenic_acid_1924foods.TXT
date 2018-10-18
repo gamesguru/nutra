@@ -1,0 +1,1925 @@
+NDB_NO	Description	ALA (g Per 100g)
+42231	Oil, flaxseed, cold pressed	53.368
+4707	Oil, flaxseed, contains added sliced flaxseed	48.93
+12006	Seeds, chia seeds, dried	17.83
+4582	Oil, canola	9.137
+12012	Seeds, hemp seed, hulled	8.684
+4650	Oil, industrial, soy, refined, for woks and light frying	6.912
+4044	Oil, soybean, salad or cooking	6.789
+4669	USDA Commodity Food, oil, vegetable, soybean, refined	6.537
+4643	Oil, industrial, canola with antifoaming agent, principal uses salads, woks and light frying	6.397
+4644	Oil, industrial, canola for salads, woks and light frying	6.34
+4685	Oil, cooking and salad, ENOVA, 80% diglycerides	6.239
+4684	Margarine, 80% fat, tub, CANOLA HARVEST Soft Spread (canola, palm and palm kernel oils)	6.176
+4670	USDA Commodity Food, oil, vegetable, low saturated fat	5.96
+42289	Oil, corn and canola	5.798
+4025	Salad dressing, mayonnaise, regular	5.331
+4611	Margarine, regular, 80% fat, composite, tub, with salt	4.677
+4692	Margarine, regular, 80% fat, composite, tub, with salt, with added vitamin D	4.677
+4653	Oil, industrial, soy (partially hydrogenated ) and soy (winterized), pourable clear fry	3.837
+27066	Sauce, horseradish	3.406
+4673	Margarine-like spread, SMART BALANCE Regular Buttery Spread with flax oil	3.385
+4639	Salad dressing, ranch dressing, regular	3.276
+21311	McDONALD'S, Creamy Ranch Sauce	3.235
+4689	Salad Dressing, mayonnaise, light, SMART BALANCE, Omega Plus light	3.188
+16399	Peanut butter with omega-3, creamy	2.928
+4683	Margarine, margarine-like vegetable oil spread, 67-70% fat, tub	2.925
+4699	Oil, industrial, soy, low linolenic	2.678
+12154	Nuts, walnuts, black, dried	2.677
+4613	Margarine-like, vegetable oil spread, 60% fat, tub, with salt	2.669
+4694	Margarine-like, vegetable oil spread, 60% fat, tub, with salt, with added vitamin D	2.669
+4614	Margarine-like, vegetable oil spread, 60% fat, stick/tub/bottle, with salt	2.645
+4585	Margarine-like, margarine-butter blend, soybean oil and butter	2.638
+4649	Shortening, industrial, soy (partially hydrogenated), pourable liquid fry shortening	2.485
+4668	Margarine, industrial, soy and partially hydrogenated soy oil, use for baking, sauces and candy	2.414
+4677	Margarine-like spread, SMART BALANCE Omega Plus Spread (with plant sterols  &  fish oil)	2.386
+6629	Sauce, pesto, CLASSICO, basil pesto, ready-to-serve	2.293
+4698	Oil, industrial, canola, high oleic	2.2
+4630	Margarine Spread, approximately 48% fat, tub	2.121
+4629	Margarine, margarine-type vegetable oil spread, 70% fat, soybean and partially hydrogenated soybean, stick	2.073
+4678	Oil, vegetable, Natreon canola, high stability, non trans, high oleic (70%)	2.07
+12141	Nuts, mixed nuts, dry roasted, with peanuts, salt added, CHOSEN ROASTER	2.017
+20118	Noodles, flat, crunchy, Chinese restaurant	2.014
+4687	Margarine-like spread, BENECOL Light Spread	1.976
+4610	Margarine, regular, 80% fat, composite, stick, with salt	1.957
+4628	Margarine, 80% fat, stick, includes regular and hydrogenated corn and soybean oils	1.957
+4691	Margarine, regular, 80% fat, composite, stick, with salt, with added vitamin D	1.957
+4648	Oil, industrial, soy (partially hydrogenated), principal uses popcorn and flavoring vegetables	1.942
+4615	Shortening, vegetable, household, composite	1.883
+2029	Spices, parsley, dried	1.86
+4128	Margarine-like, vegetable oil spread, unspecified oils, approximately 37% fat, with salt	1.754
+4690	Margarine-like, vegetable oil spread, approximately 37% fat, unspecified oils, with salt, with added vitamin D	1.754
+4612	Margarine-like, vegetable oil spread, 60% fat, stick, with salt	1.748
+4693	Margarine-like, vegetable oil spread, 60% fat, stick, with salt, with added vitamin D	1.748
+6627	Sauce, pesto, ready-to-serve, shelf stable	1.747
+28343	Rolls, gluten-free, whole grain, made with tapioca starch and brown rice flour	1.739
+28373	UDI'S, Gluten Free, Whole Grain Dinner Rolls	1.739
+4651	Oil, industrial, soy (partially hydrogenated), multiuse for non-dairy butter flavor	1.733
+4666	Shortening, industrial, soy (partially hydrogenated ) and corn for frying	1.628
+8571	Cereals ready-to-eat, NATURE'S PATH, Organic FLAX PLUS, Pumpkin Granola	1.612
+4641	Salad dressing, mayonnaise, light	1.518
+18229	Crackers, standard snack-type, regular	1.485
+4114	Salad dressing, italian dressing, commercial, regular	1.434
+4018	Salad dressing, mayonnaise type, regular, with salt	1.358
+36614	DENNY'S, chicken nuggets, star shaped, from kid's menu	1.29
+6626	Sauce, pesto, ready-to-serve, refrigerated	1.268
+6628	Sauce, pesto, BUITONI, pesto with basil, ready-to-serve, refrigerated	1.268
+6630	Sauce, pesto, MEZZETTA, NAPA VALLEY BISTRO, basil pesto, ready-to-serve	1.202
+36010	T.G.I. FRIDAY'S, chicken fingers, from kids' menu	1.198
+18621	NABISCO, NABISCO RITZ Crackers	1.193
+36022	APPLEBEE'S, crunchy onion rings	1.178
+4518	Oil, corn, industrial and retail, all purpose salad or cooking	1.161
+18954	Bread, pound cake type, pan de torta salvadoran	1.158
+36031	DENNY'S, onion rings	1.14
+4674	Margarine-like spread, SMART BALANCE Light Buttery Spread	1.116
+36020	T.G.I. FRIDAY'S, chicken fingers	1.1
+36028	DENNY'S, coleslaw	1.096
+36036	Restaurant, family style, onion rings	1.078
+4700	Oil, industrial, soy, ultra low linolenic	1.062
+4645	Oil, industrial, canola (partially hydrogenated) oil for deep fat frying	1.028
+18274	Muffins, blueberry, commercially prepared (Includes mini-muffins)	1.022
+36001	APPLEBEE'S, Double Crunch Shrimp	0.977
+36015	Restaurant, family style, chicken fingers, from kid's menu	0.969
+21314	McDONALD'S, Spicy Buffalo Sauce	0.962
+18232	Crackers, wheat, regular	0.956
+44048	Cheese food, pasteurized process, American, imitation, without added vitamin D	0.945
+36006	T.G.I. FRIDAY'S, FRIDAY'S Shrimp, breaded	0.931
+28345	Crackers, gluten-free, multi-seeded and multigrain	0.922
+28355	CRUNCHMASTER, Multi-Grain Crisps, Snack Crackers, Gluten-Free	0.922
+36605	CRACKER BARREL, country fried shrimp platter	0.918
+36026	CRACKER BARREL, onion rings, thick-cut	0.916
+36016	Restaurant, family style, shrimp, breaded and fried	0.914
+36007	T.G.I. FRIDAY'S, french fries	0.891
+18192	Cookies, shortbread, commercially prepared, plain	0.885
+28308	Crackers, standard snack-type, with whole wheat	0.861
+36005	APPLEBEE'S, chicken tenders, from kids' menu	0.859
+18950	Crackers, wheat, reduced fat	0.853
+36604	CRACKER BARREL, chicken tenderloin platter, fried, from kid's menu	0.851
+18159	Cookies, chocolate chip, commercially prepared, regular, higher fat, enriched	0.842
+36618	Restaurant, Chinese, general tso's chicken	0.84
+36035	Restaurant, family style, coleslaw	0.837
+18235	Crackers, whole-wheat	0.831
+36025	CRACKER BARREL, coleslaw	0.831
+36612	DENNY'S, golden fried shrimp	0.83
+36024	CRACKER BARREL, chicken tenderloin platter, fried	0.826
+28339	Bread, gluten-free, whole grain, made with tapioca starch and brown rice flour	0.799
+28372	UDI'S, Gluten Free, Soft  &  Hearty Whole Grain Bread	0.799
+36014	Restaurant, family style, french fries	0.792
+11296	Onion rings, breaded, par fried, frozen, prepared, heated in oven	0.789
+36622	Restaurant, Chinese, sweet and sour pork	0.785
+36633	Restaurant, Chinese, sesame chicken	0.774
+28367	SAGE VALLEY, Gluten Free Vanilla Sandwich Cookies	0.771
+36621	Restaurant, Chinese, sweet and sour chicken	0.771
+36027	DENNY'S, chicken strips	0.768
+28346	Waffles, gluten-free, frozen, ready-to-heat	0.766
+28375	VAN'S, Gluten Free, Totally Original Waffles	0.766
+21246	WENDY'S, Chicken Nuggets	0.765
+36610	DENNY'S, french fries	0.758
+36607	CRACKER BARREL, steak fries	0.754
+21214	SUBWAY, tuna sub on white bread with lettuce and tomato	0.736
+36002	APPLEBEE'S, french fries	0.728
+31022	Potatoes, hash brown, refrigerated, prepared, pan-fried in canola oil	0.718
+18214	Crackers, cheese, regular	0.715
+18213	Cookies, vanilla wafers, higher fat	0.714
+21520	Fast foods, breadstick, soft, prepared with garlic and parmesan cheese	0.696
+21525	PIZZA HUT, breadstick, parmesan garlic	0.696
+21126	Fast foods, submarine sandwich, tuna on white bread with lettuce and tomato	0.692
+5714	Turkey, skin, from retail parts, from dark meat, raw	0.681
+36606	CRACKER BARREL, farm raised catfish platter	0.679
+36416	Restaurant, Latino, bunuelos (fried yeast bread)	0.673
+5715	Turkey, skin, from retail parts, from dark meat, cooked, roasted	0.669
+36617	Restaurant, Chinese, lemon chicken	0.663
+5170	Turkey, skin from whole (light and dark), roasted	0.657
+5699	Turkey, skin from whole, (light and dark), with added solution, roasted	0.657
+21259	BURGER KING, Original Chicken Sandwich	0.649
+21247	WENDY'S, french fries	0.639
+36601	Restaurant, Chinese, egg rolls, assorted	0.636
+36034	Restaurant, family style, chicken tenders	0.635
+36029	DENNY'S, fish fillet, battered or breaded, fried	0.632
+22971	Potato salad with egg	0.63
+36030	DENNY'S, hash browns	0.623
+36039	Restaurant, family style, hash browns	0.623
+2027	Spices, oregano, dried	0.621
+36629	Restaurant, Chinese, orange chicken	0.619
+21078	Fast foods, nachos, with cheese	0.617
+21268	TACO BELL, Nachos	0.617
+32007	Taquitos, frozen, beef and cheese, oven-heated	0.615
+21106	Fast foods, fish sandwich, with tartar sauce and cheese	0.614
+21144	CHICK-FIL-A, hash browns	0.614
+21232	McDONALD'S, FILET-O-FISH	0.614
+5169	Turkey, skin from whole, (light and dark), raw	0.611
+5698	Turkey, skin from whole (light and dark), with added solution, raw	0.611
+21508	WEND'YS, Crispy Chicken Sandwich	0.603
+18173	Cookies, graham crackers, plain or honey (includes cinnamon)	0.599
+32006	Taquitos, frozen, chicken and cheese, oven-heated	0.593
+2011	Spices, cloves, ground	0.585
+36008	T.G.I. FRIDAY'S, fried mozzarella	0.584
+28310	Cookies, shortbread, reduced fat	0.582
+21130	Fast foods, onion rings, breaded and fried	0.577
+21422	KFC, Popcorn Chicken	0.577
+21509	BURGER KING, Onion Rings	0.577
+28336	Bread, gluten-free, white, made with potato extract, rice starch, and rice flour	0.571
+28366	RUDI'S, Gluten-Free Bakery, Original Sandwich Bread	0.571
+21420	KFC, Coleslaw	0.566
+10006	Pork, fresh, separable fat, raw	0.564
+36033	Restaurant, family style, fish fillet, battered or breaded, fried	0.557
+22975	Chicken, nuggets, white meat, precooked, frozen, not reheated	0.548
+16037	Beans, navy, mature seeds, raw	0.538
+36012	Restaurant, family style, fried mozzarella sticks	0.538
+18228	Crackers, saltines (includes oyster, soda, soup)	0.535
+4640	Salad dressing, ranch dressing, reduced fat	0.527
+17449	Lamb, Australian, imported, fresh, external fat, cooked	0.527
+43215	Salad dressing, buttermilk, lite	0.527
+36611	DENNY'S, mozzarella cheese sticks	0.524
+2009	Spices, chili powder	0.519
+23435	Beef, New Zealand, imported, subcutaneous fat, cooked	0.51
+23436	Beef, New Zealand, imported, subcutaneous fat, raw	0.51
+36004	APPLEBEE'S, mozzarella sticks	0.505
+19008	Snacks, corn-based, extruded, puffs or twists, cheese-flavor	0.498
+21230	Fast Foods, crispy chicken filet sandwich, with lettuce and mayonnaise	0.497
+4655	Margarine-like shortening, industrial, soy (partially hydrogenated), cottonseed, and soy, principal use flaky pastries	0.493
+18953	Bread, salvadoran sweet cheese (quesadilla salvadorena)	0.489
+21105	Fast foods, fish sandwich, with tartar sauce	0.489
+21258	BURGER KING, Premium Fish Sandwich	0.489
+28338	Bread, gluten-free, white, made with tapioca starch and brown rice flour	0.485
+28371	UDI'S, Gluten Free, Soft  &  Delicious White Sandwich Bread	0.485
+36018	APPLEBEE'S, fish, hand battered	0.482
+10864	Pork, bacon, rendered fat, cooked	0.476
+21387	BURGER KING, Hash Brown Rounds	0.475
+18140	Cake, yellow, commercially prepared, with chocolate frosting, in-store bakery	0.474
+19033	Snacks, GENERAL MILLS, CHEX MIX, traditional flavor	0.469
+21253	BURGER KING, WHOPPER, with cheese	0.469
+5686	Chicken, skin (drumsticks and thighs), with added solution, cooked, roasted	0.462
+21493	DOMINO'S 14" Sausage Pizza, Crunchy Thin Crust	0.459
+21517	Fast foods, crispy chicken in tortilla, with lettuce, cheese, and ranch sauce	0.458
+21523	McDONALD'S, RANCH SNACK WRAP, Crispy	0.458
+36021	APPLEBEE'S, coleslaw	0.458
+18096	Cake, chocolate, commercially prepared with chocolate frosting, in-store bakery	0.454
+21488	Fast foods, quesadilla, with chicken	0.454
+2028	Spices, paprika	0.453
+21279	DOMINO'S 14" Cheese Pizza, Crunchy Thin Crust	0.453
+23420	Beef, New Zealand, imported, intermuscular fat, raw	0.45
+22974	Chicken, nuggets, dark and white meat, precooked, frozen, not reheated	0.447
+22918	Burrito, bean and cheese, frozen	0.446
+28365	PEPPERIDGE FARM, Goldfish, Baked Snack Crackers, Pizza	0.446
+4021	Salad dressing, italian dressing, commercial, reduced fat	0.441
+21026	Fast foods, potatoes, hash browns, round pieces or patty	0.441
+21355	McDONALD'S, McCHICKEN Sandwich	0.43
+36609	CRACKER BARREL, macaroni n' cheese plate, from kid's menu	0.429
+21313	McDONALD'S, Hot Mustard Sauce	0.427
+16173	Frijoles rojos volteados (Refried beans, red, canned)	0.426
+36040	CRACKER BARREL, macaroni n' cheese	0.424
+18425	Crackers, saltines, low salt (includes oyster, soda, soup)	0.423
+28363	PEPPERIDGE FARM, Goldfish, Baked Snack Crackers, Original	0.418
+10007	Pork, fresh, separable fat, cooked	0.416
+21319	McDONALD'S, Hash Brown	0.412
+28335	Cookies, gluten-free, vanilla sandwich, with creme filling	0.411
+21138	Fast foods, potato, french fried in vegetable oil	0.407
+28331	Crackers, flavored, fish-shaped	0.403
+21415	POPEYES, biscuit	0.401
+5674	Chicken, skin (drumsticks and thighs), raw	0.397
+36418	Restaurant, Mexican, refried beans	0.396
+18949	Crackers, whole-wheat, reduced fat	0.392
+21255	BURGER KING, DOUBLE WHOPPER, with cheese	0.392
+21399	Fast Foods, cheeseburger; double, large patty; with condiments, vegetables and mayonnaise	0.392
+25064	Snacks, potato chips, lightly salted	0.392
+21229	Fast foods, chicken, breaded and fried, boneless pieces, plain	0.39
+23419	Beef, New Zealand, imported, intermuscular fat, cooked	0.39
+5675	Chicken, skin (drumsticks and thighs), cooked, roasted	0.385
+21441	KFC, Fried Chicken, EXTRA CRISPY, Wing, meat and skin with breading	0.384
+21238	McDONALD'S, french fries	0.382
+5673	Chicken, skin (drumsticks and thighs), cooked, braised	0.381
+5685	Chicken, skin (drumsticks and thighs), with added solution, raw	0.381
+21316	McDONALD'S, Tangy Honey Mustard Sauce	0.381
+21292	LITTLE CAESARS 14" Cheese Pizza, Thin Crust	0.378
+17351	Veal, Australian, shank, hind, bone-in, separable lean only, raw	0.377
+5684	Chicken, skin (drumsticks and thighs), with added solution, cooked, braised	0.375
+2046	Mustard, prepared, yellow	0.373
+18120	Cake, pound, commercially prepared, butter (includes fresh and frozen)	0.372
+11391	Potatoes, hash brown, frozen, plain, prepared, pan fried in canola oil	0.369
+21518	Fast foods, grilled chicken in tortilla, with lettuce, cheese, and ranch sauce	0.364
+21524	McDONALD'S, RANCH SNACK WRAP, Grilled	0.364
+21492	DOMINO'S 14" Pepperoni Pizza, Crunchy Thin Crust	0.363
+10000	Pork, fresh, composite of separable fat, with added solution, cooked	0.362
+28364	PEPPERIDGE FARM, Goldfish, Baked Snack Crackers, Parmesan	0.362
+21483	Fast Food, Pizza Chain, 14" pizza, sausage topping, thin crust	0.361
+11212	Edamame, frozen, prepared	0.358
+18938	Toaster Pastries, fruit, frosted (include apples, blueberry, cherry, strawberry)	0.358
+21275	PIZZA HUT 12" Pepperoni Pizza, Pan Crust	0.357
+6338	CAMPBELL'S, Cream of Mushroom Soup, condensed	0.354
+21294	PIZZA HUT 14" Cheese Pizza, Pan Crust	0.35
+21301	Fast Food, Pizza Chain, 14" pizza, cheese topping, thin crust	0.348
+21498	PIZZA HUT 14" Sausage Pizza, Pan Crust	0.348
+21297	PIZZA HUT 14" Pepperoni Pizza, Pan Crust	0.347
+22955	Egg rolls, vegetable, frozen, prepared	0.345
+21440	KFC, Fried Chicken, EXTRA CRISPY, Thigh, meat and skin with breading	0.342
+19411	Snacks, potato chips, plain, salted	0.34
+7973	Turkey bacon, microwaved	0.339
+22978	Chicken tenders, breaded, frozen, prepared	0.337
+21061	Fast foods, burrito, with beans and cheese	0.335
+21264	TACO BELL, Bean Burrito	0.335
+6043	Soup, cream of mushroom, canned, condensed	0.329
+36408	Restaurant, Latino, pupusas con frijoles (pupusas, bean)	0.329
+7024	Frankfurter, chicken	0.326
+17401	Lamb, New Zealand, imported, flap, boneless, separable lean and fat, cooked, braised	0.321
+21321	McDONALD'S, Hotcakes (plain)	0.321
+21421	KFC, Crispy Chicken Strips	0.321
+1001	Butter, salted	0.315
+1145	Butter, without salt	0.315
+10942	Pork, fresh, composite of separable fat, with added solution, raw	0.315
+21080	Fast foods, nachos, with cheese, beans, ground beef, and tomatoes	0.315
+21254	BURGER KING, DOUBLE WHOPPER, no cheese	0.315
+21269	TACO BELL, Nachos Supreme	0.315
+21389	Fast foods, hamburger; double, large patty; with condiments, vegetables and mayonnaise	0.315
+18362	Toaster pastries, fruit (includes apple, blueberry, cherry, strawberry)	0.314
+21485	Fast Food, Pizza Chain, 14" pizza, pepperoni topping, thin crust	0.314
+4665	Margarine, industrial, non-dairy, cottonseed, soy oil (partially hydrogenated ), for flaky pastries	0.313
+25028	Tortilla chips, yellow, plain, salted	0.313
+27052	Dip, salsa con queso, cheese and salsa- medium	0.311
+21300	Fast Food, Pizza Chain, 14" pizza, cheese topping, thick crust	0.306
+21272	PIZZA HUT 12" Cheese Pizza, Pan Crust	0.304
+5744	Turkey, back, from whole bird, meat and skin, with added solution, raw	0.303
+31023	Sweet Potatoes, french fried, frozen as packaged, salt added in processing	0.302
+36403	Restaurant, Latino, empanadas, beef, prepared	0.301
+19802	Snacks, corn-based, extruded, puffs or twists, cheese-flavor, unenriched	0.3
+21482	Fast Food, Pizza Chain, 14" pizza, sausage topping, thick crust	0.3
+21303	Fast Food, Pizza Chain, 14" pizza, pepperoni topping, thick crust	0.299
+2003	Spices, basil, dried	0.296
+21256	BURGER KING, Chicken Strips	0.296
+21309	McDONALD'S, Chicken McNUGGETS	0.296
+17406	Lamb, New Zealand, imported, loin chop, separable lean and fat, cooked, fast fried	0.294
+10895	Pork, cured, ham, separable fat, boneless, unheated	0.29
+7953	Pork sausage, link/patty, fully cooked, microwaved	0.288
+17402	Lamb, New Zealand, imported, flap, boneless, separable lean and fat, raw	0.288
+1002	Butter, whipped, with salt	0.285
+17378	Lamb, New Zealand, imported, tongue - swiss cut, cooked, soaked and simmered	0.285
+19042	Snacks, potato chips, barbecue-flavor	0.282
+7969	Kielbasa, fully cooked, pan-fried	0.281
+18166	Cookies, chocolate sandwich, with creme filling, regular	0.281
+21127	Fast foods, coleslaw	0.279
+21438	KFC, Fried Chicken, EXTRA CRISPY, Breast, meat and skin with breading	0.279
+21439	KFC, Fried Chicken, EXTRA CRISPY, Drumstick, meat and skin with breading	0.279
+17379	Lamb, New Zealand, imported, tongue - swiss cut, raw	0.278
+17415	Lamb, New Zealand, imported, square-cut shoulder chops, separable lean and fat, cooked, braised	0.277
+28347	Pancakes, gluten-free, frozen, ready-to-heat	0.277
+28374	VAN'S, Gluten Free, Totally Original Pancakes	0.277
+28307	Bread, naan, plain, commercially prepared, refrigerated	0.276
+21252	BURGER KING, WHOPPER, no cheese	0.275
+21390	Fast foods, hamburger; single, large patty; with condiments, vegetables and mayonnaise	0.275
+2033	Spices, poppy seed	0.273
+21249	BURGER KING, french fries	0.273
+18360	Taco shells, baked	0.27
+10894	Pork, cured, ham, separable fat, boneless, heated	0.269
+21385	BURGER KING, CROISSAN'WICH with Egg and Cheese	0.269
+18204	Cookies, sugar, commercially prepared, regular (includes vanilla)	0.267
+17076	Lamb, New Zealand, imported, loin chop, separable lean and fat, raw	0.266
+21491	PIZZA HUT 14" Pepperoni Pizza, THIN 'N CRISPY Crust	0.266
+23448	Beef, New Zealand, imported, brisket navel end, separable lean and fat, cooked, braised	0.265
+19003	Snacks, corn-based, extruded, chips, plain	0.264
+36603	Restaurant, Chinese, beef and vegetables	0.264
+18015	Biscuits, plain or buttermilk, refrigerated dough, higher fat, baked	0.263
+19057	Snacks, tortilla chips, nacho cheese	0.262
+21278	DOMINO'S 14" Cheese Pizza, Ultimate Deep Dish Crust	0.262
+21496	PIZZA HUT 14" Sausage Pizza, THIN 'N CRISPY Crust	0.262
+36626	Restaurant, Chinese, chicken and vegetables	0.257
+17084	Lamb, New Zealand, imported, square-cut shoulder, separable lean and fat, raw	0.256
+17411	Lamb, New Zealand, imported, neck chops, separable lean and fat, cooked, braised	0.256
+2015	Spices, curry powder	0.255
+7964	Frankfurter, meat and poultry, cooked, grilled	0.255
+21428	KFC, Fried Chicken, ORIGINAL RECIPE, Wing, meat only, skin and breading removed	0.255
+36620	Restaurant, Chinese, shrimp and vegetables	0.255
+7963	Frankfurter, meat and poultry, cooked, boiled	0.254
+22961	HOT POCKETS, meatballs  &  mozzarella stuffed sandwich, frozen	0.254
+7952	Bologna, chicken, turkey, pork	0.252
+21281	DOMINO'S 14" Pepperoni Pizza, Ultimate Deep Dish Crust	0.252
+21495	DOMINO'S 14" Sausage Pizza, Ultimate Deep Dish Crust	0.252
+17353	Lamb, Australian, ground,  85% lean / 15% fat, raw	0.249
+36407	Restaurant, Latino, Arroz con grandules (rice and pigeonpeas)	0.249
+7967	Pork sausage, link/patty, fully cooked, unheated	0.247
+7968	Kielbasa, fully cooked, grilled	0.246
+36050	Restaurant, Mexican, cheese enchilada	0.246
+36619	Restaurant, Chinese, kung pao chicken	0.244
+21295	PIZZA HUT 14" Cheese Pizza, THIN 'N CRISPY Crust	0.243
+7970	Kielbasa, fully cooked, unheated	0.242
+7254	Turkey bacon, unprepared	0.241
+21397	Fast foods, cheeseburger; single, large patty; with condiments, vegetables and mayonnaise	0.24
+21510	WENDY'S, DAVE'S Hot 'N Juicy 1/4 LB, single	0.24
+36017	Restaurant, family style, macaroni  &  cheese, from kids' menu	0.24
+17154	Veal, Australian, separable fat, raw	0.239
+17463	Lamb, Australian, imported, fresh, rack, roast, frenched, bone-in, separable lean and fat, trimmed to 1/8" fat, cooked, roasted	0.239
+18248	Doughnuts, cake-type, plain (includes unsugared, old-fashioned)	0.239
+36405	Restaurant, Latino, Arroz con frijoles negros (rice and black beans)	0.239
+17417	Lamb, New Zealand, imported, square-cut shoulder, separable lean and fat, cooked, slow roasted	0.238
+36417	Restaurant, Mexican, spanish rice	0.238
+7962	Frankfurter, meat and poultry, unheated	0.237
+15027	Fish, fish sticks, frozen, prepared	0.236
+17413	Lamb, New Zealand, imported, netted shoulder, rolled, boneless, separable lean and fat, cooked, slow roasted	0.235
+19058	Snacks, tortilla chips, ranch-flavor	0.235
+22906	Chicken pot pie, frozen entree, prepared	0.235
+10123	Pork, cured, bacon, unprepared	0.234
+5344	Chicken, broilers or fryers, skin only, cooked, rotisserie, original seasoning	0.233
+21244	WENDY'S, Homestyle Chicken Fillet Sandwich	0.233
+36044	ON THE BORDER, Mexican rice	0.233
+19056	Snacks, tortilla chips, plain, white corn, salted	0.23
+21340	McDONALD'S, Sausage Burrito	0.23
+21519	Fast foods, breakfast burrito, with egg, cheese, and sausage	0.23
+36613	DENNY'S, macaroni  &  cheese, from kid's menu	0.23
+32005	Macaroni and cheese, box mix with cheese sauce, prepared	0.229
+32020	Chicken, thighs, frozen, breaded, reheated	0.227
+36045	ON THE BORDER, refried beans	0.226
+17408	Lamb, New Zealand, imported, loin saddle, separable lean and fat, raw	0.225
+18964	Cinnamon buns, frosted (includes honey buns)	0.225
+36406	Restaurant, Latino, Arroz con habichuelas colorados (Rice And Red Beans)	0.225
+18342	Rolls, dinner, plain, commercially prepared (includes brown-and-serve)	0.224
+2021	Spices, ginger, ground	0.223
+10862	Pork, cured, bacon, pre-sliced, cooked, pan-fried	0.223
+11403	Potatoes, french fried, all types, salt added in processing, frozen, home-prepared, oven heated	0.223
+22902	Pizza, meat topping, thick crust, frozen, cooked	0.223
+36058	OLIVE GARDEN, chicken parmigiana without pasta	0.221
+17407	Lamb, New Zealand, imported, loin saddle, separable lean and fat, cooked, fast roasted	0.22
+11398	Potato puffs, frozen, unprepared	0.219
+36003	APPLEBEE'S, KRAFT, Macaroni  &  Cheese, from kid's menu	0.219
+9447	Plantains, yellow, fried, Latino restaurant	0.218
+17416	Lamb, New Zealand, imported, square-cut shoulder chops, separable lean and fat, raw	0.217
+36059	Restaurant, Italian, chicken parmesan without pasta	0.217
+33879	Babyfood, finger snacks, GERBER, GRADUATES, LIL CRUNCHIES - MILD CHEDDAR	0.217
+36413	Restaurant, Latino, black bean soup	0.216
+5669	Ground turkey, 85% lean, 15% fat, pan-broiled crumbles	0.214
+18364	Tortillas, ready-to-bake or -fry, flour, refrigerated	0.214
+9446	Plantains, green, fried	0.212
+12152	Nuts, pistachio nuts, dry roasted, without salt added	0.212
+12652	Nuts, pistachio nuts, dry roasted, with salt added	0.212
+17315	Lamb, Australian, imported, fresh, rib chop, frenched, bone-in, separable lean and fat, trimmed to 1/8" fat, cooked, grilled	0.211
+21401	Fast foods, chicken tenders	0.211
+23449	Beef, New Zealand, imported, brisket navel end, separable lean and fat, raw	0.211
+10860	Pork, cured, bacon, cooked, baked	0.21
+10974	Pork, ground, 72% lean / 28% fat, cooked, crumbles	0.21
+4652	Oil, industrial, soy ( partially hydrogenated), all purpose	0.209
+7075	Sausage, smoked link sausage, pork and beef	0.207
+17414	Lamb, New Zealand, imported, netted shoulder, rolled, boneless, separable lean and fat, raw	0.207
+16338	Beans, navy, mature seeds, cooked, boiled, with salt	0.206
+7960	Bologna, chicken, pork	0.205
+7971	Bologna, meat and poultry	0.205
+17393	Lamb, New Zealand, imported, neck chops, separable lean only, cooked, braised	0.205
+23297	Beef, Australian, imported, grass-fed, seam fat, raw	0.205
+5735	Turkey, retail parts, wing, meat and skin, cooked, roasted	0.204
+5734	Turkey, retail parts, wing, meat and skin, raw	0.203
+5700	Turkey, dark meat from whole, meat and skin, with added solution, raw	0.202
+10977	Pork, ground, 72% lean / 28% fat, cooked, pan-broiled	0.202
+21064	Fast foods, burrito, with beans, cheese, and beef	0.202
+21265	TACO BELL, BURRITO SUPREME with beef	0.202
+7957	Pork and turkey sausage, pre-cooked	0.201
+17382	Lamb, New Zealand, imported, square-cut shoulder chops, separable lean only, cooked, braised	0.201
+21010	Fast foods, biscuit, with crispy chicken fillet	0.201
+21522	McDONALD'S, Southern Style Chicken Biscuit	0.201
+36056	Restaurant, Mexican, cheese tamales	0.201
+17081	Lamb, New Zealand, imported, rack - partly frenched, separable lean and fat, cooked, fast roasted	0.2
+43378	Pork, cured, bacon, cooked, broiled, pan-fried or roasted, reduced sodium	0.2
+10861	Pork, cured, bacon, cooked, microwaved	0.199
+36051	ON THE BORDER, cheese quesadilla	0.199
+21494	DOMINO'S 14" Sausage Pizza, Classic Hand-Tossed Crust	0.198
+21102	Fast foods, chicken fillet sandwich, plain with pickles	0.197
+21142	Fast food, biscuit	0.197
+21526	CHICK-FIL-A, chicken sandwich	0.197
+17412	Lamb, New Zealand, imported, neck chops, separable lean and fat, raw	0.196
+18255	Doughnuts, yeast-leavened, glazed, enriched (includes honey buns)	0.196
+21271	PIZZA HUT 12" Cheese Pizza, Hand-Tossed Crust	0.196
+17080	Lamb, New Zealand, imported, rack - partly frenched, separable lean and fat, raw	0.194
+7025	Frankfurter, turkey	0.193
+36049	ON THE BORDER, cheese enchilada	0.193
+27065	Dip, bean, original flavor	0.192
+27068	Dip, FRITO'S, bean, original flavor	0.192
+5670	Ground turkey, 85% lean, 15% fat, patties, broiled	0.191
+23296	Beef, Australian, imported, grass-fed,  external fat, raw	0.191
+17359	Lamb, New Zealand, imported, breast, separable lean only, cooked, braised	0.19
+21274	PIZZA HUT 12" Pepperoni Pizza, Hand-Tossed Crust	0.19
+22960	Macaroni and cheese, dry mix, prepared with 2% milk and 80% stick margarine from dry mix	0.19
+21484	Fast Food, Pizza Chain, 14" pizza, sausage topping, regular crust	0.189
+5706	Turkey, whole, meat and skin, with added solution, raw	0.188
+21280	DOMINO'S 14" Pepperoni Pizza, Classic Hand-Tossed Crust	0.187
+21302	Fast Food, Pizza Chain, 14" pizza, pepperoni topping, regular crust	0.185
+21277	DOMINO'S 14" Cheese Pizza, Classic Hand-Tossed Crust	0.184
+21014	Fast foods, croissant, with egg, cheese, and sausage	0.183
+21290	LITTLE CAESARS 14" Cheese Pizza, Large Deep Dish Crust	0.183
+21383	BURGER KING, CROISSAN'WICH with Sausage, Egg and Cheese	0.183
+32032	Sausage, egg and cheese breakfast biscuit	0.183
+32036	JIMMY DEAN, Sausage, Egg, and Cheese Breakfast Biscuit, frozen, unprepared	0.183
+21296	PIZZA HUT 14" Pepperoni Pizza, Hand-Tossed Crust	0.182
+1137	Egg, yolk, dried	0.181
+18288	Pancakes plain, frozen, ready-to-heat (includes buttermilk)	0.18
+21476	DIGIORNO Pizza, pepperoni topping, cheese stuffed crust, frozen, baked	0.18
+21497	PIZZA HUT 14" Sausage Pizza, Hand-Tossed Crust	0.18
+16010	Beans, baked, canned, with pork and sweet sauce	0.179
+17448	Lamb, Australian, imported, fresh, rack, roast, frenched, bone-in, separable lean only, trimmed to 1/8" fat, cooked, roasted	0.179
+27053	Dip, OLD EL PASO, Cheese 'n Salsa, medium	0.179
+28312	Rolls, hamburger or hot dog, wheat/cracked wheat	0.179
+7072	Salami, dry or hard, pork, beef	0.178
+21467	Fast Foods, Fried Chicken, Wing, meat only, skin and breading removed	0.178
+22973	Corn dogs, frozen, prepared	0.178
+16038	Beans, navy, mature seeds, cooked, boiled, without salt	0.177
+21273	PIZZA HUT 12" Cheese Pizza, THIN 'N CRISPY Crust	0.177
+21291	LITTLE CAESARS 14" Pepperoni Pizza, Large Deep Dish Crust	0.177
+16171	Refried beans, canned, vegetarian	0.176
+17314	Lamb, Australian, imported, fresh, rib chop/rack roast, frenched, bone-in, separable lean and fat, trimmed to 1/8" fat, raw	0.176
+18350	Rolls, hamburger or hotdog, plain	0.176
+21435	KFC, Fried Chicken, ORIGINAL RECIPE, Drumstick, meat and skin with breading	0.176
+5666	Ground turkey, 93% lean, 7% fat, pan-broiled crumbles	0.175
+5745	Turkey, back, from whole bird, meat and skin, with added solution, roasted	0.175
+21284	PAPA JOHN'S 14" Pepperoni Pizza, Original Crust	0.175
+21299	Fast Food, Pizza Chain, 14" pizza, cheese topping, regular crust	0.175
+21433	KFC, Fried Chicken, EXTRA CRISPY, Wing, meat only, skin and breading removed	0.175
+5667	Ground turkey, 93% lean, 7% fat, patties, broiled	0.174
+21139	Fast foods, potato, mashed	0.174
+18127	Cake, snack cakes, creme-filled, chocolate with frosting	0.173
+17368	Lamb, New Zealand, imported, liver, cooked, soaked and fried	0.171
+1133	Egg, whole, dried	0.17
+7074	Smoked link sausage, pork	0.169
+16103	Refried beans, canned, traditional style (includes USDA commodity)	0.169
+16403	Refried beans, canned, traditional, reduced sodium	0.169
+7959	Bologna, chicken, pork, beef	0.168
+22537	HOT POCKETS Ham 'N Cheese Stuffed Sandwich, frozen	0.168
+28313	Rolls, hamburger or hot dog, whole wheat	0.168
+17464	Lamb, Australian, imported, fresh, rib chop, frenched, denuded, bone-in, separable lean and fat, trimmed to 0" fat, cooked, grilled	0.167
+21283	PAPA JOHN'S 14" Cheese Pizza, Original Crust	0.167
+21473	DIGIORNO Pizza, cheese topping, cheese stuffed crust, frozen, baked	0.167
+17403	Lamb, New Zealand, imported, hind-shank, separable lean and fat, cooked, braised	0.166
+17421	Lamb, New Zealand, imported, tunnel-boned leg, chump off, shank off, separable lean and fat, cooked, slow roasted	0.166
+18069	Bread, white, commercially prepared (includes soft bread crumbs)	0.166
+18249	Doughnuts, cake-type, plain, chocolate-coated or frosted	0.166
+21082	Fast foods, taco with beef, cheese and lettuce, hard shell	0.166
+21260	TACO BELL, Original Taco with beef, cheese and lettuce	0.166
+5668	Ground turkey, 85% lean, 15% fat, raw	0.165
+8272	Cereals ready-to-eat, GENERAL MILLS, CINNAMON TOAST CRUNCH	0.165
+21293	PIZZA HUT 14" Cheese Pizza, Hand-Tossed Crust	0.165
+7057	Pepperoni, beef and pork, sliced	0.164
+5103	Chicken, broilers or fryers, wing, meat and skin, cooked, roasted	0.163
+7972	Meatballs, frozen, Italian style	0.163
+15169	Mollusks, oyster, eastern, wild, cooked, moist heat	0.163
+18959	Pastry, Pastelitos de Guava (guava pastries)	0.163
+4654	Oil, industrial, soy (partially hydrogenated)  and cottonseed, principal use as a tortilla shortening	0.162
+18065	Bread, wheat, toasted	0.161
+21240	WENDY'S, CLASSIC SINGLE Hamburger, with cheese	0.161
+7958	Turkey sausage, fresh, cooked	0.16
+9062	Cherimoya, raw	0.159
+21288	LITTLE CAESARS 14" Original Round Pepperoni Pizza, Regular Crust	0.158
+21261	TACO BELL, Soft Taco with beef, cheese and lettuce	0.157
+21486	Fast foods, taco with beef, cheese and lettuce, soft	0.157
+17398	Lamb, New Zealand, imported, loin chop, separable lean only, cooked, fast fried	0.156
+36052	Restaurant, Mexican, cheese quesadilla	0.156
+18064	Bread, wheat	0.155
+21287	LITTLE CAESARS 14" Original Round Cheese Pizza, Regular Crust	0.155
+5701	Turkey, dark meat from whole, meat and skin, with added solution, cooked, roasted	0.154
+16172	Refried beans, canned, fat-free	0.153
+17365	Lamb, New Zealand, imported, flap, boneless, separable lean only, cooked, braised	0.153
+21262	TACO BELL, Soft Taco with chicken, cheese and lettuce	0.153
+21487	Fast foods, taco with chicken, lettuce and cheese, soft	0.153
+2030	Spices, pepper, black	0.152
+21121	Fast foods, roast beef sandwich, plain	0.152
+21276	PIZZA HUT 12" Super Supreme Pizza, Hand-Tossed Crust	0.152
+21527	ARBY'S, roast beef sandwich, classic	0.152
+27064	Wasabi	0.151
+17372	Lamb, New Zealand, imported, heart, cooked, soaked and simmered	0.15
+21384	BURGER KING, CROISSAN'WICH with Sausage and Cheese	0.15
+21511	Fast Food, Pizza Chain, 14" pizza, cheese topping, stuffed crust	0.15
+21512	PIZZA HUT 14" Cheese Pizza, Stuffed Crust	0.15
+17072	Lamb, New Zealand, imported, leg chop/steak, bone-in, separable lean and fat, raw	0.149
+21289	LITTLE CAESARS 14" Original Round Meat and Vegetable Pizza, Regular Crust	0.149
+15236	Fish, salmon, Atlantic, farmed, raw	0.148
+18946	Pie crust, refrigerated, regular, baked	0.148
+17455	Lamb, Australian, imported, fresh, leg, hindshank, heel on, bone-in, separable lean and fat, trimmed to 1/8" fat, cooked, braised	0.147
+23442	Beef, New Zealand, imported, variety meats and by-products, tongue, cooked, boiled	0.147
+35141	Mutton, cooked, roasted (Navajo)	0.147
+5356	Chicken, broiler, rotisserie, BBQ, skin	0.146
+17456	Lamb, Australian, imported, fresh, leg, hindshank, heel on, bone-in, separable lean and fat, trimmed to 1/8" fat, raw	0.146
+21477	DIGIORNO Pizza, pepperoni topping, rising crust, frozen, baked	0.146
+22970	Macaroni and cheese, frozen entree	0.146
+21024	Fast foods, french toast sticks	0.145
+21386	BURGER KING, french toast sticks	0.145
+21479	DIGIORNO Pizza, supreme topping, rising crust, frozen, baked	0.145
+23468	Beef, New Zealand, imported, striploin, separable lean and fat, cooked, fast fried	0.145
+5091	Chicken, broilers or fryers, thigh, meat and skin, raw	0.144
+10978	Pork, ground, 84% lean / 16% fat, cooked, pan-broiled	0.144
+32003	Rice and vermicelli mix, rice pilaf flavor, prepared with 80% margarine	0.144
+1210	Egg Mix, USDA Commodity	0.143
+5184	Turkey, dark meat from whole, meat and skin, cooked, roasted	0.141
+5702	Turkey from whole, light meat, meat and skin, with added solution, raw	0.141
+23469	Beef, New Zealand, imported, striploin, separable lean and fat, raw	0.141
+36625	Restaurant, Chinese, vegetable lo mein, without meat	0.141
+5742	Turkey, retail parts, thigh, meat and skin, raw	0.14
+17086	Lamb, New Zealand, imported, square-cut shoulder, separable lean only, raw	0.14
+5691	Chicken, dark meat, thigh, meat and skin, with added solution, raw	0.139
+7064	Pork sausage, link/patty, cooked, pan-fried	0.139
+17405	Lamb, New Zealand, imported, leg chop/steak, bone-in, separable lean and fat, cooked, fast fried	0.138
+17419	Lamb, New Zealand, imported, rack - fully frenched, separable lean and fat, cooked, fast roasted	0.138
+18335	Pie crust, standard-type, frozen, ready-to-bake, enriched, baked	0.138
+21304	Fast Food, Pizza Chain, 14" pizza, meat and vegetable topping, regular crust	0.138
+1042	Cheese, pasteurized process, American, fortified with vitamin D	0.137
+1253	Cheese, pasteurized process, American, without added vitamin D	0.137
+17369	Lamb, New Zealand, imported, liver, raw	0.137
+18075	Bread, whole-wheat, commercially prepared	0.137
+23437	Beef, New Zealand, imported, sweetbread, cooked, boiled	0.137
+5306	Ground turkey, cooked	0.136
+17370	Lamb, New Zealand, imported, ground lamb, cooked, braised	0.136
+17385	Lamb, New Zealand, imported, tenderloin, separable lean only, raw	0.136
+17457	Lamb, Australian, imported, fresh, leg, trotter off, bone-in, separable lean and fat, trimmed to 1/8" fat, cooked, roasted	0.135
+20142	Teff, uncooked	0.135
+21228	McDONALD'S, Hamburger	0.134
+21474	DIGIORNO Pizza, cheese topping, rising crust, frozen, baked	0.134
+22903	Pizza, pepperoni topping, regular crust, frozen, cooked	0.134
+22999	Rice and vermicelli mix, chicken flavor, prepared with 80% margarine	0.134
+23443	Beef, New Zealand, imported, variety meats and by-products, tongue, raw	0.134
+7955	Turkey sausage, fresh, raw	0.133
+17083	Lamb, New Zealand, imported, rack - partly frenched, separable lean only, cooked, fast roasted	0.133
+17394	Lamb, New Zealand, imported, netted shoulder, rolled, boneless, separable lean only, cooked, slow roasted	0.133
+17404	Lamb, New Zealand, imported, hind-shank, separable lean and fat, raw	0.133
+21478	DIGIORNO Pizza, pepperoni topping, thin crispy crust, frozen, baked	0.133
+10193	Pork, fresh, backribs, separable lean and fat, cooked, roasted	0.131
+18948	Pie crust, refrigerated, regular, unbaked	0.131
+18947	Pie crust, deep dish, frozen, baked, made with enriched flour	0.13
+28306	Bread, chapati or roti, plain, commercially prepared	0.129
+36624	Restaurant, Chinese, vegetable chow mein, without meat or noodles	0.129
+5727	Turkey, retail parts, breast, meat and skin, with added solution, raw	0.128
+17068	Lamb, New Zealand, imported, fore-shank, separable lean and fat, raw	0.128
+21108	Fast foods, hamburger; single, regular patty; with condiments	0.128
+21388	Fast foods, miniature cinnamon rolls	0.128
+36623	Restaurant, Chinese, chicken chow mein	0.128
+14062	Beverages, ABBOTT, ENSURE, Nutritional Shake, Ready-to-Drink	0.127
+21282	DOMINO'S 14" EXTRAVAGANZZA FEAST Pizza, Classic Hand-Tossed Crust	0.127
+7069	Salami, cooked, beef and pork	0.126
+23438	Beef, New Zealand, imported, sweetbread, raw	0.126
+1017	Cheese, cream	0.125
+1040	Cheese, swiss	0.125
+10940	Pork, fresh, spareribs, separable lean and fat, cooked, roasted	0.125
+17420	Lamb, New Zealand, imported, rack - fully frenched, separable lean and fat, raw	0.125
+17454	Lamb, Australian, imported, fresh, leg, bottom, boneless, separable lean and fat, trimmed to 1/8" fat, raw	0.125
+21089	Fast foods, cheeseburger; single, regular patty; plain	0.125
+23454	Beef, New Zealand, imported, cube roll, separable lean and fat, cooked, fast roasted	0.125
+36057	CARRABBA'S ITALIAN GRILL, chicken parmesan without cavatappi pasta	0.125
+17366	Lamb, New Zealand, imported, flap, boneless, separable lean only, raw	0.124
+18952	Tostada shells, corn	0.124
+25021	Formulated bar, LUNA BAR, NUTZ OVER CHOCOLATE	0.124
+35183	Corn, dried, yellow (Northern Plains Indians)	0.124
+7063	Pork sausage, link/patty, unprepared	0.123
+21090	Fast foods, cheeseburger; single, regular patty, with condiments	0.123
+21251	BURGER KING, Cheeseburger	0.123
+1053	Cream, fluid, heavy whipping	0.122
+18334	Pie crust, standard-type, frozen, ready-to-bake, enriched	0.122
+19120	Candies, milk chocolate	0.122
+21091	Fast foods, cheeseburger; single, regular patty, with condiments and vegetables	0.122
+21242	WENDY'S, Jr. Hamburger, with cheese	0.122
+1046	Cheese food, pasteurized process, American, vitamin D fortified	0.121
+1254	Cheese food, pasteurized process, American, without added vitamin D	0.121
+5665	Ground turkey, 93% lean, 7% fat, raw	0.121
+21107	Fast foods, hamburger; single, regular patty; plain	0.121
+23460	Beef, New Zealand, imported, flat, separable lean and fat, cooked, braised	0.121
+5094	Chicken, broilers or fryers, thigh, meat and skin, cooked, roasted	0.12
+12014	Seeds, pumpkin and squash seed kernels, dried	0.12
+32021	Spanish rice mix, dry mix, prepared (with canola/vegetable oil blend or diced tomatoes and margarine)	0.12
+17423	Lamb, New Zealand, imported, tenderloin, separable lean and fat, raw	0.119
+21344	McDONALD'S, Double Cheeseburger	0.119
+10975	Pork, ground, 84% lean / 16% fat, cooked, crumbles	0.118
+21419	KFC, biscuit	0.118
+21480	DIGIORNO Pizza, supreme topping, thin crispy crust, frozen, baked	0.118
+1031	Cheese, neufchatel	0.117
+1270	Cheese, cheddar, sharp, sliced	0.117
+5677	Chicken, broilers or fryers, dark meat, thigh, meat and skin, cooked, braised	0.117
+17371	Lamb, New Zealand, imported, ground lamb, raw	0.117
+19078	Baking chocolate, unsweetened, squares	0.117
+21096	Fast foods, cheeseburger; single, large patty; plain	0.117
+22963	Lean Pockets, Meatballs  &  Mozzarella	0.117
+5690	Chicken, dark meat, thigh, meat and skin, with added solution, cooked, braised	0.116
+17399	Lamb, New Zealand, imported, square-cut shoulder, separable lean only, cooked, slow roasted	0.116
+23455	Beef, New Zealand, imported, cube roll, separable lean and fat, raw	0.116
+18945	Pie crust, deep dish, frozen, unbaked, made with enriched flour	0.115
+22904	Chili con carne with beans, canned entree	0.115
+22962	LEAN POCKETS, Ham N Cheddar	0.115
+28333	Cookies, gluten-free, chocolate wafer	0.115
+28359	GLUTINO, Gluten Free Wafers, Milk Chocolate	0.115
+36047	OLIVE GARDEN, spaghetti with pomodoro sauce	0.115
+36401	Restaurant, Latino, chicken and rice, entree, prepared	0.115
+5707	Turkey, whole, meat and skin, with added solution, roasted	0.114
+17078	Lamb, New Zealand, imported, loin chop, separable lean only, raw	0.114
+17392	Lamb, New Zealand, imported, neck chops, separable lean only, raw	0.114
+17445	Lamb, Australian, imported, fresh, leg, trotter off, bone-in, separable lean only, trimmed to 1/8" fat, cooked, roasted	0.114
+21021	Fast foods, english muffin, with egg, cheese, and canadian bacon	0.114
+21357	McDONALD'S, Egg McMUFFIN	0.114
+23414	Beef, New Zealand, imported, variety meats and by-products, heart, cooked, boiled	0.114
+17082	Lamb, New Zealand, imported, rack - partly frenched, separable lean only, raw	0.113
+17317	Lamb, Australian, imported, fresh, rib chop, frenched, bone-in, separable lean only, trimmed to 1/8" fat, cooked, grilled	0.113
+17380	Lamb, New Zealand, imported, tunnel-boned leg, chump off, shank off, separable lean only, cooked, slow roasted	0.113
+17396	Lamb, New Zealand, imported, rack - fully frenched, separable lean only, cooked, fast roasted	0.113
+23450	Beef, New Zealand, imported, brisket point end, separable lean and fat, cooked, braised	0.113
+5100	Chicken, broilers or fryers, wing, meat and skin, raw	0.112
+12147	Nuts, pine nuts, dried	0.112
+17440	Lamb, Australian, imported, fresh, leg, hindshank, heel on, bone-in, separable lean only, trimmed to 1/8" fat, cooked, braised	0.112
+21094	Fast foods, cheeseburger, double, regular patty and bun, with condiments	0.112
+21395	Fast foods, cheeseburger; double, regular patty; with condiments	0.112
+9037	Avocados, raw, all commercial varieties	0.111
+9038	Avocados, raw, California	0.111
+12016	Seeds, pumpkin and squash seed kernels, roasted, without salt	0.111
+12516	Seeds, pumpkin and squash seed kernels, roasted, with salt added	0.111
+36602	Restaurant, Chinese, fried rice, without meat	0.111
+1227	Cheese, dry white, queso seco	0.11
+17461	Lamb, Australian, imported, fresh, rib chop, frenched, denuded, bone-in, separable lean only, trimmed to 0" fat, cooked, grilled	0.11
+5183	Turkey, dark meat, meat and skin, raw	0.109
+10075	Pork, fresh, shoulder, arm picnic, separable lean and fat, cooked, braised	0.108
+17418	Lamb, New Zealand, imported, tenderloin, separable lean and fat, cooked, fast fried	0.108
+21427	KFC, Fried Chicken, ORIGINAL RECIPE, Thigh, meat only, skin and breading removed	0.108
+7966	Pork sausage, link/patty, reduced fat, cooked, pan-fried	0.107
+17458	Lamb, Australian, imported, fresh, leg, trotter off, bone-in, separable lean and fat, trimmed to 1/8" fat, raw	0.107
+21475	DIGIORNO Pizza, cheese topping, thin crispy crust, frozen, baked	0.107
+17384	Lamb, New Zealand, imported, tenderloin, separable lean only, cooked, fast fried	0.106
+17390	Lamb, New Zealand, imported, hind-shank, separable lean only, cooked, braised	0.106
+21250	BURGER KING, Hamburger	0.106
+21505	Pizza, cheese topping, thin crust, frozen, cooked	0.106
+1229	Cheese, white, queso blanco	0.105
+5166	Turkey, whole, meat and skin, cooked, roasted	0.105
+5181	Turkey from whole, light meat, meat and skin, raw	0.105
+32001	Rice and vermicelli mix, beef flavor, prepared with 80% margarine	0.105
+10981	Pork loin, fresh, backribs, bone-in, cooked-roasted, lean only	0.104
+21124	Fast foods, submarine sandwich, cold cut on white bread with lettuce and tomato	0.104
+21213	SUBWAY, cold cut sub on white bread with lettuce and tomato	0.104
+21506	BURGER KING, Double Cheeseburger	0.104
+5305	Ground turkey, raw	0.103
+5723	Turkey, retail parts, drumstick, meat only, cooked, roasted	0.103
+21241	WENDY'S, Jr. Hamburger, without cheese	0.103
+1032	Cheese, parmesan, grated	0.102
+23293	Beef, Australian, imported, grass-fed, ground, 85% lean / 15% fat, raw	0.102
+36411	Restaurant, Latino, tamale, corn	0.102
+17397	Lamb, New Zealand, imported, rack - fully frenched, separable lean only, raw	0.101
+21161	SUBWAY, B.L.T. sub on white bread with bacon, lettuce and tomato	0.101
+21162	Fast foods, submarine sandwich, bacon, lettuce, and tomato on white bread	0.101
+10178	Pork, fresh, loin, blade (chops), bone-in, separable lean and fat, cooked, pan-fried	0.1
+23399	Beef, New Zealand, imported, brisket navel end, separable lean only, cooked, braised	0.1
+23412	Beef, New Zealand, imported, flat, separable lean only, cooked, braised	0.1
+1228	Cheese, fresh, queso fresco	0.099
+17071	Lamb, New Zealand, imported, fore-shank, separable lean only, cooked, braised	0.099
+25037	Snacks, pita chips, salted	0.099
+36412	Restaurant, Latino, tamale, pork	0.099
+10074	Pork, fresh, shoulder, arm picnic, separable lean and fat, raw	0.098
+10192	Pork, fresh, backribs, separable lean and fat, raw	0.098
+17439	Lamb, Australian, imported, fresh, leg, bottom, boneless, separable lean only, trimmed to 1/8" fat, cooked, roasted	0.098
+23300	Beef, Australian, imported, Wagyu, external fat, Aust. marble score 9, raw	0.098
+4511	Oil, safflower, salad or cooking, high oleic (primary safflower oil of commerce)	0.096
+4701	Oil, industrial, soy, fully hydrogenated	0.096
+7007	Bologna, beef	0.096
+17373	Lamb, New Zealand, imported, heart, raw	0.096
+17383	Lamb, New Zealand, imported, square-cut shoulder chops, separable lean only, raw	0.096
+21157	SUBWAY, meatball marinara sub on white bread (no toppings)	0.096
+21158	Fast foods, submarine sandwich, meatball marinara on white bread	0.096
+23470	Beef, New Zealand, imported, tenderloin, separable lean and fat, cooked, fast fried	0.096
+5722	Turkey, retail parts, thigh, meat only, cooked, roasted	0.095
+17361	Lamb, New Zealand, imported, chump, boneless, separable lean only, cooked, fast roasted	0.095
+17386	Lamb, New Zealand, imported, loin saddle, separable lean only, cooked, fast roasted	0.095
+5687	Chicken, dark meat, drumstick, meat and skin, with added solution, cooked, braised	0.094
+17462	Lamb, Australian, imported, fresh, rack, roast, frenched, denuded, bone-in, separable lean and fat, trimmed to 0" fat, cooked, roasted	0.094
+21466	Fast Foods, Fried Chicken, Thigh, meat only, skin and breading removed	0.094
+23439	Beef, New Zealand, imported, tenderloin, separable lean only, cooked, fast fried	0.094
+1126	Egg, yolk, raw, frozen, pasteurized	0.093
+5175	Turkey, heart, all classes, raw	0.093
+5689	Chicken, dark meat, drumstick, meat and skin, with added solution, cooked, roasted	0.093
+10016	Pork, fresh, leg (ham), shank half, separable lean and fat, raw	0.093
+17395	Lamb, New Zealand, imported, netted shoulder, rolled, boneless, separable lean only, raw	0.093
+21457	POPEYES, Fried Chicken, Mild, Drumstick, meat and skin with breading	0.093
+21507	WENDY'S, Double Stack, with cheese	0.093
+23446	Beef, New Zealand, imported, bolar blade, separable lean and fat, cooked, fast roasted	0.093
+25013	Snacks, FRITOLAY, SUNCHIPS, Multigrain Snack, original flavor	0.093
+36409	Restaurant, Latino, pupusas con queso (pupusas, cheese)	0.093
+18209	Cookies, sugar wafers with creme filling, regular	0.092
+22969	Chili with beans, microwavable bowls	0.092
+1252	Cheese product, pasteurized process, American, vitamin D fortified	0.09
+17360	Lamb, New Zealand, imported, breast, separable lean only, raw	0.09
+17459	Lamb, Australian, imported, fresh, tenderloin, boneless, separable lean and fat, trimmed to 1/8" fat, cooked, roasted	0.09
+23453	Beef, New Zealand, imported, chuck eye roll, separable lean and fat, raw	0.09
+10972	Pork, ground, 84% lean / 16% fat, raw	0.089
+18259	English muffins, plain, toasted, enriched, with calcium propionate (includes sourdough)	0.089
+23461	Beef, New Zealand, imported, flat, separable lean and fat, raw	0.089
+43570	Cereals ready-to-eat, POST, HONEY BUNCHES OF OATS, honey roasted	0.089
+5676	Chicken, broilers or fryers, dark meat, drumstick, meat and skin, cooked, braised	0.088
+18055	Bread, reduced-calorie, wheat	0.088
+19903	Chocolate, dark, 60-69% cacao solids	0.088
+28334	Cookies, gluten-free, lemon wafer	0.088
+28358	GLUTINO, Gluten Free Wafers, Lemon Flavored	0.088
+17442	Lamb, Australian, imported, fresh, tenderloin, boneless, separable lean only, trimmed to 1/8" fat, cooked, roasted	0.087
+21432	KFC, Fried Chicken, EXTRA CRISPY, Thigh, meat only, skin and breading removed	0.087
+23301	Beef, Australian, imported, Wagyu, seam fat, Aust. marble score 9, raw	0.087
+36410	Restaurant, Latino, pupusas del cerdo (pupusas, pork)	0.087
+17381	Lamb, New Zealand, imported, tunnel-boned leg, chump off, shank off, separable lean only, raw	0.086
+17422	Lamb, New Zealand, imported, tunnel-boned leg, chump off, shank off, separable lean and fat, raw	0.086
+19902	Chocolate, dark, 45- 59% cacao solids	0.085
+23465	Beef, New Zealand, imported, rump centre, separable lean and fat, cooked, fast fried	0.085
+31036	Potatoes, mashed, ready-to-eat	0.085
+10205	Pork, fresh, loin, country-style ribs, separable lean and fat, cooked, braised	0.084
+21155	Fast foods, submarine sandwich, turkey breast on white bread with lettuce and tomato	0.084
+21207	SUBWAY, turkey breast sub on white bread with lettuce and tomato	0.084
+21425	KFC, Fried Chicken, ORIGINAL RECIPE, Breast, meat only, skin and breading removed	0.084
+23406	Beef, New Zealand, imported, cube roll, separable lean only, cooked, fast roasted	0.084
+1127	Egg, yolk, raw, frozen, sugared, pasteurized	0.083
+1160	Egg, yolk, raw, frozen, salted, pasteurized	0.083
+10031	Pork, fresh, loin, blade (roasts), bone-in, separable lean and fat, cooked, roasted	0.083
+10045	Pork, fresh, loin, center rib (chops), bone-in, separable lean and fat, cooked, braised	0.083
+18967	Bread, white wheat	0.083
+19905	Candies, chocolate, dark, NFS (45-59% cacao solids 90%; 60-69% cacao solids 5%; 70-85% cacao solids 5%)	0.083
+43274	Cheese, cream, low fat	0.083
+6931	Sauce, pasta, spaghetti/marinara, ready-to-serve	0.082
+9314	Sapote, mamey, raw	0.082
+10012	Pork, fresh, leg (ham), rump half, separable lean and fat, raw	0.082
+10017	Pork, fresh, leg (ham), shank half, separable lean and fat, cooked, roasted	0.082
+10047	Pork, fresh, loin, center rib (roasts), bone-in, separable lean and fat, cooked, roasted	0.082
+12135	Nuts, mixed nuts, dry roasted, with peanuts, without salt added	0.082
+12137	Nuts, mixed nuts, oil roasted, with peanuts, without salt added	0.082
+12637	Nuts, mixed nuts, oil roasted, with peanuts, with salt added	0.082
+12737	Nuts, mixed nuts, oil roasted, with peanuts, lightly salted	0.082
+17387	Lamb, New Zealand, imported, loin saddle, separable lean only, raw	0.082
+23432	Beef, New Zealand, imported, rump centre, separable lean only, cooked, fast fried	0.082
+5333	Chicken, ground, crumbles, cooked, pan-browned	0.081
+10088	Pork, fresh, spareribs, separable lean and fat, raw	0.081
+16147	Veggie burgers or soyburgers, unprepared	0.081
+17460	Lamb, Australian, imported, fresh, tenderloin, boneless, separable lean and fat, trimmed to 1/8" fat, raw	0.081
+18185	Cookies, peanut butter, commercially prepared, regular	0.081
+23421	Beef, New Zealand, imported, variety meats and by-products, kidney, cooked, boiled	0.081
+36032	DENNY'S, spaghetti and meatballs	0.081
+36038	Restaurant, family style, spaghetti and meatballs	0.081
+5069	Chicken, broilers or fryers, drumstick, meat and skin, cooked, roasted	0.08
+5182	Turkey from whole, light meat, meat and skin, cooked, roasted	0.08
+12136	Nuts, mixed nuts, dry roasted, with peanuts, salt added, PLANTERS pistachio blend	0.08
+17400	Lamb, New Zealand, imported, leg chop/steak, bone-in, separable lean only, cooked, fast fried	0.08
+36061	Restaurant, Mexican, soft taco with ground beef, cheese and lettuce	0.08
+5703	Turkey from whole, light meat, meat and skin, with added solution, cooked, roasted	0.079
+9144	Jackfruit, raw	0.079
+10013	Pork, fresh, leg (ham), rump half, separable lean and fat, cooked, roasted	0.079
+21431	KFC, Fried Chicken, EXTRA CRISPY, Drumstick, meat only, skin and breading removed	0.079
+7965	Pork sausage, link/patty, reduced fat, unprepared	0.078
+17363	Lamb, New Zealand, imported, chump, boneless, separable lean only, raw	0.078
+17364	Lamb, New Zealand, imported, kidney, cooked, soaked and fried	0.078
+23440	Beef, New Zealand, imported, oyster blade, separable lean and fat, raw	0.078
+23462	Beef, New Zealand, imported, hind shin, separable lean and fat, cooked, braised	0.078
+25027	Snacks, plantain chips, salted	0.078
+5066	Chicken, broilers or fryers, drumstick, meat and skin, raw	0.077
+5688	Chicken, dark meat, drumstick, meat and skin, with added solution, raw	0.077
+10081	Pork, fresh, shoulder, (Boston butt), blade (steaks), separable lean and fat, cooked, braised	0.077
+4638	Salad dressing, ranch dressing, fat-free	0.076
+10078	Pork, fresh, shoulder, arm picnic, separable lean only, cooked, braised	0.076
+10180	Pork, fresh, loin, center rib (chops), bone-in, separable lean and fat, cooked, pan-fried	0.076
+10954	Pork, fresh, shoulder, (Boston butt), blade (steaks), separable lean and fat, with added solution, cooked, braised	0.076
+12038	Seeds, sunflower seed kernels, oil roasted, without salt	0.076
+12538	Seeds, sunflower seed kernels, oil roasted, with salt added	0.076
+18023	Bread, cornbread, dry mix, prepared with 2% milk, 80% margarine, and eggs	0.076
+21310	McDONALD'S, Barbeque Sauce	0.076
+23401	Beef, New Zealand, imported, brisket navel end, separable lean only, raw	0.076
+23464	Beef, New Zealand, imported, oyster blade, separable lean and fat, cooked, braised	0.076
+10053	Pork, fresh, loin, sirloin (chops), bone-in, separable lean and fat, cooked, braised	0.075
+10949	Pork, fresh, loin, top loin (chops), boneless, separable lean and fat, with added solution, raw	0.075
+16029	Beans, kidney, all types, mature seeds, canned	0.075
+17409	Lamb, New Zealand, imported, loin, boneless, separable lean and fat, cooked, fast roasted	0.075
+19109	Candies, KIT KAT Wafer Bar	0.075
+23405	Beef, New Zealand, imported, chuck eye roll, separable lean only, cooked, braised	0.075
+36046	Restaurant, Italian, spaghetti with pomodoro sauce (no meat)	0.075
+7022	Frankfurter, beef, unheated	0.075
+10037	Pork, fresh, loin, center loin (chops), bone-in, separable lean and fat, cooked, braised	0.074
+17388	Lamb, New Zealand, imported, loin, boneless, separable lean only, cooked, fast roasted	0.074
+17443	Lamb, Australian, imported, fresh, tenderloin, boneless, separable lean only, trimmed to 1/8" fat, raw	0.074
+23428	Beef, New Zealand, imported, oyster blade, separable lean only, cooked, braised	0.074
+23433	Beef, New Zealand, imported, striploin, separable lean only, cooked, fast fried	0.074
+1271	Cheese, mozzarella, low moisture, part-skim, shredded	0.073
+5341	Chicken, broilers or fryers, back, meat only, cooked, rotisserie, original seasoning	0.073
+10179	Pork, fresh, loin, center loin (chops), bone-in, separable lean and fat, cooked, pan-fried	0.073
+10189	Pork, fresh, loin, center loin (chops), boneless, separable lean and fat, cooked, pan-broiled	0.073
+18939	Toaster pastries, fruit, toasted (include apple, blueberry, cherry, strawberry)	0.073
+21426	KFC, Fried Chicken, ORIGINAL RECIPE, Drumstick, meat only, skin and breading removed	0.073
+23402	Beef, New Zealand, imported, brisket point end, separable lean only, cooked, braised	0.073
+5188	Turkey, from whole, dark meat, cooked, roasted	0.072
+5216	Turkey, back, from whole bird, meat only, roasted	0.072
+5345	Chicken, broilers or fryers, thigh, meat only, cooked, rotisserie, original seasoning	0.072
+5695	Turkey, dark meat, meat only, with added solution, cooked, roasted	0.072
+5725	Turkey, drumstick, from whole bird, meat only, with added solution, roasted	0.072
+5728	Turkey, thigh, from whole bird, meat only, with added solution, roasted	0.072
+5741	Turkey, thigh, from whole bird, meat only, roasted	0.072
+10039	Pork, fresh, loin, center loin (roasts), bone-in, separable lean and fat, cooked, roasted	0.071
+10164	Pork, fresh, loin, center loin (chops), boneless, separable lean and fat, raw	0.071
+13047	Beef, grass-fed, ground, raw	0.071
+13340	Beef, variety meats and by-products, tongue, cooked, simmered	0.071
+8122	Cereals, oats, instant, fortified, plain, dry	0.07
+10028	Pork, fresh, loin, blade (chops or roasts), bone-in, separable lean and fat, raw	0.07
+17447	Lamb, Australian, imported, fresh, rack, roast, frenched, denuded, bone-in, separable lean only, trimmed to 0" fat, cooked, roasted	0.07
+20124	Pasta, whole-wheat, dry	0.07
+23413	Beef, New Zealand, imported, flat, separable lean only, raw	0.07
+23447	Beef, New Zealand, imported, bolar blade, separable lean and fat, raw	0.07
+36009	T.G.I. FRIDAY'S, macaroni  &  cheese, from kid's menu	0.07
+5683	Chicken, dark meat, thigh, meat only, with added solution, cooked, roasted	0.069
+5713	Turkey, retail parts, wing, meat only, cooked, roasted	0.069
+17316	Lamb, Australian, imported, fresh, rib chop/rack roast, frenched, bone-in, separable lean only, trimmed to 1/8" fat, raw	0.069
+23458	Beef, New Zealand, imported, flank, separable lean and fat, cooked, braised	0.069
+25014	Snacks, popcorn, microwave, regular (butter) flavor, made with partially hydrogenated oil	0.069
+1056	Cream, sour, cultured	0.068
+8013	Cereals ready-to-eat, GENERAL MILLS, CHEERIOS	0.068
+21152	SUBWAY, SUBWAY CLUB sub on white bread with lettuce and tomato	0.067
+21153	Fast foods, submarine sandwich, turkey, roast beef and ham on white bread with lettuce and tomato	0.067
+21159	SUBWAY, steak  &  cheese sub on white bread with American cheese, lettuce and tomato	0.067
+21160	Fast foods, submarine sandwich, steak and cheese on white bread with cheese, lettuce and tomato	0.067
+23422	Beef, New Zealand, imported, knuckle, cooked, fast fried	0.067
+23467	Beef, New Zealand, imported, rump centre, separable lean and fat, raw	0.067
+5165	Turkey, whole, meat and skin, raw	0.066
+7954	Beef sausage, pre-cooked	0.066
+10029	Pork, fresh, loin, blade (chops), bone-in, separable lean and fat, cooked, braised	0.066
+17444	Lamb, Australian, imported, fresh, leg, bottom, boneless, separable lean only, trimmed to 1/8" fat, raw	0.066
+18955	Bread, pan dulce, sweet yeast bread	0.066
+21154	Fast foods, submarine sandwich, oven roasted chicken on white bread with lettuce and tomato	0.066
+21211	SUBWAY, oven roasted chicken sub on white bread with lettuce and tomato	0.066
+23407	Beef, New Zealand, imported, cube roll, separable lean only, raw	0.066
+27054	Dip, TOSTITOS, salsa con queso, medium	0.066
+36054	OLIVE GARDEN, cheese ravioli with marinara sauce	0.066
+10030	Pork, fresh, loin, blade (chops), bone-in, separable lean and fat, cooked, broiled	0.065
+13498	Beef, ground, 70% lean meat / 30% fat, raw	0.065
+17070	Lamb, New Zealand, imported, fore-shank, separable lean only, raw	0.065
+17074	Lamb, New Zealand, imported, leg chop/steak, bone-in, separable lean only, raw	0.065
+17374	Lamb, New Zealand, imported, sweetbread, cooked, soaked and simmered	0.065
+19383	Candies, toffee, prepared-from-recipe	0.065
+20140	Spelt, uncooked	0.065
+21430	KFC, Fried Chicken, EXTRA CRISPY, Breast, meat only, skin and breading removed	0.065
+36415	Restaurant, Latino, arepa (unleavened cornmeal bread)	0.065
+10173	Pork, fresh, variety meats and by-products, feet, cooked, simmered	0.064
+18002	Bagels, plain, enriched, with calcium propionate (includes onion, poppy, sesame), toasted	0.064
+23466	Beef, New Zealand, imported, rump centre, separable lean only, raw	0.064
+23471	Beef, New Zealand, imported, tenderloin, separable lean and fat, raw	0.064
+28286	Bread, paratha, whole wheat, commercially prepared, frozen	0.064
+18029	Bread, french or vienna (includes sourdough)	0.063
+19047	Snacks, pretzels, hard, plain, salted	0.063
+21125	Fast foods, submarine sandwich, roast beef on white bread with lettuce and tomato	0.063
+21210	SUBWAY, roast beef sub on white bread with lettuce and tomato	0.063
+21315	McDONALD'S, Sweet 'N Sour Sauce	0.063
+32035	BANQUET, Salisbury Steak With Gravy, family size, frozen, unprepared	0.063
+1050	Cream, fluid, light (coffee cream or table cream)	0.062
+8060	Cereals ready-to-eat, KELLOGG, KELLOGG'S RAISIN BRAN	0.062
+10208	Pork, fresh, loin, country-style ribs, separable lean only, cooked, braised	0.062
+17391	Lamb, New Zealand, imported, hind-shank, separable lean only, raw	0.062
+19138	Candies, truffles, prepared-from-recipe	0.062
+20135	Pasta, whole grain, 51% whole wheat, remaining unenriched semolina, dry	0.062
+21156	Fast foods, submarine sandwich, ham on white bread with lettuce and tomato	0.062
+21209	SUBWAY, black forest ham sub on white bread with lettuce and tomato	0.062
+21465	Fast Foods, Fried Chicken, Drumstick, meat only, skin and breading removed	0.062
+23426	Beef, New Zealand, imported, manufacturing beef, cooked, boiled	0.062
+1260	Cheese, cheddar, reduced fat	0.061
+5098	Chicken, broilers or fryers, thigh, meat only, cooked, roasted	0.061
+10046	Pork, fresh, loin, center rib (chops), bone-in, separable lean and fat, cooked, broiled	0.061
+10080	Pork, fresh, shoulder, (Boston butt), blade (steaks), separable lean and fat, raw	0.061
+11477	Squash, summer, zucchini, includes skin, raw	0.061
+17410	Lamb, New Zealand, imported, loin, boneless, separable lean and fat, raw	0.061
+17441	Lamb, Australian, imported, fresh, leg, hindshank, heel on, bone-in, separable lean only, trimmed to 1/8" fat, raw	0.061
+20648	Sorghum flour, whole-grain	0.061
+21150	SUBWAY, sweet onion chicken teriyaki sub on white bread with lettuce, tomato and sweet onion sauce	0.061
+21151	Fast foods, submarine sandwich, sweet onion chicken teriyaki on white bread with lettuce, tomato and sweet onion sauce	0.061
+21464	Fast Foods, Fried Chicken, Breast, meat only, skin and breading removed	0.061
+23415	Beef, New Zealand, imported, variety meats and by-products, heart, raw	0.061
+23427	Beef, New Zealand, imported, manufacturing beef, raw	0.061
+8410	Cereals, QUAKER, Instant Oatmeal, Cinnamon-Spice, dry	0.06
+19404	Snacks, granola bars, soft, uncoated, chocolate chip	0.06
+21445	POPEYES, Fried Chicken, Mild, Thigh, meat only, skin and breading removed	0.06
+23397	Beef, New Zealand, imported, bolar blade, separable lean only, cooked, fast roasted	0.06
+5346	Chicken, broilers or fryers, wing, meat only, cooked, rotisserie, original seasoning	0.059
+15240	Fish, trout, rainbow, farmed, raw	0.059
+17389	Lamb, New Zealand, imported, loin, boneless, separable lean only, raw	0.059
+23299	Beef, Australian, imported, Wagyu, seam fat, Aust. marble score 4/5, raw	0.059
+23429	Beef, New Zealand, imported, oyster blade, separable lean only, raw	0.059
+23441	Beef, New Zealand, imported, tenderloin, separable lean only, raw	0.059
+25046	Snacks, bagel chips, plain	0.059
+10055	Pork, fresh, loin, sirloin (roasts), bone-in, separable lean and fat, cooked, roasted	0.058
+14631	Beverages, Horchata, dry mix, unprepared, variety of brands, all with morro seeds	0.058
+20109	Noodles, egg, dry, enriched	0.058
+20409	Noodles, egg, dry, unenriched	0.058
+23463	Beef, New Zealand, imported, hind shin, separable lean and fat, raw	0.058
+23577	Beef, ground, 75% lean meat / 25% fat, raw	0.058
+25050	Snacks, yucca (cassava) chips, salted	0.058
+36042	OLIVE GARDEN, lasagna classico	0.058
+3189	Babyfood, cereal, oatmeal, dry fortified	0.057
+5332	Chicken, ground, raw	0.057
+23410	Beef, New Zealand, imported, flank, separable lean only, cooked, braised	0.057
+27056	Sauce, barbecue, BULL'S-EYE, original	0.057
+32031	Salisbury steak with gravy, frozen	0.057
+6583	Soup, ramen noodle, any flavor, dry	0.056
+6983	Soup, ramen noodle, chicken flavor, dry	0.056
+15253	Salmon, sockeye, canned, total can contents	0.056
+17446	Lamb, Australian, imported, fresh, leg, trotter off, bone-in, separable lean only, trimmed to 1/8" fat, raw	0.056
+6982	Soup, ramen noodle, beef flavor, dry	0.055
+10929	Pork, cured, ham, rump, bone-in, separable lean and fat, heated, roasted	0.055
+10990	Pork, fresh, loin, blade (roasts), boneless, separable lean and fat, cooked, roasted	0.055
+25000	Snacks, popcorn, microwave, 94% fat free	0.055
+36041	Restaurant, Italian, lasagna with meat	0.055
+36055	Restaurant, Italian, cheese ravioli with marinara sauce	0.055
+36060	ON THE BORDER, soft taco with ground beef, cheese and lettuce	0.055
+8128	Cereals, oats, instant, fortified, with cinnamon and spice, dry	0.054
+10953	Pork, fresh, shoulder, (Boston butt), blade (steaks), separable lean and fat,with added solution, raw	0.054
+10980	Pork loin, fresh, backribs, bone-in, raw, lean only	0.054
+15087	Fish, salmon, sockeye, canned, drained solids	0.054
+15234	Fish, catfish, channel, farmed, raw	0.054
+23416	Beef, New Zealand, imported, hind shin, separable lean only, cooked, braised	0.054
+23434	Beef, New Zealand, imported, striploin, separable lean only, raw	0.054
+23456	Beef, New Zealand, imported, eye round, separable lean and fat, cooked, slow roasted	0.054
+35146	Stew, mutton, corn, squash (Navajo)	0.054
+10989	Pork, fresh, loin, blade (chops or roasts), boneless, separable lean and fat only, raw	0.053
+10993	Pork, fresh, loin, country-style ribs, separable lean and fat, boneless, cooked, roasted	0.053
+18168	Cookies, chocolate sandwich, with extra creme filling	0.053
+20653	Pasta, whole grain, 51% whole wheat, remaining enriched semolina, dry	0.053
+23298	Beef, Australian, imported, Wagyu, external fat, Aust. marble score 4/5, raw	0.053
+23308	Beef, Australian, imported, grass-fed, round, bottom round steak/roast, boneless, separable lean only, raw	0.053
+23425	Beef, New Zealand, imported, variety meats and by-products, liver, raw	0.053
+23459	Beef, New Zealand, imported, flank, separable lean and fat, raw	0.053
+35144	Stew, dumpling with mutton (Navajo)	0.053
+21446	POPEYES, Fried Chicken, Mild, Wing, meat only, skin and breading removed	0.052
+5672	Chicken, broilers or fryers, dark meat, thigh, meat only, cooked, braised	0.051
+10038	Pork, fresh, loin, center loin (chops), bone-in, separable lean and fat, cooked, broiled	0.051
+16006	Beans, baked, canned, plain or vegetarian	0.051
+18160	Cookies, chocolate chip, commercially prepared, soft-type	0.051
+23237	Beef, rib, back ribs, bone-in, separable lean and fat, trimmed to 0" fat, choice, raw	0.051
+23408	Beef, New Zealand, imported, eye round, separable lean only, cooked, slow roasted	0.051
+23572	Beef, ground, 80% lean meat / 20% fat, raw	0.051
+28357	GLUTINO, Gluten Free Cookies, Vanilla Creme	0.051
+35142	Frybread, made with lard (Navajo)	0.051
+1225	Dulce de Leche	0.05
+5680	Chicken, dark meat, drumstick, meat only, with added solution, cooked, braised	0.05
+7081	Turkey breast, sliced, prepackaged	0.05
+7956	Beef sausage, fresh, cooked	0.05
+8130	Cereals, QUAKER, Instant Oatmeal, maple and brown sugar, dry	0.05
+8680	Cereals, oats, instant, fortified, maple and brown sugar, dry	0.05
+11979	Peppers, jalapeno, raw	0.05
+12040	Seeds, sunflower seed butter, without salt	0.05
+12540	Seeds, sunflower seed butter, with salt added	0.05
+15148	Crustaceans, lobster, northern, cooked, moist heat	0.05
+17367	Lamb, New Zealand, imported, kidney, raw	0.05
+18030	Bread, french or vienna, toasted (includes sourdough)	0.05
+23294	Beef, Australian, imported, grass-fed, loin, tenderloin steak/roast, boneless, separable lean only, raw	0.05
+23424	Beef, New Zealand, imported, variety meats and by-products liver, cooked, boiled	0.05
+23430	Beef, New Zealand, imported, ribs prepared, cooked, fast roasted	0.05
+5176	Turkey, heart, all classes, cooked, simmered	0.049
+15274	Fish, trout, brook, raw, New York State	0.049
+19410	Snack, potato chips, made from dried potatoes, plain	0.049
+23236	Beef, rib, back ribs, bone-in, separable lean and fat, trimmed to 0" fat, all grades, raw	0.049
+5716	Turkey, retail parts, drumstick, meat only, raw	0.048
+8576	Cereals, CREAM OF WHEAT, 1 minute cook time, dry	0.048
+10035	Pork, fresh, loin, blade (roasts), bone-in, separable lean only, cooked, roasted	0.048
+10085	Pork, fresh, shoulder, (Boston butt), blade (steaks), separable lean only, cooked, braised	0.048
+15084	Fish, salmon, pink, canned, total can contents	0.048
+15260	Fish, salmon, pink, canned, drained solids	0.048
+18258	English muffins, plain, enriched, with ca prop (includes sourdough)	0.048
+20138	Wheat, KAMUT khorasan, uncooked	0.048
+23571	Beef, ground, 85% lean meat / 15% fat, loaf, cooked, baked	0.048
+28332	Cookies, gluten-free, chocolate sandwich, with creme filling	0.048
+28356	GLUTINO, Gluten Free Cookies, Chocolate Vanilla Creme	0.048
+36043	CARRABBA'S ITALIAN GRILL, lasagne	0.048
+10937	Pork, cured, ham, slice, bone-in, separable lean and fat, heated, pan-broil	0.047
+15085	Fish, salmon, sockeye, raw	0.047
+17349	Veal, Australian, shank, fore, bone-in, separable lean only, raw	0.047
+23403	Beef, New Zealand, imported, brisket point end, separable lean only, raw	0.047
+23418	Beef, New Zealand, imported, inside, raw	0.047
+23569	Beef, ground, 85% lean meat / 15% fat, patty, cooked, pan-broiled	0.047
+28288	Bread, roll, Mexican, bollilo	0.047
+4631	Margarine-like, vegetable oil spread, fat-free, tub	0.046
+10036	Pork, fresh, loin, center loin (chops), bone-in, separable lean and fat, raw	0.046
+10052	Pork, fresh, loin, sirloin (chops or roasts), bone-in, separable lean and fat, raw	0.046
+18263	English muffins, raisin-cinnamon, toasted (includes apple-cinnamon)	0.046
+23238	Beef, rib, back ribs, bone-in, separable lean and fat, trimmed to 0" fat, select, raw	0.046
+5343	Chicken, broilers or fryers, drumstick, meat only, cooked, rotisserie, original seasoning	0.045
+5671	Chicken, broilers or fryers, dark meat, drumstick, meat only, cooked, braised	0.045
+5681	Chicken, dark meat, thigh, meat only, with added solution, cooked, braised	0.045
+10992	Pork, fresh, loin, country-style ribs, separable lean and fat, bone-in, cooked, broiled	0.045
+15083	Fish, salmon, pink, raw	0.045
+15262	Fish, tilapia, cooked, dry heat	0.045
+18961	Crackers, cream, GAMESA SABROSAS	0.045
+23126	Beef, chuck, short ribs, boneless, separable lean and fat, trimmed to 0" fat, choice, cooked, braised	0.045
+23457	Beef, New Zealand, imported, eye round, separable lean and fat, raw	0.045
+23563	Beef, ground, 90% lean meat / 10% fat, patty, cooked, broiled	0.045
+23578	Beef, ground, 75% lean meat / 25% fat, patty, cooked, broiled	0.045
+35234	Piki bread, made from blue cornmeal (Hopi)	0.045
+36053	CARRABBA'S ITALIAN GRILL, cheese ravioli with marinara sauce	0.045
+5082	Chicken, broilers or fryers, leg, meat only, cooked, roasted	0.044
+5694	Turkey, dark meat from whole, meat only, with added solution, raw	0.044
+5719	Turkey, back, from whole bird, meat only, with added solution, raw	0.044
+5724	Turkey, drumstick, from whole bird, meat only, with added solution, raw	0.044
+5726	Turkey, thigh, from whole bird, meat only, with added solution, raw	0.044
+8050	Cereals ready-to-eat, GENERAL MILLS, LUCKY CHARMS	0.044
+10051	Pork, fresh, loin, center rib (roasts), bone-in, separable lean only, cooked, roasted	0.044
+10054	Pork, fresh, loin, sirloin (chops), bone-in, separable lean and fat, cooked, broiled	0.044
+10063	Pork, fresh, loin, top loin (chops), boneless, separable lean and fat, cooked, braised	0.044
+10945	Pork, fresh, shoulder, (Boston butt), blade (steaks), separable lean only, with added solution cooked, braised	0.044
+13317	Beef, ground, patties, frozen, cooked, broiled	0.044
+13497	Beef, ground, 70% lean meat / 30% fat, patty, cooked, broiled	0.044
+20647	Millet flour	0.044
+23125	Beef, chuck, short ribs, boneless, separable lean and fat, trimmed to 0" fat, all grades, cooked, braised	0.044
+23398	Beef, New Zealand, imported, bolar blade, separable lean only, raw	0.044
+23568	Beef, ground, 85% lean meat / 15% fat, patty, cooked, broiled	0.044
+5078	Chicken, broilers or fryers, leg, meat and skin, cooked, roasted	0.043
+5168	Turkey, whole, meat only, cooked, roasted	0.043
+9520	Kiwifruit, ZESPRI SunGold, raw	0.043
+10102	Pork, fresh, variety meats and by-products, feet, raw	0.043
+10186	Pork, fresh, loin, top loin (chops), boneless, separable lean and fat, cooked, pan-fried	0.043
+10950	Pork, fresh, loin, top loin (chops), boneless, separable lean and fat, with added solution, cooked, broiled	0.043
+11467	Squash, summer, crookneck and straightneck, raw	0.043
+15264	Salmon, sockeye, canned, drained solids, without skin and bones	0.043
+19045	Snacks, potato chips, made from dried potatoes, reduced fat	0.043
+23127	Beef, chuck, short ribs, boneless, separable lean and fat, trimmed to 0" fat, select, cooked, braised	0.043
+23134	Beef, chuck eye Country-Style ribs, boneless, separable lean and fat, trimmed to 0" fat, all grades, cooked, braised	0.043
+23135	Beef, chuck eye Country-Style ribs, boneless, separable lean and fat, trimmed to 0" fat, choice, cooked, braised	0.043
+23136	Beef, chuck eye Country-Style ribs, boneless, separable lean and fat, trimmed to 0" fat, select, cooked, braised	0.043
+23473	Beef, ground, 93% lean meat / 7% fat, patty, cooked, broiled	0.043
+25063	Snacks, potato chips, made from dried potatoes (preformed), multigrain	0.043
+5171	Turkey, whole, giblets, raw	0.042
+5705	Turkey, whole, meat only, with added solution, roasted	0.042
+10898	Pork, pickled pork hocks	0.042
+20001	Amaranth grain, uncooked	0.042
+23312	Beef, Australian, imported, Wagyu, loin, top loin steak/roast, boneless, separable lean only, Aust. marble score 9, raw	0.042
+23558	Beef, ground, 95% lean meat / 5% fat, patty, cooked, broiled	0.042
+23567	Beef, ground, 85% lean meat / 15% fat, raw	0.042
+5679	Chicken, dark meat, drumstick, meat only, with added solution, cooked, roasted	0.041
+17375	Lamb, New Zealand, imported, sweetbread, raw	0.041
+23140	Beef, chuck eye steak, boneless, separable lean and fat, trimmed to 0" fat, all grades, cooked, grilled	0.041
+23141	Beef, chuck eye steak, boneless, separable lean and fat, trimmed to 0" fat, choice, cooked, grilled	0.041
+23142	Beef, chuck eye steak, boneless, separable lean and fat, trimmed to 0" fat, select, cooked, grilled	0.041
+23220	Beef, ground, unspecified fat content, cooked	0.041
+23307	Beef, Australian, imported, grass-fed, rib, ribeye steak/roast lip-on, boneless, separable lean only, raw	0.041
+23423	Beef, New Zealand, imported, variety meats and by-products, kidney, raw	0.041
+1049	Cream, fluid, half and half	0.04
+5073	Chicken, broilers or fryers, dark meat, drumstick, meat only, cooked, roasted	0.04
+8048	Cereals ready-to-eat, GENERAL MILLS, KIX	0.04
+8436	Cereals, QUAKER, Instant Oatmeal, Raisin and Spice, dry	0.04
+10057	Pork, fresh, loin, sirloin (chops), bone-in, separable lean only, cooked, braised	0.04
+10188	Pork, fresh, composite of trimmed retail cuts (leg, loin, shoulder, and spareribs), separable lean and fat, cooked	0.04
+10204	Pork, fresh, loin, country-style ribs, separable lean and fat, raw	0.04
+16034	Beans, kidney, red, mature seeds, canned, solids and liquids	0.04
+16337	Beans, kidney, red, mature seeds, canned, solids and liquid, low sodium	0.04
+23187	Beef, rib eye steak, bone-in, lip-on, separable lean and fat, trimmed to 1/8" fat, select, cooked, grilled	0.04
+23188	Beef, rib eye steak, bone-in, lip-on, separable lean and fat, trimmed to 1/8" fat, all grades, cooked, grilled	0.04
+23199	Beef, rib eye roast, boneless, lip-on, separable lean and fat, trimmed to 1/8" fat, choice, cooked, roasted	0.04
+23306	Beef, Australian, imported, grass-fed, loin, top sirloin cap-off steak/roast, boneless, separable lean only, raw	0.04
+23478	Beef, ground, 97% lean meat / 3% fat, patty, cooked, broiled	0.04
+1259	Cheese spread, American or Cheddar cheese base, reduced fat	0.039
+10044	Pork, fresh, loin, center rib (chops or roasts), bone-in, separable lean and fat, raw	0.039
+10064	Pork, fresh, loin, top loin (chops), boneless, separable lean and fat, cooked, broiled	0.039
+10224	Pork, fresh, loin, top loin (roasts), boneless, separable lean and fat, raw	0.039
+10226	Pork, fresh, composite of trimmed retail cuts (loin and shoulder blade), separable lean and fat, raw	0.039
+13380	Beef, chuck, under blade pot roast, boneless, separable lean and fat, trimmed to 0" fat, choice, cooked, braised	0.039
+15265	Fish, Salmon, pink, canned, drained solids, without skin and bones	0.039
+16011	Beans, baked, canned, with pork and tomato sauce	0.039
+17204	Veal, variety meats and by-products, liver, cooked, pan-fried	0.039
+20136	Pasta, whole grain, 51% whole wheat, remaining unenriched semolina, cooked	0.039
+23186	Beef, rib eye steak, bone-in, lip-on, separable lean and fat, trimmed to 1/8" fat, choice, cooked, grilled	0.039
+23189	Beef, rib eye roast, bone-in, lip-on, separable lean and fat, trimmed to 1/8" fat, choice, cooked, roasted	0.039
+23195	Beef, rib eye steak, boneless, lip-on, separable lean and fat, trimmed to 1/8" fat, choice, cooked, grilled	0.039
+23431	Beef, New Zealand, imported, ribs prepared, raw	0.039
+32009	Pasta mix, classic beef, unprepared	0.039
+5177	Turkey, liver, all classes, raw	0.038
+13381	Beef, chuck, under blade pot roast, boneless, separable lean and fat, trimmed to 0" fat, select, cooked, braised	0.038
+13908	Beef, short loin, t-bone steak, separable lean and fat, trimmed to 1/8" fat, choice, cooked, grilled	0.038
+18960	Crackers, snack, GOYA CRACKERS	0.038
+23099	Beef, chuck, under blade pot roast, boneless, separable lean and fat, trimmed to 0" fat, all grades, cooked, braised	0.038
+23191	Beef, rib eye roast, bone-in, lip-on, separable lean and fat, trimmed to 1/8" fat, all grades, cooked, roasted	0.038
+23197	Beef, rib eye steak, boneless, lip-on, separable lean and fat, trimmed to 1/8" fat, all grades, cooked, grilled	0.038
+23198	Beef, rib eye roast, boneless, lip-on, separable lean and fat, trimmed to 1/8" fat, all grades, cooked, roasted	0.038
+36404	Restaurant, Latino, arroz con leche (rice pudding)	0.038
+36631	OLIVE GARDEN, spaghetti with meat sauce	0.038
+4642	Oil, industrial, mid-oleic, sunflower	0.037
+8132	Cereals, oats, instant, fortified, with raisins and spice, dry	0.037
+8573	Cereals, CREAM OF WHEAT, 2 1/2 minute cook time, dry	0.037
+10043	Pork, fresh, loin, center loin (roasts), bone-in, separable lean only, cooked, roasted	0.037
+10059	Pork, fresh, loin, sirloin (roasts), bone-in, separable lean only, cooked, roasted	0.037
+10213	Pork, fresh, loin, sirloin (roasts), boneless, separable lean and fat, cooked, roasted	0.037
+23129	Beef, chuck, short ribs, boneless, separable lean and fat, trimmed to 0" fat, choice, raw	0.037
+23411	Beef, New Zealand, imported, flank, separable lean only, raw	0.037
+28348	Rolls, dinner, sweet	0.037
+1123	Egg, whole, raw, fresh	0.036
+8104	Cereals, farina, enriched, assorted brands including CREAM OF WHEAT, quick (1-3 minutes), dry	0.036
+10065	Pork, fresh, loin, top loin (roasts), boneless, separable lean and fat, cooked, roasted	0.036
+18014	Biscuits, plain or buttermilk, refrigerated dough, higher fat	0.036
+20125	Pasta, whole-wheat, cooked	0.036
+23190	Beef, rib eye roast, bone-in, lip-on, separable lean and fat, trimmed to 1/8" fat, select, cooked, roasted	0.036
+23196	Beef, rib eye steak, boneless, lip-on, separable lean and fat, trimmed to 1/8" fat, select, cooked, grilled	0.036
+23562	Beef, ground, 90% lean meat / 10% fat, raw	0.036
+35236	Stew, pinto bean and hominy, badufsuki (Hopi)	0.036
+36019	APPLEBEE'S, chili	0.036
+8045	Cereals ready-to-eat, GENERAL MILLS, HONEY NUT CHEERIOS	0.035
+10983	Pork, fresh, loin, blade (roasts), boneless, separable lean only, cooked, roasted	0.035
+13906	Beef, short loin, porterhouse steak, separable lean and fat, trimmed to 1/8" fat, choice, cooked, grilled	0.035
+21416	POPEYES, Coleslaw	0.035
+21443	POPEYES, Fried Chicken, Mild, Drumstick, meat only, skin and breading removed	0.035
+23006	Beef, short loin, t-bone steak, separable lean and fat, trimmed to 1/8" fat, all grades, cooked, grilled	0.035
+23117	Beef, chuck, under blade steak, boneless, separable lean and fat, trimmed to 0" fat, choice, cooked, braised	0.035
+23128	Beef, chuck, short ribs, boneless, separable lean and fat, trimmed to 0" fat, all grades, raw	0.035
+25020	Formulated bar, SLIM-FAST OPTIMA meal bar, milk chocolate peanut	0.035
+36037	Restaurant, family style, chili with meat and beans	0.035
+36608	CRACKER BARREL, grilled sirloin steak	0.035
+36630	Restaurant, Italian, spaghetti with meat sauce	0.035
+5357	Chicken, broiler, rotisserie, BBQ, back meat and skin	0.034
+5663	Ground turkey, fat free, pan-broiled crumbles	0.034
+5711	Turkey, retail parts, breast, meat only, cooked, roasted	0.034
+10019	Pork, fresh, leg (ham), shank half, separable lean only, cooked, roasted	0.034
+10041	Pork, fresh, loin, center loin (chops), bone-in, separable lean only, cooked, braised	0.034
+19904	Chocolate, dark, 70-85% cacao solids	0.034
+21141	BURGER KING, Vanilla Shake	0.034
+23116	Beef, chuck, under blade steak, boneless, separable lean and fat, trimmed to 0" fat, all grades, cooked, braised	0.034
+23183	Beef, rib, back ribs, bone-in, separable lean only, trimmed to 0" fat, choice, raw	0.034
+23200	Beef, rib eye roast, boneless, lip-on, separable lean and fat, trimmed to 1/8" fat, select, cooked, roasted	0.034
+23409	Beef, New Zealand, imported, eye round, separable lean only, raw	0.034
+36615	DENNY'S, top sirloin steak	0.034
+1255	Egg, whole, raw, frozen, salted, pasteurized	0.033
+5111	Canada Goose, breast meat, skinless, raw	0.033
+5178	Turkey, liver, all classes, cooked, simmered	0.033
+10033	Pork, fresh, loin, blade (chops), bone-in, separable lean only, cooked, braised	0.033
+10099	Pork, fresh, variety meats and by-products, chitterlings, cooked, simmered	0.033
+10176	Pork, fresh, loin, center loin (chops), bone-in, separable lean only, cooked, pan-fried	0.033
+10177	Pork, fresh, loin, center rib (chops), bone-in, separable lean only, cooked, pan-fried	0.033
+15261	Fish, tilapia, raw	0.033
+21442	POPEYES, Fried Chicken, Mild, Breast, meat only, skin and breading removed	0.033
+23130	Beef, chuck, short ribs, boneless, separable lean and fat, trimmed to 0" fat, select, raw	0.033
+23143	Beef, chuck eye steak, boneless, separable lean and fat, trimmed to 0" fat, all grades, raw	0.033
+23145	Beef, chuck eye steak, boneless, separable lean and fat, trimmed to 0" fat, select, raw	0.033
+23309	Beef, Australian, imported, grass-fed, round, top round cap-off steak/roast, boneless, separable lean only, raw	0.033
+1171	Egg, whole, raw, frozen, pasteurized	0.032
+5172	Turkey, whole, giblets, cooked, simmered	0.032
+6748	Soup, PROGRESSO, beef barley, traditional, ready to serve	0.032
+8069	Cereals ready-to-eat, KELLOGG, KELLOGG'S FROSTED FLAKES	0.032
+10049	Pork, fresh, loin, center rib (chops), bone-in, separable lean only, cooked, braised	0.032
+10062	Pork, fresh, loin, top loin (chops), boneless, separable lean and fat, raw	0.032
+10120	Pork, fresh, loin, blade (chops), bone-in, separable lean only, cooked, pan-fried	0.032
+20036	Rice, brown, long-grain, raw	0.032
+20655	Pasta, gluten-free, corn flour and quinoa flour, cooked, ANCIENT HARVEST	0.032
+22976	Ravioli, cheese with tomato sauce, frozen, not prepared, includes regular and light entrees	0.032
+23002	Beef, short loin, porterhouse steak, separable lean and fat, trimmed to 1/8" fat, all grades, cooked, grilled	0.032
+23008	Beef, short loin, t-bone steak, separable lean and fat, trimmed to 1/8" fat, select, cooked, grilled	0.032
+23118	Beef, chuck, under blade steak, boneless, separable lean and fat, trimmed to 0" fat, select, cooked, braised	0.032
+23144	Beef, chuck eye steak, boneless, separable lean and fat, trimmed to 0" fat, choice, raw	0.032
+36048	CARRABBA'S ITALIAN GRILL, spaghetti with pomodoro sauce	0.032
+10050	Pork, fresh, loin, center rib (chops), bone-in, separable lean only, cooked, broiled	0.031
+10988	Pork, fresh, blade, (chops), boneless, separable lean and fat, cooked, broiled	0.031
+10991	Pork, fresh, loin, country-style ribs, separable lean and fat, boneless, cooked, broiled	0.031
+13981	Beef, chuck, short ribs, boneless, separable lean only, trimmed to 0" fat, select, cooked, braised	0.031
+19379	Candies, fudge, chocolate marshmallow, prepared-from-recipe	0.031
+21143	CHICK-FIL-A, Chick-n-Strips	0.031
+23138	Beef, chuck eye Country-Style ribs, boneless, separable lean and fat, trimmed to 0" fat, choice, raw	0.031
+23181	Beef, rib, back ribs, bone-in, separable lean only, trimmed to 0" fat, all grades, raw	0.031
+23472	Beef, ground, 93% lean meat / 7% fat, raw	0.031
+35140	Bread, kneel down (Navajo)	0.031
+35237	Tamales, masa and pork filling (Hopi)	0.031
+36632	CARRABBA'S ITALIAN GRILL, spaghetti with meat sauce	0.031
+5096	Chicken, broilers or fryers, dark meat, thigh, meat only, raw	0.03
+5664	Ground turkey, fat free, patties, broiled	0.03
+10871	Pork, cured, ham and water product, whole, boneless, separable lean only, heated, roasted	0.03
+10922	Pork, cured, ham and water product, whole, boneless, separable lean and fat, heated, roasted	0.03
+13980	Beef, chuck, short ribs, boneless, separable lean only, trimmed to 0" fat, choice, cooked, braised	0.03
+13982	Beef, chuck, short ribs, boneless, separable lean only, trimmed to 0" fat, all grades, cooked, braised	0.03
+17203	Veal, variety meats and by-products, liver, cooked, braised	0.03
+18262	English muffins, raisin-cinnamon (includes apple-cinnamon)	0.03
+23114	Beef, chuck eye roast, boneless, America's Beef Roast, separable lean and fat, trimmed to 0" fat, choice, cooked, roasted	0.03
+23137	Beef, chuck eye Country-Style ribs, boneless, separable lean and fat, trimmed to 0" fat, all grades, raw	0.03
+23223	Beef, plate steak, boneless, outside skirt, separable lean and fat, trimmed to 0" fat, select, cooked, grilled	0.03
+27001	Soup, hot and sour, Chinese restaurant	0.03
+31034	Peppers, hot pickled, canned	0.03
+32017	Pasta mix, Italian four cheese lasagna, unprepared	0.03
+36013	Restaurant, family style, sirloin steak	0.03
+3194	Babyfood, cereal, Rice, dry, fortified	0.029
+5717	Turkey, retail parts, thigh, meat only, raw	0.029
+9334	Feijoa, raw	0.029
+10015	Pork, fresh, leg (ham), rump half, separable lean only, cooked, roasted	0.029
+10034	Pork, fresh, loin, blade (chops), bone-in, separable lean only, cooked, broiled	0.029
+10227	Pork, fresh, composite of trimmed retail cuts (loin and shoulder blade), separable lean and fat, cooked	0.029
+10899	Pork, cured, ham, slice, bone-in, separable lean only, heated, pan-broil	0.029
+10933	Pork, cured, ham, shank, bone-in, separable lean only, heated, roasted	0.029
+13907	Beef, short loin, t-bone steak, separable lean and fat, trimmed to 1/8" fat, choice, raw	0.029
+19301	Candies, fudge, chocolate marshmallow, with nuts, prepared-by-recipe	0.029
+23070	Beef, chuck eye Country-Style ribs, boneless, separable lean only, trimmed to 0" fat, select, cooked, braised	0.029
+23113	Beef, chuck eye roast, boneless, America's Beef Roast, separable lean and fat, trimmed to 0" fat, all grades, cooked, roasted	0.029
+23192	Beef, rib eye steak/roast, bone-in, lip-on, separable lean and fat, trimmed to 1/8" fat, all grades, raw	0.029
+23193	Beef, rib eye steak/roast, bone-in, lip-on, separable lean and fat, trimmed to 1/8" fat, choice, raw	0.029
+23194	Beef, rib eye steak/roast, bone-in, lip-on, separable lean and fat, trimmed to 1/8" fat, select, raw	0.029
+23225	Beef, plate steak, boneless, outside skirt, separable lean and fat, trimmed to 0" fat, choice, raw	0.029
+23417	Beef, New Zealand, imported, hind shin, separable lean only, raw	0.029
+23557	Beef, ground, 95% lean meat / 5% fat, raw	0.029
+27063	Sauce, enchilada, red, mild, ready to serve	0.029
+35147	Tamales (Navajo)	0.029
+10098	Pork, fresh, variety meats and by-products, chitterlings, raw	0.028
+10132	Pork, cured, feet, pickled	0.028
+10909	Pork, cured, ham -- water added, whole, boneless, separable lean and fat, unheated	0.028
+15110	Fish, swordfish, raw	0.028
+17000	Veal, Australian, rib, rib roast, separable lean only, raw	0.028
+17202	Veal, variety meats and by-products, liver, raw	0.028
+22972	Pulled pork in barbecue sauce	0.028
+23005	Beef, short loin, t-bone steak, separable lean and fat, trimmed to 1/8" fat, all grades, raw	0.028
+23107	Beef, chuck, under blade center steak, boneless, Denver Cut, separable lean and fat, trimmed to 0" fat, select, cooked, grilled	0.028
+23115	Beef, chuck eye roast, boneless, America's Beef Roast, separable lean and fat, trimmed to 0" fat, select, cooked, roasted	0.028
+23139	Beef, chuck eye Country-Style ribs, boneless, separable lean and fat, trimmed to 0" fat, select, raw	0.028
+23172	Beef, plate steak, boneless, outside skirt, separable lean only, trimmed to 0" fat, select, cooked, grilled	0.028
+23185	Beef, rib, back ribs, bone-in, separable lean only, trimmed to 0" fat, select, raw	0.028
+23224	Beef, plate steak, boneless, outside skirt, separable lean and fat, trimmed to 0" fat, all grades, raw	0.028
+23389	Beef, loin, top loin steak, boneless, lip-on, separable lean and fat, trimmed to 1/8" fat, choice, cooked, grilled	0.028
+32018	Spanish rice mix, dry mix, unprepared	0.028
+36011	T.G.I. FRIDAY'S, classic sirloin steak (10 oz)	0.028
+5071	Chicken, broilers or fryers, dark meat, drumstick, meat only, raw	0.027
+10042	Pork, fresh, loin, center loin (chops), bone-in, separable lean only, cooked, broiled	0.027
+10973	Pork, ground, 96% lean / 4% fat, raw	0.027
+13905	Beef, short loin, porterhouse steak, separable lean and fat, trimmed to 1/8" fat, choice, raw	0.027
+16098	Peanut butter, smooth style, with salt	0.027
+16398	Peanut butter, smooth style, without salt	0.027
+20521	Pasta, cooked, unenriched, with added salt	0.027
+23004	Beef, short loin, porterhouse steak, separable lean and fat, trimmed to 1/8" fat, select, cooked, grilled	0.027
+23202	Beef, rib eye steak/roast, boneless, lip-on, separable lean and fat, trimmed to 1/8" fat, choice, raw	0.027
+23391	Beef, loin, top loin steak, boneless, lip-on, separable lean and fat, trimmed to 1/8" fat, all grades, cooked, grilled	0.027
+28285	Bread, chapati or roti, whole wheat, commercially prepared, frozen	0.027
+28344	Crackers, gluten-free, multigrain and vegetable, made with corn starch and white rice flour	0.027
+32008	Pasta mix, classic cheeseburger macaroni, unprepared	0.027
+32010	Pasta mix, Italian lasagna, unprepared	0.027
+35239	Tortilla, blue corn, Sakwavikaviki (Hopi)	0.027
+5682	Chicken, dark meat, thigh, meat only, with added solution, raw	0.026
+5746	Chicken, broiler or fryers, breast, skinless, boneless, meat only, cooked, braised	0.026
+10003	Pork, fresh, composite of trimmed leg, loin, shoulder, and spareribs, (includes cuts to be cured), separable lean and fat, raw	0.026
+10901	Pork, cured, ham with natural juices, spiral slice, boneless, separable lean and fat, unheated	0.026
+10931	Pork, cured, ham, rump, bone-in, separable lean only, heated, roasted	0.026
+10938	Pork, cured, ham, slice, bone-in, separable lean only, unheated	0.026
+10976	Pork, ground, 96% lean / 4% fat, cooked, crumbles	0.026
+19409	Frostings, glaze, chocolate, prepared-from-recipe, with butter, NFSMI Recipe No. C-32	0.026
+20042	Rice, brown, parboiled, dry, UNCLE BEN'S	0.026
+22977	Lasagna with meat sauce, frozen, prepared	0.026
+23001	Beef, short loin, porterhouse steak, separable lean and fat, trimmed to 1/8" fat, all grades, raw	0.026
+23007	Beef, short loin, t-bone steak, separable lean and fat, trimmed to 1/8" fat, select, raw	0.026
+23076	Beef, chuck eye steak, boneless, separable lean only, trimmed to 0" fat, select, cooked, grilled	0.026
+23221	Beef, plate steak, boneless, outside skirt, separable lean and fat, trimmed to 0" fat, all grades, cooked, grilled	0.026
+23226	Beef, plate steak, boneless, outside skirt, separable lean and fat, trimmed to 0" fat, select, raw	0.026
+23314	Beef, Australian, imported, Wagyu, rib, small end rib steak/roast, boneless, separable lean only, Aust. marble score 9, raw	0.026
+27059	Sauce, peanut, made from peanut butter, water, soy sauce	0.026
+5080	Chicken, broilers or fryers, leg, meat only, raw	0.025
+5678	Chicken, dark meat, drumstick, meat only, with added solution, raw	0.025
+10032	Pork, fresh, loin, blade (chops or roasts), bone-in, separable lean only, raw	0.025
+10207	Pork, fresh, loin, country-style ribs, separable lean only, raw	0.025
+10917	Pork, cured, ham -- water added, whole, boneless, separable lean and fat, heated, roasted	0.025
+10934	Pork, cured, ham, shank, bone-in, separable lean only, unheated	0.025
+10979	Pork, ground, 96% lean / 4% fat, cooked, pan-broiled	0.025
+13354	Beef, chuck, under blade center steak, boneless, Denver Cut, separable lean only, trimmed to 0" fat, select, cooked, grilled	0.025
+16090	Peanuts, all types, dry-roasted, with salt	0.025
+16390	Peanuts, all types, dry-roasted, without salt	0.025
+23105	Beef, chuck, under blade center steak, boneless, Denver Cut, separable lean and fat, trimmed to 0" fat, all grades, cooked, grilled	0.025
+23201	Beef, rib eye steak/roast, boneless, lip-on, separable lean and fat, trimmed to 1/8" fat, all grades, raw	0.025
+23390	Beef, loin, top loin steak, boneless, lip-on, separable lean and fat, trimmed to 1/8" fat, select, cooked, grilled	0.025
+23477	Beef, ground, 97% lean meat / 3% fat, raw	0.025
+25017	Formulated bar, POWER BAR, chocolate	0.025
+27067	Sauce, OLD EL PASO, enchilada, red, mild, ready to serve	0.025
+5747	Chicken, broiler or fryers, breast, skinless, boneless, meat only, cooked, grilled	0.024
+5748	Chicken, broiler or fryers, breast, skinless, boneless, meat only, with added solution, cooked, braised	0.024
+10217	Pork, fresh, loin, sirloin (roasts), boneless, separable lean only, cooked, roasted	0.024
+10870	Pork, cured, ham and water product, slice, boneless, separable lean only, heated, pan-broil	0.024
+10921	Pork, cured, ham and water product, slice, boneless, separable lean and fat, heated, pan-broil	0.024
+10932	Pork, cured, ham, rump, bone-in, separable lean only, unheated	0.024
+11395	Potatoes, french fried, shoestring, salt added in processing, frozen, oven-heated	0.024
+18001	Bagels, plain, enriched, with calcium propionate (includes onion, poppy, sesame)	0.024
+20120	Pasta, dry, enriched	0.024
+20121	Pasta, cooked, enriched, without added salt	0.024
+20321	Pasta, cooked, enriched, with added salt	0.024
+20420	Pasta, dry, unenriched	0.024
+20421	Pasta, cooked, unenriched, without added salt	0.024
+23003	Beef, short loin, porterhouse steak, separable lean and fat, trimmed to 1/8" fat, select, raw	0.024
+23069	Beef, chuck eye Country-Style ribs, boneless, separable lean only, trimmed to 0" fat, choice, cooked, braised	0.024
+23071	Beef, chuck eye Country-Style ribs, boneless, separable lean only, trimmed to 0" fat, all grades, cooked, braised	0.024
+23109	Beef, chuck, under blade center steak, boneless, Denver Cut, separable lean and fat, trimmed to 0" fat, choice, raw	0.024
+23171	Beef, plate steak, boneless, outside skirt, separable lean only, trimmed to 0" fat, choice, raw	0.024
+23303	Beef, Australian, imported, grass-fed, loin, top loin steak/roast, boneless, separable lean only, raw	0.024
+36000	APPLEBEE'S, 9 oz house sirloin steak	0.024
+5173	Turkey, gizzard, all classes, raw	0.023
+5174	Turkey, gizzard, all classes, cooked, simmered	0.023
+9079	Cranberries, dried, sweetened	0.023
+9516	Fruit juice smoothie, BOLTHOUSE FARMS, strawberry banana	0.023
+10905	Pork, cured, ham and water product, whole, boneless, separable lean and fat, unheated	0.023
+11378	Potatoes, mashed, dehydrated, flakes without milk, dry form	0.023
+13351	Beef, chuck, under blade center steak, boneless, Denver Cut, separable lean only, trimmed to 0" fat, all grades, cooked, grilled	0.023
+13786	Beef, chuck eye roast, boneless, America's Beef Roast, separable lean and fat, trimmed to 0" fat, all grades, raw	0.023
+13788	Beef, chuck eye roast, boneless, America's Beef Roast, separable lean and fat, trimmed to 0" fat, choice, raw	0.023
+13791	Beef, chuck eye roast, boneless, America's Beef Roast, separable lean and fat, trimmed to 0" fat, select, raw	0.023
+22916	Lasagna with meat  &  sauce, frozen entree	0.023
+23044	Beef, chuck, shoulder clod, top blade, steak, separable lean and fat, trimmed to 0" fat, select, cooked, grilled	0.023
+23075	Beef, chuck eye steak, boneless, separable lean only, trimmed to 0" fat, choice, cooked, grilled	0.023
+23077	Beef, chuck eye steak, boneless, separable lean only, trimmed to 0" fat, all grades, cooked, grilled	0.023
+23106	Beef, chuck, under blade center steak, boneless, Denver Cut, separable lean and fat, trimmed to 0" fat, choice, cooked, grilled	0.023
+23168	Beef, plate steak, boneless, outside skirt, separable lean only, trimmed to 0" fat, all grades, cooked, grilled	0.023
+23169	Beef, plate steak, boneless, outside skirt, separable lean only, trimmed to 0" fat, all grades, raw	0.023
+23222	Beef, plate steak, boneless, outside skirt, separable lean and fat, trimmed to 0" fat, choice, cooked, grilled	0.023
+23310	Beef, Australian, imported, Wagyu, loin, tenderloin steak/roast, boneless, separable lean only, Aust. marble score 9, raw	0.023
+23395	Beef, loin, top loin steak, boneless, lip-on, separable lean and fat, trimmed to 1/8" fat, choice, raw	0.023
+32034	HUNGRY MAN, Salisbury Steak With Gravy, frozen, unprepared	0.023
+36414	Restaurant, Latino, tripe soup	0.023
+5662	Ground turkey, fat free, raw	0.022
+5749	Chicken, broiler or fryers, breast, skinless, boneless, meat only, with added solution, cooked, grilled	0.022
+10077	Pork, fresh, shoulder, arm picnic, separable lean only, raw	0.022
+10212	Pork, fresh, loin, sirloin (chops), boneless, separable lean and fat, cooked, broiled	0.022
+10872	Pork, cured, ham and water product, whole, boneless, separable lean only, unheated	0.022
+10877	Pork, cured, ham and water product, rump, bone-in, separable lean only, heated, roasted	0.022
+10916	Pork, cured, ham -- water added, slice, boneless, separable lean and fat, heated, pan-broil	0.022
+23101	Beef, rib eye roast, bone-in, lip-on, separable lean only, trimmed to 1/8" fat, choice, cooked, roasted	0.022
+23108	Beef, chuck, under blade center steak, boneless, Denver Cut, separable lean and fat, trimmed to 0" fat, all grades, raw	0.022
+23160	Beef, rib eye roast, boneless, lip-on, separable lean only, trimmed to 1/8" fat, choice, cooked, roasted	0.022
+23173	Beef, plate steak, boneless, outside skirt, separable lean only, trimmed to 0" fat, select, raw	0.022
+23213	Beef, rib eye steak/roast, boneless, lip-on, separable lean and fat, trimmed to 1/8" fat, select, raw	0.022
+23388	Beef, loin, top loin steak, boneless, lip-on, separable lean and fat, trimmed to 1/8" fat, all grades, raw	0.022
+27061	Gravy, HEINZ Home Style, classic chicken	0.022
+27062	Soup, beef barley, ready to serve	0.022
+5708	Turkey, retail parts, breast, meat only, with added solution, raw	0.021
+6150	Sauce, barbecue	0.021
+6307	Sauce, barbecue, KRAFT, original	0.021
+10119	Pork, fresh, variety meats and by-products, stomach, raw	0.021
+10181	Pork, fresh, loin, top loin (chops), boneless, separable lean only, cooked, pan-fried	0.021
+10210	Pork, fresh, loin, sirloin (chops or roasts), boneless, separable lean and fat, raw	0.021
+10873	Pork, cured, ham with natural juices, rump, bone-in, separable lean only, heated, roasted	0.021
+11292	Onions, young green, tops only	0.021
+11412	Potatoes, french fried, steak fries, salt added in processing, frozen, oven-heated	0.021
+11841	Potatoes, french fried, all types, salt not added in processing, frozen, oven-heated	0.021
+13352	Beef, chuck, under blade center steak, boneless, Denver Cut, separable lean only, trimmed to 0" fat, choice, cooked, grilled	0.021
+13359	Beef, chuck, under blade center steak, boneless, Denver Cut, separable lean only, trimmed to 0" fat, choice, raw	0.021
+13440	Beef, loin, tenderloin steak, boneless, separable lean and fat, trimmed to 0" fat, choice, cooked, grilled	0.021
+23103	Beef, chuck, under blade pot roast or steak, boneless, separable lean and fat, trimmed to 0" fat, choice, raw	0.021
+23387	Beef, loin, top loin steak, boneless, lip-on, separable lean and fat, trimmed to 1/8" fat, select, raw	0.021
+23445	Beef, New Zealand, imported, variety meats and by-products, tripe uncooked, raw	0.021
+35145	Stew, hominy with mutton (Navajo)	0.021
+5186	Turkey, all classes, light meat, cooked, roasted	0.02
+5220	Turkey, breast, from whole bird, meat only, roasted	0.02
+5228	Turkey, wing, from whole bird, meat only, roasted	0.02
+5697	Turkey from whole, light meat, meat only, with added solution, cooked, roasted	0.02
+5718	Turkey, breast, from whole bird, meat only, with added solution, roasted	0.02
+5720	Turkey, back, from whole bird, meat only, with added solution, roasted	0.02
+5730	Turkey, wing, from whole bird, meat only, with added solution, roasted	0.02
+5739	Turkey, drumstick, from whole bird, meat only, roasted	0.02
+6119	Gravy, chicken, canned or bottled, ready-to-serve	0.02
+8065	Cereals ready-to-eat, KELLOGG, KELLOGG'S RICE KRISPIES	0.02
+8478	Cereals ready-to-eat, MALT-O-MEAL, GOLDEN PUFFS	0.02
+9530	Fruit juice smoothie, ODWALLA, strawberry banana	0.02
+9531	Fruit juice smoothie, NAKED JUICE, strawberry banana	0.02
+10068	Pork, fresh, loin, top loin (chops), boneless, separable lean only, cooked, broiled	0.02
+10069	Pork, fresh, loin, top loin (roasts), boneless, separable lean only, cooked, roasted	0.02
+10868	Pork, cured, ham -- water added, slice, bone-in, separable lean only, heated, pan-broil	0.02
+10880	Pork, cured, ham -- water added, whole, boneless, separable lean only, unheated	0.02
+10947	Pork, fresh, loin, top loin (chops), boneless, separable lean only, with added solution, cooked, broiled	0.02
+11394	Potatoes, french fried, shoestring, salt added in processing, frozen, as purchased	0.02
+13232	Beef, short loin, porterhouse steak, separable lean only, trimmed to 1/8" fat, choice, cooked, grilled	0.02
+13236	Beef, short loin, t-bone steak, bone-in, separable lean only, trimmed to 1/8" fat, choice, cooked, grilled	0.02
+13439	Beef, loin, tenderloin steak, boneless, separable lean and fat, trimmed to 0" fat, all grades, cooked, grilled	0.02
+13443	Beef, loin, tenderloin steak, boneless, separable lean only, trimmed to 0" fat, choice, cooked, grilled	0.02
+13446	Beef, loin, top loin steak, boneless, lip off, separable lean and fat, trimmed to 0" fat, choice, cooked, grilled	0.02
+18962	Crackers, cream, LA MODERNA RIKIS CREAM CRACKERS	0.02
+22912	Spaghetti, with meatballs in tomato sauce, canned	0.02
+23060	Beef, chuck, shoulder clod, top blade, steak, separable lean and fat, trimmed to 0" fat, all grades, cooked, grilled	0.02
+23146	Beef, rib eye roast, bone-in, lip-on, separable lean only, trimmed to 1/8" fat, all grades, cooked, roasted	0.02
+23159	Beef, rib eye roast, boneless, lip-on, separable lean only, trimmed to 1/8" fat, all grades, cooked, roasted	0.02
+23170	Beef, plate steak, boneless, outside skirt, separable lean only, trimmed to 0" fat, choice, cooked, grilled	0.02
+1069	Cream substitute, powdered	0.019
+4047	Oil, coconut	0.019
+5704	Turkey, whole, meat only, with added solution, raw	0.019
+5712	Turkey, retail parts, wing, meat only, raw	0.019
+9513	Fruit juice smoothie, ODWALLA, ORIGINAL SUPERFOOD	0.019
+9515	Fruit juice smoothie, BOLTHOUSE FARMS, GREEN GOODNESS	0.019
+10084	Pork, fresh, shoulder, (Boston butt), blade (steaks), separable lean only, raw	0.019
+10858	Pork, fresh, loin, top loin (chops), boneless, separable lean only, with added solution, cooked, pan-broiled	0.019
+10879	Pork, cured, ham -- water added, whole, boneless, separable lean only, heated, roasted	0.019
+11402	Potatoes, french fried, all types, salt added in processing, frozen, unprepared	0.019
+13383	Beef, chuck, under blade pot roast, boneless, separable lean only, trimmed to 0" fat, choice, cooked, braised	0.019
+13442	Beef, loin, tenderloin steak, boneless, separable lean only, trimmed to 0" fat, all grades, cooked, grilled	0.019
+13445	Beef, loin, top loin steak, boneless, lip off, separable lean and fat, trimmed to 0" fat, all grades, cooked, grilled	0.019
+23042	Beef, chuck, shoulder clod, top blade, steak, separable lean and fat, trimmed to 0" fat, choice, cooked, grilled	0.019
+23043	Beef, chuck, shoulder clod, top blade, steak, separable lean and fat, trimmed to 0" fat, select, raw	0.019
+23102	Beef, chuck, under blade pot roast or steak, boneless, separable lean and fat, trimmed to 0" fat, all grades, raw	0.019
+23295	Beef, Australian, imported, Wagyu, loin, tenderloin steak/roast, boneless, separable lean only, Aust. marble score 4/5, raw	0.019
+28341	Rolls, gluten-free, white, made with rice flour, rice starch, and corn starch	0.019
+28368	SCHAR, Gluten-Free, Classic White Rolls	0.019
+35143	Tortilla, includes plain and from mutton sandwich (Navajo)	0.019
+8121	Cereals, oats, regular and quick, unenriched, cooked with water (includes boiling and microwaving), without salt	0.018
+10048	Pork, fresh, loin, center rib (chops or roasts), bone-in, separable lean only, raw	0.018
+10881	Pork, cured, ham and water product, shank, bone-in, separable lean only, heated, roasted	0.018
+10946	Pork, fresh, shoulder, (Boston butt), blade (steaks), separable lean only, with added solution, raw	0.018
+11172	Corn, sweet, yellow, canned, whole kernel, drained solids	0.018
+11360	Potatoes, french fried, crinkle or regular cut, salt added in processing, frozen, oven-heated	0.018
+11842	Potatoes, french fried, all types, salt not added in processing, frozen, as purchased	0.018
+11905	Corn, sweet, white, canned, whole kernel, drained solids	0.018
+12078	Nuts, brazilnuts, dried, unblanched	0.018
+13285	Beef, chuck, under blade pot roast, boneless, separable lean only, trimmed to 0" fat, all grades, cooked, braised	0.018
+13356	Beef, chuck, under blade center steak, boneless, Denver Cut, separable lean only, trimmed to 0" fat, all grades, raw	0.018
+13441	Beef, loin, tenderloin steak, boneless, separable lean and fat, trimmed to 0" fat, select, cooked, grilled	0.018
+13444	Beef, loin, tenderloin steak, boneless, separable lean only, trimmed to 0" fat, select, cooked, grilled	0.018
+13479	Beef, short loin, t-bone steak, bone-in, separable lean only, trimmed to 1/8" fat, all grades, cooked, grilled	0.018
+23066	Beef, chuck, short ribs, boneless, separable lean only, trimmed to 0" fat, choice, raw	0.018
+23096	Beef, chuck, under blade steak, boneless, separable lean only, trimmed to 0" fat, choice, cooked, braised	0.018
+23097	Beef, chuck, under blade steak, boneless, separable lean only, trimmed to 0" fat, select, cooked, braised	0.018
+23098	Beef, chuck, under blade steak, boneless, separable lean only, trimmed to 0" fat, all grades, cooked, braised	0.018
+23110	Beef, chuck, under blade center steak, boneless, Denver Cut, separable lean and fat, trimmed to 0" fat, select, raw	0.018
+23444	Beef, New Zealand, imported, variety meats and by-products, tripe cooked, boiled	0.018
+5696	Turkey from whole, light meat, meat only, with added solution, raw	0.017
+5721	Turkey, breast, from whole bird, meat only, with added solution, raw	0.017
+5729	Turkey, wing, from whole bird, meat only, with added solution, raw	0.017
+7043	Roast beef, deli style, prepackaged, sliced	0.017
+9213	Orange juice, frozen concentrate, unsweetened, undiluted, with added calcium	0.017
+9214	Orange juice, frozen concentrate, unsweetened, undiluted	0.017
+10878	Pork, cured, ham -- water added, slice, boneless, separable lean only, heated, pan-broil	0.017
+10889	Pork, cured, ham and water product, shank, bone-in, unheated, separable lean only	0.017
+10890	Pork, cured, ham with natural juices, rump, bone-in, separable lean only, unheated	0.017
+10928	Pork, cured, ham with natural juices, whole, boneless, separable lean and fat, heated, roasted	0.017
+11411	Potatoes, french fried, steak fries, salt added in processing, frozen, as purchased	0.017
+13326	Beef, variety meats and by-products, liver, cooked, braised	0.017
+13327	Beef, variety meats and by-products, liver, cooked, pan-fried	0.017
+13384	Beef, chuck, under blade pot roast, boneless, separable lean only, trimmed to 0" fat, select, cooked, braised	0.017
+13465	Beef, short loin, porterhouse steak, separable lean only,  trimmed to 1/8" fat, all grades, cooked, grilled	0.017
+13798	Beef, composite of trimmed retail cuts, separable lean and fat, trimmed to 1/8" fat, choice, cooked	0.017
+13822	Beef, chuck eye roast, boneless, America's Beef Roast, separable lean only, trimmed to 0" fat, choice, cooked, roasted	0.017
+15028	Fish, flatfish (flounder and sole species), raw	0.017
+22998	Rice and vermicelli mix, chicken flavor, unprepared	0.017
+23059	Beef, chuck, shoulder clod, top blade, steak, separable lean and fat, trimmed to 0" fat, all grades, raw	0.017
+23100	Beef, rib eye steak, boneless, lip-on, separable lean only, trimmed to 1/8" fat, all grades, cooked, grilled	0.017
+23119	Beef, chuck, mock tender steak, boneless, separable lean and fat, trimmed to 0" fat, all grades, cooked, braised	0.017
+23120	Beef, chuck, mock tender steak, boneless, separable lean and fat, trimmed to 0" fat, choice, cooked, braised	0.017
+23121	Beef, chuck, mock tender steak, boneless, separable lean and fat, trimmed to 0" fat, select, cooked, braised	0.017
+23147	Beef, rib eye roast, bone-in, lip-on, separable lean only, trimmed to 1/8" fat, select, cooked, roasted	0.017
+23148	Beef, rib eye steak, boneless, lip-on, separable lean only, trimmed to 1/8" fat, choice, cooked, grilled	0.017
+23149	Beef, rib eye steak, boneless, lip-on, separable lean only, trimmed to 1/8" fat, select, cooked, grilled	0.017
+23156	Beef, rib eye steak, bone-in, lip-on, separable lean only, trimmed to 1/8" fat, all grades, cooked, grilled	0.017
+23157	Beef, rib eye steak, bone-in, lip-on, separable lean only, trimmed to 1/8" fat, choice, cooked, grilled	0.017
+23158	Beef, rib eye steak, bone-in, lip-on, separable lean only, trimmed to 1/8" fat, select, cooked, grilled	0.017
+23174	Beef, rib eye steak, boneless, lip off, separable lean only, trimmed to 0" fat, all grades, cooked, grilled	0.017
+23176	Beef, rib eye steak, boneless, lip off, separable lean only, trimmed to 0" fat, choice, cooked, grilled	0.017
+23178	Beef, rib eye steak, boneless, lip off, separable lean only, trimmed to 0" fat, select, cooked, grilled	0.017
+23346	Beef, loin, tenderloin roast, boneless, separable lean and fat, trimmed to 0" fat, choice, cooked, roasted	0.017
+7961	Chicken breast, deli, rotisserie seasoned, sliced, prepackaged	0.016
+10056	Pork, fresh, loin, sirloin (chops or roasts), bone-in, separable lean only, raw	0.016
+10067	Pork, fresh, loin, top loin (chops), boneless, separable lean only, cooked, braised	0.016
+10218	Pork, fresh, loin, tenderloin, separable lean and fat, raw	0.016
+10222	Pork, fresh, loin, tenderloin, separable lean and fat, cooked, roasted	0.016
+10863	Pork, fresh, variety meats and by-products, stomach, cooked, simmered	0.016
+10874	Pork, cured, ham with natural juices, shank, bone-in, separable lean only, heated, roasted	0.016
+10883	Pork, cured, ham with natural juices, whole, boneless, separable lean only, heated, roasted	0.016
+10887	Pork, cured, ham and water product, rump, bone-in, separable lean only, unheated	0.016
+10926	Pork, cured, ham with natural juices, slice, boneless, separable lean and fat, heated, pan-broil	0.016
+10982	Pork, fresh, loin, blade (chops or roasts), boneless, separable lean only, raw	0.016
+11359	Potatoes, french fried, crinkle or regular cut, salt added in processing, frozen, as purchased	0.016
+13447	Beef, loin, top loin steak, boneless, lip off, separable lean and fat, trimmed to 0" fat, select, cooked, grilled	0.016
+13796	Beef, composite of trimmed retail cuts, separable lean and fat, trimmed to 1/8" fat, all grades, cooked	0.016
+13862	Beef, shoulder top blade steak, boneless, separable lean and fat, trimmed to 0" fat, select, cooked, grilled	0.016
+19064	Candies, TOOTSIE ROLL, chocolate-flavor roll	0.016
+19076	Candies, caramels, chocolate-flavor roll	0.016
+23041	Beef, chuck, shoulder clod, top blade, steak, separable lean and fat, trimmed to 0" fat, choice, raw	0.016
+23068	Beef, chuck, short ribs, boneless, separable lean only, trimmed to 0" fat, all grades, raw	0.016
+23072	Beef, chuck eye Country-Style ribs, boneless, separable lean only, trimmed to 0" fat, choice, raw	0.016
+23104	Beef, chuck, under blade pot roast or steak, boneless, separable lean and fat, trimmed to 0" fat, select, raw	0.016
+23161	Beef, rib eye roast, boneless, lip-on, separable lean only, trimmed to 1/8" fat, select, cooked, roasted	0.016
+23313	Beef, Australian, imported, Wagyu, rib, small end rib steak/roast, boneless, separable lean only, Aust. marble score 4/5, raw	0.016
+23345	Beef, loin, tenderloin roast, boneless, separable lean and fat, trimmed to 0" fat, all grades, cooked, roasted	0.016
+23376	Beef, loin, tenderloin roast, boneless, separable lean only, trimmed to 0" fat, choice, cooked, roasted	0.016
+2026	Spices, onion powder	0.015
+5342	Chicken, broilers or fryers, breast, meat only, cooked, rotisserie, original seasoning	0.015
+5710	Turkey, retail parts, breast, meat only, raw	0.015
+6999	Gravy, CAMPBELL'S, chicken	0.015
+7028	Ham, sliced, pre-packaged, deli meat (96%fat free, water added)	0.015
+10014	Pork, fresh, leg (ham), rump half, separable lean only, raw	0.015
+10093	Pork, fresh, composite of trimmed retail cuts (leg, loin, and shoulder), separable lean only, cooked	0.015
+10163	Pork, fresh, loin, center loin (chops), boneless, separable lean only, cooked, pan-broiled	0.015
+10867	Pork, cured, ham -- water added, shank, bone-in, separable lean only, heated, roasted	0.015
+10888	Pork, cured, ham and water product, slice, bone-in, separable lean only, unheated	0.015
+10952	Pork, fresh, loin, tenderloin, separable lean and fat, with added solution, cooked, roasted	0.015
+10956	Pork, loin, leg cap steak, boneless, separable lean and fat, cooked, broiled	0.015
+11135	Cauliflower, raw	0.015
+13000	Beef, grass-fed, strip steaks, lean only, raw	0.015
+13449	Beef, loin, top loin steak, boneless, lip off, separable lean only, trimmed to 0" fat, choice, cooked, grilled	0.015
+13821	Beef, chuck eye roast, boneless, America's Beef Roast, separable lean only, trimmed to 0" fat, all grades, cooked, roasted	0.015
+15057	Fish, ocean perch, Atlantic, raw	0.015
+15157	Mollusks, clam, mixed species, raw	0.015
+23092	Beef, chuck for stew, separable lean and fat, choice, cooked, braised	0.015
+23217	Beef, plate steak, boneless, inside skirt, separable lean and fat, trimmed to 0" fat, all grades, raw	0.015
+23218	Beef, plate steak, boneless, inside skirt, separable lean and fat, trimmed to 0" fat, choice, raw	0.015
+23340	Beef, loin, top loin steak, boneless, lip off, separable lean and fat, trimmed to 0" fat, choice, raw	0.015
+23375	Beef, loin, tenderloin roast, boneless, separable lean only, trimmed to 0" fat, all grades, cooked, roasted	0.015
+6019	Soup, chicken noodle, canned, condensed	0.014
+6062	CAMPBELL'S, Red and White, Chicken Noodle Soup, condensed	0.014
+10018	Pork, fresh, leg (ham), shank half, separable lean only, raw	0.014
+10040	Pork, fresh, loin, center loin (chops), bone-in, separable lean only, raw	0.014
+10216	Pork, fresh, loin, sirloin (chops), boneless, separable lean only, cooked, broiled	0.014
+10869	Pork, cured, ham and water product, slice, bone-in, separable lean only, heated, pan-broil	0.014
+10882	Pork, cured, ham with natural juices, slice, boneless, separable lean only, heated, pan-broil	0.014
+10951	Pork, fresh, loin, tenderloin, separable lean and fat, with added solution, raw	0.014
+10959	Pork, Shoulder breast, boneless, separable lean and fat, cooked, broiled	0.014
+10960	Pork, shoulder, petite tender, boneless, separable lean and fat, cooked, broiled	0.014
+11167	Corn, sweet, yellow, raw	0.014
+13231	Beef, short loin, porterhouse steak, separable lean only, trimmed to 1/8" fat, choice, raw	0.014
+13448	Beef, loin, top loin steak, boneless, lip off, separable lean only, trimmed to 0" fat, all grades, cooked, grilled	0.014
+13483	Beef, short loin, t-bone steak, bone-in, separable lean only, trimmed to 1/8" fat, select, cooked, grilled	0.014
+13502	Beef, shoulder top blade steak, boneless, separable lean only, trimmed to 0" fat, select, cooked, grilled	0.014
+13598	Beef, shoulder top blade steak, boneless, separable lean and fat, trimmed to 0" fat, all grades, cooked, grilled	0.014
+20654	Pasta, gluten-free, brown rice flour, cooked, TINKYADA	0.014
+23078	Beef, chuck eye steak, boneless, separable lean only, trimmed to 0" fat, choice, raw	0.014
+23080	Beef, chuck eye steak, boneless, separable lean only, trimmed to 0" fat, all grades, raw	0.014
+23090	Beef, chuck for stew, separable lean and fat, all grades, cooked, braised	0.014
+23219	Beef, plate steak, boneless, inside skirt, separable lean and fat, trimmed to 0" fat, select, raw	0.014
+23336	Beef, loin, tenderloin roast, boneless, separable lean and fat, trimmed to 0" fat, all grades, raw	0.014
+23337	Beef, loin, tenderloin roast, boneless, separable lean and fat, trimmed to 0" fat, choice, raw	0.014
+23339	Beef, loin, top loin steak, boneless, lip off, separable lean and fat, trimmed to 0" fat, all grades, raw	0.014
+23343	Beef, loin, tenderloin steak, boneless, separable lean and fat, trimmed to 0" fat, choice, raw	0.014
+23347	Beef, loin, tenderloin roast, boneless, separable lean and fat, trimmed to 0" fat, select, cooked, roasted	0.014
+31032	Vegetable smoothie, NAKED JUICE, KALE BLAZER	0.014
+1276	Yogurt, Greek, strawberry, DANNON OIKOS	0.013
+5062	Chicken, broiler or fryers, breast, skinless, boneless, meat only, raw	0.013
+9228	Papaya, canned, heavy syrup, drained	0.013
+10061	Pork, fresh, loin, tenderloin, separable lean only, cooked, roasted	0.013
+10225	Pork, fresh, loin, top loin (roasts), boneless, separable lean only, raw	0.013
+10884	Pork, cured, ham with natural juices, whole, boneless, separable lean only, unheated	0.013
+10927	Pork, cured, ham with natural juices, spiral slice, boneless, separable lean and fat, heated, roasted	0.013
+10957	Pork, Leg Cap Steak, boneless, separable lean and fat, raw	0.013
+13499	Beef, chuck, under blade center steak, boneless, Denver Cut, separable lean only, trimmed to 0" fat, select, raw	0.013
+13650	Beef, shoulder top blade steak, boneless, separable lean and fat, trimmed to 0" fat, choice, cooked, grilled	0.013
+13974	Beef, chuck eye roast, boneless, America's Beef Roast, separable lean only, trimmed to 0" fat, select, raw	0.013
+19382	Candies, taffy, prepared-from-recipe	0.013
+20657	Pasta, gluten-free, corn and rice flour, cooked	0.013
+21343	McDONALD'S, Low Fat Caramel Sauce	0.013
+23038	Beef, chuck, shoulder clod, shoulder top and center steaks, separable lean and fat, trimmed to 0" fat, choice, cooked, grilled	0.013
+23040	Beef, chuck, shoulder clod, shoulder top and center steaks, separable lean and fat, trimmed to 0" fat, select, cooked, grilled	0.013
+23054	Beef, chuck, shoulder clod, shoulder tender, medallion, separable lean and fat, trimmed to 0" fat, all grades, cooked, grilled	0.013
+23058	Beef, chuck, shoulder clod, shoulder top and center steaks, separable lean and fat, trimmed to 0" fat, all grades, cooked, grilled	0.013
+23067	Beef, chuck, short ribs, boneless, separable lean only, trimmed to 0" fat, select, raw	0.013
+23074	Beef, chuck eye Country-Style ribs, boneless, separable lean only, trimmed to 0" fat, all grades, raw	0.013
+23079	Beef, chuck eye steak, boneless, separable lean only, trimmed to 0" fat, select, raw	0.013
+23085	Beef, chuck, mock tender steak, boneless, separable lean only, trimmed to 0" fat, select, cooked, braised	0.013
+23091	Beef, chuck for stew, separable lean and fat, select, cooked, braised	0.013
+23338	Beef, loin, tenderloin roast, boneless, separable lean and fat, trimmed to 0" fat, select, raw	0.013
+23342	Beef, loin, tenderloin steak, boneless, separable lean and fat, trimmed to 0" fat, all grades, raw	0.013
+23377	Beef, loin, tenderloin roast, separable lean only, boneless, trimmed to 0" fat, select, cooked, roasted	0.013
+23392	Beef, loin, top loin steak, boneless, lip-on, separable lean only, trimmed to 1/8" fat, choice, cooked, grilled	0.013
+23554	Beef, shoulder steak, boneless, separable lean and fat, trimmed to 0" fat, all grades, cooked, grilled	0.013
+28337	Bread, gluten-free, white, made with rice flour, corn starch, and/or tapioca	0.013
+2020	Spices, garlic powder	0.012
+5028	Chicken, liver, all classes, cooked, simmered	0.012
+5661	Chicken, liver, all classes, cooked, pan-fried	0.012
+10130	Canadian bacon, unprepared	0.012
+10875	Pork, cured, ham with natural juices, slice, bone-in, separable lean only, heated, pan-broil	0.012
+10893	Pork, cured, ham with natural juices, spiral slice, boneless, separable lean only, unheated	0.012
+10943	Pork, fresh, loin, tenderloin, separable lean only, with added solution, cooked, roasted	0.012
+10958	Pork, Shoulder breast, boneless, separable lean and fat, raw	0.012
+11578	Vegetable juice cocktail, canned	0.012
+11585	Vegetable juice cocktail, low sodium, canned	0.012
+13235	Beef, short loin, t-bone steak, bone-in, separable lean only, trimmed to 1/8" fat, choice, raw	0.012
+13322	Beef, variety meats and by-products, heart, cooked, simmered	0.012
+13361	Beef, composite of trimmed retail cuts, separable lean and fat, trimmed to 0" fat, all grades, cooked	0.012
+13362	Beef, composite of trimmed retail cuts, separable lean and fat, trimmed to 0" fat, choice, cooked	0.012
+13450	Beef, loin, top loin steak, boneless, lip off, separable lean only, trimmed to 0" fat, select, cooked, grilled	0.012
+13469	Beef, short loin, porterhouse steak, separable lean only, trimmed to 1/8" fat, select, cooked, grilled	0.012
+13797	Beef, composite of trimmed retail cuts, separable lean and fat, trimmed to 1/8" fat, choice, raw	0.012
+13823	Beef, chuck eye roast, boneless, America's Beef Roast, separable lean only, trimmed to 0" fat, select, cooked, roasted	0.012
+13943	Beef, shoulder steak, boneless, separable lean only, trimmed to 0" fat, choice, cooked, grilled	0.012
+22900	Ravioli, meat-filled, with tomato sauce or meat sauce, canned	0.012
+22914	Pasta with tomato sauce, no meat, canned	0.012
+23047	Beef, round, knuckle, tip center, steak, separable lean and fat, trimmed to 0" fat, select, raw	0.012
+23048	Beef, round, knuckle, tip center, steak, separable lean and fat, trimmed to 0" fat, select, cooked, grilled	0.012
+23062	Beef, round, knuckle, tip center, steak, separable lean and fat, trimmed to 0" fat, all grades, cooked, grilled	0.012
+23084	Beef, chuck, mock tender steak, boneless, separable lean only, trimmed to 0" fat, choice, cooked, braised	0.012
+23086	Beef, chuck, mock tender steak, boneless, separable lean only, trimmed to 0" fat, all grades, cooked, braised	0.012
+23132	Beef, shoulder pot roast, boneless, separable lean and fat, trimmed to 0" fat, choice, cooked, braised	0.012
+23215	Beef, plate steak, boneless, inside skirt, separable lean and fat, trimmed to 0" fat, choice, cooked, grilled	0.012
+23341	Beef, loin, top loin steak, boneless, lip off, separable lean and fat, trimmed to 0" fat, select, raw	0.012
+23344	Beef, loin, tenderloin steak, boneless, separable lean and fat, trimmed to 0" fat, select, raw	0.012
+23366	Beef, loin, tenderloin roast, boneless, separable lean only, trimmed to 0" fat, all grades, raw	0.012
+23367	Beef, loin, tenderloin roast, boneless, separable lean only, trimmed to 0" fat, choice, raw	0.012
+23372	Beef, loin, tenderloin steak, boneless, separable lean only, trimmed to 0" fat, all grades, raw	0.012
+23373	Beef, loin, tenderloin steak, boneless, separable lean only, trimmed to 0" fat, choice, raw	0.012
+23394	Beef, loin, top loin steak, boneless, lip-on, separable lean only, trimmed to 1/8" fat, all grades, cooked, grilled	0.012
+23536	Beef, shoulder steak, boneless, separable lean and fat, trimmed to 0" fat, select, cooked, grilled	0.012
+1284	Yogurt, Greek, strawberry, lowfat	0.011
+2010	Spices, cinnamon, ground	0.011
+5314	Chicken, broilers or fryers, breast, skinless, boneless, meat only, with added solution, raw	0.011
+5709	Turkey, retail parts, breast, meat only, with added solution, cooked, roasted	0.011
+8578	Cereals, CREAM OF WHEAT, 1 minute cook time, cooked with water, microwaved, without salt	0.011
+10066	Pork, fresh, loin, top loin (chops), boneless, separable lean only, raw	0.011
+10865	Pork, cured, ham -- water added, rump, bone-in, separable lean only, heated, roasted	0.011
+10886	Pork, cured, ham -- water added, slice, bone-in, separable lean only, unheated	0.011
+10961	Pork, Shoulder petite tender, boneless, separable lean and fat, raw	0.011
+10998	Canadian bacon, cooked, pan-fried	0.011
+13321	Beef, variety meats and by-products, heart, raw	0.011
+13324	Beef, variety meats and by-products, kidneys, cooked, simmered	0.011
+13464	Beef, short loin, porterhouse steak, separable lean only, trimmed to 1/8" fat, all grades, raw	0.011
+13795	Beef, composite of trimmed retail cuts, separable lean and fat, trimmed to 1/8" fat, all grades, raw	0.011
+13889	Beef, shoulder top blade steak, boneless, separable lean and fat, trimmed to 0" fat, choice, raw	0.011
+15036	Fish, halibut, Atlantic and Pacific, raw	0.011
+15070	Fish, rockfish, Pacific, mixed species, raw	0.011
+20037	Rice, brown, long-grain, cooked	0.011
+23035	Beef, chuck, shoulder clod, shoulder tender, medallion, separable lean and fat, trimmed to 0" fat, choice, cooked, grilled	0.011
+23036	Beef, chuck, shoulder clod, shoulder tender, medallion, separable lean and fat, trimmed to 0" fat, select, raw	0.011
+23039	Beef, chuck, shoulder clod, shoulder top and center steaks, separable lean and fat, trimmed to 0" fat, select, raw	0.011
+23045	Beef, round, knuckle, tip center, steak, separable lean and fat, trimmed to 0" fat, choice, raw	0.011
+23046	Beef, round, knuckle, tip center, steak, separable lean and fat, trimmed to 0" fat, choice, cooked, grilled	0.011
+23061	Beef, round, knuckle, tip center, steak, separable lean and fat, trimmed to 0" fat, all grades, raw	0.011
+23073	Beef, chuck eye Country-Style ribs, boneless, separable lean only, trimmed to 0" fat, select, raw	0.011
+23131	Beef, shoulder pot roast, boneless, separable lean and fat, trimmed to 0" fat, all grades, cooked, braised	0.011
+23214	Beef, plate steak, boneless, inside skirt, separable lean and fat, trimmed to 0" fat, all grades, cooked, grilled	0.011
+23311	Beef, Australian, imported, Wagyu, loin, top loin steak/roast, boneless, separable lean only, Aust. marble score 4/5, raw	0.011
+23368	Beef, loin, tenderloin roast, boneless, separable lean only, trimmed to 0" fat, select, raw	0.011
+23374	Beef, loin, tenderloin steak, boneless, separable lean only, trimmed to 0" fat, select, raw	0.011
+23393	Beef, loin, top loin steak, boneless, lip-on, separable lean only, trimmed to 1/8" fat, select, cooked, grilled	0.011
+23494	Beef, composite of trimmed retail cuts, separable lean and fat, trimmed to 0" fat, choice, raw	0.011
+23516	Beef, shoulder steak, boneless, separable lean only, trimmed to 0" fat, all grades, cooked, grilled	0.011
+6024	Soup, chicken and vegetable, canned, ready-to-serve	0.01
+8575	Cereals, CREAM OF WHEAT, 2 1/2 minute cook time, cooked with water, microwaved, without salt	0.01
+10866	Pork, cured, ham -- water added, rump, bone-in, separable lean only, unheated	0.01
+10891	Pork, cured, ham with natural juices, shank, bone-in, separable lean only, unheated	0.01
+13363	Beef, composite of trimmed retail cuts, separable lean and fat, trimmed to 0" fat, select, cooked	0.01
+13366	Beef, composite of trimmed retail cuts, separable lean only, trimmed to 0" fat, select, cooked	0.01
+13478	Beef, short loin, t-bone steak, bone-in, separable lean only, trimmed to 1/8" fat, all grades, raw	0.01
+13500	Beef, shoulder top blade steak, boneless, separable lean only, trimmed to 0" fat, all grades, cooked, grilled	0.01
+13863	Beef, shoulder top blade steak, boneless, separable lean and fat, trimmed to 0" fat, all grades, raw	0.01
+13903	Beef, shoulder top blade steak, boneless, separable lean and fat, trimmed to 0" fat, select, raw	0.01
+13972	Beef, chuck eye roast, boneless, America's Beef Roast, separable lean only, trimmed to 0" fat, all grades, raw	0.01
+13973	Beef, chuck eye roast, boneless, America's Beef Roast, separable lean only, trimmed to 0" fat, choice, raw	0.01
+13983	Beef, brisket, flat half, boneless, separable lean and fat, trimmed to 0" fat, select, raw	0.01
+17376	Lamb, New Zealand, imported, testes, cooked, soaked and fried	0.01
+18963	Garlic bread, frozen	0.01
+23034	Beef, chuck, shoulder clod, shoulder tender, medallion, separable lean and fat, trimmed to 0" fat, choice, raw	0.01
+23053	Beef, chuck, shoulder clod, shoulder tender, medallion, separable lean and fat, trimmed to 0" fat, all grades, raw	0.01
+23081	Beef, shoulder pot roast, boneless, separable lean only, trimmed to 0" fat, choice, cooked, braised	0.01
+23133	Beef, shoulder pot roast, boneless, separable lean and fat, trimmed to 0" fat, select, cooked, braised	0.01
+23163	Beef, plate steak, boneless, inside skirt, separable lean only, trimmed to 0" fat, all grades, raw	0.01
+23165	Beef, plate steak, boneless, inside skirt, separable lean only, trimmed to 0" fat, choice, raw	0.01
+23352	Beef, round, eye of round steak, boneless, separable lean and fat, trimmed to 0" fat, choice, cooked, grilled	0.01
+23482	Beef, composite of trimmed retail cuts, separable lean and fat, trimmed to 0" fat, all grades, raw	0.01
+31035	Vegetable juice, BOLTHOUSE FARMS, DAILY GREENS	0.01
+5022	Chicken, broilers or fryers, giblets, cooked, simmered	0.009
+5023	Chicken, gizzard, all classes, raw	0.009
+5185	Turkey from whole, light meat, raw	0.009
+5219	Turkey, breast, from whole bird, meat only, raw	0.009
+5227	Turkey, wing, from whole bird, meat only, raw	0.009
+5738	Turkey, drumstick, from whole bird, meat only, raw	0.009
+6415	CAMPBELL'S CHUNKY Soups, Hearty Beef Barley Soup	0.009
+8577	Cereals, CREAM OF WHEAT, 1 minute cook time, cooked with water, stove-top, without salt	0.009
+9152	Lemon juice, raw	0.009
+10948	Pork, fresh, loin, top loin (chops), boneless, separable lean only, with added solution, raw	0.009
+10962	Pork, Leg sirloin tip roast, boneless, separable lean and fat, cooked, braised	0.009
+13365	Beef, composite of trimmed retail cuts, separable lean only, trimmed to 0" fat, choice, cooked	0.009
+13415	Beef, round, eye of round roast, boneless, separable lean and fat, trimmed to 0" fat, all grades, cooked, roasted	0.009
+13416	Beef, round, eye of round roast, boneless, separable lean and fat, trimmed to 0" fat, choice, cooked, roasted	0.009
+13523	Beef, shoulder top blade steak, boneless, separable lean only, trimmed to 0" fat, select, raw	0.009
+13799	Beef, composite of trimmed retail cuts, separable lean and fat, trimmed to 1/8" fat, select, raw	0.009
+13904	Beef, brisket, flat half, boneless, separable lean and fat, trimmed to 0" fat, all grades, raw	0.009
+13946	Beef, shoulder steak, boneless, separable lean only, trimmed to 0" fat, select, cooked, grilled	0.009
+13975	Beef, brisket, flat half, boneless, separable lean and fat, trimmed to 0" fat, choice, raw	0.009
+15140	Crustaceans, crab, blue, cooked, moist heat	0.009
+23032	Beef, round, knuckle, tip side, steak, separable lean and fat , trimmed to 0" fat, select, raw	0.009
+23055	Beef, round, knuckle, tip side, steak, separable lean and fat, trimmed to 0" fat, all grades, raw	0.009
+23065	Beef, chuck, shoulder clod, shoulder tender, medallion, separable lean and fat, trimmed to 0" fat, select, cooked, grilled	0.009
+23150	Beef, rib eye steak/roast, bone-in, lip-on, separable lean only, trimmed to 1/8" fat, all grades, raw	0.009
+23151	Beef, rib eye steak/roast, bone-in, lip-on, separable lean only, trimmed to 1/8" fat, choice, raw	0.009
+23164	Beef, plate steak, boneless, inside skirt, separable lean only, trimmed to 0" fat, choice, cooked, grilled	0.009
+23167	Beef, plate steak, boneless, inside skirt, separable lean only, trimmed to 0" fat, select, raw	0.009
+23216	Beef, plate steak, boneless, inside skirt, separable lean and fat, trimmed to 0" fat, select, cooked, grilled	0.009
+23351	Beef, round, eye of round steak, boneless, separable lean and fat, trimmed to 0" fat, all grades, cooked, grilled	0.009
+23369	Beef, loin, top loin steak, boneless, lip off, separable lean only, trimmed to 0" fat, all grades, raw	0.009
+23370	Beef, loin, top loin steak, boneless, lip off, separable lean only, trimmed to 0" fat, choice, raw	0.009
+23385	Beef, loin, top loin steak, boneless, lip-on, separable lean only, trimmed to 1/8" fat, choice, raw	0.009
+23386	Beef, loin, top loin steak, boneless, lip-on, separable lean only, trimmed to 1/8" fat, all grades, raw	0.009
+23491	Beef composite, separable lean only, trimmed to 1/8" fat, choice, cooked	0.009
+23497	Beef, composite of trimmed retail cuts, separable lean and fat, trimmed to 0" fat, select, raw	0.009
+27055	Sauce, barbecue, SWEET BABY RAY'S, original	0.009
+35232	Wocas, dried seeds, Oregon, yellow pond lily (Klamath)	0.009
+1079	Milk, reduced fat, fluid, 2% milkfat, with added vitamin A and vitamin D	0.008
+1174	Milk, reduced fat, fluid, 2% milkfat, without added vitamin A and vitamin D	0.008
+5363	Ruffed Grouse, breast meat, skinless, raw	0.008
+10060	Pork, fresh, loin, tenderloin, separable lean only, raw	0.008
+10214	Pork, fresh, loin, sirloin (chops or roasts), boneless, separable lean only, raw	0.008
+10892	Pork, cured, ham with natural juices, slice, bone-in, separable lean only, unheated	0.008
+13417	Beef, round, eye of round roast, boneless, separable lean and fat, trimmed to 0" fat, select, cooked, roasted	0.008
+13418	Beef, round, eye of round roast, boneless, separable lean only, trimmed to 0" fat, all grades, cooked, roasted	0.008
+13419	Beef, round, eye of round roast, boneless, separable lean only, trimmed to 0" fat, choice, cooked, roasted	0.008
+13468	Beef, short loin, porterhouse steak, separable lean only, trimmed to 1/8" fat, select, raw	0.008
+13482	Beef, short loin, t-bone steak, bone-in, separable lean only, trimmed to 1/8" fat, select, raw	0.008
+13501	Beef, shoulder top blade steak, boneless, separable lean only, trimmed to 0" fat, choice, cooked, grilled	0.008
+13519	Beef, shoulder top blade steak, boneless, separable lean only, trimmed to 0" fat, all grades, raw	0.008
+13520	Beef, shoulder top blade steak, boneless, separable lean only, trimmed to 0" fat, choice, raw	0.008
+15138	Crustaceans, crab, alaska king, imitation, made from surimi	0.008
+19193	Puddings, rice, ready-to-eat	0.008
+20651	Rice, brown, parboiled, cooked, UNCLE BENS	0.008
+21418	POPEYES, Spicy Chicken Strips, analyzed 2006	0.008
+23030	Beef, round, knuckle, tip side, steak, separable lean and fat, trimmed to 0" fat, choice, raw	0.008
+23051	Beef, round, outside round, bottom round, steak, separable lean and fat, trimmed to 0" fat, select, raw	0.008
+23083	Beef, shoulder pot roast, boneless, separable lean only, trimmed to 0" fat, all grades, cooked, braised	0.008
+23152	Beef, rib eye steak/roast, bone-in, lip-on, separable lean only, trimmed to 1/8" fat, select, raw	0.008
+23162	Beef, plate steak, boneless, inside skirt, separable lean only, trimmed to 0" fat, all grades, cooked, grilled	0.008
+23349	Beef, round, top round roast, boneless, separable lean and fat, trimmed to 0" fat, choice, cooked, roasted	0.008
+23353	Beef, round, eye of round steak, boneless, separable lean and fat, trimmed to 0" fat, select, cooked, grilled	0.008
+23381	Beef, round, eye of round steak, boneless, separable lean only, trimmed to 0" fat, all grades, cooked, grilled	0.008
+23382	Beef, round, eye of round steak, boneless, separable lean only, trimmed to 0" fat, choice, cooked, grilled	0.008
+23384	Beef, loin, top loin steak, boneless, lip-on, separable lean only, trimmed to 1/8" fat, select, raw	0.008
+23484	Beef, composite of trimmed retail cuts, separable lean only, trimmed to 1/8" fat, all grades, cooked	0.008
+23640	Beef, variety meats and by-products, tripe, cooked, simmered	0.008
+1015	Cheese, cottage, lowfat, 2% milkfat	0.007
+1287	Yogurt, Greek, plain, lowfat	0.007
+6618	Sauce, peanut, made from coconut, water, sugar, peanuts	0.007
+8105	Cereals, farina, enriched, assorted brands including CREAM OF WHEAT, quick (1-3 minutes), cooked with water, without salt	0.007
+8113	Cereals, farina, enriched, cooked with water, without salt	0.007
+8173	Cereals, farina, enriched, cooked with water, with salt	0.007
+10094	Pork, fresh, loin, center loin (chops), boneless, separable lean only, raw	0.007
+10211	Pork, fresh, loin, sirloin (chops), boneless, separable lean and fat, cooked, braised	0.007
+10944	Pork, fresh, enhanced, loin, tenderloin, separable lean only, raw	0.007
+13323	Beef, variety meats and by-products, kidneys, raw	0.007
+13325	Beef, variety meats and by-products, liver, raw	0.007
+13341	Beef, variety meats and by-products, tripe, raw	0.007
+13959	Beef, round, top round steak, boneless, separable lean and fat, trimmed to 0" fat, all grades, cooked, grilled	0.007
+13968	Beef, round, top round steak, boneless, separable lean and fat, trimmed to 0" fat, choice, cooked, grilled	0.007
+23033	Beef, round, knuckle, tip side, steak, separable lean and fat, trimmed to 0" fat, select, cooked, grilled	0.007
+23052	Beef, round, outside round, bottom round, steak, separable lean and fat, trimmed to 0" fat, select, cooked, grilled	0.007
+23082	Beef, shoulder pot roast, boneless, separable lean only, trimmed to 0" fat, select, cooked, braised	0.007
+23154	Beef, rib eye steak/roast, boneless, lip-on, separable lean only, trimmed to 1/8" fat, choice, raw	0.007
+23166	Beef, plate steak, boneless, inside skirt, separable lean only, trimmed to 0" fat, select, cooked, grilled	0.007
+23177	Beef, rib eye steak, boneless, lip off, separable lean only, trimmed to 0" fat, choice, raw	0.007
+23330	Beef, round, eye of round roast, boneless, separable lean and fat, trimmed to 0" fat, all grades, raw	0.007
+23331	Beef, round, eye of round roast, boneless, separable lean and fat, trimmed to 0" fat, choice, raw	0.007
+23333	Beef, round, eye of round steak, boneless, separable lean and fat, trimmed to 0" fat, all grades, raw	0.007
+23334	Beef, round, eye of round steak, boneless separable lean and fat, trimmed to 0" fat, choice, raw	0.007
+23361	Beef, round, eye of round roast, boneless, separable lean only, trimmed to 0" fat, choice, raw	0.007
+23364	Beef, round, eye of round steak, boneless, separable lean only, trimmed to 0" fat, choice, raw	0.007
+23371	Beef, loin, top loin steak, boneless, lip off, separable lean only, trimmed to 0" fat, select, raw	0.007
+23383	Beef, round, eye of round steak, boneless, separable lean only, trimmed to 0" fat, select, cooked, grilled	0.007
+23495	Beef, composite of trimmed retail cuts, separable lean only, trimmed to 0" fat, choice, raw	0.007
+27000	Soup, egg drop, Chinese restaurant	0.007
+1104	Milk, chocolate, lowfat, with added vitamin A and vitamin D	0.006
+1186	Cheese, cream, fat free	0.006
+5027	Chicken, liver, all classes, raw	0.006
+8574	Cereals, CREAM OF WHEAT, 2 1/2 minute cook time, cooked with water, stove-top, without salt	0.006
+9524	Lemon juice from concentrate, bottled, REAL LEMON	0.006
+10876	Pork, cured, ham with natural juices, spiral slice, meat only, boneless, separable lean only, heated, roasted	0.006
+10885	Pork, cured, ham -- water added, shank, bone-in, separable lean only, unheated	0.006
+10963	Pork, Leg sirloin tip roast, boneless, separable lean and fat, raw	0.006
+12063	Nuts, almonds, dry roasted, without salt added	0.006
+12563	Nuts, almonds, dry roasted, with salt added	0.006
+13420	Beef, round, eye of round roast, boneless, separable lean only, trimmed to 0" fat, select, cooked, roasted	0.006
+13491	Beef, round, top round steak, boneless, separable lean only, trimmed to 0" fat, all grades, cooked, grilled	0.006
+13492	Beef, round, top round steak, boneless, separable lean only, trimmed to 0" fat, choice, cooked, grilled	0.006
+15149	Crustaceans, shrimp, mixed species, raw (may have been previously frozen)	0.006
+21417	POPEYES, Mild Chicken Strips, analyzed 2006	0.006
+23056	Beef, round, knuckle, tip side, steak, separable lean and fat, trimmed to 0" fat, all grades, cooked, grilled	0.006
+23064	Beef, round, outside round, bottom round, steak, separable lean and fat, trimmed to 0" fat, all grades, cooked, grilled	0.006
+23153	Beef, rib eye steak/roast, boneless, lip-on, separable lean only, trimmed to 1/8" fat, all grades, raw	0.006
+23175	Beef, rib eye steak, boneless, lip off, separable lean only, trimmed to 0" fat, all grades, raw	0.006
+23325	Beef, round, top round steak, boneless, separable lean and fat, trimmed to 0" fat, choice, raw	0.006
+23328	Beef, round, top round roast, boneless, separable lean and fat, trimmed to 0" fat, choice, raw	0.006
+23332	Beef, round, eye of round roast, boneless, separable lean and fat, trimmed to 0" fat, select, raw	0.006
+23335	Beef, round, eye of round steak, boneless, separable lean and fat, trimmed to 0" fat, select, raw	0.006
+23348	Beef, round, top round roast, boneless, separable lean and fat, trimmed to 0" fat, all grades, cooked, roasted	0.006
+23360	Beef, round, eye of round roast, boneless, separable lean only, trimmed to 0" fat, all grades, raw	0.006
+23363	Beef, round, eye of round steak, boneless, separable lean only, trimmed to 0" fat, all grades, raw	0.006
+23379	Beef, round, top round roast, boneless, separable lean only, trimmed to 0" fat, choice, cooked, roasted	0.006
+23485	Beef, composite of trimmed retail cuts, separable lean only, trimmed to 0" fat, all grades, raw	0.006
+23498	Beef, composite of trimmed retail cuts, separable lean only, trimmed to 1/8" fat, select, cooked	0.006
+35235	Wocas, tuber, cooked, Oregon, yellow pond lily (Klamath)	0.006
+5167	Turkey, whole, meat only, raw	0.005
+11540	Tomato juice, canned, with salt added	0.005
+11886	Tomato juice, canned, without salt added	0.005
+13969	Beef, round, top round steak, boneless, separable lean and fat, trimmed to 0" fat, select, cooked, grilled	0.005
+14632	Beverages, Meal supplement drink, canned, peanut flavor	0.005
+23031	Beef, round, knuckle, tip side, steak, separable lean and fat, trimmed to 0" fat, choice, cooked, grilled	0.005
+23050	Beef, round, outside round, bottom round, steak, separable lean and fat, trimmed to 0" fat, choice, cooked, grilled	0.005
+23095	Beef, chuck for stew, separable lean and fat, choice, raw	0.005
+23324	Beef, round, top round steak, boneless, separable lean and fat, trimmed to 0" fat, all grades, raw	0.005
+23327	Beef, round, top round roast, boneless, separable lean and fat, trimmed to 0" fat, all grades, raw	0.005
+23350	Beef, round, top round roast, boneless, separable lean and fat, trimmed to 0" fat, select, cooked, roasted	0.005
+23355	Beef, round, top round steak, boneless, separable lean only, trimmed to 0" fat, choice, raw	0.005
+23358	Beef, round, top round roast, boneless, separable lean only, trimmed to 0" fat, choice, raw	0.005
+23362	Beef, round, eye of round roast, boneless, separable lean only, trimmed to 0" fat, select, raw	0.005
+23365	Beef, round, eye of round steak, boneless, separable lean only, trimmed to 0" fat, select, raw	0.005
+23378	Beef, round, top round roast, boneless, separable lean only, trimmed to 0" fat, all grades, cooked, roasted	0.005
+23496	Beef, composite of trimmed retail cuts, separable lean only, trimmed to 0" fat, select, raw	0.005
+31033	Ginger root, pickled, canned, with artificial sweetener	0.005
+1082	Milk, lowfat, fluid, 1% milkfat, with added vitamin A and vitamin D	0.004
+1175	Milk, fluid, 1% fat, without added vitamin A and vitamin D	0.004
+5024	Chicken, gizzard, all classes, cooked, simmered	0.004
+13294	Beef, chuck, under blade pot roast or steak, boneless, separable lean only, trimmed to 0" fat, choice, raw	0.004
+13493	Beef, round, top round steak, boneless, separable lean only, trimmed to 0" fat, select, cooked, grilled	0.004
+15152	Crustaceans, shrimp, mixed species, canned	0.004
+23057	Beef, chuck, shoulder clod, shoulder top and center steaks, separable lean and fat, trimmed to 0" fat, all grades, raw	0.004
+23093	Beef, chuck for stew, separable lean and fat, all grades, raw	0.004
+23326	Beef, round, top round steak, boneless, separable lean and fat, trimmed to 0" fat, select, raw	0.004
+23329	Beef, round, top round roast, boneless, separable lean and fat, trimmed to 0" fat, select, raw	0.004
+23354	Beef, round, top round steak, boneless, separable lean only, trimmed to 0" fat, all grades, raw	0.004
+23357	Beef, round, top round roast, boneless, separable lean only, trimmed to 0" fat, all grades, raw	0.004
+23380	Beef, round, top round roast, boneless, separable lean only, trimmed to 0" fat, select, cooked, roasted	0.004
+23490	Beef, composite of trimmed retail cuts, separable lean only, trimmed to 1/8" fat, choice, raw	0.004
+27002	Soup, wonton, Chinese restaurant	0.004
+1285	Yogurt, Greek, strawberry, nonfat	0.003
+2043	Spices, turmeric, ground	0.003
+6985	Gravy, HEINZ Home Style, savory beef	0.003
+12061	Nuts, almonds	0.003
+15073	Fish, roughy, orange, raw	0.003
+15172	Mollusks, scallop, mixed species, raw	0.003
+19871	Frozen novelties, No Sugar Added, FUDGSICLE pops	0.003
+23000	Beef, shoulder pot roast or steak, boneless, separable lean and fat, trimmed to 0" fat, all grades, raw	0.003
+23063	Beef, round, outside round, bottom round, steak, separable lean and fat, trimmed to 0" fat, all grades, raw	0.003
+23094	Beef, chuck for stew, separable lean and fat, select, raw	0.003
+23111	Beef, shoulder pot roast or steak, boneless, separable lean and fat, trimmed to 0" fat, choice, raw	0.003
+23155	Beef, rib eye steak/roast, boneless, lip-on, separable lean only, trimmed to 1/8" fat, select, raw	0.003
+23179	Beef, rib eye steak, boneless, lip off, separable lean only, trimmed to 0" fat, select, raw	0.003
+23356	Beef, round, top round steak, boneless, separable lean only, trimmed to 0" fat, select, raw	0.003
+23359	Beef, round, top round roast, boneless, separable lean only, trimmed to 0" fat, select, raw	0.003
+23483	Beef, composite of trimmed retail cuts, separable lean only, trimmed to 1/8" fat, all grades, raw	0.003
+1281	Yogurt, Greek, nonfat, strawberry, CHOBANI	0.002
+13293	Beef, chuck, under blade pot roast or steak, boneless, separable lean only, trimmed to 0" fat, all grades, raw	0.002
+15033	Fish, haddock, raw	0.002
+15121	Fish, tuna, light, canned in water, drained solids	0.002
+15127	Fish, tuna, fresh, yellowfin, raw	0.002
+15270	Crustaceans, shrimp, raw (not previously frozen)	0.002
+17377	Lamb, New Zealand, imported, testes, raw	0.002
+19183	Puddings, chocolate, ready-to-eat	0.002
+23112	Beef, shoulder pot roast or steak, boneless, separable lean and fat, trimmed to 0" fat, select, raw	0.002
+23122	Beef, chuck, mock tender steak, boneless, separable lean and fat, trimmed to 0" fat, all grades, raw	0.002
+23123	Beef, chuck, mock tender steak, boneless, separable lean and fat, trimmed to 0" fat, choice, raw	0.002
+23124	Beef, chuck, mock tender steak, boneless, separable lean and fat, trimmed to 0" fat, select, raw	0.002
+23499	Beef, composite of trimmed retail cuts, separable lean only, trimmed to 1/8" fat, select, raw	0.002
+1256	Yogurt, Greek, plain, nonfat	0.001
+1275	Yogurt, Greek, nonfat, vanilla, CHOBANI	0.001
+1280	Yogurt, Greek, nonfat, strawberry, DANNON OIKOS	0.001
+1286	Yogurt, Greek, vanilla, nonfat	0.001
+13647	Beef, shoulder pot roast or steak, boneless, separable lean only, trimmed to 0" fat, all grades, raw	0.001
+13648	Beef, shoulder pot roast or steak, boneless, separable lean only, trimmed to 0" fat, choice, raw	0.001
+15019	Fish, cod, Pacific, raw (may have been previously frozen)	0.001
+15066	Fish, pollock, Alaska, raw (may have been previously frozen)	0.001
+15271	Crustaceans, shrimp, cooked (not previously frozen)	0.001
+18289	Pancakes, plain, dry mix, complete (includes buttermilk)	0.001
+23087	Beef, chuck, mock tender steak, boneless, separable lean only, trimmed to 0" fat, choice, raw	0.001
+23089	Beef, chuck, mock tender steak, boneless, separable lean only, trimmed to 0" fat, all grades, raw	0.001
+1103	Milk, chocolate, fluid, commercial, reduced fat, with added vitamin A and vitamin D	0
+1172	Egg, white, raw, frozen, pasteurized	0
+1202	Milk, chocolate, fluid, commercial, reduced fat, with added calcium	0
+1258	Egg, white, dried, stabilized, glucose reduced	0
+1278	Yogurt, Greek, nonfat, vanilla, DANNON OIKOS	0
+4646	Oil, industrial, coconut, principal uses candy coatings, oil sprays, roasting nuts	0
+4664	Oil, industrial, soy (partially hydrogenated ), palm, principal uses icings and fillings	0
+4667	Shortening, industrial, soy (partially hydrogenated ) for baking and confections	0
+6188	Soup, beef broth, less/reduced sodium, ready to serve	0
+6611	Soup, SWANSON, beef broth, lower sodium	0
+6615	Soup, SWANSON, vegetable broth	0
+6700	Soup, vegetable broth, ready to serve	0
+6984	Soup, SWANSON Chicken Broth 99% Fat Free	0
+11240	Mushrooms, morel, raw	0
+11243	Mushrooms, portabella, grilled	0
+11265	Mushrooms, portabella, raw	0
+11939	Mushrooms, portabella, exposed to ultraviolet light, grilled	0
+11998	Mushrooms, portabella, exposed to ultraviolet light, raw	0
+12109	Nuts, coconut meat, dried (desiccated), sweetened, flaked, packaged	0
+13318	Beef, variety meats and by-products, brain, raw	0
+13320	Beef, variety meats and by-products, brain, cooked, simmered	0
+13349	Beef, chuck, under blade pot roast or steak, boneless, separable lean only, trimmed to 0" fat, select, raw	0
+13595	Beef, brisket, flat half, boneless separable lean only, trimmed to 0" fat, all grades, raw	0
+13596	Beef, brisket, flat half, boneless, separable lean only, trimmed to 0" fat, choice, raw	0
+13597	Beef, brisket, flat half, boneless, separable lean only, trimmed to 0" fat, select, raw	0
+13649	Beef, shoulder pot roast or steak, boneless, separable lean only, trimmed to 0" fat, select, raw	0
+14201	Beverages, coffee, brewed, prepared with tap water, decaffeinated	0
+14202	Beverages, coffee, brewed, espresso, restaurant-prepared, decaffeinated	0
+14209	Beverages, coffee, brewed, prepared with tap water	0
+14210	Beverages, coffee, brewed, espresso, restaurant-prepared	0
+15232	Fish, roughy, orange, cooked, dry heat	0
+15266	Fish, pollock, Alaska, raw (not previously frozen)	0
+15267	Fish, pollock, Alaska, cooked (not previously frozen)	0
+15268	Fish, cod, Pacific, raw (not previously frozen)	0
+15269	Fish, cod, Pacific, cooked (not previously frozen)	0
+17218	Veal, variety meats and by-products, thymus, raw	0
+17219	Veal, variety meats and by-products, thymus, cooked, braised	0
+17357	Lamb, New Zealand, imported, brains, cooked, soaked and fried	0
+17358	Lamb, New Zealand, imported, brains, raw	0
+19201	Puddings, vanilla, ready-to-eat	0
+19218	Puddings, tapioca, ready-to-eat	0
+19234	Puddings, tapioca, ready-to-eat, fat free	0
+21324	McDONALD'S, Baked Apple Pie	0
+21337	McDONALD'S, Peanuts (for Sundaes)	0
+23037	Beef, chuck, shoulder clod, shoulder top and center steaks, separable lean and fat, trimmed to 0" fat, choice, raw	0
+23049	Beef, round, outside round, bottom round, steak, separable lean and fat, trimmed to 0" fat, choice, raw	0
+23088	Beef, chuck, mock tender steak, boneless, separable lean only, trimmed to 0" fat, select, raw	0
+36023	APPLEBEE'S, chicken tenders platter	0

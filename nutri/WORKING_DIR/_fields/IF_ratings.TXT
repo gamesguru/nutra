@@ -1,0 +1,209 @@
+Food name	Serving	Weight(g)	IF rating (Per Weight)
+Sablefish, baked	3 ounces	85	703
+Herring, Atlantic, pickled	3 ounces	85	697
+Salmon, sockeye, canned, drained	3 ounces	85	528
+Salmon, coho, wild, baked	3 ounces	85	450
+Ginger root, raw	1 Tbsp	6	387
+Salmon, Atlantic, wild, raw	3 ounces	85	386
+Sea bass, baked	3 ounces	85	348
+Acerola cherries	1/2 cup	49	347
+Tuna, white, in water, drained	3 ounces	85	346
+Turmeric	1/2 Tsp	1.5	338
+Onions, raw	1/2 cup	125	292
+Onions, cooked	1/2 cup	105	240
+Oysters, eastern, wild, raw	3 ounces	85	222
+Kale, cooked	1/2 cup	65	220
+Kale, raw	1 cup	67	215
+Garlic, raw	1 Tbsp	6	215
+Pumpkin, canned	1/2 cup	123	180
+Mustard greens, cooked	1/2 cup	70	174
+Carrots, cooked	1/2 cup	78	164
+Collards, cooked	1/2 cup	95	162
+Dandelion greens, raw	1 cup	55	154
+Squash, butternut, baked	1/2 cup	103	139
+Bass, fresh water, raw	3 ounces	85	139
+Beet greens, cooked	1/2 cup	72	138
+Tuna, white, in oil, drained	3 ounces	85	132
+Hazelnuts (filberts)	1/4 cup	33	125
+Tuna, light, in water, drained	3 ounces	85	123
+Carrots, raw	1/2 cup	60	122
+Chard, Swiss, cooked	1/2 cup	88	122
+Tuna, light, in oil, drained	3 ounces	85	111
+Carrots, baby, raw	1/2 cup	60	104
+Mahimahi, baked	3 ounces	85	101
+Almond butter	1/4 cup	64	100
+Shrimp, steamed	3 ounces	85	95
+Chard, Swiss, raw	1 cup	36	88
+Pumpkin, raw	1/2 cup	88	88
+Oil, canola	1 Tbsp	14	80
+Spinach raw	1 cup	30	75
+Oil, olive	1 Tbsp	14	74
+Tea seed oil	1 Tbsp	14	73
+Lettuce, romaine	1 cup	47	70
+Leeks, cooked	1/2 cup	52	68
+Oil, avocado	1 Tbsp	14	68
+Almonds, raw	1/4 cup	36	67
+Oil, almond	1 Tbsp	14	64
+Clams, raw	3 ounces	85	63
+Broccoli, cooked	1/2 cup	78	60
+Squash, winter, baked	1/2 cup	103	58
+Avocado, fresh	1/2 cup	75	57
+Cabbage, chinese, cooked	1/2 cup	85	57
+Pepper, yellow, raw	1/2 cup	75	52
+Pecans, raw	1/4 cup	25	46
+Cheerios	1 cup	28.35	45
+Lettuce, green leaf	1 cup	36	43
+Bolthouse Farms Smoothie, Green	8 ounces	237	43
+Pepper, red, raw	1/2 cup	46	42
+Broccoli raab, cooked	1/2 cup	33	41
+Brussels sprouts, cooked	1/2 cup	76	40
+Flaxseed, whole	1/4 cup	42	39
+Asparagus, cooked	1/2 cup	90	38
+Cantaloupe, fresh	1/2 cup	85	38
+Lettuce, bibb	1 cup	55	37
+Mixed nuts, oil-roasted, less salt	1/4 cup	35	37
+Lettuce, red leaf	1 cup	28.35	35
+Edamame, frozen	1/2 cup	77	32
+Cabbage, chinese, raw	1/2 cup	35	30
+Cashews, dry-roasted	1/4 cup	34	27
+Broccoli, raw	1/2 cup	44	26
+Pepper, green, raw	1/2 cup	75	24
+Cabbage, green, cooked	1/2 cup	75	23
+Bison, ribeye, broiled	3 ounces	85	21
+Peanut butter, crunchy	2 Tbsp	32	18
+Kiwi, fresh	1/2 cup	90	17
+Lemon juice, fresh	1/2 cup	121	17
+Rice milk	1 cup	246	17
+Mayonnaise, Sm. Balance Omega Plus Light	1 Tbsp	15	15
+Strawberries, fresh	1/2 cup	75	14
+Oil, flaxseed	1 Tbsp	14	13
+Arugula, raw	1 cup	20	12
+Cabbage, red, raw	1/2 cup	40	12
+Chives, raw	1 Tbsp	3	11
+Cabbage, green, raw	1/2 cup	40	10
+Grapefruit, red	1/2 cup	115	10
+Lemon, fresh, without peel	1/2 cup	106	10
+Lettuce, radicchio	1 cup	20	10
+Tomato, raw	1/2 cup	90	10
+Chia seeds	1 ounce	28.35	10
+Cauliflower, cooked	1/2 cup	62	9
+Cauliflower, raw	1/2 cup	53	9
+Peas, sugar snap, raw	1/2 cup	32	9
+Purslane, cooked	1/2 cup	58	8
+Beef, tenderloin, broiled	3 ounces	85	8
+Celery, raw	1/2 cup	50	7
+Lime juice, fresh	1/2 cup	121	7
+Olives, green	1 Tbsp	9	7
+Lettuce, iceberg	1 cup	60	6
+Mushrooms, brown	1/2 cup	80	6
+Orange, fresh	1/2 cup	90	6
+Peas, raw	1/2 cup	72	6
+Wheat bran	1/3 cup	19	6
+Blackberries, fresh	1/2 cup	72	4
+Basil, fresh	1 Tbsp	2.6	4
+Artichoke, cooked	1/2 cup	84	3
+Cabbage, red, cooked	1/2 cup	75	3
+Lime, fresh	1/2 cup	106	3
+Orange juice, fresh	1/2 cup	121	3
+Bison, ground, cooked	3 ounces	85	2
+Tea, brewed	8 ounces	237	2
+Alfalfa sprouts	1/2 cup	24	1
+Bean sprouts (mung)	1/2 cup	52	1
+Beans, green, cooked	1/2 cup	63	1
+Grapefruit, white	1/2 cup	115	1
+Mushrooms, portabella	1/2 cup	43	1
+Coffee, brewed	8 ounces	237	1
+Cucumber, raw	1/2 cup	52	0
+Squash, summer, cooked	1/2 cup	90	0
+Espresso	1 ounce	30	0
+Vinegar, cider	1 Tbsp	15	0
+Beets, raw	1/2 cup	68	-1
+Beef, ground, 70% lean, broiled	3 ounces	85	-1
+Beef, ground, 75% lean, broiled	3 ounces	85	-1
+Beef, ground, 80% lean, broiled	3 ounces	85	-2
+Grapefruit juice, fresh	1/2 cup	121	-3
+Honeydew, fresh	1/2 cup	85	-3
+Lard	1 Tbsp	13	-3
+Oil, peanut	1 Tbsp	14	-3
+Soyburger	3 ounces	85	-4
+Sucralose (Splenda)	1 Packet	1	-4
+Aspartame (Equal)	1 Packet	1	-5
+Cheese, parmesan, hard	1 ounce	28.35	-6
+Post 100% Bran	1/2 cup	42	-6
+Turkey, light meat, roasted, w/o skin	3 ounces	85	-7
+Cottage cheese, reduced fat (2%)	1/2 cup	113	-8
+Apple, with skin	1/2 cup	55	-9
+Chicken, thigh, BBQ	3 ounces	85	-9
+Fiber One	1/2 cup	30	-11
+Apple juice	1/2 cup	121	-12
+Nectarine, fresh	1/2 cup	72	-12
+Salsa	1/2 cup	130	-13
+Milk, fat free (skim)	1 cup	246	-14
+Applesauce, unsweetened	1/2 cup	122	-15
+Blueberries, fresh	1/2 cup	75	-15
+Lentils, dried, cooked	1 cup	198	-15
+Pork, tenderloin, roasted	3 ounces	85	-16
+Cheese, feta	1 ounce	28.35	-17
+Ginger ale	8 ounces	237	-18
+Chicken, breast, roasted	3 ounces	85	-19
+Cheese, cheddar	1 ounce	28.35	-20
+Butter, salted	1 Tbsp	14	-20
+Tofu, silken	1/2 cup	125	-21
+Oil, sesame	1 Tbsp	14	-21
+Tofu, firm	1/2 cup	126	-22
+Oil, walnut	1 Tbsp	14	-25
+Miso	2 Tbsp	34	-26
+Cola	8 ounces	237	-28
+Yogurt, Greek, plain, nonfat	1 cup	224	-30
+Dr. Pepper	8 ounces	237	-31
+Red Bull	8 ounces	237	-33
+Bread, multi-grain	1 ounce	28.35	-34
+Onion rings, frozen	1/2 cup	24	-37
+Soymilk, plain, light	1 cup	246	-37
+Banana, fresh	1/2 cup	75	-38
+Oil, soybean	1 Tbsp	14	-38
+Chicken, breast, fried	3 ounces	85	-40
+Corn, frozen	1/2 cup	82	-42
+Pork, ground, 96% lean, cooked	3 ounces	85	-43
+Oat bran, cooked	1 cup	219	-43
+Milk, whole	1 cup	246	-46
+Potato, baked	1/2 cup	78	-47
+Bread, pita, whole wheat	1 ounce	28.35	-47
+Tortilla, corn	1 ounce	28.35	-47
+Sunflower kernels, dry-roasted	1/4 cup	32	-48
+Bread, wheat	1 ounce	28.35	-48
+Apples, dried	1/4 cup	22	-49
+Pork, loin, center loin, braised	3 ounces	85	-50
+Oil, corn	1 Tbsp	14	-50
+French fries, frozen	1/2 cup	78	-51
+Pine nuts, dried	1/4 cup	35	-51
+Tortilla, flour	1 ounce	28.35	-51
+Bread, white	1 ounce	28.35	-54
+Apricots, dried	1/4 cup	32	-56
+Coconut, raw	1/4 cup	20	-56
+Milk, goat	1 cup	244	-57
+Yogurt, whole milk, plain	1 cup	226	-57
+Chicken, thigh, stewed	3 ounces	85	-59
+Egg, whole	2 ounces	56.7	-62
+Sunchips, multigrain	1 ounce	28.35	-63
+Pork, ground, 72% lean, cooked	3 ounces	85	-68
+Pumpkin seed kernels, dried	1/4 cup	32	-68
+Soybeans, dry roasted	1 cup	93	-72
+Agave nectar	1 Tbsp	21	-74
+Sugar, brown	1 Tbsp	15	-77
+Raisin Bran	1 cup	59	-87
+Whole wheat flour	1/3 cup	40	-89
+Popcorn, air-popped	1 ounce	28.35	-89
+Kamut, cooked	1 cup	172	-90
+Kashi GoLean	1 cup	52	-93
+Cranberries, dried, sweetened	1/4 cup	30	-98
+Couscous, cooked	1 cup	157	-98
+Plantains, fried	1/2 cup	85	-123
+Spaghetti, cooked	1 cup	140	-124
+Spelt, cooked	1 cup	194	-142
+White flour, all-purpose, bleached	1/3 cup	42	-142
+Rice, brown, long-grain, cooked	1 cup	195	-143
+Yogurt, low fat, fruit	1 cup	226	-145
+Millet, cooked	1 cup	174	-150
+Rice, white, long-grain, cooked	1 cup	158	-153
+Burger King double cheeseburger	1 sandwich	162	-171

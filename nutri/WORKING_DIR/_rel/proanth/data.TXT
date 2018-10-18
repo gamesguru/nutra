@@ -1,0 +1,6 @@
+Nutr_No	NutrDesc
+734	Proanthocyanidin_dimers
+735	Proanthocyanidin_trimers
+736	Proanthocyanidin_4-6mers
+737	Proanthocyanidin_7-10mers
+738	Proanthocyanidin_polymers_(>10mers)
