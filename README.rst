@@ -8,7 +8,7 @@ CLI backend.
 
 - Python 3.6.5 or later
 - Desktop (Win/mac/Linux)
-- *(Optional)* Android 5.0+ phone, USB, developer mode
+- *(Optional)* Android 5.0+ phone, USB, adb, developer mode
 
 Downloading Food Data
 =====================
@@ -24,7 +24,7 @@ Available resources
 ^^^^^^^^^^^^^^^^^^^
 Installing from Release
 """""""""""""""""""""""
-The PyPi release, which can be installed on Python >3.6.5 with `pip install nutri`, ships by default with:
+The PyPi release, which can be installed on Python >3.6.5 with :code:`pip install nutri`, ships by default with:
 
 1) The USDAstock database,
 2) Supplementary flavonoid database, and
@@ -32,7 +32,7 @@ The PyPi release, which can be installed on Python >3.6.5 with `pip install nutr
 
 No configuration is required in the release, but when adding your own or doing the process from scratch you will need to pair column names with known nutrient names in a "config.txt".
 
-The full database import process is explained with `nutri db --help`
+The full database import process is explained with :code:`nutri db --help`
 
 Downloading Resources
 """""""""""""""""""""
@@ -45,25 +45,25 @@ Curl for Windows requires it be put in the $PATH variable: https://curl.haxx.se/
 
 - Standard USDA database, 8790 foods
 
-    `curl -L -u dasheenster:jZEZMA9hmz97e9z8dqmf  https://api.bitbucket.org/2.0/repositories/dasheenster/nutri-utils/downloads/USDAstock.txt -o USDAstock.txt`
+    :code:`curl -L -u dasheenster:jZEZMA9hmz97e9z8dqmf  https://api.bitbucket.org/2.0/repositories/dasheenster/nutri-utils/downloads/USDAstock.txt -o USDAstock.txt`
 
 - Branded Foods Database. **LARGE 100MB+! PC ONLY**
     
-    `curl -L https://www.ars.usda.gov/ARSUserFiles/80400525/Data/BFPDB/BFPD_csv_07132018.zip -o BFPD_csv_07132018.zip`
+    :code:`curl -L https://www.ars.usda.gov/ARSUserFiles/80400525/Data/BFPDB/BFPD_csv_07132018.zip -o BFPD_csv_07132018.zip`
 
 **Supplementary USDA Extensions**
 
 - Flavonoid, Isoflavonoids, and Proanthocyanidins
     
-    `curl -L -u dasheenster:jZEZMA9hmz97e9z8dqmf  https://api.bitbucket.org/2.0/repositories/dasheenster/nutri-utils/downloads/USDA_ext_rel.zip -o USDA_ext_rel.zip`
+    :code:`curl -L -u dasheenster:jZEZMA9hmz97e9z8dqmf  https://api.bitbucket.org/2.0/repositories/dasheenster/nutri-utils/downloads/USDA_ext_rel.zip -o USDA_ext_rel.zip`
 
-**Fields**
+**Extra Fields**
 
-**NOTE:** We are trying to start a collection of fields and make our models more general. Please upload and reach us here @ https://gitter.im/nutritracker/nutri ... (these can consist in magazine cutouts, obscure articles, or other sources of unusual nutrient data)
+**Note:** We are trying to start a collection of fields and make our models more general. Please upload and reach us `here <https://gitter.im/nutritracker/nutri>`_  ... (these can consist in magazine cutouts, obscure articles, or other sources of unusual nutrient data)
 
-- Extra_fields.zip (IF, ORAC, GI, Omega-3, and anti-nutrient oxalic acid)
+- IF, ORAC, GI, Omega-3, and (anti-nutrient?) oxalic acid
 
-    `curl -L -u dasheenster:jZEZMA9hmz97e9z8dqmf  https://api.bitbucket.org/2.0/repositories/dasheenster/nutri-utils/downloads/Extra_fields.zip -o Extra_fields.zip`
+    :code:`curl -L -u dasheenster:jZEZMA9hmz97e9z8dqmf  https://api.bitbucket.org/2.0/repositories/dasheenster/nutri-utils/downloads/Extra_fields.zip -o Extra_fields.zip`
 
 
 Getting Set Up
@@ -77,30 +77,30 @@ The Android app may be more intuitive for people less familiar with computers, i
 Usage
 ^^^^^
 
-Run the `nutri` script to get a full description:
-
-TODO: *add full commands*
+Run the :code:`nutri` script to output usage.
 
 **Usage:** nutri <command> 
 
-*Commands:*
+*Commands:* 
+::
 
     **user**			create, edit and switch users
-
+    
     **db**				import, edit and verify databases
-
+    
     **field**			import, pair and manage fields
-
+    
     **recipe**			create, edit and view foods and recipes
-
+    
     **search**			search databases or recipes
-
+    
     **add**				add foods or items to daily log
-
+    
     **log**				show previous meals and summary
-
+    
     **sync**			sync android device
-
+    
     **contrib**			rank contribution
-
+    
     **--help | -h**		show help for a given command
+
