@@ -37,38 +37,42 @@ The full database import process is explained with :code:`nutri db --help`
 Downloading Resources
 """""""""""""""""""""
 
-You can manually download resources on mac/Linux.
+You can download resources from mac/Linux terminal.
 
-Curl for Windows requires it be put in the $PATH variable: https://curl.haxx.se/windows/
+`Curl for Windows <https://curl.haxx.se/windows/>`_ requires it be put in the $PATH variable.  Better directions for getting set up on Windows will be (eventually) posted `on youtube <https://www.youtube.com/user/gamesguru>`_.
+
+So Windows users can simply download with a web browser:
+
+https://bitbucket.org/dasheenster/nutri-utils/downloads/
 
 **Databases**
 
 - Standard USDA database, 8790 foods
 
-    :code:`curl -L -u dasheenster:jZEZMA9hmz97e9z8dqmf  https://api.bitbucket.org/2.0/repositories/dasheenster/nutri-utils/downloads/USDAstock.txt -o USDAstock.txt`
+    `curl -L https://api.bitbucket.org/2.0/repositories/dasheenster/nutri-utils/downloads/USDAstock.txt -o USDAstock.txt`
 
 - Branded Foods Database. **LARGE 100MB+! PC ONLY**
     
-    :code:`curl -L https://www.ars.usda.gov/ARSUserFiles/80400525/Data/BFPDB/BFPD_csv_07132018.zip -o BFPD_csv_07132018.zip`
+    `curl -L https://www.ars.usda.gov/ARSUserFiles/80400525/Data/BFPDB/BFPD_csv_07132018.zip -o BFPD_csv_07132018.zip`
 
 **Supplementary USDA Extensions**
 
 - Flavonoid, Isoflavonoids, and Proanthocyanidins
     
-    :code:`curl -L -u dasheenster:jZEZMA9hmz97e9z8dqmf  https://api.bitbucket.org/2.0/repositories/dasheenster/nutri-utils/downloads/USDA_ext_rel.zip -o USDA_ext_rel.zip`
+    `curl -L https://api.bitbucket.org/2.0/repositories/dasheenster/nutri-utils/downloads/USDA_ext_rel.zip -o USDA_ext_rel.zip`
 
 **Extra Fields**
 
-**Note:** We are trying to start a collection of fields and make our models more general. Please upload and reach us `here <https://gitter.im/nutritracker/nutri>`_  ... (these can consist in magazine cutouts, obscure articles, or other sources of unusual nutrient data)
+**Note:** We are trying to start a collection of fields and make our models more general. Please upload and get in touch at `gitter.im/nutritracker/nutri <https://gitter.im/nutritracker/nutri>`_  ... (these can consist in magazine cutouts, obscure articles, or other sources of nutrient data)
 
-- IF, ORAC, GI, Omega-3, and (anti-nutrient?) oxalic acid
+- `IF <https://inflammationfactor.com/if-rating-system/>`_, `ORAC <https://www.superfoodly.com/orac-values/>`_, GI, Omega-3, and (anti-nutrient?) oxalic acid
 
-    :code:`curl -L -u dasheenster:jZEZMA9hmz97e9z8dqmf  https://api.bitbucket.org/2.0/repositories/dasheenster/nutri-utils/downloads/Extra_fields.zip -o Extra_fields.zip`
+    `curl -L  https://api.bitbucket.org/2.0/repositories/dasheenster/nutri-utils/downloads/Extra_fields.zip -o Extra_fields.zip`
 
 
 Getting Set Up
 ==============
-You need to make a user first, then import DBs.  Then think about pairing fields and custom foods.  Or just use the stock database to start making recipes and tracking simple meals.
+You need to make a user first, then import DBs with  :code:`nutri db --help`.  After that you can pair fields and add custom foods.  Or just use the stock database to start making recipes and tracking simple meals.
 
 Eventually you can track more fields and metrics on a daily basis, include more on your log, get to know your habits, and benefit from automated suggestions.
 
@@ -79,28 +83,27 @@ Usage
 
 Run the :code:`nutri` script to output usage.
 
-**Usage:** nutri <command> 
+Usage: :code:`nutri <command>`
 
-*Commands:* 
+**Commands**
 ::
 
-    **user**			create, edit and switch users
+    user                    create, edit and switch users
     
-    **db**				import, edit and verify databases
+    db                      import, edit and verify databases
     
-    **field**			import, pair and manage fields
+    field                   import, pair and manage fields
     
-    **recipe**			create, edit and view foods and recipes
+    recipe                  create, edit and view foods and recipes
     
-    **search**			search databases or recipes
+    search                  search databases or recipes
     
-    **add**				add foods or items to daily log
+    add                     add foods or items to daily log
     
-    **log**				show previous meals and summary
+    log                     show previous meals and summary
     
-    **sync**			sync android device
+    sync                    sync android device
     
-    **contrib**			rank contribution
+    contrib                 rank contribution
     
-    **--help | -h**		show help for a given command
-
+    --help | -h             show help for a given command
