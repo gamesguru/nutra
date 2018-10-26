@@ -76,7 +76,15 @@ You need to make a user first, then import DBs with  :code:`nutri db --help`.  A
 
 Eventually you can track more fields and metrics on a daily basis, include more on your log, get to know your habits, and benefit from automated suggestions.
 
+Due to the localized nature of the program (i.e. it runs for your computer, on your computer) we are able to outperform some websites in searches.  We can update your search results AS YOU TYPE.  But for the same reason we also face limitations, such as not having a very large Barcode database, or community-driven input.  Mostly we add data to the stock set when someone submits an interesting sample, perhaps only 30 foods.
+
+Generating Log Reports
+^^^^^^^^^^^^^^^^^^^^^^
+With the :code:`log` function, you can get detailed information printed in porcelain, color, or chart form (percentages, macros, extendeds, lowest/highest score).  It's possible to filter by date range or nutrient type.  Eventually we will make a seperate analysis command, to analyse any ingredient, food, or recipe across the standard metrics.
+
 The Android app may be more intuitive for people less familiar with computers, it offers many of the same features and we are constantly working to improve that.
+
+Eventually someone can make a GUI interface for the computer that parses the porcelain output, and that may be easier to use.
 
 Usage
 ^^^^^
