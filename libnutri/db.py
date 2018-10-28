@@ -20,37 +20,6 @@ work_dir = os.path.dirname(os.path.realpath(__file__))
 os.chdir(work_dir)
 
 
-class RAWTABLE:
-    def __init__(self, file):
-        print(f'{Back.RED}Processing:{Style.RESET_ALL} {file}')
-        # TODO: exit if config.txt exists, or prompt to overwrite
-        with open(file, 'r') as f:
-            lst = f.readlines()
-        self.dir = os.path.dirname(file)
-        self.headers = lst[0].split('\t')
-        self.pheaders = self.headers
-        self.colspan = len(self.headers)
-        self.rows = []
-        print(f'Your data has {self.colspan} columns and {len(lst)} rows.')  # , or {colspan * len(lst)} cells.')
-        for n, row in enumerate(lst):
-            self.rows.append(row)
-            curspan = len(row.split('\t'))
-            if not curspan == self.colspan:
-                print(f'Error: only {curspan} elements (expect {self.colspan}) in row #{n}\n\n{row}')
-                return None
-            print(f'Verified {Fore.CYAN}{n}/{len(lst)} rows!{Style.RESET_ALL}')
-        maxlength = 0
-        for i, h in enumerate(self.headers):
-            self.headers[i] = h.replace(' ', '_').rstrip()
-            maxlength = maxlength if maxlength >= len(self.headers[i]) else len(self.headers[i])
-        for i, h in enumerate(self.headers):
-            self.pheaders[i] = h + ' ' * (maxlength - len(h) + 1)
-        with open(f'{self.dir}/config.txt', 'w+') as f:
-            for h in self.pheaders:
-                f.write(h + '=\n')
-        print(f'\n   A config file has been generated @ {Back.YELLOW}{Fore.BLUE}{self.dir}/config.txt{Style.RESET_ALL}\n   Please assign nutrients and run this script with the "--test" switch to check progress.  Pass in the "--import" switch when ready to import.')
-
-
 class TEST:
     def __init__(self, directory):
         print(f'{Back.RED}Testing:{Style.RESET_ALL} {directory}\n')
@@ -82,14 +51,44 @@ class TEST:
         print(f'\nYou have {c}/{len(lst)} configured, {u} unknown, and {b} blank fields.\nIf you are satisfied with that, run this script again with the "--import" switch.')
 
 
-class STAGE:
-    def __init__(self, configfile):
-        self.basename = os.path.splitext(configfile)[0]
+class RAWTABLE:
+    def __init__(self, file):
+        # stage
+        self.basename = os.path.splitext(file)[0]
         print(f'{Back.RED}Importing:{Style.RESET_ALL} {configfile}..', end='')
         # TODO: warn or abort if directory exists already, offer to rename?
         os.makedirs(f'staging/{self.basename}', 0o775, True)
         shutil.copy(configfile, f'staging/{self.basename}/data.txt')
         print(' done!\n')
+
+        # import
+        print(f'{Back.RED}Processing:{Style.RESET_ALL} {file}')
+        # TODO: exit if config.txt exists, or prompt to overwrite
+        with open(file, 'r') as f:
+            lst = f.readlines()
+        self.dir = os.path.dirname(file)
+        self.headers = lst[0].split('\t')
+        self.pheaders = self.headers
+        self.colspan = len(self.headers)
+        self.rows = []
+        print(f'Your data has {self.colspan} columns and {len(lst)} rows.')  # , or {colspan * len(lst)} cells.')
+        for n, row in enumerate(lst):
+            self.rows.append(row)
+            curspan = len(row.split('\t'))
+            if not curspan == self.colspan:
+                print(f'Error: only {curspan} elements (expect {self.colspan}) in row #{n}\n\n{row}')
+                return None
+            print(f'Verified {Fore.CYAN}{n}/{len(lst)} rows!{Style.RESET_ALL}')
+        maxlength = 0
+        for i, h in enumerate(self.headers):
+            self.headers[i] = h.replace(' ', '_').rstrip()
+            maxlength = maxlength if maxlength >= len(self.headers[i]) else len(self.headers[i])
+        for i, h in enumerate(self.headers):
+            self.pheaders[i] = h + ' ' * (maxlength - len(h) + 1)
+        with open(f'{self.dir}/config.txt', 'w+') as f:
+            for h in self.pheaders:
+                f.write(h + '=\n')
+        print(f'\n   A config file has been generated @ {Back.YELLOW}{Fore.BLUE}{self.dir}/config.txt{Style.RESET_ALL}\n   Please assign nutrients and run this script with the "--test" switch to check progress.  Pass in the "--import" switch when ready to import.')
 
 
 def Add():
@@ -112,11 +111,24 @@ def Stage():
             STAGE(d)
 
 
-coredir = os.path.dirname(os.path.realpath(__file__))
+nutridir = os.path.expanduser("~") + '/.nutri'
+dbdir = nutridir + '/db'
+if not os.path.isdir(dbdir):
+    os.makedirs(dbdir, 0o775, True)
+
+
+def dbs():
+    lst = []
+    for s in os.listdir(dbdir):
+        fpath = os.path.join(dbdir, s)
+        if os.path.isdir(fpath):
+            lst.append(s)
+    return lst
 
 
 def main(args=None):
-    global coredir
+    global nutridir
+    print(nutridir)
     if os.sep == '\\':
         init()
     if args == None:
@@ -142,13 +154,14 @@ def main(args=None):
             print(f"error: unknown option `{arg}'.  See 'nutri db -h'.")
             break
 
+
 def altcmd(i, arg):
     for i in inspect.getmembers(cmdmthds):
         for i2 in inspect.getmembers(i[1]):
             if i2[0] == 'altargs' and arg in i2[1]:
                 return i[1].mthd
     return None
-    
+
 
 class cmdmthds:
     """ Where we keep the `cmd()` methods && opt args """
@@ -164,6 +177,11 @@ class cmdmthds:
     class add:
         def mthd(rarg):
             Add()
+
+    class help:
+        def mthd(rarg):
+            print(usage)
+        altargs = ['-h', '--help']
 
 
 known_fields = [

@@ -45,7 +45,8 @@ def progbar(ing=5, rda=100, buf=25):
     bar += '>'
     c = color(perc)
     p = fmtperc(perc)
-    print(f'{c}{bar} {p}{Style.RESET_ALL}')
+    fstr = f'{c}{bar} {p}{Style.RESET_ALL}'
+    return fstr
 
 
 def fmtperc(perc):
@@ -55,7 +56,5 @@ def fmtperc(perc):
     return f'{color(perc)}{p}{Style.RESET_ALL}'
 
 
-progbar(25)
-progbar(50)
-progbar(75)
-progbar(150)
+for i in range(0, 175, 25):
+    print(progbar(i))
