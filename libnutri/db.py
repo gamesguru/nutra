@@ -142,6 +142,9 @@ def main(args=None):
         # Pop off arg0
         if args[0].endswith('db'):
             args.pop(0)
+        if len(args) == 0:
+            print(usage)
+            return
 
     # Otherwise we have some args
     # print(args)

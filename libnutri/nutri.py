@@ -49,7 +49,7 @@ def main(args=None):
     """ Parses the args and hands off to submodules """
     if args == None:
         args = sys.argv
-
+    print(args)
     # No arguments passed in
     if len(args) == 0:
         print(usage)
@@ -57,6 +57,8 @@ def main(args=None):
         # Pop off arg0
         if args[0].endswith('nutri'):
             args.pop(0)
+        if len(args) == 0:
+            print(usage)
 
     # Otherwise we have some args
     # print(args)
