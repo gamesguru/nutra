@@ -7,6 +7,7 @@ Created on Fri Sep 28 22:25:38 2018
 """
 
 import sys
+import os
 import inspect
 from libnutri import db, rda, user
 
@@ -16,8 +17,12 @@ if sys.version_info < (3, 6, 5):
 
 
 class fmt:
-    BOLD = '\033[1m'
-    END = '\033[0m'
+    if os.path.sep == '/':
+        BOLD = '\033[1m'
+        END = '\033[0m'
+    else:
+        BOLD = ''
+        END = ''
 
 
 version = '0.0.1'

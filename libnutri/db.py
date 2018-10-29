@@ -133,6 +133,7 @@ def main(args=None):
         init()
     if args == None:
         args = sys.argv
+    print(args)
     print(f'\n{Fore.CYAN}Welcome to the DB import tool!{Style.RESET_ALL}\n')
     for i, arg in enumerate(args):
         rarg = args[i:]
@@ -151,7 +152,7 @@ def main(args=None):
             altcmd(i, arg)(rarg)
         # Otherwise we don't know the arg
         else:
-            print(f"error: unknown option `{arg}'.  See 'nutri db -h'.")
+            print(f"error: unknown option `{arg}'.  See 'nutri db --help'.")
             break
 
 

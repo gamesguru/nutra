@@ -12,17 +12,12 @@ print ('Checking Python version info...')
 if sys.version_info < (3, 6, 5):
     exit("ERROR: nutri requires Python 3.6.5 or later to run.")
 
-long_description = ''
-# long_description = """An extensible nutrient tracking app designed for home and office use.  CLI backend.
-# Functions:
-# - Import databases, relative or extended.  Comes with the USDA data: 8000+ foods and 50+ nutrients.
-# - Define custom fields (ORAC, IF, GI).  Pair custom fields to main DBs by food name.
-# - Add custom databases, fields, recipes, foods and ingredients.
-# - Track individual targets and rate outcomes.
-# - Merge daily strategies and meals tracked on the PC with your mobile Android app com.github.nutri
-# - Colored and charted printouts, limit by date or nuitrient."""
 
-#from setuptools import setup
+def readme():
+    with open('README.rst') as f:
+        return f.read()
+
+
 from distutils.core import setup
 
 setup(
@@ -34,14 +29,14 @@ setup(
     description='Home and office nutrient tracking software',
     # entry_points={
     #     'console_scripts': [
-    #         'command-name = nutri:main',
+    #         'nutri=libnutri.nutri:main',
     #     ],
     # },
     scripts=['nutri'],
     install_requires=['colorama'],
-    long_description=long_description,
+    long_description=readme(),
     long_description_content_type='text/x-rst',
-    version='0.0.0.dev4',
+    version='0.0.0.dev9',
     url="https://github.com/gamesguru/nutri",
     classifiers=[
         'Programming Language :: Python :: 3',
