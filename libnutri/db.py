@@ -111,8 +111,8 @@ def Stage():
             STAGE(d)
 
 
-nutridir = os.path.expanduser("~") + '/.nutri'
-dbdir = nutridir + '/db'
+nutridir = os.path.join(os.path.expanduser("~"), '.nutri')
+dbdir = os.path.join(nutridir, 'db')
 if not os.path.isdir(dbdir):
     os.makedirs(dbdir, 0o775, True)
 
@@ -128,12 +128,21 @@ def dbs():
 
 def main(args=None):
     global nutridir
-    print(nutridir)
+    # print(nutridir)
     if os.sep == '\\':
         init()
     if args == None:
         args = sys.argv
-    print(args)
+    # Pop off arg0
+    if args[0].endswith('db'):
+        args.pop(0)
+    # No arguments passed in
+    if len(args) == 0:
+        print(usage)
+        return
+
+    # Otherwise we have some args
+    # print(args)
     print(f'\n{Fore.CYAN}Welcome to the DB import tool!{Style.RESET_ALL}\n')
     for i, arg in enumerate(args):
         rarg = args[i:]
@@ -248,10 +257,12 @@ known_fields = [
 usage = f"""Database management tool
 Version {version}
 
-usage:
-    --process    extract headers/columns and prep data
-    --test       check your work before importing
-    --import     copy the config and data over from the lib to the resource directory
+Usage: nutri db <command>
+
+Commands:
+    process    extract headers/columns and prep data
+    test       check your work before importing
+    import     copy the config and data over from the lib to the resource directory
 """
 
 
