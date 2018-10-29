@@ -133,13 +133,15 @@ def main(args=None):
         init()
     if args == None:
         args = sys.argv
-    # Pop off arg0
-    if args[0].endswith('db'):
-        args.pop(0)
+
     # No arguments passed in
     if len(args) == 0:
         print(usage)
         return
+    else:
+        # Pop off arg0
+        if args[0].endswith('db'):
+            args.pop(0)
 
     # Otherwise we have some args
     # print(args)

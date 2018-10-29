@@ -49,12 +49,14 @@ def main(args=None):
     """ Parses the args and hands off to submodules """
     if args == None:
         args = sys.argv
-    # Pop off arg0
-    if args[0].endswith('nutri'):
-        args.pop(0)
+
     # No arguments passed in
     if len(args) == 0:
         print(usage)
+    else:
+        # Pop off arg0
+        if args[0].endswith('nutri'):
+            args.pop(0)
 
     # Otherwise we have some args
     # print(args)
@@ -79,7 +81,7 @@ def main(args=None):
                         i[1].mthd(rarg)
                         return
         # Otherwise we don't know the arg
-        print(f"nutri: '{arg}' is not a nutri command.  See 'nutri help'.")
+        print(f"nutri: `{arg}' is not a nutri command.  See 'nutri help'.")
         break
 
 
