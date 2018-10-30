@@ -32,11 +32,10 @@ setup(
             'nutri=libnutri.nutri:main',
         ],
     },
-    # scripts=['nutri'],
     install_requires=['colorama'],
     long_description=readme(),
     long_description_content_type='text/x-rst',
-    version='0.0.0.dev12',
+    version='0.0.0.dev13',
     license='Apache v2',
     url="https://github.com/gamesguru/nutri",
     classifiers=[
