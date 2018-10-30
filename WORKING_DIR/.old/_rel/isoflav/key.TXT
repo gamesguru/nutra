@@ -1,8 +1,0 @@
-Nutr_No	NutrDesc
-710	Daidzein
-711	Genistein
-712	Glycitein
-713	Total_isoflavones
-714	Biochanin_A
-715	Formononetin
-716	Coumestrol
