@@ -9,7 +9,7 @@ Created on Fri Sep 28 22:25:38 2018
 import sys
 import os
 import inspect
-from libnutri import db, rda, user
+from libnutri import db, rda, config
 
 # First thing's first, check Python version
 if sys.version_info < (3, 6, 5):
@@ -90,9 +90,9 @@ def main(args=None):
 class cmdmthds:
     """ Where we keep the `cmd()` methods && opt args """
 
-    class user:
+    class config:
         def mthd(rarg):
-            user.main(rarg)
+            config.main(rarg)
 
     class db:
         def mthd(rarg):
