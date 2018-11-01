@@ -95,7 +95,24 @@ def add(name=''):
 def main(args=sys.argv):
     os.chdir(os.path.expanduser("~"))
     os.makedirs('.nutri/users', 0o755, True)
-    grab_users()
+
+    if args == None:
+        args = sys.argv
+
+    # No arguments passed in
+    if len(args) == 0:
+        print(usage)
+        return
+    else:
+        # Pop off arg0
+        if args[0].endswith('config'):
+            args.pop(0)
+        if len(args) == 0:
+            config()
+            return
+
+    # Otherwise we have some args
+    # print(args)
     for i, arg in enumerate(args):
         if arg == 'user' or arg == __file__:
             if len(args) == 1:
@@ -129,6 +146,22 @@ class cmdmthds:
         def mthd(rarg):
             print(usage)
 
+
+def config():
+    """ The default method if no args supplied. """
+    try:
+        pass
+    except:
+        pass  # ?
+
+
+usage = f"""Usage: nutri config <option> [<value>]
+
+Commands:
+    process    extract headers/columns and prep data
+    test       check your work before importing
+    import     copy the config and data over from the lib to the resource directory
+"""
 
 if __name__ == "__main__":
     main()
