@@ -12,7 +12,7 @@ CLI backend.
 
 Downloading Food Data
 =====================
-Can be downloaded manually, visit these links: 
+Can be downloaded manually, visit these links:
 
 https://bitbucket.org/dasheenster/nutri-utils/downloads/
 
@@ -52,13 +52,13 @@ https://bitbucket.org/dasheenster/nutri-utils/downloads/
     `curl -L https://api.bitbucket.org/2.0/repositories/dasheenster/nutri-utils/downloads/USDAstock.txt -o USDAstock.txt`
 
 - Branded Foods Database. **LARGE 100MB+! PC ONLY**
-    
+
     `curl -L https://www.ars.usda.gov/ARSUserFiles/80400525/Data/BFPDB/BFPD_csv_07132018.zip -o BFPD_csv_07132018.zip`
 
 **Supplementary USDA Extensions**
 
 - Flavonoid, Isoflavonoids, and Proanthocyanidins
-    
+
     `curl -L https://api.bitbucket.org/2.0/repositories/dasheenster/nutri-utils/downloads/USDA_ext_rel.zip -o USDA_ext_rel.zip`
 
 **Extra Fields**
@@ -96,22 +96,24 @@ Usage: :code:`nutri <command>`
 **Commands**
 ::
 
-    user                    create, edit and switch users
-    
+    config                  change name, age, and vitamin targets
+
     db                      import, edit and verify databases
-    
+
     field                   import, pair and manage fields
-    
+
     recipe                  create, edit and view foods and recipes
-    
+
     search                  search databases or recipes
-    
+
     add                     add foods or items to daily log
-    
+
     log                     show previous meals and summary
-    
+
     sync                    sync android device
-    
+
     contrib                 rank contribution
-    
+
+    bugreport               e-wires source code and your pesonal info
+
     --help | -h             show help for a given command

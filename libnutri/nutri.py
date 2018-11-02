@@ -34,7 +34,7 @@ Version {version}
 Usage: {fmt.BOLD}nutri <command> {fmt.END}
 
 Commands:
-    {fmt.BOLD}user{fmt.END}                create, edit and switch users
+    {fmt.BOLD}config{fmt.END}              change name, age, and vitamin targets
     {fmt.BOLD}db{fmt.END}                  import, edit and verify databases
     {fmt.BOLD}field{fmt.END}               import, pair and manage fields
     {fmt.BOLD}recipe{fmt.END}              create, edit and view foods and recipes
