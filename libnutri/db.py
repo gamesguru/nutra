@@ -113,7 +113,7 @@ def Stage():
 
 nutridir = os.path.join(os.path.expanduser("~"), '.nutri')
 dbdir = os.path.join(nutridir, 'db')
-#TODO: better placement
+# TODO: better placement
 # if not os.path.isdir(dbdir):
 #     os.makedirs(dbdir, 0o775, True)
 
@@ -182,17 +182,17 @@ def altcmd(i, arg):
 class cmdmthds:
     """ Where we keep the `cmd()` methods && opt args """
 
-    class stage:
+    class prep:
         def mthd(rarg):
-            Stage()
+            Prep()
 
     class test:
         def mthd(rarg):
             Test()
 
-    class add:
+    class save:
         def mthd(rarg):
-            Add()
+            Save()
 
     class help:
         def mthd(rarg):
@@ -263,13 +263,15 @@ known_fields = [
 usage = f"""Database management tool
 Version {version}
 
+Put text file into current working directory with no other text files.
+
 Usage: nutri db <command>
 
 Commands:
-    process    extract headers/columns and prep data
-    test       check your work before importing
-    import     copy the config and data over from the lib to the resource directory
-"""
+    prep       extract headers/columns, prep for manual config
+    test       check your config.txt before importing
+    save       import the db (config and data) to your profile
+    -d         delete a database by name"""
 
 
 if __name__ == "__main__":

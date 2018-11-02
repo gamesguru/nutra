@@ -42,7 +42,8 @@ Commands:
     {fmt.BOLD}add{fmt.END}                 add foods or items to daily log
     {fmt.BOLD}log{fmt.END}                 show previous meals and summary
     {fmt.BOLD}sync{fmt.END}                sync android device
-    {fmt.BOLD}contrib{fmt.END}             rank contributions"""
+    {fmt.BOLD}contrib{fmt.END}             rank contributions
+    {fmt.BOLD}bugreport{fmt.END}           e-wires source code and your pesonal info"""
 
 
 def main(args=None):
@@ -97,6 +98,11 @@ class cmdmthds:
     class db:
         def mthd(rarg):
             db.main(rarg)
+
+    # TODO: bugreport
+    # class bugreport:
+    #     def mthd(rarg):
+    #         bugreport.main(rarg)
 
     class help:
         altargs = ['--help', '-h']

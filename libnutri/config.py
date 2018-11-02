@@ -9,6 +9,7 @@ Created on Mon Oct 29 23:44:06 2018
 import os
 import sys
 import getpass
+import inspect
 from colorama import Style, Fore, Back, init
 
 
@@ -112,7 +113,7 @@ def main(args=sys.argv):
         if args[0].endswith('config'):
             args.pop(0)
         if len(args) == 0:
-            config()
+            print(usage)
             return
 
     # Otherwise we have some args
