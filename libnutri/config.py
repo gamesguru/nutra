@@ -8,6 +8,7 @@ Created on Mon Oct 29 23:44:06 2018
 
 import os
 import sys
+import getpass
 from colorama import Style, Fore, Back, init
 
 
@@ -92,9 +93,12 @@ def add(name=''):
     grab_users()
 
 
+nutridir = f'{os.path.expanduser("~")}/.nutri'
+
+
 def main(args=sys.argv):
-    os.chdir(os.path.expanduser("~"))
-    os.makedirs('.nutri/users', 0o755, True)
+    # os.chdir(os.path.expanduser("~"))
+    # os.makedirs('.nutri/users', 0o755, True)
 
     if args == None:
         args = sys.argv
@@ -114,31 +118,42 @@ def main(args=sys.argv):
     # Otherwise we have some args
     # print(args)
     for i, arg in enumerate(args):
-        if arg == 'user' or arg == __file__:
+        rarg = args[i:]
+        # Ignore first argument, as that is filename
+        if arg == __file__:
             if len(args) == 1:
-                listusers()
+                print(usage)
+                continue
             else:
                 continue
-        elif arg in users:
-            user_info(arg, args[i + 1:])
+        # Activate method for command, e.g. `help'
+        elif hasattr(cmdmthds, arg):
+            getattr(cmdmthds, arg).mthd(rarg)
             break
-        elif arg == '-d' or arg == '--delete':
-            remove(args[i + 1:])
-            break
+        # Activate method for opt commands, e.g. `-h' or `--help'
+        else:
+            for i in inspect.getmembers(cmdmthds):
+                for i2 in inspect.getmembers(i[1]):
+                    if i2[0] == 'altargs' and arg in i2[1]:
+                        i[1].mthd(rarg)
+                        return
+        # Otherwise we don't know the arg
+        print(f"config: `{arg}' is not a nutri command.  See 'nutri help'.")
+        break
 
 
 class cmdmthds:
     """ Where we keep the `cmd()` methods && opt args """
 
-    class remove:
-        altargs = ['--delete', '-d']
+    class new:
+        altargs = ['--new', '-n']
 
         def mthd(rarg):
-            remove(rarg)
+            new_profile(rarg)
 
-    class db:
+    class extras:
         def mthd(rarg):
-            db.main(rarg)
+            print(extras)
 
     class help:
         altargs = ['--help', '-h']
@@ -155,13 +170,54 @@ def config():
         pass  # ?
 
 
+def new_profile(rargs):
+    name = getpass.getuser()
+    gender = 'n'
+    age = 0
+    print('Warning: This will create a new profile (log and db are kept)\n')
+    # Name
+    inpt = input(f'Enter name (blank for {name}): ')
+    if inpt != '':
+        name = inpt
+    # Gender
+    while True:
+        inpt = input(f'Gender? [m/f/n]: ')
+        if inpt == 'm' or inpt == 'f' or inpt == 'n':
+            gender = inpt
+            break
+    # Age
+    while True:
+        inpt = input(f'Age: ')
+        try:
+            inpt = int(inpt)
+            if inpt > 0 and inpt < 130:
+                age = inpt
+                break
+        except:
+            pass
+    # Write new profile
+    os.makedirs(nutridir, 0o775, True)
+    with open(f'{nutridir}/config.txt', 'w+') as f:
+        f.write(f'Name:{name}\n')
+        f.write(f'Gender:{gender}\n')
+        f.write(f'Age:{age}\n')
+    print("That's it for the basic config, you can see what more can be configured with `nutri config extras'")
+
+
 usage = f"""Usage: nutri config <option> [<value>]
 
-Commands:
-    process    extract headers/columns and prep data
-    test       check your work before importing
-    import     copy the config and data over from the lib to the resource directory
+Options:
+    new        create a new profile (log and db are kept)
+    -e         configure an extra option
+    extras     help for extra options (height, weight, wrist size)
 """
+
+extras = f"""Usage: nutri config -e <option> [<value>]
+
+Options:
+    ht         height
+    wt         weight
+    wrist      wrist size"""
 
 if __name__ == "__main__":
     main()

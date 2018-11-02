@@ -113,8 +113,9 @@ def Stage():
 
 nutridir = os.path.join(os.path.expanduser("~"), '.nutri')
 dbdir = os.path.join(nutridir, 'db')
-if not os.path.isdir(dbdir):
-    os.makedirs(dbdir, 0o775, True)
+#TODO: better placement
+# if not os.path.isdir(dbdir):
+#     os.makedirs(dbdir, 0o775, True)
 
 
 def dbs():
