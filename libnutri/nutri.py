@@ -50,7 +50,7 @@ def main(args=None):
     """ Parses the args and hands off to submodules """
     if args == None:
         args = sys.argv
-    print(args)
+    # print(args)
     # No arguments passed in
     if len(args) == 0:
         print(usage)

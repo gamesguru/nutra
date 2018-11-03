@@ -134,7 +134,7 @@ def main(args=None):
         init()
     if args == None:
         args = sys.argv
-
+    print(args)
     # No arguments passed in
     if len(args) == 0:
         print(usage)
@@ -201,7 +201,12 @@ class cmdmthds:
             if len(rarg) != 1:
                 print('error: not exactly one db name specified to delete')
                 return
-        altargs = ['-d', '--delete']
+        altargs = ['-d']
+
+    class list:
+        def mthd(rarg):
+            pass
+        altargs = ['-l']
 
     class help:
         def mthd(rarg):
@@ -280,6 +285,7 @@ Commands:
     prep       extract headers/columns, prep for manual config
     test       check your config.txt before importing
     save       import the db (config and data) to your profile
+    list       list off databases stored on your computer
     -d         delete a database by name"""
 
 

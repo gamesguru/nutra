@@ -8,6 +8,7 @@ __pycache__/
 .DS_Store
 
 # Database files
+/res
 *.txt
 
 # C extensions
