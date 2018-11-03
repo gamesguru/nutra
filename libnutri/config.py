@@ -76,9 +76,16 @@ class cmdmthds:
         def mthd(rarg):
             new_profile(rarg)
 
-    class extras:
+    class extra:
+        altargs = ['-e']
+
         def mthd(rarg):
-            print(extras)
+            if len(rarg) == 0:
+                print(extras)
+            elif len(rarg) == 2:
+                econfig(rarg)
+            else:
+                print('error: must specify only one option, and one value')
 
     class help:
         altargs = ['--help', '-h']
@@ -122,12 +129,18 @@ def new_profile(rargs):
     print("That's it for the basic config, you can see what more can be configured with `nutri config extras'")
 
 
+def econfig(rarg):
+    """ Configures extra settings: weight, height, wrist size, and nutrient targets """
+    print(f'option: {rarg[0]}')
+    print(f'value:  {rarg[1]}')
+    print('error: feature not implemented yet')
+
+
 usage = f"""Usage: nutri config <option> [<value>]
 
 Options:
-    new        create a new profile (log and db are kept)
-    -e         configure an extra option
-    extras     help for extra options (height, weight, wrist size)
+    new          create a new profile (log and db are kept)
+    extra | -e   list extra options, or configure a specific one
 """
 
 extras = f"""Usage: nutri config -e <option> [<value>]

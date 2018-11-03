@@ -134,18 +134,11 @@ def main(args=None):
         init()
     if args == None:
         args = sys.argv
-    print(args)
+
+    # print(args)
     # No arguments passed in
     if len(args) == 0:
         print(usage)
-        # return
-    else:
-        # Pop off arg0
-        if args[0].endswith('db'):
-            args.pop(0)
-        if len(args) == 0:
-            print(usage)
-            # return
 
     # Otherwise we have some args
     # print(args)
@@ -197,15 +190,22 @@ class cmdmthds:
 
     class delete:
         def mthd(rarg):
-            print(rarg)
             if len(rarg) != 1:
                 print('error: not exactly one db name specified to delete')
                 return
+            else:
+                chosendb = os.path.join(dbdir, rarg[0])
+                if os.path.isdir(chosendb):
+                    print(f'deleting {rarg[0]}...')
+                    shutil.rmtree(chosendb)
+                else:
+                    print(f'error: no such db {rarg[0]}')
         altargs = ['-d']
 
     class list:
         def mthd(rarg):
-            pass
+            for db in dbs():
+                print(db)
         altargs = ['-l']
 
     class help:
