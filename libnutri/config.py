@@ -48,18 +48,23 @@ def main(args=sys.argv):
                 continue
         # Activate method for command, e.g. `help'
         elif hasattr(cmdmthds, arg):
-            getattr(cmdmthds, arg).mthd(rarg)
+            getattr(cmdmthds, arg).mthd(rarg[1:])
             break
         # Activate method for opt commands, e.g. `-h' or `--help'
-        else:
-            for i in inspect.getmembers(cmdmthds):
-                for i2 in inspect.getmembers(i[1]):
-                    if i2[0] == 'altargs' and arg in i2[1]:
-                        i[1].mthd(rarg)
-                        return
+        elif altcmd(i, arg) != None:
+            altcmd(i, arg)(rarg[1:])
+            break
         # Otherwise we don't know the arg
         print(f"error: unknown option `{arg}'.  See 'nutri config --help'.")
         break
+
+
+def altcmd(i, arg):
+    for i in inspect.getmembers(cmdmthds):
+        for i2 in inspect.getmembers(i[1]):
+            if i2[0] == 'altargs' and arg in i2[1]:
+                return i[1].mthd
+    return None
 
 
 class cmdmthds:

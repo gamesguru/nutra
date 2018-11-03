@@ -74,11 +74,12 @@ def main(args=None):
                 continue
         # Activate method for command, e.g. `help'
         elif hasattr(cmdmthds, arg):
-            getattr(cmdmthds, arg).mthd(rarg)
+            getattr(cmdmthds, arg).mthd(rarg[1:])
             break
         # Activate method for opt commands, e.g. `-h' or `--help'
         elif altcmd(i, arg) != None:
-            altcmd(i, arg)(rarg)
+            altcmd(i, arg)(rarg[1:])
+            break
         # Otherwise we don't know the arg
         print(f"nutri: `{arg}' is not a nutri command.  See 'nutri help'.")
         break

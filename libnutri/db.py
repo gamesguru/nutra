@@ -138,18 +138,18 @@ def main(args=None):
     # No arguments passed in
     if len(args) == 0:
         print(usage)
-        return
+        # return
     else:
         # Pop off arg0
         if args[0].endswith('db'):
             args.pop(0)
         if len(args) == 0:
             print(usage)
-            return
+            # return
 
     # Otherwise we have some args
     # print(args)
-    print(f'\n{Fore.CYAN}Welcome to the DB import tool!{Style.RESET_ALL}\n')
+    # print(f'\n{Fore.CYAN}Welcome to the DB import tool!{Style.RESET_ALL}\n')
     for i, arg in enumerate(args):
         rarg = args[i:]
         # Ignore first argument, as that is filename
@@ -160,11 +160,12 @@ def main(args=None):
                 continue
         # Activate method for command, e.g. `help'
         elif hasattr(cmdmthds, arg):
-            getattr(cmdmthds, arg).mthd(rarg)
+            getattr(cmdmthds, arg).mthd(rarg[1:])
             break
         # Activate method for opt commands, e.g. `-h' or `--help'
         elif altcmd(i, arg) != None:
-            altcmd(i, arg)(rarg)
+            altcmd(i, arg)(rarg[1:])
+            break
         # Otherwise we don't know the arg
         else:
             print(f"error: unknown option `{arg}'.  See 'nutri db --help'.")
@@ -193,6 +194,14 @@ class cmdmthds:
     class save:
         def mthd(rarg):
             Save()
+
+    class delete:
+        def mthd(rarg):
+            print(rarg)
+            if len(rarg) != 1:
+                print('error: not exactly one db name specified to delete')
+                return
+        altargs = ['-d', '--delete']
 
     class help:
         def mthd(rarg):
