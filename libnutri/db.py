@@ -49,15 +49,25 @@ class TEST:
                 else:
                     print(f'{Back.GREEN}{Fore.BLACK}Configure:{Style.RESET_ALL} {f}={l.split("=")[0]}')
                 c += 1
-        print(f'\nYou have {c}/{len(lst)} configured, {u} unknown, and {b} blank fields.\nIf you are satisfied with that, run this script again with the "--import" switch.')
+        print(f'\nYou have {c}/{len(lst)} configured, {u} unknown, and {b} blank fields.\nIf you are satisfied with that, run this script again with the "nutri db save" command.')
 
 
 class PREP:
     def __init__(self, file):
         # stage
         self.basename = os.path.splitext(file)[0]
+        if self.basename in dbs():
+            print(f'error: db already exists, delete with: nutri db -d {self.basename}')
+            return
+        if os.path.isdir(f'nutri_staging/{self.basename}'):
+            print(f'error: staged db already exists, please manually remove: nutri_staging/{self.basename}')
+            return
+        if len(os.listdir('nutri_staging')) > 0:
+            print(f'error: one or more dbs already staged, please remove or test:')
+            for o in os.listdir('nutri_staging'):
+                print(f'\t{o}')
+            return
         print(f'{Back.RED}Importing:{Style.RESET_ALL} {file}..', end='')
-        # TODO: warn or abort if directory exists already, offer to rename?
         os.makedirs(f'nutri_staging/{self.basename}', 0o775, True)
         shutil.copy(file, f'nutri_staging/{self.basename}/data.txt')
         print(' done!\n')
@@ -79,7 +89,7 @@ class PREP:
             if not curspan == self.colspan:
                 print(f'Error: only {curspan} elements (expect {self.colspan}) in row #{n}\n\n{row}')
                 return None
-            print(f'\rVerified {Fore.CYAN}{n}/{len(lst)} rows!{Style.RESET_ALL}', end='')
+            print(f'\rVerified {Fore.CYAN}{n + 1}/{len(lst)} rows!{Style.RESET_ALL}', end='')
         maxlength = 0
         for i, h in enumerate(self.headers):
             self.headers[i] = h.replace(' ', '_').rstrip()
@@ -89,7 +99,7 @@ class PREP:
         with open(f'{self.dir}/config.txt', 'w+') as f:
             for h in self.pheaders:
                 f.write(h + '=\n')
-        print(f'\n   A config file has been generated @ {Back.YELLOW}{Fore.BLUE}{self.dir}/config.txt{Style.RESET_ALL}\n   Please assign nutrients and run this script with the "--test" switch to check progress.  Pass in the "--import" switch when ready to import.')
+        print(f'\n   A config file has been generated @ {Back.YELLOW}{Fore.BLUE}{self.dir}/config.txt{Style.RESET_ALL}\n   Please assign nutrients and run this script with the "--test" switch to check progress.  Pass in the "nutri db save" command when ready to import.')
 
 
 def Prep():
@@ -108,16 +118,18 @@ def Prep():
 def Test():
     for d in os.listdir('nutri_staging'):
         dir = f'nutri_staging/{d}'
-        if os.path.isdir(dir) and not dir.startswith('_'):
+        if os.path.isdir(dir) and not d.startswith('_'):
             TEST(dir)
 
 
 def Save():
-    for d in os.listdir('staging'):
-        if os.path.isfile(d) and not d.startswith('_'):
-            for f in os.listdir(d):
+    for d in os.listdir('nutri_staging'):
+        dir = f'nutri_staging/{d}'
+        if os.path.isdir(dir) and not d.startswith('_'):
+            for f in os.listdir(dir):
                 if f == 'data.txt':
-                    SAVE(f'{d}/t{f}')
+                    shutil.move(dir, dbdir)
+    shutil.rmtree('nutri_staging')
 
 
 nutridir = os.path.join(os.path.expanduser("~"), '.nutri')
