@@ -17,7 +17,7 @@ from colorama import Style, Fore, Back, init
 version = '0.0.1'
 
 work_dir = os.path.dirname(os.path.realpath(__file__))
-os.chdir(work_dir)
+# os.chdir(work_dir)
 
 
 class TEST:
@@ -51,14 +51,14 @@ class TEST:
         print(f'\nYou have {c}/{len(lst)} configured, {u} unknown, and {b} blank fields.\nIf you are satisfied with that, run this script again with the "--import" switch.')
 
 
-class RAWTABLE:
+class PREP:
     def __init__(self, file):
         # stage
         self.basename = os.path.splitext(file)[0]
-        print(f'{Back.RED}Importing:{Style.RESET_ALL} {configfile}..', end='')
+        print(f'{Back.RED}Importing:{Style.RESET_ALL} {file}..', end='')
         # TODO: warn or abort if directory exists already, offer to rename?
-        os.makedirs(f'staging/{self.basename}', 0o775, True)
-        shutil.copy(configfile, f'staging/{self.basename}/data.txt')
+        os.makedirs(f'nutri_staging/{self.basename}', 0o775, True)
+        shutil.copy(file, f'staging/{self.basename}/data.txt')
         print(' done!\n')
 
         # import
@@ -91,12 +91,17 @@ class RAWTABLE:
         print(f'\n   A config file has been generated @ {Back.YELLOW}{Fore.BLUE}{self.dir}/config.txt{Style.RESET_ALL}\n   Please assign nutrients and run this script with the "--test" switch to check progress.  Pass in the "--import" switch when ready to import.')
 
 
-def Add():
-    for d in os.listdir('staging'):
-        if os.path.isfile(d) and not d.startswith('_'):
-            for f in os.listdir(d):
-                if f == 'data.txt':
-                    RAWTABLE(f'{d}/t{f}')
+def Prep():
+    n = 0
+    file = None
+    for f in os.listdir():
+        if os.path.isfile(f) and f.endswith('.txt'):
+            n += 1
+            file = f
+    if n == 1:
+        PREP(file)
+    else:
+        print('error: must have exactly one *.txt file in current working directory to prep data')
 
 
 def Test():
@@ -105,10 +110,12 @@ def Test():
             TEST(d)
 
 
-def Stage():
-    for d in os.listdir():
-        if os.path.isfile(d) and d.endswith('.txt'):
-            STAGE(d)
+def Save():
+    for d in os.listdir('staging'):
+        if os.path.isfile(d) and not d.startswith('_'):
+            for f in os.listdir(d):
+                if f == 'data.txt':
+                    SAVE(f'{d}/t{f}')
 
 
 nutridir = os.path.join(os.path.expanduser("~"), '.nutri')
@@ -285,7 +292,7 @@ Commands:
     prep       extract headers/columns, prep for manual config
     test       check your config.txt before importing
     save       import the db (config and data) to your profile
-    list       list off databases stored on your computer
+    list | -l  list off databases stored on your computer
     -d         delete a database by name"""
 
 

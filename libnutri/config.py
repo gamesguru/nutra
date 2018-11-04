@@ -136,6 +136,7 @@ def econfig(rarg):
     print('error: feature not implemented yet')
 
 
+""" Usage commands """
 usage = f"""Usage: nutri config <option> [<value>]
 
 Options:
@@ -143,6 +144,7 @@ Options:
     extra | -e   list extra options, or configure a specific one
 """
 
+""" Extras usage"""
 extras = f"""Usage: nutri config -e <option> [<value>]
 
 Options:
