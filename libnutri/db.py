@@ -24,6 +24,7 @@ class TEST:
     def __init__(self, directory):
         print(f'{Back.RED}Testing:{Style.RESET_ALL} {directory}\n')
         self.dir = directory
+        print(self.dir)
         lst = []
         with open(f'{self.dir}/config.txt', 'r') as f:
             for l in f.readlines():
@@ -58,7 +59,7 @@ class PREP:
         print(f'{Back.RED}Importing:{Style.RESET_ALL} {file}..', end='')
         # TODO: warn or abort if directory exists already, offer to rename?
         os.makedirs(f'nutri_staging/{self.basename}', 0o775, True)
-        shutil.copy(file, f'staging/{self.basename}/data.txt')
+        shutil.copy(file, f'nutri_staging/{self.basename}/data.txt')
         print(' done!\n')
 
         # import
@@ -66,7 +67,7 @@ class PREP:
         # TODO: exit if config.txt exists, or prompt to overwrite
         with open(file, 'r') as f:
             lst = f.readlines()
-        self.dir = os.path.dirname(file)
+        self.dir = f'nutri_staging/{self.basename}'
         self.headers = lst[0].split('\t')
         self.pheaders = self.headers
         self.colspan = len(self.headers)
@@ -78,7 +79,7 @@ class PREP:
             if not curspan == self.colspan:
                 print(f'Error: only {curspan} elements (expect {self.colspan}) in row #{n}\n\n{row}')
                 return None
-            print(f'Verified {Fore.CYAN}{n}/{len(lst)} rows!{Style.RESET_ALL}')
+            print(f'\rVerified {Fore.CYAN}{n}/{len(lst)} rows!{Style.RESET_ALL}', end='')
         maxlength = 0
         for i, h in enumerate(self.headers):
             self.headers[i] = h.replace(' ', '_').rstrip()
@@ -105,9 +106,10 @@ def Prep():
 
 
 def Test():
-    for d in os.listdir():
-        if os.path.isdir(d) and not d.startswith('_'):
-            TEST(d)
+    for d in os.listdir('nutri_staging'):
+        dir = f'nutri_staging/{d}'
+        if os.path.isdir(dir) and not dir.startswith('_'):
+            TEST(dir)
 
 
 def Save():
