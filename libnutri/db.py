@@ -140,12 +140,43 @@ dbdir = os.path.join(nutridir, 'db')
 
 
 def dbs():
+    """ Returns a list of dbs, names only """
     lst = []
     for s in os.listdir(dbdir):
         fpath = os.path.join(dbdir, s)
         if os.path.isdir(fpath):
             lst.append(s)
     return lst
+
+
+def fdbs():
+    """ Returns a list of dbs, data, and config (headers, fields, etc) """
+    lst = []
+    for s in os.listdir(dbdir):
+        fpath = os.path.join(dbdir, s)
+        if os.path.isdir(fpath):
+            print(fpath)
+            lst.append(fdb(fpath))
+    return lst
+
+
+class fdb:
+    def __init__(self, dbname):
+        self.name = dbname
+        self.data = []
+        self.config = []
+        fpath = os.path.join(dbdir, self.name)
+        if not os.path.isdir(fpath):
+            print(f'error: no such db {self.name}')
+            return None
+        with open(f'{fpath}/config.txt', 'r') as f:
+            for line in f.readlines():
+                self.config.append(line.rstrip())
+        with open(f'{fpath}/data.txt', 'r') as f:
+            for line in f.readlines():
+                self.data.append(line.rstrip())
+        self.headers = self.data[0].split('\t')
+        # print(self.headers)
 
 
 def main(args=None):

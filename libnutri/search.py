@@ -37,6 +37,12 @@ def shell():
 
 
 def search(args):
+    for d in db.fdbs():
+        for h in d.headers:
+            print(h)
+
+
+def search2(args):
     """ Searches all dbs, foods, recipes, and favorites. """
     # Current terminal height
     bheight = shutil.get_terminal_size()[1] - 2
