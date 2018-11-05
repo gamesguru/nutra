@@ -24,7 +24,6 @@ class TEST:
     def __init__(self, directory):
         print(f'{Back.RED}Testing:{Style.RESET_ALL} {directory}\n')
         self.dir = directory
-        print(self.dir)
         lst = []
         with open(f'{self.dir}/config.txt', 'r') as f:
             for l in f.readlines():
@@ -43,11 +42,11 @@ class TEST:
             else:
                 if ('(' in l and ')' in l) or ('[' in l and ']' in l):
                     ls = re.split('\(|\)|\[|\]', l.split('=')[0])
-                    print(f'{Back.GREEN}{Fore.BLACK}Configure:{Style.RESET_ALL} {ls[0]}', end='')
+                    print(f'{Back.GREEN}{Fore.BLACK}Configure:{Style.RESET_ALL}   {ls[0]}', end='')
                     print(f'{Fore.RED}({ls[1]}){Style.RESET_ALL}', end='')
                     print(f'{ls[2]}= {f}')
                 else:
-                    print(f'{Back.GREEN}{Fore.BLACK}Configure:{Style.RESET_ALL} {f}={l.split("=")[0]}')
+                    print(f'{Back.GREEN}{Fore.BLACK}Configure:{Style.RESET_ALL}   {l.split("=")[0]}= {f}')
                 c += 1
         print(f'\nYou have {c}/{len(lst)} configured, {u} unknown, and {b} blank fields.\nIf you are satisfied with that, run this script again with the "nutri db save" command.')
 
@@ -129,7 +128,8 @@ def Save():
             for f in os.listdir(dir):
                 if f == 'data.txt':
                     shutil.move(dir, dbdir)
-    shutil.rmtree('nutri_staging')
+    # TODO: is this okay?  upload config.txt to bb for convenience
+    # shutil.rmtree('nutri_staging')
 
 
 nutridir = os.path.join(os.path.expanduser("~"), '.nutri')
@@ -166,14 +166,7 @@ def main(args=None):
     # print(f'\n{Fore.CYAN}Welcome to the DB import tool!{Style.RESET_ALL}\n')
     for i, arg in enumerate(args):
         rarg = args[i:]
-        # Ignore first argument, as that is filename
-        if arg == __file__:
-            if len(args) == 1:
-                print(usage)
-            else:
-                continue
-        # Activate method for command, e.g. `help'
-        elif hasattr(cmdmthds, arg):
+        if hasattr(cmdmthds, arg):
             getattr(cmdmthds, arg).mthd(rarg[1:])
             break
         # Activate method for opt commands, e.g. `-h' or `--help'
@@ -288,6 +281,8 @@ known_fields = [
     "Cu",
     "Cr",
     "Mo",
+    "Lycopene",
+    "LutZea",
     "Choline",
     "Inositol",
     "Carnitine",

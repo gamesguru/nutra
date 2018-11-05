@@ -9,7 +9,7 @@ Created on Fri Sep 28 22:25:38 2018
 import sys
 import os
 import inspect
-from libnutri import db, rda, config
+from libnutri import db, rda, config, search
 
 # First thing's first, check Python version
 if sys.version_info < (3, 6, 5):
@@ -104,6 +104,10 @@ class cmdmthds:
     class db:
         def mthd(rarg):
             db.main(rarg)
+
+    class search:
+        def mthd(rarg):
+            search.main(rarg)
 
     # TODO: bugreport
     # class bugreport:

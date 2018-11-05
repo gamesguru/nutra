@@ -26,14 +26,6 @@ def main(args=sys.argv):
     # No arguments passed in
     if len(args) == 0:
         print(usage)
-        return
-    else:
-        # Pop off arg0
-        if args[0].endswith('config'):
-            args.pop(0)
-        if len(args) == 0:
-            print(usage)
-            return
 
     # Otherwise we have some args
     # print(args)

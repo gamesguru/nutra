@@ -4,6 +4,7 @@ __pycache__/
 *$py.class
 
 # macOS files
+.~*
 ._*
 .DS_Store
 
