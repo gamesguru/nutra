@@ -37,6 +37,7 @@ def shell():
 
 
 def search(args):
+    """ Searches all dbs, foods, recipes, recents and favorites. """
     for d in db.fdbs():
         for h in d.headers:
             print(h)
@@ -57,27 +58,27 @@ def search2(args):
             config = f.readlines()
         # TODO: make below int reusable API, put in db module
         fn = None
-        ndb = None
+        pk_no = None
         for line in config:
             line = line.rstrip()
             if line.split('=')[1] == 'FoodName':
                 fn = line.split('=')[0].split()[0]
-            elif line.split('=')[1] == 'NDBNo':
-                ndb = line.split('=')[0].split()[0]
+            elif line.split('=')[1] == 'PK_No':
+                pk_no = line.split('=')[0].split()[0]
         # Grab & split headers
         headers = data[0]
         for i, h in enumerate(headers.split('\t')):
-            name = None
-            ndbno = None
+            foodname = None
+            pk_no = None
             # header == Headers['FoodName'], e.g. Shrt_Desc
             for line in data:
                 if h == fn:
                     # print(h)
-                    name = line.rstrip().split('\t')[i]
-                    print(name)
-                # elif h == ndb:
-                #     ndbno = line.rstrip().split('\t')[i]
-                # print(f'{ndbno}\t{name}')
+                    foodname = line.rstrip().split('\t')[i]
+                    print(foodname)
+                # elif h == pk_no:
+                #     pk_no = line.rstrip().split('\t')[i]
+                # print(f'{pk_no}\t{foodname}')
 
 
 if __name__ == '__main__':

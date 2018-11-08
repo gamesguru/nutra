@@ -9,8 +9,8 @@ __pycache__/
 .DS_Store
 
 # Database files
-/res
 *.txt
+!requirements.txt
 
 # C extensions
 *.so

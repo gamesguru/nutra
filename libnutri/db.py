@@ -9,6 +9,7 @@ Created on Fri Sep 28 10:23:50 2018
 import os
 import re
 import sys
+import numpy as np
 import shutil
 import inspect
 import ntpath
@@ -36,7 +37,7 @@ class TEST:
             if f == '':
                 print(f'{Back.MAGENTA}{Fore.YELLOW}Blank field:{Style.RESET_ALL} {l}')
                 b += 1
-            elif not f in known_fields:
+            elif not f in known_basic_fields:
                 print(f'{Back.RED}Unknown field:{Style.RESET_ALL} {l}')
                 u += 1
             else:
@@ -175,8 +176,49 @@ class fdb:
         with open(f'{fpath}/data.txt', 'r') as f:
             for line in f.readlines():
                 self.data.append(line.rstrip())
+        # Creates the fields from the config
+        self.fields = gen_fields(self.config)
+        # Allots data into numpy array
+        self.data = np.array(self.data[1:])
+        for s in self.data:
+            print(s)
         self.headers = self.data[0].split('\t')
-        # print(self.headers)
+
+    def entry(self, pk_no):
+        for i, f in enumerate(self.fields):
+            if f.basic_field_name == 'PK_No':
+                self.pkindex = i
+        for e in self.data:
+            if self.data.split('\t')[self.pkindex] == pk_no:
+                return e  # TODO: API for alloting fields into more accessible manner
+
+
+class dbentry:
+    """ A food entry and all its data """
+
+    def __init__(self, PK_no, FoodName, Fields=[]):
+        pk_no = PK_no  # Unique, even across dbs.  Program reads all dbs into one numpy array, mandates unique pk_nos
+        foodname = FoodName
+        fields = Fields
+
+
+class field:
+    """ A field, its friendly name and basic_field_name, and its RDA if it exists """
+
+    def __init__(self, fname, bname, r=None):
+        friendlyname = fname
+        basic_field_name = bname
+        rda = r
+
+
+def gen_fields(config):
+    lst = []
+    for s in config:
+        friendlyname = s.split('=')[0].rstrip()
+        basic_field_name = s.split('=')[1]
+        # TODO: parse units if available
+        lst.append(field(friendlyname, basic_field_name))
+    return lst
 
 
 def main(args=None):
@@ -259,18 +301,9 @@ class cmdmthds:
         altargs = ['-h', '--help']
 
 
-known_fields = [
+known_basic_fields = [
     "FoodName",
-    "NDBNo",
-    "OthPrimKey",
-    "OthPrimKey2",
-    "OthPrimKey3",
-    "Serv",
-    "Serv2",
-    "Weight",
-    "Weight2",
-    "ALA",
-    "EpaDha",
+    "PK_No",  # The primary key (typically `NDBNo') it must be unique even across different dbs
     "Cals",
     "CalsFat",
     "FatTot",
@@ -278,14 +311,14 @@ known_fields = [
     "FatTrans",
     "FatMono",
     "FatPoly",
-    "Cholest",
-    "Na",
-    "K",
     "Carbs",
     "Fiber",
     "FiberSol",
     "Sugar",
     "Protein",
+    "Cholest",
+    "Na",
+    "K",
     "VitA",
     "VitC",
     "Ca",
@@ -312,13 +345,18 @@ known_fields = [
     "Cu",
     "Cr",
     "Mo",
+    "ALA",
+    "EpaDha",
     "Lycopene",
     "LutZea",
     "Choline",
     "Inositol",
     "Carnitine",
-    "Lipoic acid",
-    "Aminos"
+    "Lipoic_acid",
+    "Serv",
+    "Serv2",
+    "Weight",
+    "Weight2",
 ]
 
 usage = f"""Database management tool

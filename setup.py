@@ -31,7 +31,7 @@ setup(
             'nutri=libnutri.nutri:main',
         ],
     },
-    install_requires=['colorama'],
+    install_requires=['colorama', 'numpy'],
     long_description=readme(),
     long_description_content_type='text/x-rst',
     version='0.0.0.dev14',
