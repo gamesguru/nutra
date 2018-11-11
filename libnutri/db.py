@@ -138,11 +138,11 @@ dbdir = os.path.join(nutridir, 'db')
 
 
 def dbs():
-    """ Returns a list of dbs, names only """
+    """ Returns a list of dbs, **NAMES ONLY** """
     lst = []
     for s in os.listdir(dbdir):
         fpath = os.path.join(dbdir, s)
-        if os.path.isdir(fpath):
+        if os.path.isdir(fpath) and not s.startswith('&'):
             lst.append(s)
     return lst
 
@@ -152,13 +152,14 @@ def fdbs():
     lst = []
     for s in os.listdir(dbdir):
         fpath = os.path.join(dbdir, s)
-        if os.path.isdir(fpath):
-            # print(fpath)
-            lst.append(fdb(fpath))
+        if os.path.isdir(fpath) and not s.startswith('&'):
+            lst.append(fdb(s))
     return lst
 
 
 class fdb:
+    """ The "full" db class, not just dbname as above """
+
     def __init__(self, dbname):
         self.name = dbname
         self.data = []
@@ -167,32 +168,43 @@ class fdb:
         if not os.path.isdir(fpath):
             print(f'error: no such db {self.name}')
             return None
+
+        # Reads in config.txt and data.txt
         with open(f'{fpath}/config.txt', 'r') as f:
             for line in f.readlines():
                 self.config.append(line.rstrip())
         with open(f'{fpath}/data.txt', 'r') as f:
             for line in f.readlines():
                 self.data.append(line.rstrip())
+
         # Creates the fields from the config
         self.fields = gen_fields(self.config)
         self.headers = self.data[0].split('\t')
-        # Allots data into numpy array
+
+        # Allots data-entries into numpy array
         self.data = np.array(self.data[1:])
         self.dbentries = []
         for d in self.data:
             arr = np.array(d.split('\t'))
             # Creates `dbentry': args=(pk_no, foodname, fields)
             self.dbentries.append(dbentry(arr[self.fi("PK_No")], arr[self.fi("FoodName")], arr))
-        #self.dbentries = np.array(self.dbentries)
-        # print(self.pksearch('01001'))
 
-    def fi(self, basicfieldname):  # field index
+        # Reads in relative tackons if they exist
+        relroot = os.path.join(dbdir, f'&{self.name}')
+        self.rels = []
+        if os.path.isdir(relroot):
+            for d in os.listdir(relroot):
+                self.rels.append(rel(f'{relroot}/{d}'))
+
+    def fi(self, basicfieldname):
+        """ Field index """
         for f in self.fields:
             if f.basic_field_name == basicfieldname:
                 return f.index
         return None
 
-    def pksearch(self, PK_No):  # Search by PK_No
+    def pksearch(self, PK_No):
+        """ Search by PK_No """
         for d in self.dbentries:
             if d.pk_no == PK_No:
                 return d
@@ -203,7 +215,7 @@ class dbentry:
     """ A food entry and all its data """
 
     def __init__(self, PK_No, FoodName, Fields=[]):
-        self.pk_no = PK_No  # Unique, even across dbs.  Program reads all dbs into one numpy array, mandates unique pk_nos
+        self.pk_no = int(PK_No)  # Unique, even across dbs.  Program reads all dbs into one numpy array, mandates unique pk_nos
         self.foodname = FoodName
         self.fields = Fields
         self.matchstrength = 0
@@ -229,6 +241,7 @@ class field:
 
 
 def gen_fields(config):
+    """ Pairs the fields with headers based on config, LEAVE BLANK ONES IN THERE!! """
     lst = []
     for i, s in enumerate(config):
         friendlyname = s.split('=')[0].rstrip()
@@ -236,6 +249,54 @@ def gen_fields(config):
         # TODO: parse units if available
         lst.append(field(i, friendlyname, basic_field_name))
     return lst
+
+
+def rel(fpath):
+    """ Relative add-on db constructor """
+    config = []
+    data = []
+    key = []
+
+    # Reads in config.txt, key.txt and data.txt
+    with open(f'{fpath}/config.txt', 'r') as f:
+        for line in f.readlines():
+            config.append(line.rstrip())
+    with open(f'{fpath}/data.txt', 'r') as f:
+        for line in f.readlines():
+            data.append(line.rstrip())
+    with open(f'{fpath}/key.txt', 'r') as f:
+        for line in f.readlines():
+            key.append(line.rstrip())
+
+    # Creates the pairs for field <--> header
+    fields = gen_fields(config)
+    dataheaders = data[0].split('\t')
+    keyheaders = key[0].split('\t')
+
+    # Creates the pairs for PK_NutrNo <--> NutrName
+    relfields = gen_rel_fields(key, config)
+
+    # print((dataheaders, keyheaders))
+    for i, dh in enumerate(dataheaders):
+        for f in fields:
+            if f.friendlyname == dh:
+                print(f'match: @{i} {dh}={f.friendlyname} <-- {f.basic_field_name}')
+            pass
+            # print(f'{f.friendlyname}={f.basic_field_name}')
+    print()
+    # for e in
+
+
+class relentry:
+    def __init__(self, PK_No, PK_NutrNo, NutrName, NutrAmt):
+        self.pk_no = PK_No
+        self.pk_nutrno = PK_NutrNo
+        self.nutrname = NutrName
+        self.nutramt = NutrAmt
+
+
+def gen_rel_fields(key, config):
+    pass
 
 
 def main(args=None):
