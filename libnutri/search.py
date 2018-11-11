@@ -36,11 +36,23 @@ def shell():
             search(query.split())
 
 
-def search(args):
+def search(words):
     """ Searches all dbs, foods, recipes, recents and favorites. """
     for d in db.fdbs():
-        for h in d.headers:
-            print(h)
+        for e in d.dbentries:
+            for word in words:
+                if word.upper() in e.foodname.upper():
+                    print(f'{e}')
+                    e.matchstrength += 1
+        bestmatch = 0
+        for e in d.dbentries:
+            bestmatch = e.matchstrength if e.matchstrength > bestmatch else bestmatch
+            #print(bestmatch)
+            for m in range(bestmatch, 1):
+                if e.matchstrength == m:
+                    pass
+                    #print(m)
+                    #print(e)
 
 
 def search2(args):

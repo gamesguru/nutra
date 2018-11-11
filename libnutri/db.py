@@ -17,9 +17,6 @@ from colorama import Style, Fore, Back, init
 
 version = '0.0.1'
 
-work_dir = os.path.dirname(os.path.realpath(__file__))
-# os.chdir(work_dir)
-
 
 class TEST:
     def __init__(self, directory):
@@ -178,52 +175,72 @@ class fdb:
                 self.data.append(line.rstrip())
         # Creates the fields from the config
         self.fields = gen_fields(self.config)
+        self.headers = self.data[0].split('\t')
         # Allots data into numpy array
         self.data = np.array(self.data[1:])
-        for s in self.data:
-            print(s)
-        self.headers = self.data[0].split('\t')
-
-    def entry(self, pk_no):
-        for i, f in enumerate(self.fields):
-            if f.basic_field_name == 'PK_No':
-                self.pkindex = i
-        for e in self.data:
-            if self.data.split('\t')[self.pkindex] == pk_no:
-                return e  # TODO: API for alloting fields into more accessible manner
+        self.dbentries = []
+        for d in self.data:            
+            arr = np.array(d.split('\t'))
+            # Creates `dbentry': args=(pk_no, foodname, fields)
+            self.dbentries.append(dbentry(arr[self.fi("PK_No")], arr[self.fi("FoodName")], arr))
+        #self.dbentries = np.array(self.dbentries)
+        #print(self.pksearch('01001'))
+    
+    def fi(self, basicfieldname): # field index
+        for f in self.fields:
+            if f.basic_field_name == basicfieldname:
+                return f.index
+        return None
+    
+    def pksearch(self, PK_No): # Search by PK_No
+        for d in self.dbentries:
+            if d.pk_no == PK_No:
+                return d
+        return None
 
 
 class dbentry:
     """ A food entry and all its data """
 
-    def __init__(self, PK_no, FoodName, Fields=[]):
-        pk_no = PK_no  # Unique, even across dbs.  Program reads all dbs into one numpy array, mandates unique pk_nos
-        foodname = FoodName
-        fields = Fields
+    def __init__(self, PK_No, FoodName, Fields=[]):
+        self.pk_no = PK_No  # Unique, even across dbs.  Program reads all dbs into one numpy array, mandates unique pk_nos
+        self.foodname = FoodName
+        self.fields = Fields
+        self.matchstrength = 0
+    
+    def __str__(self):
+        return f'{self.pk_no} {self.foodname}'
 
 
 class field:
-    """ A field, its friendly name and basic_field_name, and its RDA if it exists """
+    """ A field, its column index, friendly name and basic_field_name, and its RDA if it exists """
 
-    def __init__(self, fname, bname, r=None):
-        friendlyname = fname
-        basic_field_name = bname
-        rda = r
+    def __init__(self, index, friendlyname, basicfieldname, r=None):
+        self.index = index
+        self.friendlyname = friendlyname
+        self.basic_field_name = basicfieldname
+        self.rda = r
+        
+
+    def __str__(self):
+        if self.rda is None:
+            return f'{self.friendlyname}={self.basic_field_name}'
+        else:
+            return f'{self.friendlyname}={self.basic_field_name} ({self.rda})'
 
 
 def gen_fields(config):
     lst = []
-    for s in config:
+    for i, s in enumerate(config):
         friendlyname = s.split('=')[0].rstrip()
         basic_field_name = s.split('=')[1]
         # TODO: parse units if available
-        lst.append(field(friendlyname, basic_field_name))
+        lst.append(field(i, friendlyname, basic_field_name))
     return lst
 
 
 def main(args=None):
     global nutridir
-    # print(nutridir)
     if os.sep == '\\':
         init()
     if args == None:
