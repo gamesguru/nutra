@@ -6,7 +6,7 @@ Created on Sat Oct 27 20:28:06 2018
 @author: shane
 """
 
-import os
+import re
 import sys
 import shutil
 import operator
@@ -28,40 +28,44 @@ def main(args=sys.argv):
 def shell():
     """ Provides interactive shell with broadly similar function to `search()' """
     print("Welcome to the search shell! Enter nothing, `q', or `c' to quit")
+    dbs = db.fdbs()
     while True:
         query = input('> ')
         exits = ['', 'q', 'c']
         if query in exits:
             break
         else:
-            search(query.split())
+            search(query.split(), dbs)
 
 
-def search(words):
+def search(words, dbs=None):
     """ Searches all dbs, foods, recipes, recents and favorites. """
     # Current terminal height
     bheight = shutil.get_terminal_size()[1] - 2
-
+    if dbs == None:
+        dbs = db.fdbs()
     # Count word matches
-    dbs = db.fdbs()
     for d in dbs:
         for e in d.dbentries:
             for word in words:
-                f = e.foodname
                 w = word.upper()
-                # Checks for our search words in the FoodName, also anti_vowel(our words) e.g. BRST, CKD, etc
-                if ((w in f) or (len(w) > 4 and anti_vowel(w) in f)):  # and not (w == 'CHICKEN'):
-                    e.matchstrength += len(w)
+                for fword in re.split(' |,|/', e.foodname):
+                    f = fword.upper()
+                    # Checks for our search words in the FoodName, also anti_vowel(our words) e.g. BRST, CKD, etc
+                    if ((w in f) or (len(w) > 5 and anti_vowel(w) in f)):
+                        e.matchstrength += 2 * len(w) if e.foodname.startswith(w) else len(w)  # ONIONS,SWT,RAW vs "nutri search onion raw"
+                        break
 
         # Sort by the strongest match
         d.dbentries.sort(key=operator.attrgetter('matchstrength'))
         d.dbentries.reverse()
-
+    bestmatch = d.dbentries[0].matchstrength
     # Print off as much space as terminal allots, TODO: override flag to print more or print all results?
     n = 0
     for d in dbs:
         for e in d.dbentries:
-            print(f'{e.matchstrength}: {e}')
+            perc = 100 * e.matchstrength / bestmatch
+            print(f'{perc}%: {e}')
             n += 1
             if n == bheight:
                 return
