@@ -49,16 +49,15 @@ def search(words):
         for e in d.dbentries:
             for rword in re.split(' |,|/|;', e.foodname.upper()):
                 for word in words:
-                    inc = similarity(rword.upper(), word.upper())
-                    e.matchstrength += inc
-                    print(f'{rword} & {word}: {inc}')
-            #e.matchstrength = similarity(e.foodname.upper(), ' '.join(words).upper())
-#            for word in words:
-#                if word.upper() in e.foodname.upper():
-#                    e.matchstrength += 1
-        # Determine the strongest match
+                    w = word.upper()
+                    f = e.foodname.upper()
+                    # Checks for our search words in the FoodName, also anti_vowel(our words) e.g. BRST, CKD, etc
+                    if (w in f) or (len(w) > 4 and anti_vowel(w) in f):
+                        e.matchstrength += len(word)
+        # Sort by the strongest match
         d.dbentries.sort(key=operator.attrgetter('matchstrength'))
         d.dbentries.reverse()
+    # Print off as much space as terminal allots, TODO: override flag to print more or print all results?
     n = 0
     for d in dbs:
         for e in d.dbentries:
@@ -66,24 +65,13 @@ def search(words):
             n += 1
             if n == bheight:
                 return
-#        bestmatch = 0
-#        for e in d.dbentries:
-#            bestmatch = e.matchstrength if e.matchstrength > bestmatch else bestmatch
-#        #print(f'bestmatch:{bestmatch}')
-#        # Print off the top matches
-#        n = 0
-#        for m in range(bestmatch, 0, -1): # TODO: fix this
-#            #print(f'start: {m}')
-#            for e in d.dbentries:
-#                if e.matchstrength == m:
-#                    print(f'{m} words: {e}')
-#                    n += 1
-#                    if n == bheight:
-#                        return
 
 def similarity(a, b):
     return SequenceMatcher(None, a, b).ratio()
 
+def anti_vowel(c):
+    vowels = ('A', 'E', 'I', 'O', 'U')
+    return ''.join([l for l in c if l not in vowels])
 
 def search2(args):
     """ Searches all dbs, foods, recipes, and favorites. """
