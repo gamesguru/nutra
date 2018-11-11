@@ -153,7 +153,7 @@ def fdbs():
     for s in os.listdir(dbdir):
         fpath = os.path.join(dbdir, s)
         if os.path.isdir(fpath):
-            print(fpath)
+            #print(fpath)
             lst.append(fdb(fpath))
     return lst
 

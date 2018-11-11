@@ -38,21 +38,29 @@ def shell():
 
 def search(words):
     """ Searches all dbs, foods, recipes, recents and favorites. """
+    # Current terminal height
+    bheight = shutil.get_terminal_size()[1] - 2
+    # Count word matches
     for d in db.fdbs():
         for e in d.dbentries:
             for word in words:
                 if word.upper() in e.foodname.upper():
-                    print(f'{e}')
                     e.matchstrength += 1
+        # Determine the strongest match
         bestmatch = 0
         for e in d.dbentries:
             bestmatch = e.matchstrength if e.matchstrength > bestmatch else bestmatch
-            #print(bestmatch)
-            for m in range(bestmatch, 1):
+        #print(f'bestmatch:{bestmatch}')
+        # Print off the top matches
+        n = 0
+        for m in range(bestmatch, 0, -1): # TODO: fix this
+            #print(f'start: {m}')
+            for e in d.dbentries:
                 if e.matchstrength == m:
-                    pass
-                    #print(m)
-                    #print(e)
+                    print(f'{m} words: {e}')
+                    n += 1
+                    if n == bheight:
+                        return
 
 
 def search2(args):
