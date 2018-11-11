@@ -153,7 +153,7 @@ def fdbs():
     for s in os.listdir(dbdir):
         fpath = os.path.join(dbdir, s)
         if os.path.isdir(fpath):
-            #print(fpath)
+            # print(fpath)
             lst.append(fdb(fpath))
     return lst
 
@@ -179,20 +179,20 @@ class fdb:
         # Allots data into numpy array
         self.data = np.array(self.data[1:])
         self.dbentries = []
-        for d in self.data:            
+        for d in self.data:
             arr = np.array(d.split('\t'))
             # Creates `dbentry': args=(pk_no, foodname, fields)
             self.dbentries.append(dbentry(arr[self.fi("PK_No")], arr[self.fi("FoodName")], arr))
         #self.dbentries = np.array(self.dbentries)
-        #print(self.pksearch('01001'))
-    
-    def fi(self, basicfieldname): # field index
+        # print(self.pksearch('01001'))
+
+    def fi(self, basicfieldname):  # field index
         for f in self.fields:
             if f.basic_field_name == basicfieldname:
                 return f.index
         return None
-    
-    def pksearch(self, PK_No): # Search by PK_No
+
+    def pksearch(self, PK_No):  # Search by PK_No
         for d in self.dbentries:
             if d.pk_no == PK_No:
                 return d
@@ -207,7 +207,7 @@ class dbentry:
         self.foodname = FoodName
         self.fields = Fields
         self.matchstrength = 0
-    
+
     def __str__(self):
         return f'{self.pk_no} {self.foodname}'
 
@@ -220,7 +220,6 @@ class field:
         self.friendlyname = friendlyname
         self.basic_field_name = basicfieldname
         self.rda = r
-        
 
     def __str__(self):
         if self.rda is None:

@@ -57,10 +57,10 @@ nutridir = os.path.join(os.path.expanduser('~'), '.nutri')
 
 def sync(serial):
     print(f'sync: {serial}')
-    #TODO: verify db, currently overwrites desktop over mobile each sync
+    # TODO: verify db, currently overwrites desktop over mobile each sync
     adb_push(f'{nutridir}/db', '/storage/emulated/0/nutri/db')
-    #adb_push(f'{nutridir}/field', '/storage/emulated/0/nutri/field')
-    #adb_push(f'{nutridir}/user', '/storage/emulated/0/nutri/user')
+    # adb_push(f'{nutridir}/field', '/storage/emulated/0/nutri/field')
+    # adb_push(f'{nutridir}/user', '/storage/emulated/0/nutri/user')
 
 
 if __name__ == '__main__':
