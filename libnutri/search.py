@@ -8,11 +8,9 @@ Created on Sat Oct 27 20:28:06 2018
 
 import os
 import sys
-import re
 import shutil
 import operator
 from libnutri import db
-from difflib import SequenceMatcher
 
 
 def main(args=sys.argv):
@@ -43,20 +41,22 @@ def search(words):
     """ Searches all dbs, foods, recipes, recents and favorites. """
     # Current terminal height
     bheight = shutil.get_terminal_size()[1] - 2
+    
     # Count word matches
     dbs = db.fdbs()
     for d in dbs:
         for e in d.dbentries:
-            for rword in re.split(' |,|/|;', e.foodname.upper()):
-                for word in words:
-                    w = word.upper()
-                    f = e.foodname.upper()
-                    # Checks for our search words in the FoodName, also anti_vowel(our words) e.g. BRST, CKD, etc
-                    if (w in f) or (len(w) > 4 and anti_vowel(w) in f):
-                        e.matchstrength += len(word)
+            for word in words:
+                f = e.foodname
+                w = word.upper()
+                # Checks for our search words in the FoodName, also anti_vowel(our words) e.g. BRST, CKD, etc
+                if ((w in f) or (len(w) > 4 and anti_vowel(w) in f)):# and not (w == 'CHICKEN'):
+                        e.matchstrength += len(w)
+
         # Sort by the strongest match
         d.dbentries.sort(key=operator.attrgetter('matchstrength'))
         d.dbentries.reverse()
+        
     # Print off as much space as terminal allots, TODO: override flag to print more or print all results?
     n = 0
     for d in dbs:
@@ -65,9 +65,6 @@ def search(words):
             n += 1
             if n == bheight:
                 return
-
-def similarity(a, b):
-    return SequenceMatcher(None, a, b).ratio()
 
 def anti_vowel(c):
     vowels = ('A', 'E', 'I', 'O', 'U')
