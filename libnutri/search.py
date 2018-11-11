@@ -8,8 +8,11 @@ Created on Sat Oct 27 20:28:06 2018
 
 import os
 import sys
+import re
 import shutil
+import operator
 from libnutri import db
+from difflib import SequenceMatcher
 
 
 def main(args=sys.argv):
@@ -41,26 +44,45 @@ def search(words):
     # Current terminal height
     bheight = shutil.get_terminal_size()[1] - 2
     # Count word matches
-    for d in db.fdbs():
+    dbs = db.fdbs()
+    for d in dbs:
         for e in d.dbentries:
-            for word in words:
-                if word.upper() in e.foodname.upper():
-                    e.matchstrength += 1
+            for rword in re.split(' |,|/|;', e.foodname.upper()):
+                for word in words:
+                    inc = similarity(rword.upper(), word.upper())
+                    e.matchstrength += inc
+                    print(f'{rword} & {word}: {inc}')
+            #e.matchstrength = similarity(e.foodname.upper(), ' '.join(words).upper())
+#            for word in words:
+#                if word.upper() in e.foodname.upper():
+#                    e.matchstrength += 1
         # Determine the strongest match
-        bestmatch = 0
+        d.dbentries.sort(key=operator.attrgetter('matchstrength'))
+        d.dbentries.reverse()
+    n = 0
+    for d in dbs:
         for e in d.dbentries:
-            bestmatch = e.matchstrength if e.matchstrength > bestmatch else bestmatch
-        #print(f'bestmatch:{bestmatch}')
-        # Print off the top matches
-        n = 0
-        for m in range(bestmatch, 0, -1): # TODO: fix this
-            #print(f'start: {m}')
-            for e in d.dbentries:
-                if e.matchstrength == m:
-                    print(f'{m} words: {e}')
-                    n += 1
-                    if n == bheight:
-                        return
+            print(f'{e.matchstrength}: {e}')
+            n += 1
+            if n == bheight:
+                return
+#        bestmatch = 0
+#        for e in d.dbentries:
+#            bestmatch = e.matchstrength if e.matchstrength > bestmatch else bestmatch
+#        #print(f'bestmatch:{bestmatch}')
+#        # Print off the top matches
+#        n = 0
+#        for m in range(bestmatch, 0, -1): # TODO: fix this
+#            #print(f'start: {m}')
+#            for e in d.dbentries:
+#                if e.matchstrength == m:
+#                    print(f'{m} words: {e}')
+#                    n += 1
+#                    if n == bheight:
+#                        return
+
+def similarity(a, b):
+    return SequenceMatcher(None, a, b).ratio()
 
 
 def search2(args):
