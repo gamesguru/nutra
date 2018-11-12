@@ -20,6 +20,8 @@ def analyze(PK_No=None, grams=100):
             if e.pk_no == PK_No:
                 print(f'Analyze: {e.foodname} ({grams}g)\n')
 
+                # Prints basic fields
+
                 # Prints relative fields
                 max_rel_length = 0
                 for r in d.rels:

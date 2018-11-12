@@ -137,23 +137,34 @@ dbdir = os.path.join(nutridir, 'db')
 #     os.makedirs(dbdir, 0o775, True)
 
 
-def dbs():
+def abbrev_fdbs():
     """ Returns a list of dbs, **NAMES ONLY** """
     lst = []
     for s in os.listdir(dbdir):
         fpath = os.path.join(dbdir, s)
-        if os.path.isdir(fpath) and not s.startswith('&'):
+        if os.path.isdir(fpath) and not s.startswith('&') and not s.startswith('_'):
+            lst.append(s)
+    return lst
+
+
+def abbrev_rdbs():
+    """ Returns a list of relative dbs (standalone, not tack on) """
+    lst = []
+    for s in os.listdir(dbdir):
+        fpath = os.path.join(dbdir, s)
+        if os.path.isdir(fpath) and s.startswith('_'):
             lst.append(s)
     return lst
 
 
 def fdbs():
-    """ Returns a list of dbs, data, and config (headers, fields, etc) """
+    """ Returns a list of flatfile dbs, data, and config (headers, fields, etc) """
     lst = []
     for s in os.listdir(dbdir):
         fpath = os.path.join(dbdir, s)
-        if os.path.isdir(fpath) and not s.startswith('&'):
-            lst.append(fdb(s))
+        if os.path.isdir(fpath):
+            if not s.startswith('&') and not s.startswith('_'):
+                lst.append(fdb(s))
     return lst
 
 
@@ -179,22 +190,23 @@ class fdb:
 
         # Creates the fields from the config
         self.fields = gen_fields(self.config)
-        self.headers = self.data[0].split('\t')
+        # self.headers = self.data[0].split('\t')
 
         # Allots data-entries into numpy array
-        self.data = np.array(self.data[1:])
-        self.dbentries = []
-        for d in self.data:
-            arr = np.array(d.split('\t'))
-            # Creates `dbentry': args=(pk_no, foodname, fields)
-            self.dbentries.append(dbentry(arr[self.fi("PK_No")], arr[self.fi("FoodName")], arr))
+        self.fdb_entries = gen_fdb_entries(self.data, self.fields)
+        # self.data = np.array(self.data[1:])
+        # self.dbentries = []
+        # for d in self.data:
+        #     arr = np.array(d.split('\t'))
+        #     # Creates `dbentry': args=(pk_no, foodname, fields)
+        #     self.dbentries.append(dbentry(arr[self.fi("PK_No")], arr[self.fi("FoodName")], arr))
 
         # Reads in relative tackons if they exist
         relroot = os.path.join(dbdir, f'&{self.name}')
         self.rels = []
         if os.path.isdir(relroot):
             for d in os.listdir(relroot):
-                self.rels.append(rel(f'{relroot}/{d}'))
+                self.rels.append(frel(f'{relroot}/{d}'))
 
     def fi(self, basicfieldname):
         """ Field index """
@@ -211,7 +223,7 @@ class fdb:
         return None
 
 
-class dbentry:
+class fdb_entry:
     """ A food entry and all its data """
 
     def __init__(self, PK_No, FoodName, Fields=[]):
@@ -222,6 +234,12 @@ class dbentry:
 
     def __str__(self):
         return f'{self.pk_no} {self.foodname}'
+
+
+def gen_fdb_entries(data, fields):
+    lst = []
+    # TODO: this, later
+    return lst
 
 
 class field:
@@ -251,7 +269,7 @@ def gen_fields(config):
     return lst
 
 
-class rel:
+class frel:
     def __init__(self, fpath):
         """ Relative add-on db constructor """
         self.config = []
@@ -272,12 +290,18 @@ class rel:
         # Creates the pairs for field <--> header
         self.fields = gen_fields(self.config)
         # Creates the pairs for PK_NutrNo <--> NutrName
-        self.rel_keys = gen_rel_keys(self.key, self.config)
+        self.frel_keys = gen_frel_keys(self.key, self.config)
         # Creates the pairs for field <--> header ???
-        self.rel_entries = gen_rel_entries(self.data, self.config, self.rel_keys)
+        self.frel_entries = gen_frel_entries(self.data, self.config, self.frel_keys)
 
 
-def gen_rel_keys(key, config):
+class frel_key:
+    def __init__(self, PK_NutrNo, NutrName):
+        self.pk_nutrno = PK_NutrNo
+        self.nutrname = NutrName
+
+
+def gen_frel_keys(key, config):
     # Determine friendlyname (header) for PK_NutrNo and NutrName (e.g. Nutr_No and NutrDesc in USDA)
     for c in config:
         if c.split('=')[1] == 'PK_NutrNo':
@@ -292,20 +316,24 @@ def gen_rel_keys(key, config):
         elif k == nutrname:
             nni = i
 
-    # Allot "rel keys"
-    rel_keys = []
+    # Allot "frel keys"
+    frel_keys = []
     for k in key[1:]:
-        rel_keys.append(rel_key(k.split('\t')[pkni], k.split('\t')[nni]))
-    return rel_keys
+        frel_keys.append(frel_key(k.split('\t')[pkni], k.split('\t')[nni]))
+    return frel_keys
 
 
-class rel_key:
-    def __init__(self, PK_NutrNo, NutrName):
-        self.pk_nutrno = PK_NutrNo
+class frel_entry:
+    def __init__(self, PK_No, NutrName, NutrAmt):
+        self.pk_no = PK_No
         self.nutrname = NutrName
+        self.nutramt = NutrAmt
+
+    def __str__(self):
+        return f'{self.pk_no}: {self.nutrname} @{self.nutramt}'
 
 
-def gen_rel_entries(data, config, rel_keys):
+def gen_frel_entries(data, config, rel_keys):
     # Determine friendlyname (header) for PK_NutrNo and NutrName (e.g. Nutr_No and NutrDesc in USDA)
     for c in config:
         if c.split('=')[1] == 'PK_No':
@@ -323,26 +351,16 @@ def gen_rel_entries(data, config, rel_keys):
         elif d == nutramt:
             namti = i
     # Allot rel entries
-    rel_entries = []
+    frel_entries = []
     for d in data[1:]:
         pk_no = d.split('\t')[pki]
         pk_nutrno = d.split('\t')[pkni]
         nutrname = [n for n in rel_keys if n.pk_nutrno == pk_nutrno][0].nutrname
         nutramt = d.split('\t')[namti]
-        rel_entries.append(rel_entry(int(pk_no), nutrname, nutramt))
+        frel_entries.append(frel_entry(int(pk_no), nutrname, nutramt))
     # for r in rel_entries:
     #     print(r)
-    return rel_entries
-
-
-class rel_entry:
-    def __init__(self, PK_No, NutrName, NutrAmt):
-        self.pk_no = PK_No
-        self.nutrname = NutrName
-        self.nutramt = NutrAmt
-
-    def __str__(self):
-        return f'{self.pk_no}: {self.nutrname} @{self.nutramt}'
+    return frel_entries
 
 
 def main(args=None):
@@ -411,8 +429,10 @@ class cmdmthds:
 
     class list:
         def mthd(rarg):
-            for db in dbs():
-                print(db)
+            for db in abbrev_fdbs():
+                print(f'flat: {db}')
+            for rdb in abbrev_rdbs():
+                print(f'rel:  {rdb[1:]}')
         altargs = ['-l']
 
     class help:

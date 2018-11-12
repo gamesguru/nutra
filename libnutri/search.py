@@ -46,7 +46,7 @@ def search(words, dbs=None):
         dbs = db.fdbs()
     # Count word matches
     for d in dbs:
-        for e in d.dbentries:
+        for e in d.fdb_entries:
             for word in words:
                 w = word.upper()
                 for fword in re.split(' |,|/', e.foodname):
@@ -57,13 +57,13 @@ def search(words, dbs=None):
                         break
 
         # Sort by the strongest match
-        d.dbentries.sort(key=operator.attrgetter('matchstrength'))
-        d.dbentries.reverse()
-    bestmatch = d.dbentries[0].matchstrength
+        d.fdb_entries.sort(key=operator.attrgetter('matchstrength'))
+        d.fdb_entries.reverse()
+    bestmatch = d.fdb_entries[0].matchstrength
     # Print off as much space as terminal allots, TODO: override flag to print more or print all results?
     n = 0
     for d in dbs:
-        for e in d.dbentries:
+        for e in d.fdb_entries:
             perc = round(100 * e.matchstrength / bestmatch, 1)
             print(f'{perc}%: {e}')
             n += 1
