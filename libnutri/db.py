@@ -270,33 +270,85 @@ def rel(fpath):
 
     # Creates the pairs for field <--> header
     fields = gen_fields(config)
-    dataheaders = data[0].split('\t')
-    keyheaders = key[0].split('\t')
-
     # Creates the pairs for PK_NutrNo <--> NutrName
-    relfields = gen_rel_fields(key, config)
+    rel_keys = gen_rel_keys(key, config)
+    # Creates the pairs for field <--> header ???
+    rel_entries = gen_rel_entries(data, config, rel_keys)
+
+    for r in rel_entries:
+        print(r)
 
     # print((dataheaders, keyheaders))
-    for i, dh in enumerate(dataheaders):
-        for f in fields:
-            if f.friendlyname == dh:
-                print(f'match: @{i} {dh}={f.friendlyname} <-- {f.basic_field_name}')
-            pass
-            # print(f'{f.friendlyname}={f.basic_field_name}')
-    print()
-    # for e in
+    # for i, dh in enumerate(dataheaders):
+    #     for f in fields:
+    #         if f.friendlyname == dh:
+    #             # print(f'match: @{i} {dh}={f.friendlyname} <-- {f.basic_field_name}')
+    #             pass
+    # print(f'{f.friendlyname}={f.basic_field_name}')
 
 
-class relentry:
-    def __init__(self, PK_No, PK_NutrNo, NutrName, NutrAmt):
-        self.pk_no = PK_No
+def gen_rel_keys(key, config):
+    # Determine friendlyname (header) for PK_NutrNo and NutrName (e.g. Nutr_No and NutrDesc in USDA)
+    for c in config:
+        if c.split('=')[1] == 'PK_NutrNo':
+            pk_nutrno = c.split('=')[0].rstrip()
+        elif c.split('=')[1] == 'NutrName':
+            nutrname = c.split('=')[0].rstrip()
+    # Figure out column index
+    for i, k in enumerate(key[0].split('\t')):
+        if k == pk_nutrno:
+            pkni = i
+        elif k == nutrname:
+            nni = i
+    # Allot "rel keys"
+    rel_keys = []
+    for k in key[1:]:
+        rel_keys.append(rel_key(k.split('\t')[pkni], k.split('\t')[nni]))
+    return rel_keys
+
+
+class rel_key:
+    def __init__(self, PK_NutrNo, NutrName):
         self.pk_nutrno = PK_NutrNo
+        self.nutrname = NutrName
+
+
+def gen_rel_entries(data, config, rel_keys):
+    # Determine friendlyname (header) for PK_NutrNo and NutrName (e.g. Nutr_No and NutrDesc in USDA)
+    for c in config:
+        if c.split('=')[1] == 'PK_No':
+            pk_no = c.split('=')[0].rstrip()
+        elif c.split('=')[1] == 'PK_NutrNo':
+            pk_nutrno = c.split('=')[0].rstrip()
+        elif c.split('=')[1] == 'NutrAmt':
+            nutramt = c.split('=')[0].rstrip()
+    # Figure out column index
+    for i, d in enumerate(data[0].split('\t')):
+        if d == pk_no:
+            pki = i
+        elif d == pk_nutrno:
+            pkni = i
+        elif d == nutramt:
+            namti = i
+    # Allot rel entries
+    rel_entries = []
+    for d in data[1:]:
+        pk_no = d.split('\t')[pki]
+        pk_nutrno = d.split('\t')[pkni]
+        nutrname = [n for n in rel_keys if n.pk_nutrno == pk_nutrno][0].pk_nutrno
+        nutramt = d.split('\t')[namti]
+        rel_entries.append(rel_entry(pk_no, pk_nutrno, nutramt))
+    return rel_entries
+
+
+class rel_entry:
+    def __init__(self, PK_No, NutrName, NutrAmt):
+        self.pk_no = PK_No
         self.nutrname = NutrName
         self.nutramt = NutrAmt
 
-
-def gen_rel_fields(key, config):
-    pass
+    def __str__(self):
+        return f'{self.pk_no}: {self.nutrname} @{self.nutramt}'
 
 
 def main(args=None):
@@ -434,6 +486,8 @@ known_basic_fields = [
     "Serv2",
     "Weight",
     "Weight2",
+
+
 ]
 
 usage = f"""Database management tool
