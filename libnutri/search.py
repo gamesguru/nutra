@@ -64,7 +64,7 @@ def search(words, dbs=None):
     n = 0
     for d in dbs:
         for e in d.dbentries:
-            perc = 100 * e.matchstrength / bestmatch
+            perc = round(100 * e.matchstrength / bestmatch, 1)
             print(f'{perc}%: {e}')
             n += 1
             if n == bheight:

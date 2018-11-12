@@ -251,40 +251,30 @@ def gen_fields(config):
     return lst
 
 
-def rel(fpath):
-    """ Relative add-on db constructor """
-    config = []
-    data = []
-    key = []
+class rel:
+    def __init__(self, fpath):
+        """ Relative add-on db constructor """
+        self.config = []
+        self.data = []
+        self.key = []
 
-    # Reads in config.txt, key.txt and data.txt
-    with open(f'{fpath}/config.txt', 'r') as f:
-        for line in f.readlines():
-            config.append(line.rstrip())
-    with open(f'{fpath}/data.txt', 'r') as f:
-        for line in f.readlines():
-            data.append(line.rstrip())
-    with open(f'{fpath}/key.txt', 'r') as f:
-        for line in f.readlines():
-            key.append(line.rstrip())
+        # Reads in config.txt, key.txt and data.txt
+        with open(f'{fpath}/config.txt', 'r') as f:
+            for line in f.readlines():
+                self.config.append(line.rstrip())
+        with open(f'{fpath}/data.txt', 'r') as f:
+            for line in f.readlines():
+                self.data.append(line.rstrip())
+        with open(f'{fpath}/key.txt', 'r') as f:
+            for line in f.readlines():
+                self.key.append(line.rstrip())
 
-    # Creates the pairs for field <--> header
-    fields = gen_fields(config)
-    # Creates the pairs for PK_NutrNo <--> NutrName
-    rel_keys = gen_rel_keys(key, config)
-    # Creates the pairs for field <--> header ???
-    rel_entries = gen_rel_entries(data, config, rel_keys)
-
-    for r in rel_entries:
-        print(r)
-
-    # print((dataheaders, keyheaders))
-    # for i, dh in enumerate(dataheaders):
-    #     for f in fields:
-    #         if f.friendlyname == dh:
-    #             # print(f'match: @{i} {dh}={f.friendlyname} <-- {f.basic_field_name}')
-    #             pass
-    # print(f'{f.friendlyname}={f.basic_field_name}')
+        # Creates the pairs for field <--> header
+        self.fields = gen_fields(self.config)
+        # Creates the pairs for PK_NutrNo <--> NutrName
+        self.rel_keys = gen_rel_keys(self.key, self.config)
+        # Creates the pairs for field <--> header ???
+        self.rel_entries = gen_rel_entries(self.data, self.config, self.rel_keys)
 
 
 def gen_rel_keys(key, config):
@@ -294,12 +284,14 @@ def gen_rel_keys(key, config):
             pk_nutrno = c.split('=')[0].rstrip()
         elif c.split('=')[1] == 'NutrName':
             nutrname = c.split('=')[0].rstrip()
+
     # Figure out column index
     for i, k in enumerate(key[0].split('\t')):
         if k == pk_nutrno:
             pkni = i
         elif k == nutrname:
             nni = i
+
     # Allot "rel keys"
     rel_keys = []
     for k in key[1:]:
@@ -335,9 +327,11 @@ def gen_rel_entries(data, config, rel_keys):
     for d in data[1:]:
         pk_no = d.split('\t')[pki]
         pk_nutrno = d.split('\t')[pkni]
-        nutrname = [n for n in rel_keys if n.pk_nutrno == pk_nutrno][0].pk_nutrno
+        nutrname = [n for n in rel_keys if n.pk_nutrno == pk_nutrno][0].nutrname
         nutramt = d.split('\t')[namti]
-        rel_entries.append(rel_entry(pk_no, pk_nutrno, nutramt))
+        rel_entries.append(rel_entry(int(pk_no), nutrname, nutramt))
+    # for r in rel_entries:
+    #     print(r)
     return rel_entries
 
 
@@ -358,14 +352,11 @@ def main(args=None):
     if args == None:
         args = sys.argv
 
-    # print(args)
     # No arguments passed in
     if len(args) == 0:
         print(usage)
 
     # Otherwise we have some args
-    # print(args)
-    # print(f'\n{Fore.CYAN}Welcome to the DB import tool!{Style.RESET_ALL}\n')
     for i, arg in enumerate(args):
         rarg = args[i:]
         if hasattr(cmdmthds, arg):
