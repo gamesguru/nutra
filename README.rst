@@ -7,25 +7,34 @@ CLI backend.
 *Requires:*
 
 - Python 3.6.5 or later
-- Desktop (Win/mac/Linux)
+- Desktop: Windows, macOS, or Linux
 - *(Optional)* Android 5.0+ phone, USB, adb, developer mode
 
 
-Getting Set Up
-==============
-Installing from Release
------------------------
-The PyPi release can be installed on Python >3.6.5 with
+
+Install PyPi release (from pip)
+-------------------------------
 
 :code:`pip install nutri`
 
-You can update with :code:`pip install -U nutri`
+(**Note:** use :code:`pip3` on Linux/macOS)
 
-Subscribe to the preview/beta channel: :code:`pip install nutri --pre`
+**Update to latest**
 
-Using the source-code directly:
+:code:`pip install -U nutri`
 
+**Subscribe to the preview/beta channel**
 
+:code:`pip install nutri --pre`
+
+**Unsubscribe (back to stable)**
+::
+
+    pip uninstall nutri
+    pip install nutri
+
+Using the source-code directly
+------------------------------
 ::
 
     git clone git@github.com:gamesguru/nutri.git
@@ -36,10 +45,23 @@ Using the source-code directly:
 
 
 Downloading Food Data
----------------------
-Can be downloaded manually:
+=====================
 
-(Grab the latest :code:`nutri.zip` file)
+
+Linux/macOS Script (curl)
+-------------------------
+::
+
+    cd ~
+    curl -L https://api.bitbucket.org/2.0/repositories/dasheenster/nutri-utils/downloads/nutri.zip -o nutri.zip
+    unzip -o nutri.zip
+    rm nutri.zip
+
+
+Windows (web download)
+----------------------
+
+Download :code:`nutri.zip`:
 
 https://bitbucket.org/dasheenster/nutri-utils/downloads/
 
@@ -51,7 +73,6 @@ Extract the :code:`.nutri` folder to your home folder.
 - On Linux it's :code:`/home/<your_name>`
 
 These can also be downloaded from the Android app, or synced over USB cable.
-
 
 You can also import your own flat file databases.  The full database import process is explained with :code:`nutri db --help`
 
