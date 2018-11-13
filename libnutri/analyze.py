@@ -16,12 +16,13 @@ version = '0.0.1'
 def analyze(PK_No=None, grams=100):
     dbs = db.fdbs()
     for d in dbs:
-        for e in d.dbentries:
+        for e in d.fdb_entries:
             if e.pk_no == PK_No:
                 print(f'Analyze: {e.foodname} ({grams}g)\n')
 
                 # Prints basic fields
-
+                max_basic_length = 0
+                for f in e.fields
                 # Prints relative fields
                 max_rel_length = 0
                 for r in d.rels:

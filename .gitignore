@@ -3,13 +3,14 @@ __pycache__/
 *.py[cod]
 *$py.class
 
-# macOS files
+# macOS/backup files
 .~*
 ._*
 .DS_Store
 
 # Database files
 *.txt
+*.zip
 
 # C extensions
 *.so

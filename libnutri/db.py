@@ -188,12 +188,11 @@ class fdb:
             for line in f.readlines():
                 self.data.append(line.rstrip())
 
-        # Creates the fields from the config
-        self.fields = gen_fields(self.config)
-        # self.headers = self.data[0].split('\t')
+        # Creates the headers from the config
+        self.headers = gen_headers(self.config)
 
         # Allots data-entries into numpy array
-        self.fdb_entries = gen_fdb_entries(self.data, self.fields)
+        self.fdb_entries = []  # gen_fdb_entries(self.data, self.headers)
         # self.data = np.array(self.data[1:])
         # self.dbentries = []
         # for d in self.data:
@@ -226,24 +225,34 @@ class fdb:
 class fdb_entry:
     """ A food entry and all its data """
 
-    def __init__(self, PK_No, FoodName, Fields=[]):
-        self.pk_no = int(PK_No)  # Unique, even across dbs.  Program reads all dbs into one numpy array, mandates unique pk_nos
-        self.foodname = FoodName
-        self.fields = Fields
-        self.matchstrength = 0
+    def __init__(self, data, headers):
+        self.ffields =
+        # def __init__(self, PK_No, FoodName, Fields=[]):
+        #     self.pk_no = int(PK_No)  # Unique, even across dbs.  Program reads all dbs into one numpy array, mandates unique pk_nos
+        #     self.foodname = FoodName
+        #     self.fields = Fields
+        #     self.matchstrength = 0
 
     def __str__(self):
         return f'{self.pk_no} {self.foodname}'
 
 
-def gen_fdb_entries(data, fields):
+class ffield:
+    """ Flat file field, plus its value, TODO: units/rda """
+
+    def __init__(self, basicfieldname, value):
+        self.basic_field_name = basicfieldname
+        self.value = value
+
+
+def gen_fdb_entries(data, headers):
     lst = []
     # TODO: this, later
     return lst
 
 
-class field:
-    """ A field, its column index, friendly name and basic_field_name, and its RDA if it exists """
+class header:
+    """ A header, its column index, friendly name and basic_field_name, and its RDA if it exists """
 
     def __init__(self, index, friendlyname, basicfieldname, r=None):
         self.index = index
@@ -258,14 +267,14 @@ class field:
             return f'{self.friendlyname}={self.basic_field_name} ({self.rda})'
 
 
-def gen_fields(config):
+def gen_headers(config):
     """ Pairs the fields with headers based on config, LEAVE BLANK ONES IN THERE!! """
     lst = []
     for i, s in enumerate(config):
         friendlyname = s.split('=')[0].rstrip()
         basic_field_name = s.split('=')[1]
         # TODO: parse units if available
-        lst.append(field(i, friendlyname, basic_field_name))
+        lst.append(header(i, friendlyname, basic_field_name))
     return lst
 
 
@@ -497,8 +506,6 @@ known_basic_fields = [
     "Serv2",
     "Weight",
     "Weight2",
-
-
 ]
 
 usage = f"""Database management tool
