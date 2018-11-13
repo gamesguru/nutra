@@ -1,8 +1,7 @@
 Nutritracker
 ============
 
-An extensible nutrient tracking app designed for home and office use.
-CLI backend.
+Extensible command-line tool for nutrient analysis.
 
 *Requires:*
 
@@ -11,10 +10,8 @@ CLI backend.
 - *(Optional)* Android 5.0+ phone, USB, adb, developer mode
 
 
-
 Install PyPi release (from pip)
 -------------------------------
-
 :code:`pip install nutri`
 
 (**Note:** use :code:`pip3` on Linux/macOS)
@@ -37,16 +34,13 @@ Using the source-code directly
 ------------------------------
 ::
 
-    git clone git@github.com:gamesguru/nutri.git
-    
-    cd nutri
-    
+    git clone git@github.com:gamesguru/nutri.git    
+    cd nutri    
     ./nutri -h
 
 
 Downloading Food Data
 =====================
-
 
 Linux/macOS Script (curl)
 -------------------------
@@ -57,10 +51,8 @@ Linux/macOS Script (curl)
     unzip -o nutri.zip
     rm nutri.zip
 
-
 Windows (web download)
 ----------------------
-
 Download :code:`nutri.zip`:
 
 https://bitbucket.org/dasheenster/nutri-utils/downloads/
@@ -78,8 +70,9 @@ You can also import your own flat file databases.  The full database import proc
 
 Better directions for getting set up (on Windows) will (eventually) be posted `on youtube <https://www.youtube.com/user/gamesguru>`_.
 
+
 Currently Supported Data
-------------------------
+========================
 **USDA Stock database**
 
 - Standard flat file database, 8790 foods
@@ -99,7 +92,7 @@ Currently Supported Data
 
 
 Not Supported Yet
------------------
+=================
 
 **Branded Foods Database**
 
@@ -108,6 +101,7 @@ Not Supported Yet
 **Canadian Nutrient Files**
 
 - Similar to USDAstock, except relational (not flat file)
+
 
 Usage
 =====
