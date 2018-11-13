@@ -226,7 +226,8 @@ class fdb_entry:
     """ A food entry and all its data """
 
     def __init__(self, data, headers):
-        self.ffields =
+        self.ffields = None
+        #TODO: this
         # def __init__(self, PK_No, FoodName, Fields=[]):
         #     self.pk_no = int(PK_No)  # Unique, even across dbs.  Program reads all dbs into one numpy array, mandates unique pk_nos
         #     self.foodname = FoodName

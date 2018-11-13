@@ -22,7 +22,8 @@ def analyze(PK_No=None, grams=100):
 
                 # Prints basic fields
                 max_basic_length = 0
-                for f in e.fields
+                # TODO: this
+                # for f in e.fields
                 # Prints relative fields
                 max_rel_length = 0
                 for r in d.rels:

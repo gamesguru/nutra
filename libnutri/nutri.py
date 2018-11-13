@@ -27,9 +27,8 @@ class fmt:
 
 version = '0.0.1'
 
-usage = f"""Nutritracker helps you stay fit and healthy.
+usage = f"""nutri helps you stay fit and healthy.
 Version {version}
-
 
 Usage: {fmt.BOLD}nutri <command> {fmt.END}
 
@@ -37,14 +36,10 @@ Commands:
     {fmt.BOLD}config{fmt.END}              change name, age, and vitamin targets
     {fmt.BOLD}db{fmt.END}                  import, edit and verify databases
     {fmt.BOLD}field{fmt.END}               import, pair and manage fields
-    {fmt.BOLD}recipe{fmt.END}              create, edit and view recipes and custom foods
-    {fmt.BOLD}search{fmt.END}              search databases or recipes
-    {fmt.BOLD}add{fmt.END}                 add foods or items to daily log
-    {fmt.BOLD}log{fmt.END}                 show previous meals and summary
     {fmt.BOLD}sync{fmt.END}                sync android device
-    {fmt.BOLD}analyze{fmt.END}             critique a date (range), meal, recipe, or food
-    {fmt.BOLD}contrib{fmt.END}             rank contributions
-    {fmt.BOLD}bugreport{fmt.END}           e-wires source code and your pesonal .nutri data"""
+    {fmt.BOLD}analyze | anl{fmt.END}       critique a date (range), meal, recipe, or food
+    {fmt.BOLD}bugreport{fmt.END}           upload database info, and version number
+    {fmt.BOLD}--help | -h{fmt.END}         show help for a given command"""
 
 
 def main(args=None):
