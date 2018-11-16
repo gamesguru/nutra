@@ -1,0 +1,9 @@
+1. implement Redis or similar IPC, instead of reading full db with each cmd (search, analyze, etc.) it should keep it in memory for 20-30 minutes
+
+2. supplementary field pairing.  export to my ubuntu server via node.js and socket.py: either implement username-password pairs, or just mandate unique IP submissions (allow edits)
+
+3. support for BFDB and CNF
+
+4. implement ServingConversionField so people can use units other than grams
+
+5. optimize and generalize the database class/metaclass schemes
