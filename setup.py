@@ -34,12 +34,12 @@ setup(
     install_requires=['colorama', 'numpy'],
     long_description=readme(),
     long_description_content_type='text/x-rst',
-    version='0.0.0.dev16',
-    license='Apache v2',
+    version='0.0.0.dev17',
+    license='GPL v3',
     url="https://github.com/gamesguru/nutri",
     classifiers=[
         'Programming Language :: Python :: 3',
-        'License :: OSI Approved :: Apache Software License',
+        'License :: OSI Approved :: GNU General Public License v3 (GPLv3)',
         'Operating System :: OS Independent',
     ],
 )
