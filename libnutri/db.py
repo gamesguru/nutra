@@ -153,9 +153,15 @@ def Save():
 
 nutridir = os.path.join(os.path.expanduser("~"), '.nutri')
 dbdir = os.path.join(nutridir, 'db')
-# TODO: better placement
-# if not os.path.isdir(dbdir):
-#     os.makedirs(dbdir, 0o775, True)
+
+
+class serving_conversion_field:
+    def __init__(self, house_unit, house_qty, std_unit, std_qty):
+        """ Converts between household and standard units, e.g. 0.25 sec spray = 1 g """
+        self.hunit = house_unit  # cups, 1 sec spray, sprigs, 1 sausage, etc.
+        self.hqty = house_qty
+        self.sunit = std_unit  # either g or mL
+        self.sqty = std_qty
 
 
 def abbrev_fdbs():
@@ -248,7 +254,7 @@ class fdb_entry:
 
     def __init__(self, data, headers):
         self.ffields = None
-        #TODO: this
+        # TODO: this
         # def __init__(self, PK_No, FoodName, Fields=[]):
         #     self.pk_no = int(PK_No)  # Unique, even across dbs.  Program reads all dbs into one numpy array, mandates unique pk_nos
         #     self.foodname = FoodName
