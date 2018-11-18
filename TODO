@@ -7,3 +7,9 @@
 4. implement ServingConversionField so people can use units other than grams
 
 5. optimize and generalize the database class/metaclass schemes
+
+6. parse amino acid db: http://www.fao.org/docrep/005/AC854T/AC854T00.htm
+
+7. convert usda stock flat file to relative, they offer better data anyways
+
+8. preserve support for import flat file db??  big questions..
