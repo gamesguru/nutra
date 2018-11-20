@@ -64,7 +64,7 @@ class table:
         self.schemas = []
         lines = []
         print(file)
-        with open(file, 'r') as f:
+        with open(file, 'r', encoding='utf8') as f:
             for line in f:
                 lines.append(line)
                 # print(line.rstrip())
