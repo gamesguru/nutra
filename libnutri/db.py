@@ -35,40 +35,86 @@ import shutil
 import inspect
 import ntpath
 from colorama import Style, Fore, Back, init
+import timeit
 
 version = '0.0.1'
 nutridir = os.path.join(os.path.expanduser("~"), '.nutri')
 dbdir = os.path.join(nutridir, 'db')
 
 
+def gen_dbs():
+    lst = []
+    for dir in os.listdir(dbdir):
+        lst.append(db(f'{dbdir}/{dir}'))
+    return lst
+
+
 class db:
-    def __init__(self):
+    def __init__(self, dir):
         # tables
+        self.tables = []
+        for file in os.listdir(dir):
+            self.tables.append(table(f'{dir}/{file}'))
         # perform relational algebra
         pass
 
 
 class table:
-    def __init__(self):
-        # key_schema
-        # schemas
+    def __init__(self, file):
+        self.schemas = []
+        lines = []
+        print(file)
+        with open(file, 'r') as f:
+            for line in f:
+                lines.append(line)
+                # print(line.rstrip())
+        self.schemas = schematize(lines)
         pass
 
 
 class schema:
-    def __init__(self):
-        # rows
-        # n = len(rows)
-        pass
+    def __init__(self, Header, Entries):
+        self.header = Header
+        self.entries = Entries
 
 
-class serving_conversion_field:
+class dbentry:
+    def __init__(self, Key_No, FoodName, Nutrients, Servings):
+        self.key = Key_No
+        self.foodname = FoodName
+        self.nutrients = Nutrients
+        self.servings = Servings
+
+
+class nutrient:
+    def __init__(self, Key_NutrNo, NutrName, NutrAmt, Units):
+        self.nutrno = Key_NutrNo
+        self.nutrname = NutrName
+        self.nutramt = NutrAmt
+        self.units = Units
+
+
+class serving:
     def __init__(self, house_unit, house_qty, std_unit, std_qty):
         """ Converts between household and standard units, e.g. 0.25 sec spray = 1 g """
         self.hunit = house_unit  # cups, 1 sec spray, sprigs, 1 sausage, etc.
         self.hqty = house_qty
         self.sunit = std_unit  # either g or mL
         self.sqty = std_qty
+
+
+def schematize(lines):
+    schemas = []
+    headers = lines[0].split('\t')
+    splitrows = [l.split('\t') for l in lines[1:]]
+    for i, h in enumerate(headers):
+        rows = [r[i] for r in splitrows]
+        schemas.append(schema(h, rows))
+    return schemas
+
+    ######
+    # legacy code below
+    ######
 
 
 def abbrev_fdbs():
