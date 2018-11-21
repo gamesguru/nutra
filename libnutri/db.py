@@ -45,8 +45,13 @@ dbdir = os.path.join(nutridir, 'db')
 def gen_dbs():
     lst = []
     for dir in os.listdir(dbdir):
+        print(dir)
         lst.append(db(f'{dbdir}/{dir}'))
     return lst
+
+
+def bench(mthd=gen_dbs):
+    print(timeit.timeit(mthd, number=1))
 
 
 class db:
@@ -55,26 +60,39 @@ class db:
         self.tables = []
         for file in os.listdir(dir):
             self.tables.append(table(f'{dir}/{file}'))
-        # perform relational algebra
-        pass
+        # for t in self.tables:
+        #     print(t.name)
+        for t1 in self.tables:
+            print(t1.name)
+            for t2 in self.tables:
+                if t1 == t2:
+                    continue
+                for s1 in t1.schemas:
+                    for s2 in t2.schemas:
+                        if s1.header == s2.header:
+                            # if t1.name.startswith('DATA_'):
+                            #     continue
+                            # if s1.iskey:
+                            print(f'{s1.header}: {t1.name} <--> {t2.name}')
+            print()
 
 
 class table:
     def __init__(self, file):
+        self.name = ntpath.basename(file)
         self.schemas = []
         lines = []
-        print(file)
+        # print(file)
         with open(file, 'r', encoding='utf8') as f:
             for line in f:
                 lines.append(line)
-                # print(line.rstrip())
         self.schemas = schematize(lines)
-        pass
 
 
 class schema:
     def __init__(self, Header, Entries):
         self.header = Header
+        self.iskey = self.header.startswith('Key_')
         self.entries = Entries
 
 
@@ -109,12 +127,13 @@ def schematize(lines):
     splitrows = [l.split('\t') for l in lines[1:]]
     for i, h in enumerate(headers):
         rows = [r[i] for r in splitrows]
-        schemas.append(schema(h, rows))
+        schemas.append(schema(h.rstrip(), rows))
     return schemas
 
-    ######
-    # legacy code below
-    ######
+
+######
+# legacy code below
+######
 
 
 def abbrev_fdbs():
@@ -358,7 +377,7 @@ def main(args=None):
     if os.sep == '\\':
         init()
     if args == None:
-        args = sys.argv
+        args = sys.argv[1:]
 
     # No arguments passed in
     if len(args) == 0:
@@ -505,4 +524,5 @@ Commands:
 
 
 if __name__ == "__main__":
-    main()
+    bench()
+    # main()
