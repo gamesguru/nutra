@@ -62,6 +62,7 @@ class db:
             self.tables.append(table(f'{dir}/{file}'))
         # for t in self.tables:
         #     print(t.name)
+        # schemas = [s for s in ]
         for t1 in self.tables:
             print(t1.name)
             for t2 in self.tables:
