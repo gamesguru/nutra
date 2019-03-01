@@ -65,6 +65,7 @@ def search(words, dbs=None):
     bheight = shutil.get_terminal_size()[1] - 2
     if dbs == None:
         dbs = db.fdbs()
+        #TODO: redis cache here
     # Count word matches
     for d in dbs:
         for e in d.fdb_entries:

@@ -54,58 +54,101 @@ def bench(mthd=gen_dbs):
     print(timeit.timeit(mthd, number=1))
 
 
+rdas = []
+
+
+class rda:
+    def __init__(self, nute, rda, units):
+        self.nute = nute
+        self.rda = rda
+        self.units = units
+
+
+# Redis here
+with open(f'{nutridir}/user/rda.txt', 'r', encoding='utf8') as f:
+    for line in f:
+        if line.startswith('#'):
+            continue
+        l = line.split('#')[0].strip()
+        n = l.split('=')[0]
+        r = float(l.split('=')[1].split()[0])
+        try:
+            u = l.split('=')[1].split()[1]
+        except:
+            u = str()
+        print(f'{n}: {r} {u}')
+        rdas.append(rda(n, r, u))
+
+
 class db:
     def __init__(self, dir):
         # tables
         self.tables = []
         for file in os.listdir(dir):
             self.tables.append(table(f'{dir}/{file}'))
-        # for t in self.tables:
-        #     print(t.name)
+        for t in self.tables:
+            print(t.name)
+        # gen_entries(self.tables)
+        self.entries = []
+        pkis = set()
+        for t in self.tables:
+            if t.name.startswith('DATA_'):
+                for line in t.lines:
+                    els = line.split('\t')
+                    if els[t.pki] in pkis:
+                        e = next((e for e in self.entries if e.pki == ), None)
+                    if any(e.key == key for e in self.entries):
+                        pass
+                    else:
+                        pass
         # schemas = [s for s in ]
-        for t1 in self.tables:
-            print(t1.name)
-            for t2 in self.tables:
-                if t1 == t2:
-                    continue
-                for s1 in t1.schemas:
-                    for s2 in t2.schemas:
-                        if s1.header == s2.header:
-                            # if t1.name.startswith('DATA_'):
-                            #     continue
-                            # if s1.iskey:
-                            print(f'{s1.header}: {t1.name} <--> {t2.name}')
+        # for t1 in self.tables:
+        #     print(t1.name)
+        #     for t2 in self.tables:
+        #         if t1 == t2:
+        #             continue
+        #         for s1 in t1.schemas:
+        #             for s2 in t2.schemas:
+        #                 if s1.header == s2.header:
+        #                     # if t1.name.startswith('DATA_'):
+        #                     #     continue
+        #                     # if s1.iskey:
+        #                     print(f'{s1.header}: {t1.name} <--> {t2.name}')
             print()
 
 
 class table:
     def __init__(self, file):
         self.name = ntpath.basename(file)
-        self.schemas = []
-        lines = []
+        self.headers = []
+        #self.schemas = []
+        self.lines = []
         # print(file)
         with open(file, 'r', encoding='utf8') as f:
             for line in f:
-                lines.append(line)
-        self.schemas = schematize(lines)
+                self.lines.append(line)
+        self.headers = lines[0].split('\t')
+        self.pki = self.headers.index('Key_No')
+        self.nki = self.headers.index('Key_NutrNo')
+        self.nvi = self.headers.index('Nutr_Val')
+        # self.schemas = schematize(lines)
 
 
-class schema:
-    def __init__(self, Header, Entries):
-        self.header = Header
-        self.iskey = self.header.startswith('Key_')
-        self.entries = Entries
+# class schema:
+#     def __init__(self, Header, Entries):
+#         self.header = Header
+#         self.iskey = self.header.startswith('Key_')
+#         self.entries = Entries
 
 
-class dbentry:
-    def __init__(self, Key_No, FoodName, Nutrients, Servings):
+class rdbentry:
+    def __init__(self, Key_No):
         self.key = Key_No
-        self.foodname = FoodName
-        self.nutrients = Nutrients
-        self.servings = Servings
+        self.foodname = None
+        self.nutrients = None
 
 
-class nutrient:
+class rnutrient:
     def __init__(self, Key_NutrNo, NutrName, NutrAmt, Units):
         self.nutrno = Key_NutrNo
         self.nutrname = NutrName
@@ -113,28 +156,32 @@ class nutrient:
         self.units = Units
 
 
-class serving:
-    def __init__(self, house_unit, house_qty, std_unit, std_qty):
-        """ Converts between household and standard units, e.g. 0.25 sec spray = 1 g """
-        self.hunit = house_unit  # cups, 1 sec spray, sprigs, 1 sausage, etc.
-        self.hqty = house_qty
-        self.sunit = std_unit  # either g or mL
-        self.sqty = std_qty
+def gen_entries(tables):
+    # for t1 in self.tables:
+    #     for t2 in self.tables:
+    #         if t1 == t2:
+    #             continue
 
+    # class serving:
+    #     def __init__(self, house_unit, house_qty, std_unit, std_qty):
+    #         """ Converts between household and standard units, e.g. 0.25 sec spray = 1 g """
+    #         self.hunit = house_unit  # cups, 1 sec spray, sprigs, 1 sausage, etc.
+    #         self.hqty = house_qty
+    #         self.sunit = std_unit  # either g or mL
+    #         self.sqty = std_qty
 
-def schematize(lines):
-    schemas = []
-    headers = lines[0].split('\t')
-    splitrows = [l.split('\t') for l in lines[1:]]
-    for i, h in enumerate(headers):
-        rows = [r[i] for r in splitrows]
-        schemas.append(schema(h.rstrip(), rows))
-    return schemas
+    # def schematize(lines):
+    #     schemas = []
+    #     headers = lines[0].split('\t')
+    #     splitrows = [l.split('\t') for l in lines[1:]]
+    #     for i, h in enumerate(headers):
+    #         rows = [r[i] for r in splitrows]
+    #         schemas.append(schema(h.rstrip(), rows))
+    #     return schemas
 
-
-######
-# legacy code below
-######
+    ######
+    # legacy code below
+    ######
 
 
 def abbrev_fdbs():

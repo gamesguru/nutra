@@ -13,3 +13,5 @@
 7. convert usda stock flat file to relative, they offer better data anyways
 
 8. preserve support for import flat file db??  big questions..
+
+9. analyze args: -f [full] -e [extended] -r [rank by RDA]
