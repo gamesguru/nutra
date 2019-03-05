@@ -30,7 +30,6 @@ END NOTICE
 import os
 import re
 import sys
-import numpy as np
 import shutil
 import inspect
 import ntpath
@@ -45,13 +44,13 @@ dbdir = os.path.join(nutridir, 'db')
 def gen_dbs():
     lst = []
     for dir in os.listdir(dbdir):
-        print(dir)
+        print(dir)  # REMOVE IN PRODUCTION!!
         lst.append(db(f'{dbdir}/{dir}'))
     return lst
 
 
 def bench(mthd=gen_dbs):
-    print(timeit.timeit(mthd, number=1))
+    print('Timeit: ' + str(timeit.timeit(mthd, number=1) * 1000) + ' ms')
 
 
 rdas = []
@@ -76,31 +75,53 @@ with open(f'{nutridir}/user/rda.txt', 'r', encoding='utf8') as f:
             u = l.split('=')[1].split()[1]
         except:
             u = str()
-        print(f'{n}: {r} {u}')
+        # print(f'{n}: {r} {u}')
         rdas.append(rda(n, r, u))
 
 
+# and here
 class db:
     def __init__(self, dir):
         # tables
+        self.dir = dir
         self.tables = []
         for file in os.listdir(dir):
             self.tables.append(table(f'{dir}/{file}'))
-        for t in self.tables:
-            print(t.name)
-        # gen_entries(self.tables)
         self.entries = []
-        pkis = set()
+
+        # for t in self.tables:
+        #     print(t.name)
+        #     for h in t.headers:
+        #         print('   ' + h)
+
+        # gen_entries(self.tables)
+
+        # self.entries = entries(self.tables)
+        # for e in self.entries:
+        #     print(e)
+
         for t in self.tables:
             if t.name.startswith('DATA_'):
-                for line in t.lines:
-                    els = line.split('\t')
-                    if els[t.pki] in pkis:
-                        e = next((e for e in self.entries if e.pki == ), None)
-                    if any(e.key == key for e in self.entries):
-                        pass
-                    else:
-                        pass
+                for l in t.lines:
+                    Key_NutrNo = ''
+                    Nutr_Val = ''
+                    nute = nute_entry(Key_NutrNo, Nutr_Val)
+                    self.append_entry(self, nute)
+
+        self.nutrients = nutrients(self)
+        pkis = set()
+
+        # for t in self.tables:
+        #     if t.name.startswith('DATA_'):
+        #         for line in t.lines:
+        #             els = line.split('\t')
+        #             if els[t.pki] in pkis:
+        #                 e = next((e for e in self.entries if e.pki == ), None)
+        #             if any(e.key == key for e in self.entries):
+        #                 pass
+        #             else:
+        #                 pass
+
         # schemas = [s for s in ]
         # for t1 in self.tables:
         #     print(t1.name)
@@ -114,23 +135,34 @@ class db:
         #                     #     continue
         #                     # if s1.iskey:
         #                     print(f'{s1.header}: {t1.name} <--> {t2.name}')
-            print()
+        print()
+
+    def append_entry(self, Key_No, nute_entry):
+        if any(e.key == Key_No for e in self.entries):
+            e = next(e.key == Key_No for e in self.entries)
+            print(type(e))
+            e.add_nute(nute_entry)
+        else:
+            e = entry(Key_No)
+            e.add_nute(nute_entry)
+            self.entries.append(e)
 
 
 class table:
     def __init__(self, file):
-        self.name = ntpath.basename(file)
+        self.name = os.path.splitext(ntpath.basename(file))[0]
         self.headers = []
-        #self.schemas = []
-        self.lines = []
+        # self.schemas = []
         # print(file)
+        self.lines = []
         with open(file, 'r', encoding='utf8') as f:
             for line in f:
-                self.lines.append(line)
-        self.headers = lines[0].split('\t')
-        self.pki = self.headers.index('Key_No')
-        self.nki = self.headers.index('Key_NutrNo')
-        self.nvi = self.headers.index('Nutr_Val')
+                self.lines.append(line.rstrip())
+        self.headers = self.lines[0].split('\t')
+        # self.pki = self.headers.index('Key_No')
+        # self.nki = self.headers.index('Key_NutrNo')
+        # self.nvi = self.headers.index('Nutr_Val')
+
         # self.schemas = schematize(lines)
 
 
@@ -140,48 +172,123 @@ class table:
 #         self.iskey = self.header.startswith('Key_')
 #         self.entries = Entries
 
+# class entries:
 
-class rdbentry:
+
+class entry:
     def __init__(self, Key_No):
         self.key = Key_No
         self.foodname = None
-        self.nutrients = None
+        self.nutrients = []  # nutrients
+
+    def add_nute(self, nute_entry):
+        self.nutrients.append(nute_entry)
 
 
-class rnutrient:
-    def __init__(self, Key_NutrNo, NutrName, NutrAmt, Units):
+def entries(tables):
+    entries = []
+    lines = []
+    for t in tables:
+        if t.name == 'DATA_MAIN':
+            for l in t.lines:
+                lines.append(l)
+    headers = lines[0].split('\t')
+    pki = -1
+    nki = -1
+    nvi = -1
+    for i, h in enumerate(headers):
+        if h == ', NutrAmt=0':
+            pki = i
+        elif (h == 'Key_NutrNo'):
+            nki = i
+        elif h == 'Nutr_Val':
+            nvi = i
+    for l in lines:
+        entries.append(entry())
+    return entries
+
+    for t1 in tables:
+        print(t1.name)
+        for h in t1.headers:
+            if h.startswith('Key_'):
+                print('   ' + h)
+        for t2 in tables:
+            if t1 == t2:
+                continue
+    return entries
+
+
+class nute_entry:
+    def __init__(self, Key_NutrNo, Nutr_Val):
+        self.nutrno = Key_NutrNo
+        self.nutramt = Nutr_Val
+
+
+class nutrient:
+    def __init__(self, Key_NutrNo, NutrName, Units, NutrAmt=0):
         self.nutrno = Key_NutrNo
         self.nutrname = NutrName
         self.nutramt = NutrAmt
         self.units = Units
 
 
-def gen_entries(tables):
-    # for t1 in self.tables:
-    #     for t2 in self.tables:
-    #         if t1 == t2:
-    #             continue
+def nutrients(db):
+    ret = []
+    lines = []
+    with open(f'{db.dir}/NUTR_DEF.txt', 'r') as f:
+        for line in f.readlines():
+            lines.append(line.rstrip())
+    headers = lines[0].split('\t')
+    pki = -1
+    uni = -1
+    nni = -1
+    for i, h in enumerate(headers):
+        if (h == 'Key_NutrNo'):
+            pki = i
+        elif h == 'NutrUnit':
+            uni = i
+        elif h == 'NutrName':
+            nni = i
+    for l in lines[1:]:
+        els = l.split('\t')
+        ret.append(nutrient(els[pki], els[nni], els[uni]))
+    return ret
 
-    # class serving:
-    #     def __init__(self, house_unit, house_qty, std_unit, std_qty):
-    #         """ Converts between household and standard units, e.g. 0.25 sec spray = 1 g """
-    #         self.hunit = house_unit  # cups, 1 sec spray, sprigs, 1 sausage, etc.
-    #         self.hqty = house_qty
-    #         self.sunit = std_unit  # either g or mL
-    #         self.sqty = std_qty
+# class rdbentry:
+#     def __init__(self, Key_No):
+#         self.key = Key_No
+#         self.foodname = None
+#         self.nutrients = None
 
-    # def schematize(lines):
-    #     schemas = []
-    #     headers = lines[0].split('\t')
-    #     splitrows = [l.split('\t') for l in lines[1:]]
-    #     for i, h in enumerate(headers):
-    #         rows = [r[i] for r in splitrows]
-    #         schemas.append(schema(h.rstrip(), rows))
-    #     return schemas
 
-    ######
-    # legacy code below
-    ######
+# class rnutrient:
+#     def __init__(self, Key_NutrNo, NutrName, NutrAmt, Units):
+#         self.nutrno = Key_NutrNo
+#         self.nutrname = NutrName
+#         self.nutramt = NutrAmt
+#         self.units = Units
+
+# class serving:
+#     def __init__(self, house_unit, house_qty, std_unit, std_qty):
+#         """ Converts between household and standard units, e.g. 0.25 sec spray = 1 g """
+#         self.hunit = house_unit  # cups, 1 sec spray, sprigs, 1 sausage, etc.
+#         self.hqty = house_qty
+#         self.sunit = std_unit  # either g or mL
+#         self.sqty = std_qty
+
+# def schematize(lines):
+#     schemas = []
+#     headers = lines[0].split('\t')
+#     splitrows = [l.split('\t') for l in lines[1:]]
+#     for i, h in enumerate(headers):
+#         rows = [r[i] for r in splitrows]
+#         schemas.append(schema(h.rstrip(), rows))
+#     return schemas
+
+
+#####################
+# legacy code below #
+#####################
 
 
 def abbrev_fdbs():
@@ -458,32 +565,6 @@ def altcmd(i, arg):
 class cmdmthds:
     """ Where we keep the `cmd()` methods && opt args """
 
-    class prep:
-        def mthd(rarg):
-            Prep()
-
-    class test:
-        def mthd(rarg):
-            Test()
-
-    class save:
-        def mthd(rarg):
-            Save()
-
-    class delete:
-        def mthd(rarg):
-            if len(rarg) != 1:
-                print('error: not exactly one db name specified to delete')
-                return
-            else:
-                chosendb = os.path.join(dbdir, rarg[0])
-                if os.path.isdir(chosendb):
-                    print(f'deleting {rarg[0]}...')
-                    shutil.rmtree(chosendb)
-                else:
-                    print(f'error: no such db {rarg[0]}')
-        altargs = ['-d']
-
     class list:
         def mthd(rarg):
             for db in abbrev_fdbs():
@@ -491,6 +572,12 @@ class cmdmthds:
             for rdb in abbrev_rdbs():
                 print(f'rel:  {rdb[1:]}')
         altargs = ['-l']
+
+    class bench:
+        """ REMOVE IN PRODUCTION!! """
+        def mthd(rarg):
+            bench()
+        altargs = ['-b']
 
     class help:
         def mthd(rarg):
@@ -556,21 +643,13 @@ known_basic_fields = [
     "Weight2",
 ]
 
-usage = f"""Database management tool
+usage = f"""nutri: Database management tool
 Version {version}
-
-Put text file into current working directory with no other text files.
 
 Usage: nutri db <command>
 
 Commands:
-    prep       extract headers/columns, prep for manual config
-    test       check your config.txt before importing
-    save       import the db (config and data) to your profile
-    list | -l  list off databases stored on your computer
-    -d         delete a database by name"""
-
+    list | -l  list off databases stored on your computer"""
 
 if __name__ == "__main__":
-    bench()
-    # main()
+    main()

@@ -6,7 +6,7 @@ Extensible command-line tool for nutrient analysis.
 *Requires:*
 
 - Python 3.6.5 or later
-- Desktop: Windows, macOS, or Linux
+- Redis server
 - *(Optional)* Android 5.0+ phone, USB, adb, developer mode
 
 
