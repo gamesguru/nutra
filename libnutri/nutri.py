@@ -30,7 +30,7 @@ END NOTICE
 import sys
 import os
 import inspect
-from libnutri import db, config, search, analyze
+from libnutri import db, config, search, analyze, remote
 
 # First thing's first, check Python version
 if sys.version_info < (3, 6, 5):
@@ -59,6 +59,7 @@ Commands:
     {fmt.BOLD}field{fmt.END}               import, pair and manage fields
     {fmt.BOLD}sync{fmt.END}                sync android device
     {fmt.BOLD}analyze | anl{fmt.END}       critique a date (range), meal, recipe, or food
+    {fmt.BOLD}login{fmt.END}               login, logout, register, and online functions
     {fmt.BOLD}bugreport{fmt.END}           upload database info, and version number
     {fmt.BOLD}--help | -h{fmt.END}         show help for a given command"""
 
@@ -132,6 +133,10 @@ class cmdmthds:
 
         def mthd(rarg):
             analyze.main(rarg)
+
+    class remote:
+        def mthd(rarg):
+            remote.main(rarg)
 
     # TODO: bugreport
     # class bugreport:

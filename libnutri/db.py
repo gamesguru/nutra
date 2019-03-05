@@ -44,6 +44,8 @@ dbdir = os.path.join(nutridir, 'db')
 def gen_dbs():
     lst = []
     for dir in os.listdir(dbdir):
+        if dir.startswith('_') or dir.startswith('&'):
+            continue  # TODO
         print(dir)  # REMOVE IN PRODUCTION!!
         lst.append(db(f'{dbdir}/{dir}'))
     return lst
@@ -137,7 +139,7 @@ class db:
         #                     print(f'{s1.header}: {t1.name} <--> {t2.name}')
         print()
 
-    def append_entry(self, Key_No, nute_entry):
+    def append_entry(self, Key_No, nute_entry):  # TODO: remove from line
         if any(e.key == Key_No for e in self.entries):
             e = next(e.key == Key_No for e in self.entries)
             print(type(e))
@@ -146,12 +148,54 @@ class db:
             e = entry(Key_No)
             e.add_nute(nute_entry)
             self.entries.append(e)
+        self.entries = set()
+
+        for t in self.tables:
+            if t.name.startswith('DATA_'):
+                pki = -1
+                nki = -1
+                nvi = -1
+                pki = t.headers.index('Key_No')
+                nki = t.headers.index('Key_NutrNo')
+                nvi = t.headers.index('Nutr_Val')
+
+                for l in t.lines:
+                    splits = l.split('\t')
+
+                    Key_No = splits[pki]
+                    Key_NutrNo = splits[nki]
+                    Nutr_Val = splits[nvi]
+
+                    nute = nute_entry(Key_NutrNo, Nutr_Val)
+                    self.append_entry(Key_No, nute)
+
+        self.nutrients = nutrients(self)
+        # pkis = set()
+        print()
+
+    # def append_entry(self, Key_No, nute_entry):
+    #     # if any(e.key == Key_No for e in self.entries):
+    #     for e in self.entries:
+    #         if e.key == Key_No:
+    #             e.add_nute(nute_entry)
+    #             # print(f'add: {e.key} --> {nute_entry.nutrno}')
+    #             return
+
+    #         # e = next(e.key == Key_No for e in self.entries)
+    #         # print(type(e))
+    #         # e.add_nute(nute_entry)
+    #     # else:
+    #     e = entry(Key_No)
+    #     e.add_nute(nute_entry)
+    #     self.entries.add(e)
+    #     if len(self.entries) % 100 == 0:
+    #         print(len(self.entries))
+    #     # print(f'create: {e.key}')
 
 
 class table:
     def __init__(self, file):
         self.name = os.path.splitext(ntpath.basename(file))[0]
-        self.headers = []
         # self.schemas = []
         # print(file)
         self.lines = []
