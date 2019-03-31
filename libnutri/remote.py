@@ -27,8 +27,53 @@ NOTICE
 END NOTICE
 """
 
+import os
 import sys
 import inspect
+import getpass
+import requests
+
+localhost = 'http://localhost:8080'
+hostname = 'https://nutritracker-server.herokuapp.com'
+
+nutridir = os.path.join(os.path.expanduser("~"), '.nutri')
+
+
+def register(args=None):
+    print('Register an online account!')
+    username = input('Enter a username: ')
+    email = input('Enter your email: ')
+    password = getpass.getpass('Enter a password: ')
+    confirm_password = getpass.getpass('Confirm password: ')
+
+    params = dict(
+        username=username,
+        password=password,
+        confirm_password=confirm_password,
+        email=email
+    )
+
+    response = requests.get(url=f'{hostname}/register', params=params)
+    print(response.json()['message'] + ': ' + response.json()['data']['message'])
+
+
+def login(args=None):
+    print('Login!')
+    username = input('Enter your username: ')
+    password = getpass.getpass('Enter your password: ')
+
+    params = dict(
+        username=username,
+        password=password
+    )
+
+    response = requests.get(url=f'{hostname}/oauth', params=params)
+    token = response.json()['data']['message']
+    print('Response: ' + token)
+
+    with open(f'{nutridir}/token', 'a+') as token_file:
+        token_file.write(token)
+
 
 def main(args=None):
     if args == None:
@@ -64,12 +109,20 @@ def altcmd(i, arg):
 
 class cmdmthds:
     """ Where we keep the `cmd()` methods && opt args """
+    class register:
+        def mthd(rarg):
+            register()
+
+    class login:
+        def mthd(rarg):
+            login()
 
     class help:
         def mthd(rarg):
             print(usage)
         altargs = ['-h', '--help']
-        
+
+
 usage = f"""nutri: Remote connection tool
 
 Usage: nutri remote <command>
