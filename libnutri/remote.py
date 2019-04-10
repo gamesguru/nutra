@@ -38,6 +38,8 @@ hostname = 'https://nutritracker-server.herokuapp.com'
 
 nutridir = os.path.join(os.path.expanduser("~"), '.nutri')
 
+SERVER_HOST = 'nutritracker-server.herokuapp.com'
+
 
 def register(args=None):
     print('Register an online account!')
