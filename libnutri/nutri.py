@@ -30,7 +30,7 @@ END NOTICE
 import sys
 import os
 import inspect
-from libnutri import db, config, search, analyze, remote
+from libnutri import search, remote
 
 # First thing's first, check Python version
 if sys.version_info < (3, 6, 5):
