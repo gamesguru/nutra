@@ -1,17 +1,13 @@
-1. implement Redis or similar IPC, instead of reading full db with each cmd (search, analyze, etc.) it should keep it in memory for 20-30 minutes
+1. improve search class:
+    a. flag args (which db, include nutes, **see below too**)
+    b. terminal buffer width/height (override with flag?)
 
-2. supplementary field pairing.  export to my ubuntu server via node.js and socket.py: either implement username-password pairs, or just mandate unique IP submissions (allow edits)
+2. supplementary field pairing.
 
-3. support for BFDB and CNF
+3. support for CNF ?
 
-4. implement ServingConversionField so people can use units other than grams
+4. parse amino acid db: http://www.fao.org/docrep/005/AC854T/AC854T00.htm
 
-5. optimize and generalize the database class/metaclass schemes
+5. implement ServingConversionField so people can use units other than grams
 
-6. parse amino acid db: http://www.fao.org/docrep/005/AC854T/AC854T00.htm
-
-7. convert usda stock flat file to relative, they offer better data anyways
-
-8. preserve support for import flat file db??  big questions..
-
-9. analyze args: -f [full] -e [extended] -r [rank by RDA]
+6. implement analyze... with args: -f [full] -e [extended] -r [rank by RDA]
