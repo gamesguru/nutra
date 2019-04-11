@@ -41,6 +41,10 @@ nutridir = os.path.join(os.path.expanduser("~"), '.nutri')
 SERVER_HOST = 'nutritracker-server.herokuapp.com'
 
 
+def request(path, params):
+    return requests.get(url=f'{hostname}/{path}', params=params)
+
+
 def register(args=None):
     print('Register an online account!')
     username = input('Enter a username: ')
@@ -55,7 +59,8 @@ def register(args=None):
         email=email
     )
 
-    response = requests.get(url=f'{hostname}/register', params=params)
+    # response = requests.get(url=f'{hostname}/register', params=params)
+    response = request('register', params)
     print(response.json()['message'] + ': ' + response.json()['data']['message'])
 
 
