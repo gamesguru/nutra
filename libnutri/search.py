@@ -37,6 +37,7 @@ def search(words, dbs=None):
     """ Searches all dbs, foods, recipes, recents and favorites. """
     # Current terminal height
     bufferheight = shutil.get_terminal_size()[1] - 2
+    bufferwidth = shutil.get_terminal_size()[0]
 
     params = dict(
         terms=','.join(words)
@@ -56,10 +57,16 @@ def search(words, dbs=None):
         if len(food_name) > lfoodname:
             lfoodname = len(food_name)
 
-    for r in results:
+    for i, r in enumerate(results):
+        if i == bufferheight:
+            break
         food_id = str(r['food_id'])
         food_name = str(r['long_desc'])
-        print(f'{food_id.ljust(lfoodid)}    {food_name}')
+        avail_buffer = bufferwidth - len(food_id) - 12
+        if len(food_name) > avail_buffer:
+            print(f'{food_id.ljust(lfoodid)}    {food_name[:avail_buffer]}...')
+        else:
+            print(f'{food_id.ljust(lfoodid)}    {food_name}')
 
 
 def main(args=None):
