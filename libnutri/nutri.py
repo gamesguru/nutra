@@ -55,12 +55,9 @@ Usage: {fmt.BOLD}nutri <command> {fmt.END}
 
 Commands:
     {fmt.BOLD}config{fmt.END}              change name, age, and vitamin targets
-    {fmt.BOLD}db{fmt.END}                  import, edit and verify databases
-    {fmt.BOLD}field{fmt.END}               import, pair and manage fields
-    {fmt.BOLD}sync{fmt.END}                sync android device
+    {fmt.BOLD}search{fmt.END}              search database by food name
     {fmt.BOLD}analyze | anl{fmt.END}       critique a date (range), meal, recipe, or food
-    {fmt.BOLD}login{fmt.END}               login, logout, register, and online functions
-    {fmt.BOLD}bugreport{fmt.END}           upload database info, and version number
+    {fmt.BOLD}remote{fmt.END}              login, logout, register, and online functions
     {fmt.BOLD}--help | -h{fmt.END}         show help for a given command"""
 
 
@@ -137,11 +134,6 @@ class cmdmthds:
     class remote:
         def mthd(rarg):
             remote.main(rarg)
-
-    # TODO: bugreport
-    # class bugreport:
-    #     def mthd(rarg):
-    #         bugreport.main(rarg)
 
     class help:
         altargs = ['--help', '-h']

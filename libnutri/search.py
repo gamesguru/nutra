@@ -69,6 +69,22 @@ def search(words, dbs=None):
             print(f'{food_id.ljust(lfoodid)}    {food_name}')
 
 
+def rank(rargs):
+    nutr_no = rargs[0]
+    words = rargs[1:]
+    bufferheight = shutil.get_terminal_size()[1] - 2
+    bufferwidth = shutil.get_terminal_size()[0]
+
+    params = dict(
+        nutr_no=nutr_no,
+        terms=','.join(words)
+    )
+
+    response = remote.request('sort', params=params)
+    print(response)
+    results = response.json()['data']['message']
+
+
 def main(args=None):
     if args == None:
         args = sys.argv[1:]
@@ -89,7 +105,7 @@ def main(args=None):
         # Activate method for opt commands, e.g. `-h' or `--help'
         elif altcmd(i, arg) != None:
             altcmd(i, arg)(rarg[1:])
-            if arg == '-h' or arg == '--help':
+            if arg == '-h' or arg == '--help' or arg == '-r' or arg == '--rank':
                 break
         # Otherwise we don't know the arg
         else:
@@ -114,6 +130,11 @@ class cmdmthds:
         def mthd(rarg):
             print(usage)
         altargs = ['-h', '--help']
+
+    class help:
+        def mthd(rarg):
+            rank(rarg)
+        altargs = ['-r', '--rank']
 
 
 usage = f"""nutri: Search tool
