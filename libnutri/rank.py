@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-Created on Sat Oct 27 20:28:06 2018
+Created on Fri Apr 12 19:45:43 2019
 
 @author: shane
 NOTICE
@@ -10,7 +10,7 @@ NOTICE
         https://pypi.org/project/nutri/
 
     nutri is an extensible nutrient analysis and composition application.
-    Copyright (C) 2018  Shane Jaroch
+    Copyright (C) 2019  Shane Jaroch
 
     This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -34,7 +34,28 @@ from libnutri import remote
 from tabulate import tabulate
 
 
-def print_id_and_long_desc(results):
+def rank(type, rargs):
+    words = rargs[1:]
+
+    if type == 'nutr_no':
+        nutr_no = int(rargs[0])
+        params = dict(
+            nutr_no=nutr_no
+        )
+        response = remote.request('sort', params=params)
+        results = response.json()['data']['message']
+    else:  # tagname
+        tagname = rargs[0]
+        params = dict(
+            tagname=tagname
+        )
+        response = remote.request('sort', params=params)
+        results = response.json()['data']['message']
+
+    print_id_and_long_desc_and_nutr_val(results)
+
+
+def print_id_and_long_desc_and_nutr_val(results):
     # Current terminal size
     bufferwidth = shutil.get_terminal_size()[0]
     bufferheight = shutil.get_terminal_size()[1]
@@ -45,31 +66,18 @@ def print_id_and_long_desc(results):
             break
         food_id = str(r['food_id'])
         food_name = str(r['long_desc'])
-        avail_buffer = bufferwidth - len(food_id) - 15
+        nutr_val = str(r['nutr_val'])
+        avail_buffer = bufferwidth - len(food_id) - len(nutr_val) - 20
         if len(food_name) > avail_buffer:
-            rows.append([food_id, food_name[:avail_buffer] + '...'])
+            rows.append([food_id, food_name[:avail_buffer] + '...', nutr_val])
         else:
-            rows.append([food_id, food_name])
-    print(tabulate(rows, headers=['food_id', 'food_name'], tablefmt='orgtbl'))
-
-
-def search(words, dbs=None):
-    """ Searches all dbs, foods, recipes, recents and favorites. """
-    params = dict(
-        terms=','.join(words)
-    )
-
-    response = remote.request('search', params=params)
-    results = response.json()['data']['message']
-
-    print_id_and_long_desc(results)
+            rows.append([food_id, food_name, nutr_val])
+    print(tabulate(rows, headers=['food_id', 'food_name', 'nutr_val'], tablefmt='orgtbl'))
 
 
 def main(args=None):
     if args == None:
         args = sys.argv[1:]
-
-    words = []
 
     # No arguments passed in
     if len(args) == 0:
@@ -80,19 +88,15 @@ def main(args=None):
         rarg = args[i:]
         if hasattr(cmdmthds, arg):
             getattr(cmdmthds, arg).mthd(rarg[1:])
-            if arg == 'help':
-                break
+            break
         # Activate method for opt commands, e.g. `-h' or `--help'
         elif altcmd(i, arg) != None:
             altcmd(i, arg)(rarg[1:])
-            if arg == '-h' or arg == '--help':
-                break
+            break
         # Otherwise we don't know the arg
         else:
-            words.append(arg)
-
-    if len(words) > 0:
-        search(words)
+            print(f"error: unknown option `{arg}'.  See 'nutri rank --help'.")
+            break
 
 
 def altcmd(i, arg):
@@ -106,28 +110,31 @@ def altcmd(i, arg):
 class cmdmthds:
     """ Where we keep the `cmd()` methods && opt args """
 
+    class nutrno:
+        def mthd(rarg):
+            rank('nutr_no', rarg)
+        altargs = ['-n']
+
+    class tagname:
+        def mthd(rarg):
+            rank('tagname', rarg)
+        altargs = ['-t']
+
     class help:
         def mthd(rarg):
             print(usage)
         altargs = ['-h', '--help']
 
-    class rank:
-        def mthd(rarg):
-            rank(rarg)
-        altargs = ['-r', '--rank']
 
-
-usage = f"""nutri: Search tool
+usage = f"""nutri: Rank foods by Nutr_No or Tagname
 
 Usage: nutri search <flags> <query>
 
 Flags:
-    -r            rank foods by Nutr_No or Tagname
-    -u            search USDA only
-    -b            search BFDB only
-    -n            search nutri DB only
+    -n            search by Nutr_No
+    -t            search by Tagname
+    -u            filter USDA only
+    -b            filter BFDB only
+    -n            filter nutri DB only
     -nub          search all three DBs
     --help | -h   print help"""
-
-if __name__ == '__main__':
-    main()

@@ -30,7 +30,7 @@ END NOTICE
 import sys
 import os
 import inspect
-from libnutri import search, remote
+from libnutri import remote, search, rank
 
 # First thing's first, check Python version
 if sys.version_info < (3, 6, 5):
@@ -110,6 +110,12 @@ class cmdmthds:
 
         def mthd(rarg):
             search.main(rarg)
+
+    class rank:
+        altargs = ['-r']
+
+        def mthd(rarg):
+            rank.main(rarg)
 
     class analyze:
         altargs = ['anl']
