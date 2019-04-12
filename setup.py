@@ -31,10 +31,10 @@ setup(
             'nutri=libnutri.nutri:main',
         ],
     },
-    install_requires=['colorama', 'numpy'],
+    install_requires=['colorama', 'tabulate'],
     long_description=readme(),
     long_description_content_type='text/x-rst',
-    version='0.0.0.dev18',
+    version='0.0.0.dev19',
     license='GPL v3',
     url="https://github.com/gamesguru/nutri",
     classifiers=[
