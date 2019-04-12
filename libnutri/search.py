@@ -32,22 +32,14 @@ import shutil
 import inspect
 from libnutri import remote
 
-
-def search(words, dbs=None):
-    """ Searches all dbs, foods, recipes, recents and favorites. """
+def print_id_and_long_desc(results):
     # Current terminal height
     bufferheight = shutil.get_terminal_size()[1] - 2
     bufferwidth = shutil.get_terminal_size()[0]
 
-    params = dict(
-        terms=','.join(words)
-    )
-
-    response = remote.request('search', params=params)
-    results = response.json()['data']['message']
-
     lfoodid = 0
     lfoodname = 0
+
     for r in results:
         food_id = str(r['food_id'])
         food_name = str(r['long_desc'])
@@ -67,6 +59,40 @@ def search(words, dbs=None):
             print(f'{food_id.ljust(lfoodid)}    {food_name[:avail_buffer]}...')
         else:
             print(f'{food_id.ljust(lfoodid)}    {food_name}')
+
+def search(words, dbs=None):
+    """ Searches all dbs, foods, recipes, recents and favorites. """
+    params = dict(
+        terms=','.join(words)
+    )
+
+    response = remote.request('search', params=params)
+    results = response.json()['data']['message']
+
+    print_id_and_long_desc(results)
+
+
+def rank(rargs):
+    words = rargs[1:]
+
+    try:
+        nutr_no = int(rargs[0])
+        params = dict(
+            nutr_no=nutr_no,
+            #terms=','.join(words)
+        )
+        response = remote.request('sort', params=params)
+        results = response.json()['data']['message']
+    except:
+        tagname = rargs[0]
+        params = dict(
+            tagname=tagname,
+            #terms=','.join(words)
+        )
+        response = remote.request('sort', params=params)
+        results = response.json()['data']['message']
+
+    print_id_and_long_desc(results)
 
 
 def main(args=None):
@@ -89,7 +115,7 @@ def main(args=None):
         # Activate method for opt commands, e.g. `-h' or `--help'
         elif altcmd(i, arg) != None:
             altcmd(i, arg)(rarg[1:])
-            if arg == '-h' or arg == '--help':
+            if arg == '-h' or arg == '--help' or arg == '-r' or arg == '--rank':
                 break
         # Otherwise we don't know the arg
         else:
@@ -114,6 +140,11 @@ class cmdmthds:
         def mthd(rarg):
             print(usage)
         altargs = ['-h', '--help']
+
+    class help:
+        def mthd(rarg):
+            rank(rarg)
+        altargs = ['-r', '--rank']
 
 
 usage = f"""nutri: Search tool

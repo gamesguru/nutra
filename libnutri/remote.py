@@ -42,6 +42,8 @@ SERVER_HOST = 'nutritracker-server.herokuapp.com'
 
 
 def request(path, params):
+    # print(f'{hostname}/{path}')
+    # print(params)
     return requests.get(url=f'{hostname}/{path}', params=params)
 
 

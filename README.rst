@@ -118,16 +118,12 @@ Usage: :code:`nutri <command>`
 
     config                  change name, age, and vitamin targets
 
-    db                      import, edit and verify databases
-
-    field                   import, pair and manage fields
-
-    search                  search databases or recipes
+    search                  search database by food name
 
     analyze | anl           critique a date (range), meal, recipe, or food
 
-    sync                    sync android device
-
-    bugreport               upload database info, and version number
+    remote                  login, logout, register, and online functions
 
     --help | -h             show help for a given command
+
+    config                  change name, age, and vitamin targets
