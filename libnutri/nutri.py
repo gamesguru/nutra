@@ -36,29 +36,19 @@ from libnutri import search, remote
 if sys.version_info < (3, 6, 5):
     exit("ERROR: nutri requires Python 3.6.5 or later to run.")
 
-
-class fmt:
-    if os.path.sep == '/':
-        BOLD = '\033[1m'
-        END = '\033[0m'
-    else:
-        BOLD = ''
-        END = ''
-
-
 version = '0.0.1'
 
 usage = f"""nutri helps you stay fit and healthy.
 Version {version}
 
-Usage: {fmt.BOLD}nutri <command> {fmt.END}
+Usage: nutri <command>
 
 Commands:
-    {fmt.BOLD}config{fmt.END}              change name, age, and vitamin targets
-    {fmt.BOLD}search{fmt.END}              search database by food name
-    {fmt.BOLD}analyze | anl{fmt.END}       critique a date (range), meal, recipe, or food
-    {fmt.BOLD}remote{fmt.END}              login, logout, register, and online functions
-    {fmt.BOLD}--help | -h{fmt.END}         show help for a given command"""
+    config                  change name, age, and vitamin targets
+    search                  search database by food name
+    analyze | anl           critique a date (range), meal, recipe, or food
+    remote                  login, logout, register, and online functions
+    --help | -h             show help for a given command"""
 
 
 def main(args=None):
@@ -114,10 +104,6 @@ class cmdmthds:
     class config:
         def mthd(rarg):
             config.main(rarg)
-
-    class db:
-        def mthd(rarg):
-            db.main(rarg)
 
     class search:
         altargs = ['-s']

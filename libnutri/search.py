@@ -31,14 +31,50 @@ import sys
 import shutil
 import inspect
 from libnutri import remote
+from tabulate import tabulate
+
+
+def print_id_and_long_desc(results):
+    # Current terminal size
+    bufferwidth = shutil.get_terminal_size()[0]
+    bufferheight = shutil.get_terminal_size()[1]
+
+    rows = []
+    for i, r in enumerate(results):
+        if i == bufferheight - 4:
+            break
+        food_id = str(r['food_id'])
+        food_name = str(r['long_desc'])
+        avail_buffer = bufferwidth - len(food_id) - 15
+        if len(food_name) > avail_buffer:
+            rows.append([food_id, food_name[:avail_buffer] + '...'])
+        else:
+            rows.append([food_id, food_name])
+    print(tabulate(rows, headers=['food_id', 'food_name'], tablefmt='orgtbl'))
+
+
+def print_id_and_long_desc_and_nutr_val(results):
+    # Current terminal size
+    bufferwidth = shutil.get_terminal_size()[0]
+    bufferheight = shutil.get_terminal_size()[1]
+
+    rows = []
+    for i, r in enumerate(results):
+        if i == bufferheight - 4:
+            break
+        food_id = str(r['food_id'])
+        food_name = str(r['long_desc'])
+        nutr_val = str(r['nutr_val'])
+        avail_buffer = bufferwidth - len(food_id) - len(nutr_val) - 20
+        if len(food_name) > avail_buffer:
+            rows.append([food_id, food_name[:avail_buffer] + '...', nutr_val])
+        else:
+            rows.append([food_id, food_name, nutr_val])
+    print(tabulate(rows, headers=['food_id', 'food_name', 'nutr_val'], tablefmt='orgtbl'))
 
 
 def search(words, dbs=None):
     """ Searches all dbs, foods, recipes, recents and favorites. """
-    # Current terminal height
-    bufferheight = shutil.get_terminal_size()[1] - 2
-    bufferwidth = shutil.get_terminal_size()[0]
-
     params = dict(
         terms=','.join(words)
     )
@@ -46,43 +82,30 @@ def search(words, dbs=None):
     response = remote.request('search', params=params)
     results = response.json()['data']['message']
 
-    lfoodid = 0
-    lfoodname = 0
-    for r in results:
-        food_id = str(r['food_id'])
-        food_name = str(r['long_desc'])
-
-        if len(food_id) > lfoodid:
-            lfoodid = len(food_id)
-        if len(food_name) > lfoodname:
-            lfoodname = len(food_name)
-
-    for i, r in enumerate(results):
-        if i == bufferheight:
-            break
-        food_id = str(r['food_id'])
-        food_name = str(r['long_desc'])
-        avail_buffer = bufferwidth - len(food_id) - 12
-        if len(food_name) > avail_buffer:
-            print(f'{food_id.ljust(lfoodid)}    {food_name[:avail_buffer]}...')
-        else:
-            print(f'{food_id.ljust(lfoodid)}    {food_name}')
+    print_id_and_long_desc(results)
 
 
 def rank(rargs):
-    nutr_no = rargs[0]
     words = rargs[1:]
-    bufferheight = shutil.get_terminal_size()[1] - 2
-    bufferwidth = shutil.get_terminal_size()[0]
 
-    params = dict(
-        nutr_no=nutr_no,
-        terms=','.join(words)
-    )
+    try:
+        nutr_no = int(rargs[0])
+        params = dict(
+            nutr_no=nutr_no,
+            # terms=','.join(words)
+        )
+        response = remote.request('sort', params=params)
+        results = response.json()['data']['message']
+    except:
+        tagname = rargs[0]
+        params = dict(
+            tagname=tagname,
+            # terms=','.join(words)
+        )
+        response = remote.request('sort', params=params)
+        results = response.json()['data']['message']
 
-    response = remote.request('sort', params=params)
-    print(response)
-    results = response.json()['data']['message']
+    print_id_and_long_desc_and_nutr_val(results)
 
 
 def main(args=None):
@@ -131,7 +154,7 @@ class cmdmthds:
             print(usage)
         altargs = ['-h', '--help']
 
-    class help:
+    class rank:
         def mthd(rarg):
             rank(rarg)
         altargs = ['-r', '--rank']
@@ -142,6 +165,7 @@ usage = f"""nutri: Search tool
 Usage: nutri search <flags> <query>
 
 Flags:
+    -r            rank foods by Nutr_No or Tagname
     -u            search USDA only
     -b            search BFDB only
     -n            search nutri DB only
