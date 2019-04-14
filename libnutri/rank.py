@@ -67,7 +67,7 @@ def print_id_and_long_desc_and_nutr_val(results):
         food_id = str(r['food_id'])
         food_name = str(r['long_desc'])
         nutr_val = str(r['nutr_val'])
-        avail_buffer = bufferwidth - len(food_id) - len(nutr_val) - 20
+        avail_buffer = bufferwidth - len(food_id) - len(nutr_val) - 25
         if len(food_name) > avail_buffer:
             rows.append([food_id, food_name[:avail_buffer] + '...', nutr_val])
         else:
