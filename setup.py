@@ -34,7 +34,7 @@ setup(
     install_requires=['colorama', 'tabulate', 'requests'],
     long_description=readme(),
     long_description_content_type='text/x-rst',
-    version='0.0.0.dev21',
+    version='0.0.0.dev22',
     license='GPL v3',
     url="https://github.com/gamesguru/nutri",
     classifiers=[

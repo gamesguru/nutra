@@ -61,7 +61,7 @@ def print_id_and_long_desc_and_nutr_val(results):
     bufferheight = shutil.get_terminal_size()[1]
 
     rows = []
-    for i, r in enumerate(results):
+    for i, r in enumerate(results[0]['foods']):
         if i == bufferheight - 4:
             break
         food_id = str(r['food_id'])
