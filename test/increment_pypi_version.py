@@ -16,6 +16,11 @@ def version():
     return version
 
 old_version = version()
+print(f'Current version: {old_version}')
+new_version = input('New version: ')
+
+if not new_version == '':
+    print('not blank')
 
 split_version = old_version.split('.')
 if split_version[-1].startswith('dev'):
@@ -24,4 +29,6 @@ else:
     split_version[-1] = str(int(split_version[-1]) + 1)
 new_version = '.'.join(split_version)
 
-os.system(f"sed -i 's/{old_version}/{new_version}/g' setup.py")
+sed_cmd = f"sed -i 's/{old_version}/{new_version}/g' setup.py"
+print(sed_cmd)
+os.system(sed_cmd)
