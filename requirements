@@ -1,3 +1,4 @@
 colorama
 tabulate
 requests
+pytest
