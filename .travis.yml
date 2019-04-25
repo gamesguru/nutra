@@ -7,10 +7,10 @@ install:
 - pip install -r requirements
 script:
 - pytest test/main.py
-after_success:
-- python test/increment_pypi_version.py
-deploy:
-  provider: pypi
-  user: gamesguru
-  password:
-    secure: Y8HYCb9+ApN1M9M/TTvHTXds3f16ToKJdABQkUQ3ccLJ9WmhI5DD9cefSmIVuF5D8t69c7gMocC8//y07zeP8i7fF6e3FyRzP29YnGnVBlfiw0r+vNzMFoRUk6YK/KtLEvVGiqzp1YIGbHaept3omby6txXkH0S1hjMDPpj9Ic/eTU4JnaWae0Y10f+lpG5s1csDVWniY4dH89y5qF2uv28Cdw9cYRWJ4KKC67GzjMSzJx5bj3l5huMrVxEpLK2uwCX6/xqJgPnwoT3C7o9SlTYcpW4+kAdJTzC1NoZDX4TcGDW11ghwN+DLtc5OIKFnN4mgMPGX0LkyWPhdLdknaFLtJJmNeilEDqPXtRaFexKS0qGqnmCd45E/3fOFPGqqlvix2SxOQZ3+XejcrFnA9qyRD8OO6+qJgYb8uGbdKRMNLlR02RecH3n74KSvUNCVW4FgXnN99pS46UTger+NeAvSX/K/gpNjIxav+Bad4OiN1Fy4mtkQ2GfZwN8C/T+7Nbj8gZqsQU4M3Z04YkwmvB0kKnxz+LkQevrB+RtaMTuUX3KA9Xd/ngM5Gj4RYSI0pBAdRUigYwvTmBh5cqvhhl/bAxo/dvEOFaoSbg6g+ETq5Do/98WZ6EgLiW+mk9Pp+nqi9PnlSUNS5/aEJtxO0W17GY2fbL7vCzn0A6iLgpY=
+# after_success:
+# - python test/increment_pypi_version.py
+# deploy:
+#   provider: pypi
+#   user: gamesguru
+#   password:
+#     secure: Y8HYCb9+ApN1M9M/TTvHTXds3f16ToKJdABQkUQ3ccLJ9WmhI5DD9cefSmIVuF5D8t69c7gMocC8//y07zeP8i7fF6e3FyRzP29YnGnVBlfiw0r+vNzMFoRUk6YK/KtLEvVGiqzp1YIGbHaept3omby6txXkH0S1hjMDPpj9Ic/eTU4JnaWae0Y10f+lpG5s1csDVWniY4dH89y5qF2uv28Cdw9cYRWJ4KKC67GzjMSzJx5bj3l5huMrVxEpLK2uwCX6/xqJgPnwoT3C7o9SlTYcpW4+kAdJTzC1NoZDX4TcGDW11ghwN+DLtc5OIKFnN4mgMPGX0LkyWPhdLdknaFLtJJmNeilEDqPXtRaFexKS0qGqnmCd45E/3fOFPGqqlvix2SxOQZ3+XejcrFnA9qyRD8OO6+qJgYb8uGbdKRMNLlR02RecH3n74KSvUNCVW4FgXnN99pS46UTger+NeAvSX/K/gpNjIxav+Bad4OiN1Fy4mtkQ2GfZwN8C/T+7Nbj8gZqsQU4M3Z04YkwmvB0kKnxz+LkQevrB+RtaMTuUX3KA9Xd/ngM5Gj4RYSI0pBAdRUigYwvTmBh5cqvhhl/bAxo/dvEOFaoSbg6g+ETq5Do/98WZ6EgLiW+mk9Pp+nqi9PnlSUNS5/aEJtxO0W17GY2fbL7vCzn0A6iLgpY=
