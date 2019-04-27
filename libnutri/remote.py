@@ -33,10 +33,13 @@ import inspect
 import getpass
 import requests
 
-LOCAL_HOST = 'http://localhost:8080'
-SERVER_HOST = 'https://nutritracker-server.herokuapp.com'
-
 nutridir = os.path.join(os.path.expanduser("~"), '.nutri')
+
+SERVER_HOST = 'https://nutritracker-server.herokuapp.com'
+try:
+    SERVER_HOST = os.environ['NUTRA_SERVER_HOST']
+except:
+    pass
 
 
 def request(path, params):
@@ -60,7 +63,7 @@ def register(args=None):
     )
 
     response = request('register', params)
-    print(response.json()['message'] + ': ' + response.json()['data']['message'])
+    print(response.json()['message'] + ': ' + response.json()['data']['result'])
 
 
 def login(args=None):
@@ -74,7 +77,7 @@ def login(args=None):
     )
 
     response = request('oauth', params)
-    token = response.json()['data']['message']
+    token = response.json()['data']['result']
     print('Response: ' + token)
 
     with open(f'{nutridir}/token', 'a+') as token_file:

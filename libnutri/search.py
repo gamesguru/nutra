@@ -60,7 +60,7 @@ def search(words, dbs=None):
     )
 
     response = remote.request('search', params=params)
-    results = response.json()['data']['message']
+    results = response.json()['data']['result']
 
     print_id_and_long_desc(results)
 
