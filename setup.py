@@ -10,7 +10,7 @@ import sys
 
 print('Checking Python version info...')
 if sys.version_info < (3, 6, 5):
-    exit("ERROR: nutri requires Python 3.6.5 or later to run.")
+    exit("ERROR: nutra requires Python 3.6.5 or later to run.")
 
 
 def readme():
@@ -21,14 +21,14 @@ def readme():
 from distutils.core import setup
 
 setup(
-    name='nutri',
-    packages=['libnutri'],
+    name='nutra',
+    packages=['libnutra'],
     author='gamesguru',
     author_email='mathmuncher11@gmail.com',
     description='Home and office nutrient tracking software',
     entry_points={
         'console_scripts': [
-            'nutri=libnutri.nutri:main',
+            'nutra=libnutra.nutra:main',
         ],
     },
     install_requires=['colorama', 'tabulate', 'requests'],
@@ -36,7 +36,7 @@ setup(
     long_description_content_type='text/x-rst',
     version='0.0.0.dev23',
     license='GPL v3',
-    url="https://github.com/gamesguru/nutri",
+    url="https://github.com/gamesguru/nutra",
     classifiers=[
         'Programming Language :: Python :: 3',
         'License :: OSI Approved :: GNU General Public License v3 (GPLv3)',

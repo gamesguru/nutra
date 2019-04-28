@@ -5,11 +5,11 @@ Created on Fri Sep 28 22:25:38 2018
 
 @author: shane
 NOTICE
-    This file is part of nutri, a nutrient analysis program.
-        https://github.com/gamesguru/nutri
-        https://pypi.org/project/nutri/
+    This file is part of nutra, a nutraent analysis program.
+        https://github.com/gamesguru/nutra
+        https://pypi.org/project/nutra/
 
-    nutri is an extensible nutrient analysis and composition application.
+    nutra is an extensible nutraent analysis and composition application.
     Copyright (C) 2018  Shane Jaroch
 
     This program is free software: you can redistribute it and/or modify
@@ -30,18 +30,18 @@ END NOTICE
 import sys
 import os
 import inspect
-from libnutri import remote, search, rank
+from libnutra import remote, search, rank
 
 # First thing's first, check Python version
 if sys.version_info < (3, 6, 5):
-    exit("ERROR: nutri requires Python 3.6.5 or later to run.")
+    exit("ERROR: nutra requires Python 3.6.5 or later to run.")
 
 version = '0.0.1'
 
-usage = f"""nutri helps you stay fit and healthy.
+usage = f"""nutra helps you stay fit and healthy.
 Version {version}
 
-Usage: nutri <command>
+Usage: nutra <command>
 
 Commands:
     config                  change name, age, and vitamin targets
@@ -61,7 +61,7 @@ def main(args=None):
         print(usage)
     else:
         # Pop off arg0
-        if args[0].endswith('nutri'):
+        if args[0].endswith('nutra'):
             args.pop(0)
         if len(args) == 0:
             print(usage)
@@ -86,7 +86,7 @@ def main(args=None):
             altcmd(i, arg)(rarg[1:])
             break
         # Otherwise we don't know the arg
-        print(f"nutri: `{arg}' is not a nutri command.  See 'nutri help'.")
+        print(f"nutra: `{arg}' is not a nutra command.  See 'nutra help'.")
         break
 
 

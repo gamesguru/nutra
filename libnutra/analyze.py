@@ -5,11 +5,11 @@ Created on Sun Nov 11 23:57:03 2018
 
 @author: shane
 NOTICE
-    This file is part of nutri, a nutrient analysis program.
-        https://github.com/gamesguru/nutri
-        https://pypi.org/project/nutri/
+    This file is part of nutra, a nutraent analysis program.
+        https://github.com/gamesguru/nutra
+        https://pypi.org/project/nutra/
 
-    nutri is an extensible nutrient analysis and composition application.
+    nutra is an extensible nutraent analysis and composition application.
     Copyright (C) 2018  Shane Jaroch
 
     This program is free software: you can redistribute it and/or modify
@@ -29,7 +29,7 @@ END NOTICE
 
 import sys
 import inspect
-from libnutri import db
+from libnutra import db
 
 version = '0.0.1'
 
@@ -84,7 +84,7 @@ def main(args=None):
             break
         # Otherwise we don't know the arg
         else:
-            print(f"error: unknown option `{arg}'.  See 'nutri anl --help'.")
+            print(f"error: unknown option `{arg}'.  See 'nutra anl --help'.")
             break
 
 
@@ -123,7 +123,7 @@ class cmdmthds:
 usage = f"""Analyze ingredients, foods, recipes, and days.
 Version {version}
 
-Usage: nutri anl <option> [<value>]
+Usage: nutra anl <option> [<value>]
 
 Options:
     dbno | -n  analyze an ingredient by PK_No (NDB_No)"""

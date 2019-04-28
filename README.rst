@@ -1,7 +1,7 @@
-Nutritracker
+nutratracker
 ============
 
-Extensible command-line tool for nutrient analysis.
+Extensible command-line tool for nutraent analysis.
 
 *Requires:*
 
@@ -12,31 +12,31 @@ Extensible command-line tool for nutrient analysis.
 
 Install PyPi release (from pip)
 -------------------------------
-:code:`pip install nutri`
+:code:`pip install nutra`
 
 (**Note:** use :code:`pip3` on Linux/macOS)
 
 **Update to latest**
 
-:code:`pip install -U nutri`
+:code:`pip install -U nutra`
 
 **Subscribe to the preview/beta channel**
 
-:code:`pip install nutri --pre`
+:code:`pip install nutra --pre`
 
 **Unsubscribe (back to stable)**
 ::
 
-    pip uninstall nutri
-    pip install nutri
+    pip uninstall nutra
+    pip install nutra
 
 Using the source-code directly
 ------------------------------
 ::
 
-    git clone git@github.com:gamesguru/nutri.git    
-    cd nutri    
-    ./nutri -h
+    git clone git@github.com:gamesguru/nutra.git    
+    cd nutra    
+    ./nutra -h
 
 
 Currently Supported Data
@@ -61,9 +61,9 @@ Usage
 
 Requires internet connection to remote server.
 
-Run the :code:`nutri` script to output usage.
+Run the :code:`nutra` script to output usage.
 
-Usage: :code:`nutri <command>`
+Usage: :code:`nutra <command>`
 
 
 **Commands**

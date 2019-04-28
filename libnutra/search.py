@@ -5,11 +5,11 @@ Created on Sat Oct 27 20:28:06 2018
 
 @author: shane
 NOTICE
-    This file is part of nutri, a nutrient analysis program.
-        https://github.com/gamesguru/nutri
-        https://pypi.org/project/nutri/
+    This file is part of nutra, a nutraent analysis program.
+        https://github.com/gamesguru/nutra
+        https://pypi.org/project/nutra/
 
-    nutri is an extensible nutrient analysis and composition application.
+    nutra is an extensible nutraent analysis and composition application.
     Copyright (C) 2018  Shane Jaroch
 
     This program is free software: you can redistribute it and/or modify
@@ -30,7 +30,7 @@ END NOTICE
 import sys
 import shutil
 import inspect
-from libnutri import remote
+from libnutra import remote
 from tabulate import tabulate
 
 
@@ -117,15 +117,15 @@ class cmdmthds:
         altargs = ['-r', '--rank']
 
 
-usage = f"""nutri: Search tool
+usage = f"""nutra: Search tool
 
-Usage: nutri search <flags> <query>
+Usage: nutra search <flags> <query>
 
 Flags:
     -r            rank foods by Nutr_No or Tagname
     -u            search USDA only
     -b            search BFDB only
-    -n            search nutri DB only
+    -n            search nutra DB only
     -nub          search all three DBs
     --help | -h   print help"""
 

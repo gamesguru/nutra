@@ -7,6 +7,6 @@ Created on Fri Sep 28 22:25:38 2018
 """
 
 import sys
-from libnutri import nutri
+from libnutra import nutra
 
-nutri.main(sys.argv[1:])
+nutra.main(sys.argv[1:])

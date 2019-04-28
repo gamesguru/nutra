@@ -5,11 +5,11 @@ Created on Sat Mar 23 13:09:07 2019
 
 @author: shane
 NOTICE
-    This file is part of nutri, a nutrient analysis program.
-        https://github.com/gamesguru/nutri
-        https://pypi.org/project/nutri/
+    This file is part of nutra, a nutraent analysis program.
+        https://github.com/gamesguru/nutra
+        https://pypi.org/project/nutra/
 
-    nutri is an extensible nutrient analysis and composition application.
+    nutra is an extensible nutraent analysis and composition application.
     Copyright (C) 2018  Shane Jaroch
 
     This program is free software: you can redistribute it and/or modify
@@ -33,9 +33,9 @@ import inspect
 import getpass
 import requests
 
-nutridir = os.path.join(os.path.expanduser("~"), '.nutri')
+nutradir = os.path.join(os.path.expanduser("~"), '.nutra')
 
-SERVER_HOST = 'https://nutritracker-server.herokuapp.com'
+SERVER_HOST = 'https://nutra-server.herokuapp.com'
 try:
     SERVER_HOST = os.environ['NUTRA_SERVER_HOST']
 except:
@@ -80,7 +80,7 @@ def login(args=None):
     token = response.json()['data']['result']
     print('Response: ' + token)
 
-    with open(f'{nutridir}/token', 'a+') as token_file:
+    with open(f'{nutradir}/token', 'a+') as token_file:
         token_file.write(token)
 
 
@@ -104,7 +104,7 @@ def main(args=None):
             break
         # Otherwise we don't know the arg
         else:
-            print(f"error: unknown option `{arg}'.  See 'nutri db --help'.")
+            print(f"error: unknown option `{arg}'.  See 'nutra db --help'.")
             break
 
 
@@ -132,9 +132,9 @@ class cmdmthds:
         altargs = ['-h', '--help']
 
 
-usage = f"""nutri: Remote connection tool
+usage = f"""nutra: Remote connection tool
 
-Usage: nutri remote <command>
+Usage: nutra remote <command>
 
 Commands:
     list | -l  list off databases stored on your computer"""

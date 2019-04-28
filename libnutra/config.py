@@ -5,11 +5,11 @@ Created on Mon Oct 29 23:44:06 2018
 
 @author: shane
 NOTICE
-    This file is part of nutri, a nutrient analysis program.
-        https://github.com/gamesguru/nutri
-        https://pypi.org/project/nutri/
+    This file is part of nutra, a nutraent analysis program.
+        https://github.com/gamesguru/nutra
+        https://pypi.org/project/nutra/
 
-    nutri is an extensible nutrient analysis and composition application.
+    nutra is an extensible nutraent analysis and composition application.
     Copyright (C) 2018  Shane Jaroch
 
     This program is free software: you can redistribute it and/or modify
@@ -34,12 +34,12 @@ import inspect
 from colorama import Style, Fore, Back, init
 
 
-nutridir = f'{os.path.expanduser("~")}/.nutri'
+nutradir = f'{os.path.expanduser("~")}/.nutra'
 
 
 def main(args=sys.argv):
     # os.chdir(os.path.expanduser("~"))
-    # os.makedirs('.nutri/users', 0o755, True)
+    # os.makedirs('.nutra/users', 0o755, True)
 
     if args == None:
         args = sys.argv
@@ -68,7 +68,7 @@ def main(args=sys.argv):
             altcmd(i, arg)(rarg[1:])
             break
         # Otherwise we don't know the arg
-        print(f"error: unknown option `{arg}'.  See 'nutri config --help'.")
+        print(f"error: unknown option `{arg}'.  See 'nutra config --help'.")
         break
 
 
@@ -134,23 +134,23 @@ def new_profile(rargs):
         except:
             pass
     # Write new profile
-    os.makedirs(nutridir, 0o775, True)
-    with open(f'{nutridir}/config.txt', 'w+') as f:
+    os.makedirs(nutradir, 0o775, True)
+    with open(f'{nutradir}/config.txt', 'w+') as f:
         f.write(f'Name:{name}\n')
         f.write(f'Gender:{gender}\n')
         f.write(f'Age:{age}\n')
-    print("That's it for the basic config, you can see what more can be configured with `nutri config extras'")
+    print("That's it for the basic config, you can see what more can be configured with `nutra config extras'")
 
 
 def econfig(rarg):
-    """ Configures extra settings: weight, height, wrist size, and nutrient targets """
+    """ Configures extra settings: weight, height, wrist size, and nutraent targets """
     print(f'option: {rarg[0]}')
     print(f'value:  {rarg[1]}')
     print('error: feature not implemented yet')
 
 
 """ Usage commands """
-usage = f"""Usage: nutri config <option> [<value>]
+usage = f"""Usage: nutra config <option> [<value>]
 
 Options:
     new          create a new profile (log and db are kept)
@@ -158,7 +158,7 @@ Options:
 """
 
 """ Extras usage"""
-extras = f"""Usage: nutri config -e <option> [<value>]
+extras = f"""Usage: nutra config -e <option> [<value>]
 
 Options:
     ht         height
