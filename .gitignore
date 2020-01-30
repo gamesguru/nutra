@@ -1,16 +1,21 @@
-# Byte-compiled / optimized / DLL files
-__pycache__/
-*.py[cod]
-*$py.class
 
 # macOS/backup files
 .~*
 ._*
 .DS_Store
+*.swp
 
-# Database files
-*.txt
-*.zip
+# Our files
+.vscode/
+
+####################
+## Python Ignores ##
+####################
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
 
 # C extensions
 *.so

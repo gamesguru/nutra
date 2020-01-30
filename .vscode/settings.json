@@ -1,0 +1,21 @@
+{
+    "python.testing.pytestEnabled": true,
+    "files.exclude": {
+        "**/__pycache__/**": true,
+        "**/.pytest_cache/**": true,
+        "**/__init__.py": true,
+        "**/.vscode/**": true,
+        "**/dist/**": true,
+        "MANIFEST": true,
+    },
+    "search.exclude": {
+        "**/__pycache__/**": true,
+        "**/.pytest_cache/**": true,
+        "**/dist/**": true,
+    },
+    "files.watcherExclude": {
+        "**/__pycache__/**": true,
+        "**/.pytest_cache/**": true,
+        "**/dist/**": true,
+    },
+}
