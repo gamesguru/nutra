@@ -1,6 +1,10 @@
-nutratracker
-============
+**************
+ nutratracker
+**************
 
+.. image:: https://api.travis-ci.com/gamesguru/nutra.svg?branch=master
+    :target: https://travis-ci.com/gamesguru/nutra
+    
 Extensible command-line tool for nutraent analysis.
 
 *Requires:*
@@ -10,8 +14,12 @@ Extensible command-line tool for nutraent analysis.
 - Internet connection
 
 
+See database: https://github.com/gamesguru/ntdb
+
+See server:   https://github.com/gamesguru/nutra-server
+
 Install PyPi release (from pip)
--------------------------------
+===============================
 :code:`pip install nutra`
 
 (**Note:** use :code:`pip3` on Linux/macOS)
@@ -25,36 +33,38 @@ Install PyPi release (from pip)
 :code:`pip install nutra --pre`
 
 **Unsubscribe (back to stable)**
-::
+.. code-block:: bash
 
     pip uninstall nutra
     pip install nutra
 
 Using the source-code directly
-------------------------------
-::
+##############################
+.. code-block:: bash
 
-    git clone git@github.com:gamesguru/nutra.git    
+    git clone git@github.com:gamesguru/nutra.git
     cd nutra    
     ./nutra -h
 
 
 Currently Supported Data
 ========================
+
 **USDA Stock database**
 
-- Standard reference database, 8790 foods
+- Standard reference database (SR28)  [7794 foods]
 
 
 **Relative USDA Extensions**
 
-- Flavonoid, Isoflavonoids, and Proanthocyanidins
+- Flavonoid, Isoflavonoids, and Proanthocyanidins  [1352 foods]
 
+Advanced Features
+=================
 
-**Branded Foods Database**
+Features such as adding to a food log and creating recipes require logging in.
 
-- Pairs with USDA stock, has 300k foods
-
+First use the :code:`register` command to create an account, then :code:`login`.
 
 Usage
 =====
@@ -66,7 +76,9 @@ Run the :code:`nutra` script to output usage.
 Usage: :code:`nutra <command>`
 
 
-**Commands**
+Commands
+########
+
 ::
 
     config                  change name, age, and vitamin targets
