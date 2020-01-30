@@ -63,7 +63,7 @@ def register(args=None):
     )
 
     response = request("register", params)
-    print(response.json()["message"] + ": " + response.json()["data"]["result"])
+    print(response.json()["message"] + ": " + response.json()["data"])
 
 
 def login(args=None):
@@ -74,7 +74,7 @@ def login(args=None):
     params = dict(username=username, password=password)
 
     response = request("oauth", params)
-    token = response.json()["data"]["result"]
+    token = response.json()["data"]
     print("Response: " + token)
 
     with open(f"{nutradir}/token", "a+") as token_file:

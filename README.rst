@@ -33,6 +33,7 @@ Install PyPi release (from pip)
 :code:`pip install nutra --pre`
 
 **Unsubscribe (back to stable)**
+
 .. code-block:: bash
 
     pip uninstall nutra

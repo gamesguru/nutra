@@ -41,12 +41,12 @@ def rank(type, rargs):
         nutr_no = int(rargs[0])
         params = dict(nutr_no=nutr_no)
         response = remote.request("sort", params=params)
-        results = response.json()["data"]["result"]
+        results = response.json()["data"]
     else:  # tagname
         tagname = rargs[0]
         params = dict(tagname=tagname)
         response = remote.request("sort", params=params)
-        results = response.json()["data"]["result"]
+        results = response.json()["data"]
 
     print_id_and_long_desc_and_nutr_val(results)
 
