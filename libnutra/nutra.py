@@ -36,7 +36,7 @@ from libnutra import remote, search, rank
 if sys.version_info < (3, 6, 5):
     exit("ERROR: nutra requires Python 3.6.5 or later to run.")
 
-version = '0.0.1'
+version = "0.0.1"
 
 usage = f"""nutra helps you stay fit and healthy.
 Version {version}
@@ -61,7 +61,7 @@ def main(args=None):
         print(usage)
     else:
         # Pop off arg0
-        if args[0].endswith('nutra'):
+        if args[0].endswith("nutra"):
             args.pop(0)
         if len(args) == 0:
             print(usage)
@@ -93,7 +93,7 @@ def main(args=None):
 def altcmd(i, arg):
     for i in inspect.getmembers(cmdmthds):
         for i2 in inspect.getmembers(i[1]):
-            if i2[0] == 'altargs' and arg in i2[1]:
+            if i2[0] == "altargs" and arg in i2[1]:
                 return i[1].mthd
     return None
 
@@ -106,19 +106,19 @@ class cmdmthds:
             config.main(rarg)
 
     class search:
-        altargs = ['-s']
+        altargs = ["-s"]
 
         def mthd(rarg):
             search.main(rarg)
 
     class rank:
-        altargs = ['-r']
+        altargs = ["-r"]
 
         def mthd(rarg):
             rank.main(rarg)
 
     class analyze:
-        altargs = ['anl']
+        altargs = ["anl"]
 
         def mthd(rarg):
             analyze.main(rarg)
@@ -128,7 +128,7 @@ class cmdmthds:
             remote.main(rarg)
 
     class help:
-        altargs = ['--help', '-h']
+        altargs = ["--help", "-h"]
 
         def mthd(rarg):
             print(usage)

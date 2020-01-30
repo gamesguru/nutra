@@ -43,24 +43,22 @@ def print_id_and_long_desc(results):
     for i, r in enumerate(results):
         if i == bufferheight - 4:
             break
-        food_id = str(r['food_id'])
-        food_name = str(r['long_desc'])
+        food_id = str(r["food_id"])
+        food_name = str(r["long_desc"])
         avail_buffer = bufferwidth - len(food_id) - 15
         if len(food_name) > avail_buffer:
-            rows.append([food_id, food_name[:avail_buffer] + '...'])
+            rows.append([food_id, food_name[:avail_buffer] + "..."])
         else:
             rows.append([food_id, food_name])
-    print(tabulate(rows, headers=['food_id', 'food_name'], tablefmt='orgtbl'))
+    print(tabulate(rows, headers=["food_id", "food_name"], tablefmt="orgtbl"))
 
 
 def search(words, dbs=None):
     """ Searches all dbs, foods, recipes, recents and favorites. """
-    params = dict(
-        terms=','.join(words)
-    )
+    params = dict(terms=",".join(words))
 
-    response = remote.request('search', params=params)
-    results = response.json()['data']['result']
+    response = remote.request("search", params=params)
+    results = response.json()["data"]["result"]
 
     print_id_and_long_desc(results)
 
@@ -80,12 +78,12 @@ def main(args=None):
         rarg = args[i:]
         if hasattr(cmdmthds, arg):
             getattr(cmdmthds, arg).mthd(rarg[1:])
-            if arg == 'help':
+            if arg == "help":
                 break
         # Activate method for opt commands, e.g. `-h' or `--help'
         elif altcmd(i, arg) != None:
             altcmd(i, arg)(rarg[1:])
-            if arg == '-h' or arg == '--help':
+            if arg == "-h" or arg == "--help":
                 break
         # Otherwise we don't know the arg
         else:
@@ -98,7 +96,7 @@ def main(args=None):
 def altcmd(i, arg):
     for i in inspect.getmembers(cmdmthds):
         for i2 in inspect.getmembers(i[1]):
-            if i2[0] == 'altargs' and arg in i2[1]:
+            if i2[0] == "altargs" and arg in i2[1]:
                 return i[1].mthd
     return None
 
@@ -109,12 +107,14 @@ class cmdmthds:
     class help:
         def mthd(rarg):
             print(usage)
-        altargs = ['-h', '--help']
+
+        altargs = ["-h", "--help"]
 
     class rank:
         def mthd(rarg):
             rank(rarg)
-        altargs = ['-r', '--rank']
+
+        altargs = ["-r", "--rank"]
 
 
 usage = f"""nutra: Search tool
@@ -129,5 +129,5 @@ Flags:
     -nub          search all three DBs
     --help | -h   print help"""
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()

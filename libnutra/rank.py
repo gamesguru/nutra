@@ -37,20 +37,16 @@ from tabulate import tabulate
 def rank(type, rargs):
     words = rargs[1:]
 
-    if type == 'nutr_no':
+    if type == "nutr_no":
         nutr_no = int(rargs[0])
-        params = dict(
-            nutr_no=nutr_no
-        )
-        response = remote.request('sort', params=params)
-        results = response.json()['data']['result']
+        params = dict(nutr_no=nutr_no)
+        response = remote.request("sort", params=params)
+        results = response.json()["data"]["result"]
     else:  # tagname
         tagname = rargs[0]
-        params = dict(
-            tagname=tagname
-        )
-        response = remote.request('sort', params=params)
-        results = response.json()['data']['result']
+        params = dict(tagname=tagname)
+        response = remote.request("sort", params=params)
+        results = response.json()["data"]["result"]
 
     print_id_and_long_desc_and_nutr_val(results)
 
@@ -61,18 +57,20 @@ def print_id_and_long_desc_and_nutr_val(results):
     bufferheight = shutil.get_terminal_size()[1]
 
     rows = []
-    for i, r in enumerate(results[0]['foods']):
+    for i, r in enumerate(results[0]["foods"]):
         if i == bufferheight - 4:
             break
-        food_id = str(r['food_id'])
-        food_name = str(r['long_desc'])
-        nutr_val = str(r['nutr_val'])
+        food_id = str(r["food_id"])
+        food_name = str(r["long_desc"])
+        nutr_val = str(r["nutr_val"])
         avail_buffer = bufferwidth - len(food_id) - len(nutr_val) - 25
         if len(food_name) > avail_buffer:
-            rows.append([food_id, food_name[:avail_buffer] + '...', nutr_val])
+            rows.append([food_id, food_name[:avail_buffer] + "...", nutr_val])
         else:
             rows.append([food_id, food_name, nutr_val])
-    print(tabulate(rows, headers=['food_id', 'food_name', 'nutr_val'], tablefmt='orgtbl'))
+    print(
+        tabulate(rows, headers=["food_id", "food_name", "nutr_val"], tablefmt="orgtbl")
+    )
 
 
 def main(args=None):
@@ -102,7 +100,7 @@ def main(args=None):
 def altcmd(i, arg):
     for i in inspect.getmembers(cmdmthds):
         for i2 in inspect.getmembers(i[1]):
-            if i2[0] == 'altargs' and arg in i2[1]:
+            if i2[0] == "altargs" and arg in i2[1]:
                 return i[1].mthd
     return None
 
@@ -112,18 +110,21 @@ class cmdmthds:
 
     class nutrno:
         def mthd(rarg):
-            rank('nutr_no', rarg)
-        altargs = ['-n']
+            rank("nutr_no", rarg)
+
+        altargs = ["-n"]
 
     class tagname:
         def mthd(rarg):
-            rank('tagname', rarg)
-        altargs = ['-t']
+            rank("tagname", rarg)
+
+        altargs = ["-t"]
 
     class help:
         def mthd(rarg):
             print(usage)
-        altargs = ['-h', '--help']
+
+        altargs = ["-h", "--help"]
 
 
 usage = f"""nutra: Rank foods by Nutr_No or Tagname

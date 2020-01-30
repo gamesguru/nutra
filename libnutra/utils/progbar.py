@@ -58,23 +58,23 @@ def progbar(ing=5, rda=100, buf=25):
     perc = ing / rda
     ticks = round(perc * buf)
     ticks = ticks if ticks < buf else buf
-    bar = '<'
+    bar = "<"
     for i in range(ticks):
-        bar += '='
+        bar += "="
     for i in range(buf - ticks):
-        bar += ' '
-    bar += '>'
+        bar += " "
+    bar += ">"
     c = color(perc)
     p = fmtperc(perc)
-    fstr = f'{c}{bar} {p}{Style.RESET_ALL}'
+    fstr = f"{c}{bar} {p}{Style.RESET_ALL}"
     return fstr
 
 
 def fmtperc(perc):
-    p = str(perc * 100) + '%'
+    p = str(perc * 100) + "%"
     for i in range(len(p), 6):
-        p = f' {p}'
-    return f'{color(perc)}{p}{Style.RESET_ALL}'
+        p = f" {p}"
+    return f"{color(perc)}{p}{Style.RESET_ALL}"
 
 
 for i in range(0, 175, 25):

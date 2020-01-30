@@ -41,12 +41,14 @@ class Nutrient:
 
 
 nutrients = []
-Nutrient('Calories', 2000, 'cals')
-Nutrient('Thiamin', 0.9, 'mg')
+Nutrient("Calories", 2000, "cals")
+Nutrient("Thiamin", 0.9, "mg")
 
 
 class Food:
-    def __init__(self, db, key, name, Nutrients=None, per_units=None):  # fields? recipes? no. no.no
+    def __init__(
+        self, db, key, name, Nutrients=None, per_units=None
+    ):  # fields? recipes? no. no.no
         self.db = db
         self.key = key
         self.name = name

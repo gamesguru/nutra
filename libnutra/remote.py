@@ -33,11 +33,11 @@ import inspect
 import getpass
 import requests
 
-nutradir = os.path.join(os.path.expanduser("~"), '.nutra')
+nutradir = os.path.join(os.path.expanduser("~"), ".nutra")
 
-SERVER_HOST = 'https://nutra-server.herokuapp.com'
+SERVER_HOST = "https://nutra-server.herokuapp.com"
 try:
-    SERVER_HOST = os.environ['NUTRA_SERVER_HOST']
+    SERVER_HOST = os.environ["NUTRA_SERVER_HOST"]
 except:
     pass
 
@@ -45,42 +45,39 @@ except:
 def request(path, params):
     # print(f'{SERVER_HOST}/{path}')
     # print(params)
-    return requests.get(url=f'{SERVER_HOST}/{path}', params=params)
+    return requests.get(url=f"{SERVER_HOST}/{path}", params=params)
 
 
 def register(args=None):
-    print('Register an online account!')
-    username = input('Enter a username: ')
-    email = input('Enter your email: ')
-    password = getpass.getpass('Enter a password: ')
-    confirm_password = getpass.getpass('Confirm password: ')
+    print("Register an online account!")
+    username = input("Enter a username: ")
+    email = input("Enter your email: ")
+    password = getpass.getpass("Enter a password: ")
+    confirm_password = getpass.getpass("Confirm password: ")
 
     params = dict(
         username=username,
         password=password,
         confirm_password=confirm_password,
-        email=email
+        email=email,
     )
 
-    response = request('register', params)
-    print(response.json()['message'] + ': ' + response.json()['data']['result'])
+    response = request("register", params)
+    print(response.json()["message"] + ": " + response.json()["data"]["result"])
 
 
 def login(args=None):
-    print('Login!')
-    username = input('Enter your username: ')
-    password = getpass.getpass('Enter your password: ')
+    print("Login!")
+    username = input("Enter your username: ")
+    password = getpass.getpass("Enter your password: ")
 
-    params = dict(
-        username=username,
-        password=password
-    )
+    params = dict(username=username, password=password)
 
-    response = request('oauth', params)
-    token = response.json()['data']['result']
-    print('Response: ' + token)
+    response = request("oauth", params)
+    token = response.json()["data"]["result"]
+    print("Response: " + token)
 
-    with open(f'{nutradir}/token', 'a+') as token_file:
+    with open(f"{nutradir}/token", "a+") as token_file:
         token_file.write(token)
 
 
@@ -111,13 +108,14 @@ def main(args=None):
 def altcmd(i, arg):
     for i in inspect.getmembers(cmdmthds):
         for i2 in inspect.getmembers(i[1]):
-            if i2[0] == 'altargs' and arg in i2[1]:
+            if i2[0] == "altargs" and arg in i2[1]:
                 return i[1].mthd
     return None
 
 
 class cmdmthds:
     """ Where we keep the `cmd()` methods && opt args """
+
     class register:
         def mthd(rarg):
             register()
@@ -129,7 +127,8 @@ class cmdmthds:
     class help:
         def mthd(rarg):
             print(usage)
-        altargs = ['-h', '--help']
+
+        altargs = ["-h", "--help"]
 
 
 usage = f"""nutra: Remote connection tool

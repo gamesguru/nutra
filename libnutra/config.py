@@ -75,7 +75,7 @@ def main(args=sys.argv):
 def altcmd(i, arg):
     for i in inspect.getmembers(cmdmthds):
         for i2 in inspect.getmembers(i[1]):
-            if i2[0] == 'altargs' and arg in i2[1]:
+            if i2[0] == "altargs" and arg in i2[1]:
                 return i[1].mthd
     return None
 
@@ -84,13 +84,13 @@ class cmdmthds:
     """ Where we keep the `cmd()` methods && opt args """
 
     class new:
-        altargs = ['--new', '-n']
+        altargs = ["--new", "-n"]
 
         def mthd(rarg):
             new_profile(rarg)
 
     class extra:
-        altargs = ['-e']
+        altargs = ["-e"]
 
         def mthd(rarg):
             if len(rarg) == 0:
@@ -98,10 +98,10 @@ class cmdmthds:
             elif len(rarg) == 2:
                 econfig(rarg)
             else:
-                print('error: must specify only one option, and one value')
+                print("error: must specify only one option, and one value")
 
     class help:
-        altargs = ['--help', '-h']
+        altargs = ["--help", "-h"]
 
         def mthd(rarg):
             print(usage)
@@ -110,22 +110,22 @@ class cmdmthds:
 def new_profile(rargs):
     """Creates a new profile, deletes old one."""
     name = getpass.getuser()
-    gender = 'n'
+    gender = "n"
     age = 0
-    print('Warning: This will create a new profile (log and db are kept)\n')
+    print("Warning: This will create a new profile (log and db are kept)\n")
     # Name
-    inpt = input(f'Enter name (blank for {name}): ')
-    if inpt != '':
+    inpt = input(f"Enter name (blank for {name}): ")
+    if inpt != "":
         name = inpt
     # Gender
     while True:
-        inpt = input(f'Gender? [m/f/n]: ')
-        if inpt == 'm' or inpt == 'f' or inpt == 'n':
+        inpt = input(f"Gender? [m/f/n]: ")
+        if inpt == "m" or inpt == "f" or inpt == "n":
             gender = inpt
             break
     # Age
     while True:
-        inpt = input(f'Age: ')
+        inpt = input(f"Age: ")
         try:
             inpt = int(inpt)
             if inpt > 0 and inpt < 130:
@@ -135,18 +135,20 @@ def new_profile(rargs):
             pass
     # Write new profile
     os.makedirs(nutradir, 0o775, True)
-    with open(f'{nutradir}/config.txt', 'w+') as f:
-        f.write(f'Name:{name}\n')
-        f.write(f'Gender:{gender}\n')
-        f.write(f'Age:{age}\n')
-    print("That's it for the basic config, you can see what more can be configured with `nutra config extras'")
+    with open(f"{nutradir}/config.txt", "w+") as f:
+        f.write(f"Name:{name}\n")
+        f.write(f"Gender:{gender}\n")
+        f.write(f"Age:{age}\n")
+    print(
+        "That's it for the basic config, you can see what more can be configured with `nutra config extras'"
+    )
 
 
 def econfig(rarg):
     """ Configures extra settings: weight, height, wrist size, and nutraent targets """
-    print(f'option: {rarg[0]}')
-    print(f'value:  {rarg[1]}')
-    print('error: feature not implemented yet')
+    print(f"option: {rarg[0]}")
+    print(f"value:  {rarg[1]}")
+    print("error: feature not implemented yet")
 
 
 """ Usage commands """
