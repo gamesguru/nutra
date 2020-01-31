@@ -29,6 +29,9 @@ import argparse
 import sys
 
 from . import __version__
+from .account import cmd_login
+from .analyze import cmd_analyze
+from .search import cmd_search
 
 # Check Python version
 if sys.version_info < (3, 6, 5):
@@ -42,80 +45,54 @@ if sys.version_info < (3, 6, 5):
 
 
 def build_argparser():
+    global login_parser
 
-    usage = """
-    An extensible food database to analyze recipes and aid in fitness.
-    Version {__version__}
-
-    Usage: %(prog)s [options] <command> [options]
-    """
-
-    arg_parser = argparse.ArgumentParser(prog="nutra", usage=usage)
-
+    arg_parser = argparse.ArgumentParser(prog="nutra")
     arg_parser.add_argument(
         "-v", "--version", action="version", version="%(prog)s " + __version__
     )
 
-    arg_parser.add_argument(
-        "--key",
-        dest="key",
-        metavar="KEY",
-        default=None,
-        help="set the secret key to sign with",
-    )
-
-    arg_parser.add_argument(
-        "--alg",
-        dest="algorithm",
-        metavar="ALG",
-        default="HS256",
-        help="set crypto algorithm to sign with. default=HS256",
-    )
-
+    # --------------------------
+    # Sub-command parsers
+    # --------------------------
     subparsers = arg_parser.add_subparsers(
-        title="PyJWT subcommands",
+        title="nutra subcommands",
         description="valid subcommands",
         help="additional help",
     )
 
-    # Encode subcommand
-    encode_parser = subparsers.add_parser(
-        "encode", help="use to encode a supplied payload"
+    # Search subcommand
+    search_parser = subparsers.add_parser(
+        "search", help="use to search foods and recipes"
     )
+    search_parser.set_defaults(func=cmd_search, nargs="+")
 
-    payload_help = """Payload to encode. Must be a space separated list of key/value
-    pairs separated by equals (=) sign."""
-
-    encode_parser.add_argument("payload", nargs="+", help=payload_help)
-    encode_parser.set_defaults(func=encode_payload)
-
-    # Decode subcommand
-    decode_parser = subparsers.add_parser(
-        "decode", help="use to decode a supplied JSON web token"
+    # Analyze subcommand
+    analyze_parser = subparsers.add_parser(
+        "anl", help="use to analyze foods, recipes, logs"
     )
-    decode_parser.add_argument("token", help="JSON web token to decode.", nargs="?")
+    analyze_parser.add_argument("-r", help="recipe ID", type=int)
+    # analyze_parser.add_argument("token", help="JSON web token to decode.", nargs="?")
+    analyze_parser.set_defaults(func=cmd_analyze)  # , nargs="+")
 
-    decode_parser.add_argument(
-        "-n",
-        "--no-verify",
-        action="store_false",
-        dest="verify",
-        default=True,
-        help="ignore signature and claims verification on decode",
-    )
-
-    decode_parser.set_defaults(func=decode_payload)
+    # Login subcommand
+    login_parser = subparsers.add_parser("login", help="log in to your account")
+    login_parser.set_defaults(func=cmd_login)
 
     return arg_parser
 
 
-def main(args):
+def main(argv=None):
+    if argv == None:
+        argv = sys.argv
     arg_parser = build_argparser()
-
+    # Used for testing
+    # if len(sys.argv) < 2:
+    #     sys.argv = ["./nutra", "search", "grass", "fed", "beef"]
     try:
-        arguments = arg_parser.parse_args(args)
-        output = arguments.func(arguments)
-        print(output)
+        args, unknown = arg_parser.parse_known_args()
+        args.func(args, unknown, arg_parser=arg_parser)
     except Exception as e:
+        # print_tb(e)
         print("There was an unforseen error: ", e)
         arg_parser.print_help()

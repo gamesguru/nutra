@@ -32,6 +32,10 @@ from libnutra import remote
 from tabulate import tabulate
 
 
+def cmd_search(args, unknown, arg_parser=None):
+    return search(words=unknown)
+
+
 def print_id_and_long_desc(results):
     # Current terminal size
     bufferwidth = shutil.get_terminal_size()[0]

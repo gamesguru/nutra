@@ -3,10 +3,10 @@
     "files.exclude": {
         "**/__pycache__/**": true,
         "**/.pytest_cache/**": true,
-        "**/__init__.py": true,
         "**/.vscode/**": true,
         "**/dist/**": true,
         "MANIFEST": true,
+	"MANIFEST.in": true,
     },
     "search.exclude": {
         "**/__pycache__/**": true,
