@@ -4,8 +4,12 @@
 
 .. image:: https://api.travis-ci.com/gamesguru/nutra.svg?branch=master
     :target: https://travis-ci.com/gamesguru/nutra
-    
-Extensible command-line tool for nutraent analysis.
+.. image:: https://pepy.tech/badge/nutri/month
+    :target: https://pepy.tech/project/nutri/month
+.. image:: https://img.shields.io/pypi/pyversions/nutra.svg
+    :target: https://pypi.org/project/nutra
+
+Extensible command-line tools for nutrient analysis.
 
 *Requires:*
 

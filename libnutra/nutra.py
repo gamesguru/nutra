@@ -1,45 +1,50 @@
-#!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
 Created on Fri Sep 28 22:25:38 2018
 
 @author: shane
-NOTICE
-    This file is part of nutra, a nutraent analysis program.
-        https://github.com/gamesguru/nutra
-        https://pypi.org/project/nutra/
 
-    nutra is an extensible nutraent analysis and composition application.
-    Copyright (C) 2018  Shane Jaroch
+This file is part of nutra, a nutrient analysis program.
+    https://github.com/nutratech/cli
+    https://pypi.org/project/nutra/
 
-    This program is free software: you can redistribute it and/or modify
-    it under the terms of the GNU General Public License as published by
-    the Free Software Foundation, either version 3 of the License, or
-    (at your option) any later version.
+nutra is an extensible nutraent analysis and composition application.
+Copyright (C) 2018  Shane Jaroch
 
-    This program is distributed in the hope that it will be useful,
-    but WITHOUT ANY WARRANTY; without even the implied warranty of
-    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-    GNU General Public License for more details.
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
 
-    You should have received a copy of the GNU General Public License
-    along with this program.  If not, see <https://www.gnu.org/licenses/>.
-END NOTICE
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program.  If not, see <https://www.gnu.org/licenses/>.
 """
+
 
 import sys
 import os
 import inspect
 from libnutra import remote, search, rank
+from . import __version__
 
 # First thing's first, check Python version
 if sys.version_info < (3, 6, 5):
-    exit("ERROR: nutra requires Python 3.6.5 or later to run.")
+    ver = ".".join([str(x) for x in sys.version_info[0:3]])
+    print(
+        "ERROR: nutra requires Python 3.6.5 or later to run",
+        f"HINT:  You're running Python {ver}",
+        sep="\n",
+    )
+    exit(1)
 
-version = "0.0.1"
 
 usage = f"""nutra helps you stay fit and healthy.
-Version {version}
+Version {__version__}
 
 Usage: nutra <command>
 
