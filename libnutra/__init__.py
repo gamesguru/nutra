@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """
-Created on Fri Sep 28 22:25:38 2018
+Created on Fri Jan 31 16:01:31 2020
 
 @author: shane
 
@@ -8,7 +8,7 @@ This file is part of nutra, a nutrient analysis program.
     https://github.com/nutratech/cli
     https://pypi.org/project/nutra/
 
-nutra is an extensible nutraent analysis and composition application.
+nutra is an extensible nutrient analysis and composition application.
 Copyright (C) 2018  Shane Jaroch
 
 This program is free software: you can redistribute it and/or modify
@@ -25,4 +25,8 @@ You should have received a copy of the GNU General Public License
 along with this program.  If not, see <https://www.gnu.org/licenses/>.
 """
 
+__title__ = "nutra"
 __version__ = "0.0.1"
+__author__ = "Shane Jaroch"
+__license__ = "GPL v3"
+__copyright__ = "Copyright 2018-2020 Shane Jaroch"

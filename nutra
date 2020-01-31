@@ -3,10 +3,10 @@
 """
 Created on Fri Sep 28 22:25:38 2018
 
-@author: shane
+@author: gamesguru
 """
 
 import sys
-from libnutra import nutra
+from libnutra.__main__ import main
 
-nutra.main(sys.argv[1:])
+main(sys.argv[1:])
