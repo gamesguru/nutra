@@ -37,7 +37,8 @@ def cmd_analyze(args, unknown, arg_parser=None):
     # if args.r:
     #     print(f"recipe id: {args.r}")
     if not unknown:
-        analyze_parser.print_help()
+        arg_parser.print_help()
+        return
 
     # Get analysis
     food_ids = [int(x) for x in unknown]
@@ -45,9 +46,9 @@ def cmd_analyze(args, unknown, arg_parser=None):
     response = requests.get(f"{SERVER_HOST}/analyze", params={"food_ids": food_ids})
     analyses = response.json()["data"]
     # Get RDAs
-    response = requests.get(f"{SERVER_HOST}/rdas", params={"food_ids": food_ids})
+    response = requests.get(f"{SERVER_HOST}/nutrients")
     rdas = response.json()["data"]
-    rdas = {rda["nutr_id"]: rda for rda in rdas}
+    rdas = {rda["id"]: rda for rda in rdas}
 
     # print(json.dumps(rdas))
     # print(json.dumps(analyses))
