@@ -27,7 +27,14 @@ along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 import os
 
+from dotenv import load_dotenv
+
+# Read in .env file if it exists locally, else look to env vars
+load_dotenv()
+
 NUTRA_DIR = os.path.join(os.path.expanduser("~"), ".nutra")
 
-SERVER_HOST = "https://nutra-server.herokuapp.com"
-# SERVER_HOST = "http://localhost:20000"
+REMOTE_HOST = "https://nutra-server.herokuapp.com"
+SERVER_HOST = os.getenv("NUTRA_OVERRIDE_LOCAL_SERVER_HOST", REMOTE_HOST)
+
+TESTING = SERVER_HOST != REMOTE_HOST

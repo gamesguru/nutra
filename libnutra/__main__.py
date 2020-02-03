@@ -32,6 +32,7 @@ from . import __version__
 from .account import cmd_login
 from .analyze import cmd_analyze
 from .search import cmd_search
+from .utils.settings import TESTING
 
 # Check Python version
 if sys.version_info < (3, 6, 5):
@@ -87,7 +88,7 @@ def main(argv=None):
         argv = sys.argv
     arg_parser = build_argparser()
     # Used for testing
-    if len(sys.argv) < 2:
+    if TESTING and len(sys.argv) < 2:
         sys.argv = ["./nutra", "anl", "1001"]
         # sys.argv = ["./nutra", "search", "grass", "fed", "beef"]
     try:
