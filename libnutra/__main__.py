@@ -28,21 +28,21 @@ along with this program.  If not, see <https://www.gnu.org/licenses/>.
 import argparse
 import sys
 
-from . import __version__
-from .account import cmd_login
-from .analyze import cmd_analyze
-from .search import cmd_search
-from .utils.settings import TESTING
-
 # Check Python version
 if sys.version_info < (3, 6, 5):
     ver = ".".join([str(x) for x in sys.version_info[0:3]])
     print(
         "ERROR: nutra requires Python 3.6.5 or later to run",
-        f"HINT:  You're running Python {ver}",
+        "HINT:  You're running Python " + ver,
         sep="\n",
     )
     exit(1)
+
+from . import __version__
+from .account import cmd_login
+from .analyze import cmd_analyze
+from .search import cmd_search
+from .utils.settings import TESTING
 
 
 def build_argparser():

@@ -31,6 +31,7 @@ setup(
     author_email="mathmuncher11@gmail.com",
     classifiers=CLASSIFIERS,
     install_requires=REQUIREMENTS,
+    python_requires='~=3.6.5',
     packages=["libnutra", "libnutra/utils"],
     entry_points={"console_scripts": ["nutra=libnutra.__main__:main"]},
     description="Home and office nutrient tracking software",
@@ -38,5 +39,5 @@ setup(
     long_description_content_type="text/x-rst",
     url="https://github.com/nutratech/cli",
     license="GPL v3",
-    version="0.0.9",
+    version="0.0.10",
 )
