@@ -2,10 +2,10 @@
  nutratracker
 **************
 
-.. image:: https://api.travis-ci.com/gamesguru/nutra.svg?branch=master
-    :target: https://travis-ci.com/gamesguru/nutra
-.. image:: https://pepy.tech/badge/nutri/month
-    :target: https://pepy.tech/project/nutri/month
+.. image:: https://api.travis-ci.com/nutratech/cli.svg?branch=master
+    :target: https://travis-ci.com/nutratech/cli
+.. image:: https://pepy.tech/badge/nutra/month
+    :target: https://pepy.tech/project/nutra/month
 .. image:: https://img.shields.io/pypi/pyversions/nutra.svg
     :target: https://pypi.org/project/nutra
 
@@ -48,6 +48,7 @@ Using the source-code directly
 .. code-block:: bash
 
     git clone git@github.com:gamesguru/nutra.git
+    pip3 install -r requirements.txt
     cd nutra    
     ./nutra -h
 
@@ -92,8 +93,4 @@ Commands
 
     analyze | anl           critique a date (range), meal, recipe, or food
 
-    remote                  login, logout, register, and online functions
-
     --help | -h             show help for a given command
-
-    config                  change name, age, and vitamin targets
