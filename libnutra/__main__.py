@@ -31,11 +31,8 @@ import sys
 # Check Python version
 if sys.version_info < (3, 6, 5):
     ver = ".".join([str(x) for x in sys.version_info[0:3]])
-    print(
-        "ERROR: nutra requires Python 3.6.5 or later to run",
-        "HINT:  You're running Python " + ver,
-        sep="\n",
-    )
+    print("ERROR: nutra requires Python 3.6.5 or later to run")
+    print("HINT:  You're running Python " + ver)
     exit(1)
 
 from . import __version__

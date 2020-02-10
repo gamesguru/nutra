@@ -18,4 +18,5 @@
         "**/.pytest_cache/**": true,
         "**/dist/**": true,
     },
+    "python.formatting.provider": "black",
 }
