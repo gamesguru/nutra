@@ -29,7 +29,7 @@ CLASSIFIERS = [
     "Programming Language :: Python :: 3.8",
 ]
 
-REQUIREMENTS = ["colorama", "tabulate", "requests"]
+REQUIREMENTS = ["colorama", "tabulate", "requests", "python-dotenv"]
 
 README = open("README.rst").read()
 
@@ -47,5 +47,5 @@ setup(
     long_description_content_type="text/x-rst",
     url="https://github.com/nutratech/cli",
     license="GPL v3",
-    version="0.0.10",
+    version="0.0.12",
 )
