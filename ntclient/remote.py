@@ -31,13 +31,9 @@ import inspect
 import getpass
 import requests
 
-nutradir = os.path.join(os.path.expanduser("~"), ".nutra")
+from .utils.settings import SERVER_HOST
 
-SERVER_HOST = "https://nutra-server.herokuapp.com"
-try:
-    SERVER_HOST = os.environ["NUTRA_SERVER_HOST"]
-except:
-    pass
+nutradir = os.path.join(os.path.expanduser("~"), ".nutra")
 
 
 def request(path, params):

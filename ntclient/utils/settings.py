@@ -37,6 +37,8 @@ NUTRA_DIR = os.path.join(os.path.expanduser("~"), ".nutra")
 REMOTE_HOST = "https://nutra-server.herokuapp.com"
 SERVER_HOST = os.getenv("NUTRA_OVERRIDE_LOCAL_SERVER_HOST", REMOTE_HOST)
 
-print(SERVER_HOST)
 
 TESTING = SERVER_HOST != REMOTE_HOST
+
+if TESTING:
+    print(f"server_host: {SERVER_HOST}")
