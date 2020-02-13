@@ -7,6 +7,6 @@ Created on Fri Sep 28 22:25:38 2018
 """
 
 import sys
-from libnutra.__main__ import main
+from ntclient.__main__ import main
 
 main(sys.argv[1:])

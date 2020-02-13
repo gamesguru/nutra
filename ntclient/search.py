@@ -28,8 +28,10 @@ along with this program.  If not, see <https://www.gnu.org/licenses/>.
 import sys
 import shutil
 import inspect
-from libnutra import remote
+
 from tabulate import tabulate
+
+from . import remote
 
 
 def cmd_search(args, unknown, arg_parser=None):
