@@ -6,4 +6,4 @@ python:
 install:
 - pip install -r requirements.txt
 script:
-- pytest test_nutra.py -v -s
+- pytest test_ntclient.py -v -s
