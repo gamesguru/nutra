@@ -25,9 +25,9 @@ You should have received a copy of the GNU General Public License
 along with this program.  If not, see <https://www.gnu.org/licenses/>.
 """
 
-import sys
-import shutil
 import inspect
+import shutil
+import sys
 
 from tabulate import tabulate
 
@@ -36,6 +36,16 @@ from . import remote
 
 def cmd_search(args, unknown, arg_parser=None):
     return search(words=unknown)
+
+
+def search(words, dbs=None):
+    """ Searches all dbs, foods, recipes, recents and favorites. """
+    params = dict(terms=",".join(words))
+
+    response = remote.request("search", params=params)
+    results = response.json()["data"]
+
+    print_id_and_long_desc(results)
 
 
 def print_id_and_long_desc(results):
@@ -55,83 +65,3 @@ def print_id_and_long_desc(results):
         else:
             rows.append([food_id, food_name])
     print(tabulate(rows, headers=["food_id", "food_name"], tablefmt="orgtbl"))
-
-
-def search(words, dbs=None):
-    """ Searches all dbs, foods, recipes, recents and favorites. """
-    params = dict(terms=",".join(words))
-
-    response = remote.request("search", params=params)
-    results = response.json()["data"]
-
-    print_id_and_long_desc(results)
-
-
-def main(args=None):
-    if args == None:
-        args = sys.argv[1:]
-
-    words = []
-
-    # No arguments passed in
-    if len(args) == 0:
-        print(usage)
-
-    # Otherwise we have some args
-    for i, arg in enumerate(args):
-        rarg = args[i:]
-        if hasattr(cmdmthds, arg):
-            getattr(cmdmthds, arg).mthd(rarg[1:])
-            if arg == "help":
-                break
-        # Activate method for opt commands, e.g. `-h' or `--help'
-        elif altcmd(i, arg) != None:
-            altcmd(i, arg)(rarg[1:])
-            if arg == "-h" or arg == "--help":
-                break
-        # Otherwise we don't know the arg
-        else:
-            words.append(arg)
-
-    if len(words) > 0:
-        search(words)
-
-
-def altcmd(i, arg):
-    for i in inspect.getmembers(cmdmthds):
-        for i2 in inspect.getmembers(i[1]):
-            if i2[0] == "altargs" and arg in i2[1]:
-                return i[1].mthd
-    return None
-
-
-class cmdmthds:
-    """ Where we keep the `cmd()` methods && opt args """
-
-    class help:
-        def mthd(rarg):
-            print(usage)
-
-        altargs = ["-h", "--help"]
-
-    class rank:
-        def mthd(rarg):
-            rank(rarg)
-
-        altargs = ["-r", "--rank"]
-
-
-usage = f"""nutra: Search tool
-
-Usage: nutra search <flags> <query>
-
-Flags:
-    -r            rank foods by Nutr_No or Tagname
-    -u            search USDA only
-    -b            search BFDB only
-    -n            search nutra DB only
-    -nub          search all three DBs
-    --help | -h   print help"""
-
-if __name__ == "__main__":
-    main()

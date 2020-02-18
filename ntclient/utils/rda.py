@@ -27,8 +27,8 @@ NOTICE
 END NOTICE
 """
 
-import os
 import datetime
+import os
 
 
 class Nutrient:

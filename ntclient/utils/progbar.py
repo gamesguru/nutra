@@ -27,7 +27,7 @@ NOTICE
 END NOTICE
 """
 
-from colorama import Style, Fore
+from colorama import Fore, Style
 
 # Colors
 critlevel = 0.3

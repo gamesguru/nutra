@@ -34,12 +34,12 @@ if sys.version_info < (3, 6, 5):
     print("ERROR: nutra requires Python 3.6.5 or later to run")
     print("HINT:  You're running Python " + ver)
     exit(1)
-
-from . import __version__
-from .account import cmd_login
-from .analyze import cmd_analyze
-from .search import cmd_search
-from .utils.settings import TESTING
+else:
+    from . import __version__
+    from .account import cmd_login
+    from .analyze import cmd_analyze
+    from .search import cmd_search
+    from .utils.settings import TESTING
 
 
 def build_argparser():

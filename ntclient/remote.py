@@ -25,15 +25,14 @@ You should have received a copy of the GNU General Public License
 along with this program.  If not, see <https://www.gnu.org/licenses/>.
 """
 
+import getpass
+import inspect
 import os
 import sys
-import inspect
-import getpass
+
 import requests
 
-from .utils.settings import SERVER_HOST
-
-nutradir = os.path.join(os.path.expanduser("~"), ".nutra")
+from .utils.settings import NUTRA_DIR, SERVER_HOST
 
 
 def request(path, params):
@@ -71,66 +70,5 @@ def login(args=None):
     token = response.json()["data"]
     print("Response: " + token)
 
-    with open(f"{nutradir}/token", "a+") as token_file:
+    with open(f"{NUTRA_DIR}/token", "a+") as token_file:
         token_file.write(token)
-
-
-def main(args=None):
-    if args == None:
-        args = sys.argv[1:]
-
-    # No arguments passed in
-    if len(args) == 0:
-        print(usage)
-
-    # Otherwise we have some args
-    for i, arg in enumerate(args):
-        rarg = args[i:]
-        if hasattr(cmdmthds, arg):
-            getattr(cmdmthds, arg).mthd(rarg[1:])
-            break
-        # Activate method for opt commands, e.g. `-h' or `--help'
-        elif altcmd(i, arg) != None:
-            altcmd(i, arg)(rarg[1:])
-            break
-        # Otherwise we don't know the arg
-        else:
-            print(f"error: unknown option `{arg}'.  See 'nutra db --help'.")
-            break
-
-
-def altcmd(i, arg):
-    for i in inspect.getmembers(cmdmthds):
-        for i2 in inspect.getmembers(i[1]):
-            if i2[0] == "altargs" and arg in i2[1]:
-                return i[1].mthd
-    return None
-
-
-class cmdmthds:
-    """ Where we keep the `cmd()` methods && opt args """
-
-    class register:
-        def mthd(rarg):
-            register()
-
-    class login:
-        def mthd(rarg):
-            login()
-
-    class help:
-        def mthd(rarg):
-            print(usage)
-
-        altargs = ["-h", "--help"]
-
-
-usage = f"""nutra: Remote connection tool
-
-Usage: nutra remote <command>
-
-Commands:
-    list | -l  list off databases stored on your computer"""
-
-if __name__ == "__main__":
-    main()

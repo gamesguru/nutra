@@ -25,11 +25,15 @@ You should have received a copy of the GNU General Public License
 along with this program.  If not, see <https://www.gnu.org/licenses/>.
 """
 
-import sys
-import shutil
 import inspect
-from libnutra import remote
+import shutil
+import sys
+
 from tabulate import tabulate
+
+from . import remote
+
+# TODO - implement argparse on this module
 
 
 def rank(type, rargs):
@@ -69,71 +73,3 @@ def print_id_and_long_desc_and_nutr_val(results):
     print(
         tabulate(rows, headers=["food_id", "food_name", "nutr_val"], tablefmt="orgtbl")
     )
-
-
-def main(args=None):
-    if args == None:
-        args = sys.argv[1:]
-
-    # No arguments passed in
-    if len(args) == 0:
-        print(usage)
-
-    # Otherwise we have some args
-    for i, arg in enumerate(args):
-        rarg = args[i:]
-        if hasattr(cmdmthds, arg):
-            getattr(cmdmthds, arg).mthd(rarg[1:])
-            break
-        # Activate method for opt commands, e.g. `-h' or `--help'
-        elif altcmd(i, arg) != None:
-            altcmd(i, arg)(rarg[1:])
-            break
-        # Otherwise we don't know the arg
-        else:
-            print(f"error: unknown option `{arg}'.  See 'nutra rank --help'.")
-            break
-
-
-def altcmd(i, arg):
-    for i in inspect.getmembers(cmdmthds):
-        for i2 in inspect.getmembers(i[1]):
-            if i2[0] == "altargs" and arg in i2[1]:
-                return i[1].mthd
-    return None
-
-
-class cmdmthds:
-    """ Where we keep the `cmd()` methods && opt args """
-
-    class nutrno:
-        def mthd(rarg):
-            rank("nutr_no", rarg)
-
-        altargs = ["-n"]
-
-    class tagname:
-        def mthd(rarg):
-            rank("tagname", rarg)
-
-        altargs = ["-t"]
-
-    class help:
-        def mthd(rarg):
-            print(usage)
-
-        altargs = ["-h", "--help"]
-
-
-usage = f"""nutra: Rank foods by Nutr_No or Tagname
-
-Usage: nutra search <flags> <query>
-
-Flags:
-    -n            search by Nutr_No
-    -t            search by Tagname
-    -u            filter USDA only
-    -b            filter BFDB only
-    -n            filter nutra DB only
-    -nub          search all three DBs
-    --help | -h   print help"""
