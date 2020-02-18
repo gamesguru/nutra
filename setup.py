@@ -5,8 +5,11 @@ Created on Sat Oct 13 16:30:30 2018
 @author: shane
 """
 
+import os
+import shutil
 import sys
-from distutils.core import setup
+
+from setuptools import setup
 
 # Old pip doesn't respect `python_requires'
 if sys.version_info < (3, 6, 5):
@@ -15,6 +18,9 @@ if sys.version_info < (3, 6, 5):
     print("HINT:  You're running Python " + ver)
     exit(1)
 
+# cd to parent dir of setup.py
+os.chdir(os.path.dirname(os.path.abspath(__file__)))
+shutil.rmtree("dist")
 
 CLASSIFIERS = [
     "Intended Audience :: End Users/Desktop",
@@ -33,8 +39,10 @@ REQUIREMENTS = ["colorama", "tabulate", "requests", "python-dotenv"]
 
 README = open("README.rst").read()
 
+PKG_NAME = "nutra"
+
 setup(
-    name="nutra",
+    name=PKG_NAME,
     author="gamesguru",
     author_email="mathmuncher11@gmail.com",
     classifiers=CLASSIFIERS,
@@ -47,5 +55,10 @@ setup(
     long_description_content_type="text/x-rst",
     url="https://github.com/nutratech/cli",
     license="GPL v3",
-    version="0.0.15",
+    version="0.0.16",
 )
+
+# Clean up
+shutil.rmtree(f"{PKG_NAME}.egg-info", True)
+shutil.rmtree(f"__pycache__", True)
+shutil.rmtree(f".pytest_cache", True)
