@@ -20,7 +20,7 @@ if sys.version_info < (3, 6, 5):
 
 # cd to parent dir of setup.py
 os.chdir(os.path.dirname(os.path.abspath(__file__)))
-shutil.rmtree("dist")
+shutil.rmtree("dist", True)
 
 CLASSIFIERS = [
     "Intended Audience :: End Users/Desktop",
@@ -55,7 +55,7 @@ setup(
     long_description_content_type="text/x-rst",
     url="https://github.com/nutratech/cli",
     license="GPL v3",
-    version="0.0.16",
+    version="0.0.17",
 )
 
 # Clean up
