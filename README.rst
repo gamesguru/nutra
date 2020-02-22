@@ -66,6 +66,12 @@ Using the source-code directly
     cd nutra    
     ./nutra -h
 
+When building the PyPi release use the commands:
+
+.. code-block:: bash
+
+    python3 setup.py sdist
+    twine upload dist/nutra-X.X.X.tar.gz
 
 Currently Supported Data
 ========================

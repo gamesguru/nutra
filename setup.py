@@ -62,3 +62,7 @@ setup(
 shutil.rmtree(f"{PKG_NAME}.egg-info", True)
 shutil.rmtree(f"__pycache__", True)
 shutil.rmtree(f".pytest_cache", True)
+try:
+    os.remove("MANIFEST")
+except:
+    pass
