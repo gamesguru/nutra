@@ -42,7 +42,7 @@ def search(words, dbs=None):
     """ Searches all dbs, foods, recipes, recents and favorites. """
     params = dict(terms=",".join(words))
 
-    response = remote.request("search", params=params)
+    response = remote.request("/foods/search", params=params)
     results = response.json()["data"]
 
     print_id_and_long_desc(results)

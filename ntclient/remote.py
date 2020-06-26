@@ -36,9 +36,9 @@ from .utils.settings import NUTRA_DIR, SERVER_HOST
 
 
 def request(path, params):
-    # print(f'{SERVER_HOST}/{path}')
+    # print(f'{SERVER_HOST}{path}')
     # print(params)
-    return requests.get(url=f"{SERVER_HOST}/{path}", params=params)
+    return requests.get(url=f"{SERVER_HOST}{path}", params=params)
 
 
 def register(args=None):

@@ -43,7 +43,9 @@ def cmd_analyze(args, unknown, arg_parser=None):
     # Get analysis
     food_ids = [int(x) for x in unknown]
     food_ids = ",".join([str(x) for x in food_ids])
-    response = requests.get(f"{SERVER_HOST}/analyze", params={"food_ids": food_ids})
+    response = requests.get(
+        f"{SERVER_HOST}/foods/analyze", params={"food_ids": food_ids}
+    )
     analyses = response.json()["data"]
     # Get RDAs
     response = requests.get(f"{SERVER_HOST}/nutrients")
