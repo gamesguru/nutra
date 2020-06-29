@@ -32,7 +32,7 @@ import sys
 from tabulate import tabulate
 
 from . import remote
-from .utils.settings import NUTR_ID_KCAL
+from .utils.settings import NUTR_ID_KCAL, NUTR_IDS_AMINOS, NUTR_IDS_FLAVONES
 
 
 def cmd_search(args, unknown, arg_parser=None):
@@ -65,8 +65,14 @@ def print_results(results):
         nutrients = r["nutrients"]
         kcal = nutrients.get(str(NUTR_ID_KCAL))
         kcal = kcal["nutr_val"] if kcal else None
+        len_aminos = len(
+            [nutrients[n_id] for n_id in nutrients if int(n_id) in NUTR_IDS_AMINOS]
+        )
+        len_flavones = len(
+            [nutrients[n_id] for n_id in nutrients if int(n_id) in NUTR_IDS_FLAVONES]
+        )
 
-        row = [food_id, food_name, kcal, len(nutrients)]
+        row = [food_id, food_name, kcal, len(nutrients), len_aminos, len_flavones]
         rows.append(row)
         # TODO: dynamic buffer
         # avail_buffer = bufferwidth - len(food_id) - 15
