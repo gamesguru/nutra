@@ -25,9 +25,7 @@ You should have received a copy of the GNU General Public License
 along with this program.  If not, see <https://www.gnu.org/licenses/>.
 """
 
-import inspect
 import shutil
-import sys
 
 from tabulate import tabulate
 
@@ -51,7 +49,8 @@ def search(words, dbs=None):
 
 def print_results(results):
     # Current terminal size
-    bufferwidth = shutil.get_terminal_size()[0]
+    # TODO: dynamic buffer
+    # bufferwidth = shutil.get_terminal_size()[0]
     bufferheight = shutil.get_terminal_size()[1]
 
     headers = ["food_id", "food_name", "kcal", "# nutrients", "Aminos", "Flavones"]
@@ -74,7 +73,6 @@ def print_results(results):
 
         row = [food_id, food_name, kcal, len(nutrients), len_aminos, len_flavones]
         rows.append(row)
-        # TODO: dynamic buffer
         # avail_buffer = bufferwidth - len(food_id) - 15
         # if len(food_name) > avail_buffer:
         #     rows.append([food_id, food_name[:avail_buffer] + "..."])
