@@ -26,13 +26,10 @@ along with this program.  If not, see <https://www.gnu.org/licenses/>.
 """
 
 import getpass
-import inspect
-import os
-import sys
 
 import requests
 
-from .utils.settings import NUTRA_DIR, SERVER_HOST
+from .settings import NUTRA_DIR, SERVER_HOST
 
 
 def request(path, params):

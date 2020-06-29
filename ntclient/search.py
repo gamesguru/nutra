@@ -50,6 +50,7 @@ def search(words, dbs=None):
 def print_results(results):
     # Current terminal size
     # TODO: dynamic buffer
+    # TODO: display "nonzero/total" report nutrients, aminos, and flavones.. sometimes zero values are not useful
     # bufferwidth = shutil.get_terminal_size()[0]
     bufferheight = shutil.get_terminal_size()[1]
 
