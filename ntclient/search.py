@@ -29,7 +29,7 @@ import shutil
 
 from tabulate import tabulate
 
-from . import remote
+from .utils import remote
 from .utils.settings import NUTR_ID_KCAL, NUTR_IDS_AMINOS, NUTR_IDS_FLAVONES
 
 

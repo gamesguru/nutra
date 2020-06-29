@@ -36,18 +36,19 @@ if sys.version_info < (3, 6, 5):
     exit(1)
 else:
     from . import __version__
-    from .account import cmd_login
+
+    # from .account import cmd_login
     from .analyze import cmd_analyze
     from .search import cmd_search
     from .utils.settings import TESTING
 
 
 def build_argparser():
-    global login_parser
+    # global login_parser
 
     arg_parser = argparse.ArgumentParser(prog="nutra")
     arg_parser.add_argument(
-        "-v", "--version", action="version", version="%(prog)s " + __version__
+        "-v", "--version", action="version", version="%(prog)s version " + __version__
     )
 
     # --------------------------
@@ -73,9 +74,9 @@ def build_argparser():
     # analyze_parser.add_argument("token", help="JSON web token to decode.", nargs="?")
     analyze_parser.set_defaults(func=cmd_analyze)  # , nargs="+")
 
-    # Login subcommand
-    login_parser = subparsers.add_parser("login", help="log in to your account")
-    login_parser.set_defaults(func=cmd_login)
+    # # Login subcommand
+    # login_parser = subparsers.add_parser("login", help="log in to your account")
+    # login_parser.set_defaults(func=cmd_login)
 
     return arg_parser
 

@@ -25,13 +25,11 @@ You should have received a copy of the GNU General Public License
 along with this program.  If not, see <https://www.gnu.org/licenses/>.
 """
 
-import inspect
 import shutil
-import sys
 
 from tabulate import tabulate
 
-from . import remote
+from .utils import remote
 
 # TODO - implement argparse on this module
 
