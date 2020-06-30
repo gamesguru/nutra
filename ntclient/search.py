@@ -54,13 +54,22 @@ def print_results(results):
     # bufferwidth = shutil.get_terminal_size()[0]
     bufferheight = shutil.get_terminal_size()[1]
 
-    headers = ["food_id", "food_name", "kcal", "# nutrients", "Aminos", "Flavones"]
+    headers = [
+        "food_id",
+        "food_name",
+        "kcal",
+        "# nutrients",
+        "Aminos",
+        "Flavones",
+        "fdgrp_desc",
+    ]
     rows = []
     for i, r in enumerate(results):
         if i == bufferheight - 4:
             break
         food_id = r["food_id"]
         food_name = r["long_desc"][:45]
+        fdgrp_desc = r["fdgrp_desc"]
 
         nutrients = r["nutrients"]
         kcal = nutrients.get(str(NUTR_ID_KCAL))
@@ -72,7 +81,15 @@ def print_results(results):
             [nutrients[n_id] for n_id in nutrients if int(n_id) in NUTR_IDS_FLAVONES]
         )
 
-        row = [food_id, food_name, kcal, len(nutrients), len_aminos, len_flavones]
+        row = [
+            food_id,
+            food_name,
+            kcal,
+            len(nutrients),
+            len_aminos,
+            len_flavones,
+            fdgrp_desc,
+        ]
         rows.append(row)
         # avail_buffer = bufferwidth - len(food_id) - 15
         # if len(food_name) > avail_buffer:

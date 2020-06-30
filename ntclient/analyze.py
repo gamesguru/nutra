@@ -25,6 +25,8 @@ You should have received a copy of the GNU General Public License
 along with this program.  If not, see <https://www.gnu.org/licenses/>.
 """
 
+import csv
+
 import requests
 from tabulate import tabulate
 
@@ -75,3 +77,9 @@ def cmd_analyze(args, unknown, arg_parser=None):
             rows.append([nute["nutr_desc"], amount, rdas[id]["units"], f"{rda_ratio}%"])
         print(tabulate(rows, headers=headers, tablefmt="orgtbl"))
         # print(food["food_id"])
+
+def parse_csv(file):
+    with open(file) as f:
+        reader = csv.reader(f)
+        for line in reader:
+            print(line)
