@@ -60,8 +60,10 @@ setup(
 
 # Clean up
 shutil.rmtree(f"{PKG_NAME}.egg-info", True)
-shutil.rmtree(f"__pycache__", True)
-shutil.rmtree(f".pytest_cache", True)
+shutil.rmtree("__pycache__", True)
+shutil.rmtree("ntclient/__pycache__", True)
+shutil.rmtree("ntclient/utils/__pycache__", True)
+shutil.rmtree(".pytest_cache", True)
 try:
     os.remove("MANIFEST")
 except:

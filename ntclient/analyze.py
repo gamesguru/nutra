@@ -78,6 +78,7 @@ def cmd_analyze(args, unknown, arg_parser=None):
         print(tabulate(rows, headers=headers, tablefmt="orgtbl"))
         # print(food["food_id"])
 
+
 def parse_csv(file):
     with open(file) as f:
         reader = csv.reader(f)
