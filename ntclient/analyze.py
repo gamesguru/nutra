@@ -83,6 +83,7 @@ def cmd_analyze(args, unknown, arg_parser=None):
         food_nutes = {x["nutr_id"]: x for x in food["nutrients"]}
         for id, nute in food_nutes.items():
             if not rdas[id]["rda"]:
+                # print(rdas[id])
                 continue
 
             amount = food_nutes[id]["nutr_val"]

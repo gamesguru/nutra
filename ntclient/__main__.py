@@ -87,7 +87,7 @@ def main(argv=None):
     arg_parser = build_argparser()
     # Used for testing
     if TESTING and len(sys.argv) < 2:
-        sys.argv = ["./nutra", "anl", "12155"]
+        sys.argv = ["./nutra", "anl", "42231"]
         # sys.argv = ["./nutra", "search", "grass", "fed", "beef"]
     try:
         args, unknown = arg_parser.parse_known_args()
