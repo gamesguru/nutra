@@ -55,7 +55,7 @@ setup(
     long_description_content_type="text/x-rst",
     url="https://github.com/nutratech/cli",
     license="GPL v3",
-    version="0.0.20",
+    version="0.0.21",
 )
 
 # Clean up

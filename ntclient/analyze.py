@@ -55,17 +55,29 @@ def cmd_analyze(args, unknown, arg_parser=None):
     rdas = response.json()["data"]
     rdas = {rda["id"]: rda for rda in rdas}
 
-    # print(json.dumps(rdas))
-    # print(json.dumps(analyses))
-    # print(len(analyses))
-    # print(rdas)
-
+    # --------------------------------------
+    # Food-by-food analysis (w/ servings)
+    # --------------------------------------
     for food in analyses:
+        food_id = food["food_id"]
+        food_name = food["long_desc"]
         print(
             "\n======================================\n"
-            f"==> {food['long_desc']} ({food['food_id']})\n"
+            f"==> {food_name} ({food_id})\n"
             "======================================\n",
         )
+        print("=========================\nSERVINGS\n=========================\n")
+        ###############
+        # Serving table
+        headers = ["msre_id", "msre_desc", "grams"]
+        rows = [x for x in servings if x["food_id"] == food_id]
+        for r in rows:
+            r.pop("food_id")
+        print(tabulate(rows, headers="keys", tablefmt="orgtbl"))
+
+        print("\n=========================\nNUTRITION\n=========================\n")
+        ################
+        # Nutrient table
         headers = ["nutrient", "amount", "units", "rda"]
         rows = []
         food_nutes = {x["nutr_id"]: x for x in food["nutrients"]}
@@ -79,7 +91,6 @@ def cmd_analyze(args, unknown, arg_parser=None):
             rda_ratio = round(amount / rdas[id]["rda"] * 100, 1)
             rows.append([nute["nutr_desc"], amount, rdas[id]["units"], f"{rda_ratio}%"])
         print(tabulate(rows, headers=headers, tablefmt="orgtbl"))
-        # print(food["food_id"])
 
 
 def parse_csv(file):

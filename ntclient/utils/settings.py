@@ -30,7 +30,7 @@ import os
 from dotenv import load_dotenv
 
 # Read in .env file if it exists locally, else look to env vars
-load_dotenv(verbose=True)
+load_dotenv(verbose=False)
 
 NUTRA_DIR = os.path.join(os.path.expanduser("~"), ".nutra")
 
