@@ -1,0 +1,80 @@
+id,rda,units,tagname,nutr_desc
+203,18,g,PRO,Protein
+204,25,g,FAT,Total lipid (fat)
+205,60,g,CARB,"Carbohydrate, by difference"
+208,450,kcal,CAL,Energy
+269,15,g,SUGAR,"Sugars, total"
+291,9,g,FIBTG,"Fiber, total dietary"
+301,300,mg,CA,"Calcium, Ca"
+303,4,mg,FE,"Iron, Fe"
+304,100,mg,MG,"Magnesium, Mg"
+305,250,mg,P,"Phosphorus, P"
+306,1300,mg,K,"Potassium, K"
+307,350,mg,NA,"Sodium, Na"
+309,3,mg,ZN,"Zinc, Zn"
+312,0.2,mg,CU,"Copper, Cu"
+315,0.6,mg,MN,"Manganese, Mn"
+317,15,µg,SE,"Selenium, Se"
+318,1000,IU,VITA_IU,"Vitamin A, IU"
+320,250,µg,VITA_RAE,"Vitamin A, RAE"
+324,100,IU,VITD_IU,Vitamin D
+328,5,µg,VITD,Vitamin D (D2 + D3)
+337,900,µg,LYCPN,Lycopene
+338,2000,µg,LUTZEA,Lutein + zeaxanthin
+401,30,mg,VITC,"Vitamin C, total ascorbic acid"
+404,0.3,mg,B1,Thiamin
+405,0.35,mg,B2,Riboflavin
+406,4,mg,B3,Niacin
+410,1.25,mg,B5,Pantothenic acid
+415,0.4,mg,B6,Vitamin B-6
+417,100,µg,B9,"Folate, total"
+418,0.6,µg,B12,Vitamin B-12
+421,110,mg,CHO,"Choline, total"
+430,30,µg,VITK,Vitamin K (phylloquinone)
+501,0.1,g,TRP_G,Tryptophan
+502,0.3,g,THR_G,Threonine
+503,0.5,g,ILE_G,Isoleucine
+504,1,g,LEU_G,Leucine
+505,0.8,g,LYS_G,Lysine
+506,0.3,g,MET_G,Methionine
+508,0.3,g,PHE_G,Phenylalanine
+509,0.4,g,TYR_G,Tyrosine
+510,0.5,g,VAL_G,Valine
+511,0.3,g,ARG_G,Arginine
+512,0.2,g,HISTN_G,Histidine
+513,0.3,g,ALA_G,Alanine
+514,0.3,g,ASP_G,Aspartic acid
+515,0.5,g,GLU_G,Glutamic acid
+516,0.2,g,GLY_G,Glycine
+517,0.2,g,PRO_G,Proline
+518,0.4,g,SER_G,Serine
+601,50,mg,CHOLEST,Cholesterol
+605,0,g,FATRN,"Fatty acids, total trans"
+606,7,g,FASAT,"Fatty acids, total saturated"
+621,0.1,g,F22D6,22:6 n-3 (DHA)
+629,0.05,g,F20D5,20:5 n-3 (EPA)
+645,10,g,FAMS,"Fatty acids, total monounsaturated"
+646,6,g,FAPU,"Fatty acids, total polyunsaturated"
+710,8,mg,DAID,Daidzein
+711,4,mg,GENI,Genistein
+713,11,mg,TOTISO,Total isoflavones
+731,5,mg,CYAD,Cyanidin
+734,10,mg,PAdimer,Proanthocyanidin dimers
+735,5,mg,PAtrimer,Proanthocyanidin trimers
+736,5,mg,PA4-6mer,Proanthocyanidin 4-6mers
+737,2,mg,PA7-10mer,Proanthocyanidin 7-10mers
+738,1,mg,PApolymer,Proanthocyanidin polymers (>10mers)
+749,10,mg,CATE,(+)-Catechin
+750,10,mg,EPICATEGC,(-)-Epigallocatechin
+751,10,mg,EPICATEC,(-)-Epicatechin
+752,10,mg,EPICATECG3,(-)-Epicatechin 3-gallate
+753,15,mg,EGCG,(-)-Epigallocatechin 3-gallate
+759,20,mg,HESPT,Hesperetin
+762,15,mg,NARING,Naringenin
+770,8,mg,APIGEN,Apigenin
+773,5,mg,LUTEOL,Luteolin
+785,5,mg,ISORHAM,Isorhamnetin
+786,1.5,mg,KAEMF,Kaempferol
+788,0.5,mg,MYRIC,Myricetin
+789,5,mg,QUERCE,Quercetin
+851,0.3,g,F18D3CN3,"18:3 n-3 c,c,c (ALA)"
