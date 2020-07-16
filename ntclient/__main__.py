@@ -42,6 +42,13 @@ else:
     from .search import cmd_search
     from .utils.settings import TESTING
 
+# TODO:
+# - visually report nonzero values in `anl` command, even if RDA isn't established
+# - display full food name in results
+# - display refuse
+# - function to list out nutrients and info on them
+# - sort function
+
 
 def build_argparser():
     # global login_parser
