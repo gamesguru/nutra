@@ -49,6 +49,7 @@ def cmd_analyze(args, unknown, arg_parser=None):
     res = response.json()["data"]
     analyses = res["analyses"]
     servings = res["servings"]
+    food_des = res["food_des"]
 
     # Get RDAs
     response = requests.get(f"{SERVER_HOST}/nutrients")
@@ -66,7 +67,7 @@ def cmd_analyze(args, unknown, arg_parser=None):
             f"==> {food_name} ({food_id})\n"
             "======================================\n",
         )
-        print("=========================\nSERVINGS\n=========================\n")
+        print("\n=========================\nSERVINGS\n=========================\n")
         ###############
         # Serving table
         headers = ["msre_id", "msre_desc", "grams"]
@@ -75,6 +76,14 @@ def cmd_analyze(args, unknown, arg_parser=None):
             r.pop("food_id")
         print(tabulate(rows, headers="keys", tablefmt="orgtbl"))
 
+        refuse = next(
+            (x for x in food_des if x["id"] == food_id and x["ref_desc"]), None
+        )
+        if refuse:
+            print("\n=========================\nREFUSE\n=========================\n")
+            print(refuse["ref_desc"])
+            print(f"    ({refuse['refuse']}%, by mass)")
+
         print("\n=========================\nNUTRITION\n=========================\n")
         ################
         # Nutrient table
@@ -82,15 +91,20 @@ def cmd_analyze(args, unknown, arg_parser=None):
         rows = []
         food_nutes = {x["nutr_id"]: x for x in food["nutrients"]}
         for id, nute in food_nutes.items():
-            if not rdas[id]["rda"]:
-                # print(rdas[id])
-                continue
-
+            # Skip zero values
             amount = food_nutes[id]["nutr_val"]
             if not amount:
                 continue
-            rda_ratio = round(amount / rdas[id]["rda"] * 100, 1)
-            rows.append([nute["nutr_desc"], amount, rdas[id]["units"], f"{rda_ratio}%"])
+
+            # Insert RDA % into row
+            if rdas[id]["rda"]:
+                rda_ratio = round(amount / rdas[id]["rda"] * 100, 1)
+                row = [nute["nutr_desc"], amount, rdas[id]["units"], f"{rda_ratio}%"]
+            else:
+                # print(rdas[id])
+                row = [nute["nutr_desc"], amount, rdas[id]["units"], None]
+
+            rows.append(row)
         print(tabulate(rows, headers=headers, tablefmt="orgtbl"))
 
 

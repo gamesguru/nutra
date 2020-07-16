@@ -43,11 +43,11 @@ else:
     from .utils.settings import TESTING
 
 # TODO:
-# - visually report nonzero values in `anl` command, even if RDA isn't established
 # - display full food name in results
 # - display refuse
 # - function to list out nutrients and info on them
 # - sort function
+# - nested nutrient tree, like: http://www.whfoods.com/genpage.php?tname=nutrientprofile&dbid=132
 
 
 def build_argparser():
@@ -94,7 +94,7 @@ def main(argv=None):
     arg_parser = build_argparser()
     # Used for testing
     if TESTING and len(sys.argv) < 2:
-        sys.argv = ["./nutra", "anl", "42231"]
+        sys.argv = ["./nutra", "anl", "11233"]
         # sys.argv = ["./nutra", "search", "grass", "fed", "beef"]
     try:
         args, unknown = arg_parser.parse_known_args()
