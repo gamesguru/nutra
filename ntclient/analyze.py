@@ -74,7 +74,7 @@ def cmd_analyze(args, unknown, arg_parser=None):
         rows = [x for x in servings if x["food_id"] == food_id]
         for r in rows:
             r.pop("food_id")
-        print(tabulate(rows, headers="keys", tablefmt="orgtbl"))
+        print(tabulate(rows, headers="keys", tablefmt="presto"))
 
         refuse = next(
             (x for x in food_des if x["id"] == food_id and x["ref_desc"]), None
@@ -105,7 +105,7 @@ def cmd_analyze(args, unknown, arg_parser=None):
                 row = [nute["nutr_desc"], amount, rdas[id]["units"], None]
 
             rows.append(row)
-        print(tabulate(rows, headers=headers, tablefmt="orgtbl"))
+        print(tabulate(rows, headers=headers, tablefmt="presto"))
 
 
 def parse_csv(file):

@@ -51,6 +51,7 @@ def print_results(results):
     # Current terminal size
     # TODO: dynamic buffer
     # TODO: display "nonzero/total" report nutrients, aminos, and flavones.. sometimes zero values are not useful
+    # TODO: macros, ANDI score, and other metrics on preview
     # bufferwidth = shutil.get_terminal_size()[0]
     bufferheight = shutil.get_terminal_size()[1]
 
@@ -68,7 +69,9 @@ def print_results(results):
         if i == bufferheight - 4:
             break
         food_id = r["food_id"]
-        food_name = r["long_desc"][:45]
+        # food_name = r["long_desc"][:45]
+        # food_name = r["long_desc"][:bufferwidth]
+        food_name = r["long_desc"]
         fdgrp_desc = r["fdgrp_desc"]
 
         nutrients = r["nutrients"]
@@ -96,4 +99,4 @@ def print_results(results):
         #     rows.append([food_id, food_name[:avail_buffer] + "..."])
         # else:
         #     rows.append([food_id, food_name])
-    print(tabulate(rows, headers=headers, tablefmt="orgtbl"))
+    print(tabulate(rows, headers=headers, tablefmt="presto"))

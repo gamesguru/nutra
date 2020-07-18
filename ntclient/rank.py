@@ -69,5 +69,5 @@ def print_id_and_long_desc_and_nutr_val(results):
         else:
             rows.append([food_id, food_name, nutr_val])
     print(
-        tabulate(rows, headers=["food_id", "food_name", "nutr_val"], tablefmt="orgtbl")
+        tabulate(rows, headers=["food_id", "food_name", "nutr_val"], tablefmt="presto")
     )
