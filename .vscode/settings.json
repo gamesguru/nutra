@@ -20,4 +20,5 @@
         "-v",
         "-s",
     ],
+    "python.pythonPath": "/usr/bin/python3",
 }

@@ -39,6 +39,7 @@ else:
 
     # from .account import cmd_login
     from .analyze import cmd_analyze
+    from .parsers import nutrients
     from .search import cmd_search
     from .utils.settings import TESTING
 
@@ -81,6 +82,12 @@ def build_argparser():
     # analyze_parser.add_argument("token", help="JSON web token to decode.", nargs="?")
     analyze_parser.set_defaults(func=cmd_analyze)  # , nargs="+")
 
+    # Nutrient subcommand
+    nutrient_parser = subparsers.add_parser(
+        "nt", help="list out nutrients and their info"
+    )
+    nutrient_parser.set_defaults(func=nutrients)
+
     # # Login subcommand
     # login_parser = subparsers.add_parser("login", help="log in to your account")
     # login_parser.set_defaults(func=cmd_login)
@@ -94,7 +101,8 @@ def main(argv=None):
     arg_parser = build_argparser()
     # Used for testing
     if TESTING and len(sys.argv) < 2:
-        sys.argv = ["./nutra", "anl", "11233"]
+        sys.argv = ["./nutra", "nt"]
+        # sys.argv = ["./nutra", "anl", "11233"]
         # sys.argv = ["./nutra", "search", "grass", "fed", "beef"]
     try:
         args, unknown = arg_parser.parse_known_args()
