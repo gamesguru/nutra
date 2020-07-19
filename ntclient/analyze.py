@@ -87,7 +87,7 @@ def cmd_analyze(args, unknown, arg_parser=None):
         print("\n=========================\nNUTRITION\n=========================\n")
         ################
         # Nutrient table
-        headers = ["nutrient", "amount", "units", "rda"]
+        headers = ["id", "nutrient", "amount", "units", "rda"]
         rows = []
         food_nutes = {x["nutr_id"]: x for x in food["nutrients"]}
         for id, nute in food_nutes.items():
@@ -99,10 +99,16 @@ def cmd_analyze(args, unknown, arg_parser=None):
             # Insert RDA % into row
             if rdas[id]["rda"]:
                 rda_ratio = round(amount / rdas[id]["rda"] * 100, 1)
-                row = [nute["nutr_desc"], amount, rdas[id]["units"], f"{rda_ratio}%"]
+                row = [
+                    id,
+                    nute["nutr_desc"],
+                    amount,
+                    rdas[id]["units"],
+                    f"{rda_ratio}%",
+                ]
             else:
                 # print(rdas[id])
-                row = [nute["nutr_desc"], amount, rdas[id]["units"], None]
+                row = [id, nute["nutr_desc"], amount, rdas[id]["units"], None]
 
             rows.append(row)
         print(tabulate(rows, headers=headers, tablefmt="presto"))
