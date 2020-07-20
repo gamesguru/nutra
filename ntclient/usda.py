@@ -17,3 +17,17 @@ def list_nutrients():
 
     table = tabulate(results, headers="keys", tablefmt="presto")
     print(table)
+    return table
+
+
+def sort_foods_by_nutrient_id(id):
+    response = remote.request("/foods/sort", params={"nutr_id": id})
+    results = response.json()["data"]
+
+    table = tabulate(results, headers="keys", tablefmt="presto")
+    print(table)
+    return table
+
+
+def sort_foods_by_kcal_nutrient_id(id):
+    pass

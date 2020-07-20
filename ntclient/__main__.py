@@ -39,7 +39,7 @@ else:
 
     # from .account import cmd_login
     from .analyze import cmd_analyze
-    from .parsers import nutrients
+    from .parsers import nutrients, sort
     from .search import cmd_search
     from .utils.settings import TESTING
 
@@ -77,6 +77,10 @@ def build_argparser():
     )
     search_parser.set_defaults(func=cmd_search, nargs="+")
 
+    # Sort subcommand
+    sort_parser = subparsers.add_parser("sort", help="use to sort foods by nutrient ID")
+    sort_parser.set_defaults(func=sort, nargs="+")
+
     # Analyze subcommand
     analyze_parser = subparsers.add_parser(
         "anl", help="use to analyze foods, recipes, logs"
@@ -104,8 +108,9 @@ def main(argv=None):
     arg_parser = build_argparser()
     # Used for testing
     if TESTING and len(sys.argv) < 2:
+        sys.argv = ["./nutra", "sort", "789"]
+        # sys.argv = ["./nutra", "anl", "11233"]
         # sys.argv = ["./nutra", "nt"]
-        sys.argv = ["./nutra", "anl", "11233"]
         # sys.argv = ["./nutra", "search", "grass", "fed", "beef"]
     try:
         args, unknown = arg_parser.parse_known_args()
