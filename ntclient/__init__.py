@@ -50,7 +50,7 @@ def git_sha():
 ##################
 # Standard details
 __title__ = "nutra"
-__version__ = "0.0.24"
+__version__ = "0.0.25"
 __sha__ = git_sha()
 __author__ = "Shane Jaroch"
 __license__ = "GPL v3"

@@ -23,8 +23,8 @@ def search():
 
 def sort(args, unknown, arg_parser=None):
     # TODO: --kcal or -c, option for sorting by kcal
-    print(args)
-    return sort_foods_by_nutrient_id(789)
+    nutr_id = int(unknown[0])
+    return sort_foods_by_nutrient_id(nutr_id)
 
 
 def analyze():
