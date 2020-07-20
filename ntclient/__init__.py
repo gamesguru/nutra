@@ -26,7 +26,7 @@ along with this program.  If not, see <https://www.gnu.org/licenses/>.
 """
 
 __title__ = "nutra"
-__version__ = "0.0.19"
+__version__ = "0.0.23"
 __author__ = "Shane Jaroch"
 __license__ = "GPL v3"
 __copyright__ = "Copyright 2018-2020 Shane Jaroch"

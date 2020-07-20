@@ -11,6 +11,8 @@ import sys
 
 from setuptools import setup
 
+from ntclient import __version__
+
 # Old pip doesn't respect `python_requires'
 if sys.version_info < (3, 6, 5):
     ver = ".".join([str(x) for x in sys.version_info[0:3]])
@@ -55,7 +57,7 @@ setup(
     long_description_content_type="text/x-rst",
     url="https://github.com/nutratech/cli",
     license="GPL v3",
-    version="0.0.22",
+    version=__version__,
 )
 
 # Clean up
@@ -64,7 +66,5 @@ shutil.rmtree("__pycache__", True)
 shutil.rmtree("ntclient/__pycache__", True)
 shutil.rmtree("ntclient/utils/__pycache__", True)
 shutil.rmtree(".pytest_cache", True)
-try:
+if os.path.exists("MANIFEST"):
     os.remove("MANIFEST")
-except:
-    pass
