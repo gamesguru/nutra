@@ -35,7 +35,7 @@ if sys.version_info < (3, 6, 5):
     print("HINT:  You're running Python " + ver)
     exit(1)
 else:
-    from . import __version__
+    from . import __sha__, __title__, __version__
 
     # from .account import cmd_login
     from .analyze import cmd_analyze
@@ -54,9 +54,12 @@ else:
 def build_argparser():
     # global login_parser
 
-    arg_parser = argparse.ArgumentParser(prog="nutra")
+    arg_parser = argparse.ArgumentParser(prog=__title__)
     arg_parser.add_argument(
-        "-v", "--version", action="version", version="%(prog)s version " + __version__
+        "-v",
+        "--version",
+        action="version",
+        version=f"{__title__} version " + f"{__version__}   ({__sha__})",
     )
 
     # --------------------------

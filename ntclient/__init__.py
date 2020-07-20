@@ -25,8 +25,11 @@ You should have received a copy of the GNU General Public License
 along with this program.  If not, see <https://www.gnu.org/licenses/>.
 """
 
+sha = open("git-rev").read().rstrip()
+
 __title__ = "nutra"
 __version__ = "0.0.23"
+__sha__ = sha
 __author__ = "Shane Jaroch"
 __license__ = "GPL v3"
 __copyright__ = "Copyright 2018-2020 Shane Jaroch"

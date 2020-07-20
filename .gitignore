@@ -6,6 +6,7 @@
 
 # Our files
 .vscode/
+git-rev
 
 ####################
 ## Python Ignores ##

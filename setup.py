@@ -7,6 +7,7 @@ Created on Sat Oct 13 16:30:30 2018
 
 import os
 import shutil
+import subprocess
 import sys
 
 from setuptools import setup
@@ -42,6 +43,9 @@ REQUIREMENTS = ["colorama", "tabulate", "requests", "python-dotenv"]
 README = open("README.rst").read()
 
 PKG_NAME = "nutra"
+
+sha = subprocess.check_output(["git", "rev-parse", "--short", "HEAD"]).decode().rstrip()
+open("git-rev", "w+").write(sha)
 
 setup(
     name=PKG_NAME,
