@@ -25,11 +25,33 @@ You should have received a copy of the GNU General Public License
 along with this program.  If not, see <https://www.gnu.org/licenses/>.
 """
 
-sha = open("git-rev").read().rstrip()
 
+def git_sha():
+    """ Gets the git revision, if it exists in cwd """
+    try:
+        sha = open("git-rev").read().rstrip()
+    except Exception as e1:
+        print(e1)
+        import subprocess
+
+        try:
+            sha = (
+                subprocess.check_output(["git", "rev-parse", "--short", "HEAD"])
+                .decode()
+                .rstrip()
+            )
+        except Exception as e2:
+            print(e2)
+            sha = None
+
+    return sha
+
+
+##################
+# Standard details
 __title__ = "nutra"
-__version__ = "0.0.23"
-__sha__ = sha
+__version__ = "0.0.24"
+__sha__ = git_sha()
 __author__ = "Shane Jaroch"
 __license__ = "GPL v3"
 __copyright__ = "Copyright 2018-2020 Shane Jaroch"

@@ -44,8 +44,15 @@ README = open("README.rst").read()
 
 PKG_NAME = "nutra"
 
-sha = subprocess.check_output(["git", "rev-parse", "--short", "HEAD"]).decode().rstrip()
-open("git-rev", "w+").write(sha)
+try:
+    sha = (
+        subprocess.check_output(["git", "rev-parse", "--short", "HEAD"])
+        .decode()
+        .rstrip()
+    )
+    open("git-rev", "w+").write(sha)
+except Exception as e:
+    print(e)
 
 setup(
     name=PKG_NAME,
