@@ -27,6 +27,7 @@ along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 import argparse
 import sys
+import traceback
 
 # Check Python version
 if sys.version_info < (3, 6, 5):
@@ -108,14 +109,16 @@ def main(argv=None):
     arg_parser = build_argparser()
     # Used for testing
     if TESTING and len(sys.argv) < 2:
-        sys.argv = ["./nutra", "sort", "789"]
-        # sys.argv = ["./nutra", "anl", "11233"]
+        # sys.argv = ["./nutra", "sort", "789"]
+        sys.argv = ["./nutra", "anl", "11233"]
         # sys.argv = ["./nutra", "nt"]
         # sys.argv = ["./nutra", "search", "grass", "fed", "beef"]
     try:
         args, unknown = arg_parser.parse_known_args()
         args.func(args, unknown, arg_parser=arg_parser)
     except Exception as e:
-        # print_tb(e)
-        print("There was an unforseen error: ", e)
+        print("There was an unforseen error: ", repr(e))
+        if TESTING:
+            trace = "\n".join(traceback.format_tb(e.__traceback__))
+            print(trace)
         arg_parser.print_help()
