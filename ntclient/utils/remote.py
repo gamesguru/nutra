@@ -32,9 +32,11 @@ import requests
 from .settings import NUTRA_DIR, SERVER_HOST
 
 
-def request(path, params=None):
+def request(path, params=None, body=None):
     # print(f'{SERVER_HOST}{path}')
     # print(params)
+    if body:
+        return requests.post(url=f"{SERVER_HOST}{path}", json=body)
     return requests.get(url=f"{SERVER_HOST}{path}", params=params)
 
 

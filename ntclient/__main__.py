@@ -40,7 +40,7 @@ else:
 
     # from .account import cmd_login
     from .analyze import cmd_analyze
-    from .parsers import nutrients, sort
+    from .parsers import day, nutrients, sort
     from .search import cmd_search
     from .utils.settings import TESTING
 
@@ -90,6 +90,10 @@ def build_argparser():
     # analyze_parser.add_argument("token", help="JSON web token to decode.", nargs="?")
     analyze_parser.set_defaults(func=cmd_analyze)  # , nargs="+")
 
+    # Day (analyze-day) subcommand
+    day_parser = subparsers.add_parser("day", help="use to sort foods by nutrient ID")
+    day_parser.set_defaults(func=day, nargs="+")
+
     # Nutrient subcommand
     nutrient_parser = subparsers.add_parser(
         "nt", help="list out nutrients and their info"
@@ -109,7 +113,8 @@ def main(argv=None):
     arg_parser = build_argparser()
     # Used for testing
     if TESTING and len(sys.argv) < 2:
-        sys.argv = ["./nutra", "sort", "789"]
+        sys.argv = ["./nutra", "day", "/home/shane/.nutra/rocky.csv"]
+        # sys.argv = ["./nutra", "sort", "789"]
         # sys.argv = ["./nutra", "anl", "11233"]
         # sys.argv = ["./nutra", "nt"]
         # sys.argv = ["./nutra", "search", "grass", "fed", "beef"]

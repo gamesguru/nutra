@@ -7,6 +7,7 @@ Created on Sat Jul 18 16:13:45 2020
 """
 
 from .usda import (
+    day_analyze,
     list_nutrients,
     sort_foods_by_kcal_nutrient_id,
     sort_foods_by_nutrient_id,
@@ -29,3 +30,9 @@ def sort(args, unknown, arg_parser=None):
 
 def analyze():
     pass
+
+
+def day(args, unknown, arg_parser=None):
+    # TODO: rda.csv argument
+    day_csv = open(unknown[0])
+    return day_analyze(day_csv)

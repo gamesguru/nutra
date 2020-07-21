@@ -6,6 +6,8 @@ Created on Sat Jul 18 16:16:08 2020
 @author: shane
 """
 
+import csv
+
 from tabulate import tabulate
 
 from .utils import remote
@@ -31,3 +33,15 @@ def sort_foods_by_nutrient_id(id):
 
 def sort_foods_by_kcal_nutrient_id(id):
     pass
+
+
+def day_analyze(day_csv, rda_csv=None):
+    day_csv_input = csv.DictReader(day_csv)
+
+    log = []
+    for row in day_csv_input:
+        log.append(row)
+
+    response = remote.request("/day/analyze", body={"log": log})
+    results = response.json()["data"]
+    print(results)
