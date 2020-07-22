@@ -6,7 +6,7 @@
 
 # Our files
 .vscode/
-git-rev
+ntclient/utils/__sha__.py
 
 ####################
 ## Python Ignores ##
