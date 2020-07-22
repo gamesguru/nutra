@@ -25,8 +25,24 @@ def list_nutrients():
 def sort_foods_by_nutrient_id(id):
     response = remote.request("/foods/sort", params={"nutr_id": id})
     results = response.json()["data"]
+    # TODO: if err
 
-    table = tabulate(results, headers="keys", tablefmt="presto")
+    sorted_foods = results["sorted_foods"]
+
+    nutrients = results["nutrients"]
+    nutrient = nutrients[str(id)]
+    units = nutrient["units"]
+
+    fdgrp = results["fdgrp"]
+
+    for x in sorted_foods:
+        id = str(x["fdgrp"])
+        units = nutrient["units"]
+        x["fdgrp"] = f"{fdgrp[id]['fdgrp_desc']} [{id}]"
+        x[f"value ({units})"] = x["value"]
+        del x["value"]
+    # for
+    table = tabulate(sorted_foods, headers="keys", tablefmt="presto")
     print(table)
     return table
 
