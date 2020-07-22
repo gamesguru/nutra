@@ -1,1 +1,1 @@
-include git-rev
+include ntclient/git-rev

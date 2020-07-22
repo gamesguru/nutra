@@ -6,6 +6,8 @@ Created on Sat Jul 18 16:13:45 2020
 @author: shane
 """
 
+import os
+
 from .usda import (
     day_analyze,
     list_nutrients,
@@ -34,5 +36,10 @@ def analyze():
 
 def day(args, unknown, arg_parser=None):
     # TODO: rda.csv argument
-    day_csv = open(unknown[0])
-    return day_analyze(day_csv)
+    day_path = os.path.expanduser(unknown[0])
+    day_csv = open(day_path)
+    rda_csv = None
+    if len(unknown) > 1:
+        rda_path = os.path.expanduser(unknown[1])
+        rda_csv = open(rda_path)
+    return day_analyze(day_csv, rda_csv=rda_csv)

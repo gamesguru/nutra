@@ -113,7 +113,12 @@ def main(argv=None):
     arg_parser = build_argparser()
     # Used for testing
     if TESTING and len(sys.argv) < 2:
-        sys.argv = ["./nutra", "day", "/home/shane/.nutra/rocky.csv"]
+        sys.argv = [
+            "./nutra",
+            "day",
+            "~/.nutra/rocky.csv",
+            "~/.nutra/dog-rdas-18lbs.csv",
+        ]
         # sys.argv = ["./nutra", "sort", "789"]
         # sys.argv = ["./nutra", "anl", "11233"]
         # sys.argv = ["./nutra", "nt"]

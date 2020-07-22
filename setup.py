@@ -50,7 +50,7 @@ try:
         .decode()
         .rstrip()
     )
-    open("git-rev", "w+").write(sha)
+    open("ntclient/git-rev", "w+").write(sha)
 except Exception as e:
     print(e)
 

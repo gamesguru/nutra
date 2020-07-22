@@ -42,6 +42,14 @@ def day_analyze(day_csv, rda_csv=None):
     for row in day_csv_input:
         log.append(row)
 
-    response = remote.request("/day/analyze", body={"log": log})
+    rda = []
+    if rda_csv:
+        rda_csv_input = csv.DictReader(rda_csv)
+        for row in rda_csv_input:
+            rda.append(row)
+
+    response = remote.request("/day/analyze", body={"log": log, "rda": rda})
     results = response.json()["data"]
-    print(results)
+
+    totals = results["nutrient_totals"]
+    print(totals)
