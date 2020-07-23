@@ -44,13 +44,14 @@ README = open("README.rst").read()
 
 PKG_NAME = "nutra"
 
+# Includes the git sha on PyPI releases
 try:
     sha = (
         subprocess.check_output(["git", "rev-parse", "--short", "HEAD"])
         .decode()
         .rstrip()
     )
-    open("ntclient/utils/__sha__.py", "w+").write(f"__sha__ = '{sha}'")
+    open("ntclient/utils/__sha__.py", "w+").writelines([f'__sha__ = "{sha}"'])
 except Exception as e:
     print(e)
 
