@@ -33,7 +33,7 @@ from tabulate import tabulate
 from .utils.settings import SERVER_HOST
 
 
-def cmd_analyze(args, unknown, arg_parser=None):
+def cmd_analyze(args, unknown, arg_parser=None, **kwargs):
     # if args.r:
     #     print(f"recipe id: {args.r}")
     if not unknown:

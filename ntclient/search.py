@@ -33,7 +33,7 @@ from .utils import remote
 from .utils.settings import NUTR_ID_KCAL, NUTR_IDS_AMINOS, NUTR_IDS_FLAVONES
 
 
-def cmd_search(args, unknown, arg_parser=None):
+def cmd_search(args, unknown, arg_parser=None, **kwargs):
     return search(words=unknown)
 
 

@@ -16,7 +16,7 @@ from .usda import (
 )
 
 
-def nutrients(args, unknown, arg_parser=None):
+def nutrients(args, unknown, arg_parser=None, **kwargs):
     return list_nutrients()
 
 
@@ -40,7 +40,7 @@ def analyze():
     pass
 
 
-def day(args, unknown, arg_parser=None):
+def day(args, unknown, arg_parser=None, **kwargs):
     # TODO: rda.csv argument
     day_path = os.path.expanduser(unknown[0])
     day_csv = open(day_path)

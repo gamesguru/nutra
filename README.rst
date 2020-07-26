@@ -46,24 +46,13 @@ Install PyPi release (from pip)
 
 :code:`pip install -U nutra`
 
-**Subscribe to the preview/beta channel**
-
-:code:`pip install nutra --pre`
-
-**Unsubscribe (back to stable)**
-
-.. code-block:: bash
-
-    pip uninstall nutra
-    pip install nutra
-
 Using the source-code directly
 ##############################
 .. code-block:: bash
 
-    git clone git@github.com:gamesguru/nutra.git
-    pip3 install -r requirements.txt
+    git clone git@github.com:nutratech/cli.git
     cd nutra    
+    pip3 install -r requirements.txt
     ./nutra -h
 
 When building the PyPi release use the commands:
@@ -85,17 +74,10 @@ Currently Supported Data
 
 - Flavonoid, Isoflavonoids, and Proanthocyanidins  [1352 foods]
 
-Advanced Features
-=================
-
-Features such as adding to a food log and creating recipes require logging in.
-
-First use the :code:`register` command to create an account, then :code:`login`.
-
 Usage
 =====
 
-Requires internet connection to remote server.
+Requires internet connection to remote server, or a locally running server (set env: `NUTRA_OVERRIDE_LOCAL_SERVER_HOST`).
 
 Run the :code:`nutra` script to output usage.
 
@@ -107,10 +89,17 @@ Commands
 
 ::
 
-    config                  change name, age, and vitamin targets
+    optional arguments:
+    -h, --help            show this help message and exit
+    -v, --version         show program's version number and exit
 
-    search                  search database by food name
+    nutra subcommands:
+    valid subcommands
 
-    analyze | anl           critique a date (range), meal, recipe, or food
-
-    --help | -h             show help for a given command
+    {search,sort,anl,day,nt}
+                            additional help
+        search              use to search foods and recipes
+        sort                use to sort foods by nutrient ID
+        anl                 use to analyze foods, recipes, logs
+        day                 use to sort foods by nutrient ID
+        nt                  list out nutrients and their info
