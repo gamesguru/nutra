@@ -80,6 +80,13 @@ def build_argparser():
 
     # Sort subcommand
     sort_parser = subparsers.add_parser("sort", help="use to sort foods by nutrient ID")
+    sort_parser.add_argument(
+        "--kcal",
+        "-c",
+        action="store_true",
+        help="sort by value per 200 kcal, instead of per 100 g",
+    )
+    sort_parser.add_argument("nutr_id", type=int, nargs="+")
     sort_parser.set_defaults(func=sort, nargs="+")
 
     # Analyze subcommand
@@ -119,7 +126,8 @@ def main(argv=None):
         #     "~/.nutra/rocky.csv",
         #     "~/.nutra/dog-rdas-18lbs.csv",
         # ]
-        sys.argv = ["./nutra", "sort", "789"]
+        sys.argv = ["./nutra", "sort"]
+        # sys.argv = ["./nutra", "sort", "789"]
         # sys.argv = ["./nutra", "anl", "11233"]
         # sys.argv = ["./nutra", "nt"]
         # sys.argv = ["./nutra", "search", "grass", "fed", "beef"]

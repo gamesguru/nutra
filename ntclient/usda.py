@@ -22,8 +22,8 @@ def list_nutrients():
     return table
 
 
-def sort_foods_by_nutrient_id(id):
-    response = remote.request("/foods/sort", params={"nutr_id": id})
+def sort_foods_by_nutrient_id(id, by_kcal=False):
+    response = remote.request("/foods/sort", params={"nutr_id": id, "by_kcal": by_kcal})
     results = response.json()["data"]
     # TODO: if err
 
