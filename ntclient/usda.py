@@ -23,7 +23,7 @@ def list_nutrients():
 
 
 def sort_foods_by_nutrient_id(id, by_kcal=False):
-    response = remote.request("/foods/sort", params={"nutr_id": id, "by_kcal": by_kcal})
+    response = remote.request("/foods/sort", params={"nutr_id": id})
     results = response.json()["data"]
     # TODO: if err
 
@@ -48,7 +48,28 @@ def sort_foods_by_nutrient_id(id, by_kcal=False):
 
 
 def sort_foods_by_kcal_nutrient_id(id):
-    pass
+    response = remote.request("/foods/sort", params={"nutr_id": id, "by_kcal": True})
+    results = response.json()["data"]
+    # TODO: if err
+
+    sorted_foods = results["sorted_foods"]
+
+    nutrients = results["nutrients"]
+    nutrient = nutrients[str(id)]
+    units = nutrient["units"]
+
+    fdgrp = results["fdgrp"]
+
+    for x in sorted_foods:
+        id = str(x["fdgrp"])
+        units = nutrient["units"]
+        x["fdgrp"] = f"{fdgrp[id]['fdgrp_desc']} [{id}]"
+        x[f"value ({units})"] = x["value"]
+        del x["value"]
+    # for
+    table = tabulate(sorted_foods, headers="keys", tablefmt="presto")
+    print(table)
+    return table
 
 
 def day_analyze(day_csv, rda_csv=None):

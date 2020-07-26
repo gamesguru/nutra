@@ -24,10 +24,16 @@ def search():
     pass
 
 
-def sort(args, unknown, arg_parser=None):
-    by_kcal = args.kcal
+def sort(args, unknown, arg_parser=None, subparsers=None):
     nutr_id = args.nutr_id
-    return sort_foods_by_nutrient_id(nutr_id, by_kcal=by_kcal)
+    if not nutr_id:
+        subparsers["sort"].print_help()
+    elif unknown:
+        print(f"error: unknown extra args: {unknown}")
+    elif args.kcal:
+        return sort_foods_by_kcal_nutrient_id(nutr_id)
+    else:
+        return sort_foods_by_nutrient_id(nutr_id)
 
 
 def analyze():

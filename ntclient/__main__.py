@@ -86,7 +86,7 @@ def build_argparser():
         action="store_true",
         help="sort by value per 200 kcal, instead of per 100 g",
     )
-    sort_parser.add_argument("nutr_id", type=int, nargs="+")
+    sort_parser.add_argument("nutr_id", type=int, nargs="?")
     sort_parser.set_defaults(func=sort, nargs="+")
 
     # Analyze subcommand
@@ -133,7 +133,18 @@ def main(argv=None):
         # sys.argv = ["./nutra", "search", "grass", "fed", "beef"]
     try:
         args, unknown = arg_parser.parse_known_args()
-        args.func(args, unknown, arg_parser=arg_parser)
+        if hasattr(args, "func"):
+            subparsers_actions = [
+                action
+                for action in arg_parser._actions
+                if isinstance(action, argparse._SubParsersAction)
+            ]
+            subparsers = subparsers_actions[0].choices
+            ######################
+            # Run the cmd function
+            args.func(args, unknown, arg_parser=arg_parser, subparsers=subparsers)
+        else:
+            arg_parser.print_help()
     except Exception as e:
         print("There was an unforseen error: ", repr(e))
         if TESTING:
