@@ -53,18 +53,17 @@ def analyze(args, unknown, arg_parser=None, subparsers=None):
 
 
 def day(args, unknown, arg_parser=None, subparsers=None):
-    day_csv = getattr(args, "food_log")
-    if not day_csv:
+
+    day_csv_path = args.food_log
+    if day_csv_path:
+        day_csv_path = os.path.expanduser(day_csv_path)
+
+    if not day_csv_path:
         subparsers["day"].print_help()
     elif len(unknown) == 0:
-        return day_analyze(day_csv)
+        return day_analyze(day_csv_path)
     elif len(unknown) == 1:
-        rda_path = os.path.expanduser(unknown[0])
-        # day_csv = open(day_path)
-        # rda_csv = None
-        # if len(unknown) > 1:
-        #     rda_path = os.path.expanduser(unknown[1])
-        rda_csv = open(rda_path)
-        return day_analyze(day_csv, rda_csv=rda_csv)
+        rda_csv_path = os.path.expanduser(unknown[0])
+        return day_analyze(day_csv_path, rda_csv_path=rda_csv_path)
     else:
         print(f"error: {len(unknown)} unknown extra args: {unknown}")

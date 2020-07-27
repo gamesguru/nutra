@@ -123,16 +123,16 @@ def foods_analyze(food_ids):
     return nutrients_tables, servings_tables
 
 
-def day_analyze(day_csv, rda_csv=None):
-    day_csv_input = csv.DictReader(day_csv)
+def day_analyze(day_csv_path, rda_csv_path=None):
+    day_csv_input = csv.DictReader(open(day_csv_path))
 
     log = []
     for row in day_csv_input:
         log.append(row)
 
     rda = []
-    if rda_csv:
-        rda_csv_input = csv.DictReader(rda_csv)
+    if rda_csv_path:
+        rda_csv_input = csv.DictReader(open(rda_csv_path))
         for row in rda_csv_input:
             rda.append(row)
 

@@ -131,13 +131,13 @@ def main(argv=None):
     # Used for testing
     if TESTING and len(sys.argv) < 2:
         # --------------------------------
-        # sys.argv = [
-        #     "./nutra",
-        #     "day",
-        #     "~/.nutra/rocky.csv",
-        #     "-r",
-        #     "~/.nutra/dog-rdas-18lbs.csv",
-        # ]
+        sys.argv = [
+            "./nutra",
+            "day",
+            "~/.nutra/rocky.csv",
+            "-r",
+            "~/.nutra/dog-rdas-18lbs.csv",
+        ]
         # sys.argv = [
         #     "./nutra",
         #     "day",
@@ -149,7 +149,7 @@ def main(argv=None):
         # sys.argv = ["./nutra"]
         # sys.argv = ["./nutra", "sort"]
         # sys.argv = ["./nutra", "sort", "789"]
-        sys.argv = ["./nutra", "anl", "9050", "9052"]
+        # sys.argv = ["./nutra", "anl", "9050", "9052"]
         # sys.argv = ["./nutra", "nt"]
         # sys.argv = ["./nutra", "search", "grass", "fed", "beef"]
     try:
