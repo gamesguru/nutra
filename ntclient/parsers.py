@@ -8,8 +8,9 @@ Created on Sat Jul 18 16:13:45 2020
 
 import os
 
+from .analyze import day_analyze, foods_analyze
+from .search import search_results
 from .usda import (
-    day_analyze,
     list_nutrients,
     sort_foods_by_kcal_nutrient_id,
     sort_foods_by_nutrient_id,
@@ -20,8 +21,12 @@ def nutrients(args, unknown, arg_parser=None, **kwargs):
     return list_nutrients()
 
 
-def search():
-    pass
+def search(args, unknown, arg_parser=None, subparsers=None):
+    """ Searches all dbs, foods, recipes, recents and favorites. """
+    if len(unknown) < 1:
+        subparsers["search"].print_help()
+    else:
+        return search_results(words=unknown)
 
 
 def sort(args, unknown, arg_parser=None, subparsers=None):
@@ -29,23 +34,37 @@ def sort(args, unknown, arg_parser=None, subparsers=None):
     if not nutr_id:
         subparsers["sort"].print_help()
     elif unknown:
-        print(f"error: unknown extra args: {unknown}")
+        print(f"error: {len(unknown)} unknown extra args: {unknown}")
     elif args.kcal:
         return sort_foods_by_kcal_nutrient_id(nutr_id)
     else:
         return sort_foods_by_nutrient_id(nutr_id)
 
 
-def analyze():
-    pass
+def analyze(args, unknown, arg_parser=None, subparsers=None):
+    food_id = args.food_id
+
+    if not food_id:
+        subparsers["anl"].print_help()
+    elif unknown:
+        print(f"error: {len(unknown)} unknown extra args: {unknown}")
+    else:
+        return foods_analyze(food_id)
 
 
-def day(args, unknown, arg_parser=None, **kwargs):
-    # TODO: rda.csv argument
-    day_path = os.path.expanduser(unknown[0])
-    day_csv = open(day_path)
-    rda_csv = None
-    if len(unknown) > 1:
-        rda_path = os.path.expanduser(unknown[1])
+def day(args, unknown, arg_parser=None, subparsers=None):
+    day_csv = getattr(args, "food_log")
+    if not day_csv:
+        subparsers["day"].print_help()
+    elif len(unknown) == 0:
+        return day_analyze(day_csv)
+    elif len(unknown) == 1:
+        rda_path = os.path.expanduser(unknown[0])
+        # day_csv = open(day_path)
+        # rda_csv = None
+        # if len(unknown) > 1:
+        #     rda_path = os.path.expanduser(unknown[1])
         rda_csv = open(rda_path)
-    return day_analyze(day_csv, rda_csv=rda_csv)
+        return day_analyze(day_csv, rda_csv=rda_csv)
+    else:
+        print(f"error: {len(unknown)} unknown extra args: {unknown}")

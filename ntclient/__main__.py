@@ -39,9 +39,7 @@ else:
     from . import __sha__, __title__, __version__
 
     # from .account import cmd_login
-    from .analyze import cmd_analyze
-    from .parsers import day, nutrients, sort
-    from .search import cmd_search
+    from .parsers import analyze, day, nutrients, search, sort
     from .utils.settings import TESTING
 
 # TODO:
@@ -76,7 +74,13 @@ def build_argparser():
     search_parser = subparsers.add_parser(
         "search", help="use to search foods and recipes"
     )
-    search_parser.set_defaults(func=cmd_search, nargs="+")
+    search_parser.add_argument(
+        "terms",
+        type=list,
+        nargs="?",
+        help='search query, e.g. "grass fed beef" or "ultraviolet mushrooms"',
+    )
+    search_parser.set_defaults(func=search, nargs="+")
 
     # Sort subcommand
     sort_parser = subparsers.add_parser("sort", help="use to sort foods by nutrient ID")
@@ -93,12 +97,18 @@ def build_argparser():
     analyze_parser = subparsers.add_parser(
         "anl", help="use to analyze foods, recipes, logs"
     )
-    analyze_parser.add_argument("-r", help="recipe ID", type=int)
-    # analyze_parser.add_argument("token", help="JSON web token to decode.", nargs="?")
-    analyze_parser.set_defaults(func=cmd_analyze)  # , nargs="+")
+    analyze_parser.add_argument("food_id", type=int, nargs="+")
+    analyze_parser.set_defaults(func=analyze, nargs="?")
 
     # Day (analyze-day) subcommand
     day_parser = subparsers.add_parser("day", help="use to sort foods by nutrient ID")
+    day_parser.add_argument(
+        "--rda",
+        "-r",
+        action="store_true",
+        help="provide a custom RDA file in csv format",
+    )
+    day_parser.add_argument("food_log", type=str, nargs="?")
     day_parser.set_defaults(func=day, nargs="+")
 
     # Nutrient subcommand
@@ -120,16 +130,26 @@ def main(argv=None):
     arg_parser = build_argparser()
     # Used for testing
     if TESTING and len(sys.argv) < 2:
+        # --------------------------------
         # sys.argv = [
         #     "./nutra",
         #     "day",
         #     "~/.nutra/rocky.csv",
+        #     "-r",
         #     "~/.nutra/dog-rdas-18lbs.csv",
         # ]
-        sys.argv = ["./nutra"]
+        # sys.argv = [
+        #     "./nutra",
+        #     "day",
+        #     # "-r",
+        #     # "~/.nutra/dog-rdas-18lbs.csv",
+        #     "~/.nutra/rocky.csv",
+        # ]
+        # --------------------------------
+        # sys.argv = ["./nutra"]
         # sys.argv = ["./nutra", "sort"]
         # sys.argv = ["./nutra", "sort", "789"]
-        # sys.argv = ["./nutra", "anl", "11233"]
+        sys.argv = ["./nutra", "anl", "9050", "9052"]
         # sys.argv = ["./nutra", "nt"]
         # sys.argv = ["./nutra", "search", "grass", "fed", "beef"]
     try:

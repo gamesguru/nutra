@@ -33,21 +33,16 @@ from .utils import remote
 from .utils.settings import NUTR_ID_KCAL, NUTR_IDS_AMINOS, NUTR_IDS_FLAVONES
 
 
-def cmd_search(args, unknown, arg_parser=None, **kwargs):
-    return search(words=unknown)
+def search_results(words):
 
-
-def search(words, dbs=None):
-    """ Searches all dbs, foods, recipes, recents and favorites. """
     params = dict(terms=",".join(words))
-
     response = remote.request("/foods/search", params=params)
     results = response.json()["data"]
 
-    print_results(results)
+    tabulate_search(results)
 
 
-def print_results(results):
+def tabulate_search(results):
     # Current terminal size
     # TODO: dynamic buffer
     # TODO: display "nonzero/total" report nutrients, aminos, and flavones.. sometimes zero values are not useful
@@ -99,4 +94,6 @@ def print_results(results):
         #     rows.append([food_id, food_name[:avail_buffer] + "..."])
         # else:
         #     rows.append([food_id, food_name])
-    print(tabulate(rows, headers=headers, tablefmt="presto"))
+    table = tabulate(rows, headers=headers, tablefmt="presto")
+    print(table)
+    return table

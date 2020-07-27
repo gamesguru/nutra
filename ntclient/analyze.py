@@ -30,18 +30,13 @@ import csv
 import requests
 from tabulate import tabulate
 
+from .utils import remote
 from .utils.settings import SERVER_HOST
 
 
-def cmd_analyze(args, unknown, arg_parser=None, **kwargs):
-    # if args.r:
-    #     print(f"recipe id: {args.r}")
-    if not unknown:
-        arg_parser.print_help()
-        return
+def foods_analyze(food_ids):
 
     # Get analysis
-    food_ids = [int(x) for x in unknown]
     food_ids = ",".join([str(x) for x in food_ids])
     response = requests.get(
         f"{SERVER_HOST}/foods/analyze", params={"food_ids": food_ids}
@@ -59,6 +54,8 @@ def cmd_analyze(args, unknown, arg_parser=None, **kwargs):
     # --------------------------------------
     # Food-by-food analysis (w/ servings)
     # --------------------------------------
+    servings_tables = []
+    nutrients_tables = []
     for food in analyses:
         food_id = food["food_id"]
         food_name = food["long_desc"]
@@ -68,13 +65,18 @@ def cmd_analyze(args, unknown, arg_parser=None, **kwargs):
             "======================================\n",
         )
         print("\n=========================\nSERVINGS\n=========================\n")
+
         ###############
         # Serving table
         headers = ["msre_id", "msre_desc", "grams"]
-        rows = [x for x in servings if x["food_id"] == food_id]
+        # Copy obj with dict(x)
+        rows = [dict(x) for x in servings if x["food_id"] == food_id]
         for r in rows:
             r.pop("food_id")
-        print(tabulate(rows, headers="keys", tablefmt="presto"))
+        # Print table
+        servings_table = tabulate(rows, headers="keys", tablefmt="presto")
+        print(servings_table)
+        servings_tables.append(servings_table)
 
         refuse = next(
             (x for x in food_des if x["id"] == food_id and x["ref_desc"]), None
@@ -85,6 +87,7 @@ def cmd_analyze(args, unknown, arg_parser=None, **kwargs):
             print(f"    ({refuse['refuse']}%, by mass)")
 
         print("\n=========================\nNUTRITION\n=========================\n")
+
         ################
         # Nutrient table
         headers = ["id", "nutrient", "amount", "units", "rda"]
@@ -111,11 +114,31 @@ def cmd_analyze(args, unknown, arg_parser=None, **kwargs):
                 row = [id, nute["nutr_desc"], amount, rdas[id]["units"], None]
 
             rows.append(row)
-        print(tabulate(rows, headers=headers, tablefmt="presto"))
+
+        # Print table
+        nutrients = tabulate(rows, headers=headers, tablefmt="presto")
+        print(nutrients)
+        nutrients_tables.append(nutrients)
+
+    return nutrients_tables, servings_tables
 
 
-def parse_csv(file):
-    with open(file) as f:
-        reader = csv.reader(f)
-        for line in reader:
-            print(line)
+def day_analyze(day_csv, rda_csv=None):
+    day_csv_input = csv.DictReader(day_csv)
+
+    log = []
+    for row in day_csv_input:
+        log.append(row)
+
+    rda = []
+    if rda_csv:
+        rda_csv_input = csv.DictReader(rda_csv)
+        for row in rda_csv_input:
+            rda.append(row)
+
+    response = remote.request("/day/analyze", body={"log": log, "rda": rda})
+    results = response.json()["data"]
+
+    totals = results["nutrient_totals"]
+    print(totals)
+    return totals

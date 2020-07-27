@@ -66,27 +66,7 @@ def sort_foods_by_kcal_nutrient_id(id):
         x["fdgrp"] = f"{fdgrp[id]['fdgrp_desc']} [{id}]"
         x[f"value ({units})"] = x["value"]
         del x["value"]
-    # for
+
     table = tabulate(sorted_foods, headers="keys", tablefmt="presto")
     print(table)
     return table
-
-
-def day_analyze(day_csv, rda_csv=None):
-    day_csv_input = csv.DictReader(day_csv)
-
-    log = []
-    for row in day_csv_input:
-        log.append(row)
-
-    rda = []
-    if rda_csv:
-        rda_csv_input = csv.DictReader(rda_csv)
-        for row in rda_csv_input:
-            rda.append(row)
-
-    response = remote.request("/day/analyze", body={"log": log, "rda": rda})
-    results = response.json()["data"]
-
-    totals = results["nutrient_totals"]
-    print(totals)
