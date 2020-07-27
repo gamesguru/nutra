@@ -51,9 +51,9 @@ try:
         .decode()
         .rstrip()
     )
-    open("ntclient/utils/__sha__.py", "w+").writelines([f'__sha__ = "{sha}"'])
+    open("ntclient/utils/__sha__.py", "w+").writelines([f'__sha__ = "{sha}"\n'])
 except Exception as e:
-    print(e)
+    print(repr(e))
 
 setup(
     name=PKG_NAME,

@@ -6,8 +6,6 @@ Created on Sat Jul 18 16:16:08 2020
 @author: shane
 """
 
-import csv
-
 from tabulate import tabulate
 
 from .utils import remote
@@ -41,7 +39,7 @@ def sort_foods_by_nutrient_id(id, by_kcal=False):
         x["fdgrp"] = f"{fdgrp[id]['fdgrp_desc']} [{id}]"
         x[f"value ({units})"] = x["value"]
         del x["value"]
-    # for
+
     table = tabulate(sorted_foods, headers="keys", tablefmt="presto")
     print(table)
     return table

@@ -35,6 +35,7 @@ from .utils.settings import SERVER_HOST
 
 
 def foods_analyze(food_ids):
+    """Analyze a list of food_ids against stock RDA values"""
 
     # Get analysis
     food_ids = ",".join([str(x) for x in food_ids])
@@ -123,22 +124,31 @@ def foods_analyze(food_ids):
     return nutrients_tables, servings_tables
 
 
-def day_analyze(day_csv_path, rda_csv_path=None):
-    day_csv_input = csv.DictReader(open(day_csv_path))
+def day_analyze(day_csv_paths, rda_csv_path=None):
+    """Analyze a day optionally with custom RDAs,
+    e.g.  nutra day ~/.nutra/rocky.csv -r ~/.nutra/dog-rdas-18lbs.csv
+    TODO: Should be a subset of foods_analyze
+    """
 
-    log = []
-    for row in day_csv_input:
-        log.append(row)
+    analyses = []
+    for day_csv_path in day_csv_paths:
+        day_csv_input = csv.DictReader(open(day_csv_path))
 
-    rda = []
-    if rda_csv_path:
-        rda_csv_input = csv.DictReader(open(rda_csv_path))
-        for row in rda_csv_input:
-            rda.append(row)
+        log = []
+        for row in day_csv_input:
+            log.append(row)
 
-    response = remote.request("/day/analyze", body={"log": log, "rda": rda})
-    results = response.json()["data"]
+        rda = []
+        if rda_csv_path:
+            rda_csv_input = csv.DictReader(open(rda_csv_path))
+            for row in rda_csv_input:
+                rda.append(row)
 
-    totals = results["nutrient_totals"]
-    print(totals)
-    return totals
+        response = remote.request("/day/analyze", body={"log": log, "rda": rda})
+        results = response.json()["data"]
+        # TODO: if err
+
+        totals = results["nutrient_totals"]
+        print(totals)
+        analyses.append(totals)
+    return analyses

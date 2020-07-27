@@ -17,19 +17,19 @@ from .usda import (
 )
 
 
-def nutrients(args, unknown, arg_parser=None, **kwargs):
+def nutrients(args, arg_parser=None, **kwargs):
     return list_nutrients()
 
 
-def search(args, unknown, arg_parser=None, subparsers=None):
+def search(args, arg_parser=None, subparsers=None):
     """ Searches all dbs, foods, recipes, recents and favorites. """
-    if len(unknown) < 1:
-        subparsers["search"].print_help()
+    if args.terms:
+        return search_results(words=args.terms)
     else:
-        return search_results(words=unknown)
+        subparsers["search"].print_help()
 
 
-def sort(args, unknown, arg_parser=None, subparsers=None):
+def sort(args, arg_parser=None, subparsers=None):
     nutr_id = args.nutr_id
     if not nutr_id:
         subparsers["sort"].print_help()
@@ -41,7 +41,7 @@ def sort(args, unknown, arg_parser=None, subparsers=None):
         return sort_foods_by_nutrient_id(nutr_id)
 
 
-def analyze(args, unknown, arg_parser=None, subparsers=None):
+def analyze(args, arg_parser=None, subparsers=None):
     food_id = args.food_id
 
     if not food_id:
@@ -52,18 +52,14 @@ def analyze(args, unknown, arg_parser=None, subparsers=None):
         return foods_analyze(food_id)
 
 
-def day(args, unknown, arg_parser=None, subparsers=None):
+def day(args, arg_parser=None, subparsers=None):
+    day_csv_paths = args.food_log
+    day_csv_paths = [os.path.expanduser(x) for x in day_csv_paths]
+    rda_csv_path = os.path.expanduser(args.rda)
 
-    day_csv_path = args.food_log
-    if day_csv_path:
-        day_csv_path = os.path.expanduser(day_csv_path)
-
-    if not day_csv_path:
+    if not day_csv_paths:
         subparsers["day"].print_help()
-    elif len(unknown) == 0:
-        return day_analyze(day_csv_path)
-    elif len(unknown) == 1:
-        rda_csv_path = os.path.expanduser(unknown[0])
-        return day_analyze(day_csv_path, rda_csv_path=rda_csv_path)
+    elif not rda_csv_path:
+        return day_analyze(day_csv_paths)
     else:
-        print(f"error: {len(unknown)} unknown extra args: {unknown}")
+        return day_analyze(day_csv_paths, rda_csv_path=rda_csv_path)

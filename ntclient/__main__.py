@@ -76,8 +76,8 @@ def build_argparser():
     )
     search_parser.add_argument(
         "terms",
-        type=list,
-        nargs="?",
+        type=str,
+        nargs="+",
         help='search query, e.g. "grass fed beef" or "ultraviolet mushrooms"',
     )
     search_parser.set_defaults(func=search, nargs="+")
@@ -103,13 +103,12 @@ def build_argparser():
     # Day (analyze-day) subcommand
     day_parser = subparsers.add_parser("day", help="use to sort foods by nutrient ID")
     day_parser.add_argument(
-        "--rda",
-        "-r",
-        action="store_true",
-        help="provide a custom RDA file in csv format",
+        "food_log", type=str, nargs="+", help="path to CSV file of food log"
     )
-    day_parser.add_argument("food_log", type=str, nargs="?")
-    day_parser.set_defaults(func=day, nargs="+")
+    day_parser.add_argument(
+        "--rda", "-r", help="provide a custom RDA file in csv format",
+    )
+    day_parser.set_defaults(func=day)
 
     # Nutrient subcommand
     nutrient_parser = subparsers.add_parser(
@@ -135,6 +134,7 @@ def main(argv=None):
             "./nutra",
             "day",
             "~/.nutra/rocky.csv",
+            "~/.nutra/rocky-mom.csv",
             "-r",
             "~/.nutra/dog-rdas-18lbs.csv",
         ]
@@ -153,7 +153,8 @@ def main(argv=None):
         # sys.argv = ["./nutra", "nt"]
         # sys.argv = ["./nutra", "search", "grass", "fed", "beef"]
     try:
-        args, unknown = arg_parser.parse_known_args()
+        args = arg_parser.parse_args()
+        # args, unknown = arg_parser.parse_known_args()
         if hasattr(args, "func"):
             subparsers_actions = [
                 action
@@ -163,7 +164,7 @@ def main(argv=None):
             subparsers = subparsers_actions[0].choices
             ######################
             # Run the cmd function
-            args.func(args, unknown, arg_parser=arg_parser, subparsers=subparsers)
+            args.func(args, arg_parser=arg_parser, subparsers=subparsers)
         else:
             arg_parser.print_help()
     except Exception as e:
