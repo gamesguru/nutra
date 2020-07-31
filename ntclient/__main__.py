@@ -80,7 +80,7 @@ def build_argparser():
         nargs="+",
         help='search query, e.g. "grass fed beef" or "ultraviolet mushrooms"',
     )
-    search_parser.set_defaults(func=search, nargs="+")
+    search_parser.set_defaults(func=search, nargs="?")
 
     # Sort subcommand
     sort_parser = subparsers.add_parser("sort", help="use to sort foods by nutrient ID")
@@ -130,14 +130,15 @@ def main(argv=None):
     # Used for testing
     if TESTING and len(sys.argv) < 2:
         # --------------------------------
-        sys.argv = [
-            "./nutra",
-            "day",
-            "~/.nutra/rocky.csv",
-            "~/.nutra/rocky-mom.csv",
-            "-r",
-            "~/.nutra/dog-rdas-18lbs.csv",
-        ]
+        # sys.argv = [
+        #     "./nutra",
+        #     "day",
+        #     "~/.nutra/rocky.csv",
+        #     "~/.nutra/rocky-mom.csv",
+        #     "-r",
+        #     "~/.nutra/dog-rdas-18lbs.csv",
+        # ]
+        # ---------------------------------
         # sys.argv = [
         #     "./nutra",
         #     "day",
@@ -152,6 +153,7 @@ def main(argv=None):
         # sys.argv = ["./nutra", "anl", "9050", "9052"]
         # sys.argv = ["./nutra", "nt"]
         # sys.argv = ["./nutra", "search", "grass", "fed", "beef"]
+        sys.argv = ["./nutra", "search", "grass"]
     try:
         args = arg_parser.parse_args()
         # args, unknown = arg_parser.parse_known_args()

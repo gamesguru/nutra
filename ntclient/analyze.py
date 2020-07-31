@@ -149,6 +149,12 @@ def day_analyze(day_csv_paths, rda_csv_path=None):
         # TODO: if err
 
         totals = results["nutrient_totals"]
-        print(totals)
         analyses.append(totals)
+    # Print
+    for analysis in analyses:
+        print(day_format(analysis))
     return analyses
+
+
+def day_format(analysis):
+    pass

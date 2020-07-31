@@ -33,8 +33,6 @@ def sort(args, arg_parser=None, subparsers=None):
     nutr_id = args.nutr_id
     if not nutr_id:
         subparsers["sort"].print_help()
-    elif unknown:
-        print(f"error: {len(unknown)} unknown extra args: {unknown}")
     elif args.kcal:
         return sort_foods_by_kcal_nutrient_id(nutr_id)
     else:
@@ -46,8 +44,6 @@ def analyze(args, arg_parser=None, subparsers=None):
 
     if not food_id:
         subparsers["anl"].print_help()
-    elif unknown:
-        print(f"error: {len(unknown)} unknown extra args: {unknown}")
     else:
         return foods_analyze(food_id)
 
