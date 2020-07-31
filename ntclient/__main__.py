@@ -80,7 +80,7 @@ def build_argparser():
         nargs="+",
         help='search query, e.g. "grass fed beef" or "ultraviolet mushrooms"',
     )
-    search_parser.set_defaults(func=search, nargs="?")
+    search_parser.set_defaults(func=search)
 
     # Sort subcommand
     sort_parser = subparsers.add_parser("sort", help="use to sort foods by nutrient ID")
@@ -90,15 +90,15 @@ def build_argparser():
         action="store_true",
         help="sort by value per 200 kcal, instead of per 100 g",
     )
-    sort_parser.add_argument("nutr_id", type=int, nargs="?")
-    sort_parser.set_defaults(func=sort, nargs="+")
+    sort_parser.add_argument("nutr_id", type=int)
+    sort_parser.set_defaults(func=sort)
 
     # Analyze subcommand
     analyze_parser = subparsers.add_parser(
         "anl", help="use to analyze foods, recipes, logs"
     )
     analyze_parser.add_argument("food_id", type=int, nargs="+")
-    analyze_parser.set_defaults(func=analyze, nargs="?")
+    analyze_parser.set_defaults(func=analyze)
 
     # Day (analyze-day) subcommand
     day_parser = subparsers.add_parser("day", help="use to sort foods by nutrient ID")
