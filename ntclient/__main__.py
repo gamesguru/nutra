@@ -29,6 +29,8 @@ import argparse
 import sys
 import traceback
 
+from colorama import init as colorama_init
+
 # Check Python version
 if sys.version_info < (3, 6, 5):
     ver = ".".join([str(x) for x in sys.version_info[0:3]])
@@ -41,6 +43,8 @@ else:
     # from .account import cmd_login
     from .parsers import analyze, day, nutrients, search, sort
     from .utils.settings import TESTING
+
+    colorama_init()  # colorama
 
 # TODO:
 # - display full food name in results
@@ -130,20 +134,18 @@ def main(argv=None):
     # Used for testing
     if TESTING and len(sys.argv) < 2:
         # --------------------------------
+        sys.argv = [
+            "./nutra",
+            "day",
+            "~/.nutra/rocky.csv",
+            # "~/.nutra/rocky-mom.csv",
+            "-r",
+            "~/.nutra/dog-rdas-18lbs.csv",
+        ]
+        # --------------------------------
         # sys.argv = [
         #     "./nutra",
         #     "day",
-        #     "~/.nutra/rocky.csv",
-        #     "~/.nutra/rocky-mom.csv",
-        #     "-r",
-        #     "~/.nutra/dog-rdas-18lbs.csv",
-        # ]
-        # ---------------------------------
-        # sys.argv = [
-        #     "./nutra",
-        #     "day",
-        #     # "-r",
-        #     # "~/.nutra/dog-rdas-18lbs.csv",
         #     "~/.nutra/rocky.csv",
         # ]
         # --------------------------------
@@ -153,7 +155,7 @@ def main(argv=None):
         # sys.argv = ["./nutra", "anl", "9050", "9052"]
         # sys.argv = ["./nutra", "nt"]
         # sys.argv = ["./nutra", "search", "grass", "fed", "beef"]
-        sys.argv = ["./nutra", "search", "grass"]
+        # sys.argv = ["./nutra", "search", "grass"]
     try:
         args = arg_parser.parse_args()
         # args, unknown = arg_parser.parse_known_args()

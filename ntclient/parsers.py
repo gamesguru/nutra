@@ -51,11 +51,12 @@ def analyze(args, arg_parser=None, subparsers=None):
 def day(args, arg_parser=None, subparsers=None):
     day_csv_paths = args.food_log
     day_csv_paths = [os.path.expanduser(x) for x in day_csv_paths]
-    rda_csv_path = os.path.expanduser(args.rda)
+    if args.rda:
+        rda_csv_path = os.path.expanduser(args.rda)
 
     if not day_csv_paths:
         subparsers["day"].print_help()
-    elif not rda_csv_path:
+    elif not args.rda:
         return day_analyze(day_csv_paths)
     else:
         return day_analyze(day_csv_paths, rda_csv_path=rda_csv_path)

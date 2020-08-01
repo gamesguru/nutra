@@ -27,6 +27,7 @@ along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 import os
 
+from colorama import Fore
 from dotenv import load_dotenv
 
 # Read in .env file if it exists locally, else look to env vars
@@ -39,6 +40,22 @@ SERVER_HOST = os.getenv("NUTRA_OVERRIDE_LOCAL_SERVER_HOST", REMOTE_HOST)
 
 
 TESTING = SERVER_HOST != REMOTE_HOST
+
+# ---------------------------
+# Colors and other settings
+# ---------------------------
+
+THRESH_WARN = 0.7
+COLOR_WARN = Fore.YELLOW
+
+THRESH_CRIT = 0.4
+COLOR_CRIT = Fore.RED
+
+THRESH_OVER = 1.9
+COLOR_OVER = Fore.LIGHTMAGENTA_EX
+
+COLOR_DEFAULT = Fore.BLUE
+
 
 # ------------------------
 # Nutrient IDs
