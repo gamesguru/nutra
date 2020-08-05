@@ -9,7 +9,7 @@ Created on Sat Jul 18 16:16:08 2020
 from tabulate import tabulate
 
 from .utils import remote
-from .utils.sqlfuncs import nutrients
+from .utils.sqlfuncs import nutrients, sort_foods, sort_foods_by_kcal
 
 
 def list_nutrients():
@@ -22,6 +22,10 @@ def list_nutrients():
 
 
 def sort_foods_by_nutrient_id(id, by_kcal=False):
+    results = sort_foods(id)[1]
+    print(results)
+    return
+
     response = remote.request("/foods/sort", params={"nutr_id": id})
     results = response.json()["data"]
     # TODO: if err
@@ -47,6 +51,10 @@ def sort_foods_by_nutrient_id(id, by_kcal=False):
 
 
 def sort_foods_by_kcal_nutrient_id(id):
+    results = sort_foods_by_kcal(id)[1]
+    print(results)
+    return
+
     response = remote.request("/foods/sort", params={"nutr_id": id, "by_kcal": True})
     results = response.json()["data"]
     # TODO: if err
