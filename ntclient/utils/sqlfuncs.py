@@ -87,9 +87,10 @@ ORDER BY
     return _sql(query)
 
 
-def servings(food_ids_in=None):
+def servings(food_ids=["'None'"]):
     """Food servings"""
     # TODO: apply connective logic from `sort_foods()` IS ('None') ?
+    food_ids = ",".join([str(x) for x in set(food_ids)])
     query = """
 SELECT
   serv.food_id,
@@ -98,15 +99,11 @@ SELECT
   serv.grams
 FROM
   serving serv
-  LEFT JOIN serv_desc ON serv.msre_id = serv_desc.id"""
-    if food_ids_in:
-        food_ids_in = ", ".join(str(x) for x in set(food_ids_in))
-        query += """
+  LEFT JOIN serv_desc ON serv.msre_id = serv_desc.id
 WHERE
-  serv.food_id IN (%s);
+  serv.food_id IN ({0}) OR ({0}) IS ('None');
 """
-        return _sql(query % food_ids_in)
-    return _sql(query)
+    return _sql(query.format(food_ids))
 
 
 def analyze_foods(food_ids_in):
