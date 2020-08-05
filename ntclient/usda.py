@@ -9,13 +9,14 @@ Created on Sat Jul 18 16:16:08 2020
 from tabulate import tabulate
 
 from .utils import remote
+from .utils.sqlfuncs import nutrients
 
 
 def list_nutrients():
-    response = remote.request("/nutrients")
-    results = response.json()["data"]
 
-    table = tabulate(results, headers="keys", tablefmt="presto")
+    n = nutrients()
+
+    table = tabulate(n[1], headers=n[0], tablefmt="presto")
     print(table)
     return table
 

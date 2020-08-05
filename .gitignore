@@ -7,6 +7,7 @@
 # Our files
 .vscode/
 ntclient/utils/__sha__.py
+*.db
 
 ####################
 ## Python Ignores ##

@@ -28,7 +28,6 @@ along with this program.  If not, see <https://www.gnu.org/licenses/>.
 import csv
 import shutil
 
-import requests
 from colorama import Fore, Style
 from tabulate import tabulate
 
@@ -43,39 +42,40 @@ from .utils.settings import (
     NUTR_ID_FIBER,
     NUTR_ID_KCAL,
     NUTR_ID_PROTEIN,
-    SERVER_HOST,
     THRESH_CRIT,
     THRESH_OVER,
     THRESH_WARN,
 )
+from .utils.sqlfuncs import analyze_foods, food_details, nutrients, servings
 
 
 def foods_analyze(food_ids):
     """Analyze a list of food_ids against stock RDA values"""
 
     # Get analysis
-    food_ids = ",".join([str(x) for x in food_ids])
-    response = requests.get(
-        f"{SERVER_HOST}/foods/analyze", params={"food_ids": food_ids}
-    )
-    res = response.json()["data"]
-    analyses = res["analyses"]
-    servings = res["servings"]
-    food_des = res["food_des"]
-
-    # Get RDAs
-    response = requests.get(f"{SERVER_HOST}/nutrients")
-    rdas = response.json()["data"]
-    rdas = {rda["id"]: rda for rda in rdas}
+    analysis = analyze_foods(food_ids)[1]
+    analyses = {}
+    for a in analysis:
+        id = a[0]
+        anl = (a[1], a[2])
+        if id not in analyses:
+            analyses[id] = [anl]
+        else:
+            analyses[id].append(anl)
+    serving = servings(food_ids)[1]
+    food_des = food_details(food_ids)[1]
+    food_des = {x[0]: x for x in food_des}
+    n = {x[0]: x for x in nutrients()[1]}
+    rdas = {x[0]: x[2] for x in n.values()}
 
     # --------------------------------------
     # Food-by-food analysis (w/ servings)
     # --------------------------------------
     servings_tables = []
     nutrients_tables = []
-    for food in analyses:
-        food_id = food["food_id"]
-        food_name = food["long_desc"]
+    for food_id in analyses:
+        food_name = food_des[food_id][2]
+        # food_name = food["long_desc"]
         print(
             "\n======================================\n"
             f"==> {food_name} ({food_id})\n"
@@ -87,21 +87,21 @@ def foods_analyze(food_ids):
         # Serving table
         headers = ["msre_id", "msre_desc", "grams"]
         # Copy obj with dict(x)
-        rows = [dict(x) for x in servings if x["food_id"] == food_id]
-        for r in rows:
-            r.pop("food_id")
+        rows = [(x[1], x[2], x[3]) for x in serving if x[0] == food_id]
+        # for r in rows:
+        #     r.pop("food_id")
         # Print table
-        servings_table = tabulate(rows, headers="keys", tablefmt="presto")
+        servings_table = tabulate(rows, headers=headers, tablefmt="presto")
         print(servings_table)
         servings_tables.append(servings_table)
 
         refuse = next(
-            (x for x in food_des if x["id"] == food_id and x["ref_desc"]), None
+            ((x[7], x[8]) for x in food_des.values() if x[0] == food_id and x[7]), None
         )
         if refuse:
             print("\n=========================\nREFUSE\n=========================\n")
-            print(refuse["ref_desc"])
-            print(f"    ({refuse['refuse']}%, by mass)")
+            print(refuse[0])
+            print(f"    ({refuse[1]}%, by mass)")
 
         print("\n=========================\nNUTRITION\n=========================\n")
 
@@ -109,33 +109,34 @@ def foods_analyze(food_ids):
         # Nutrient table
         headers = ["id", "nutrient", "amount", "units", "rda"]
         rows = []
-        food_nutes = {x["nutr_id"]: x for x in food["nutrients"]}
-        for id, nute in food_nutes.items():
+        # food_nutes = {x["nutr_id"]: x for x in food["nutrients"]}
+        # for id, nute in food_nutes.items():
+        for id, amount in analyses[food_id]:
             # Skip zero values
-            amount = food_nutes[id]["nutr_val"]
+            # amount = food_nutes[id]["nutr_val"]
             if not amount:
                 continue
 
             # Insert RDA % into row
-            if rdas[id]["rda"]:
-                rda_ratio = round(amount / rdas[id]["rda"] * 100, 1)
+            if rdas[id]:
+                rda_ratio = round(amount / rdas[id] * 100, 1)
                 row = [
                     id,
-                    nute["nutr_desc"],
+                    n[id][1],  # nutr_desc
                     amount,
-                    rdas[id]["units"],
+                    n[id][3],  # unit
                     f"{rda_ratio}%",
                 ]
             else:
                 # print(rdas[id])
-                row = [id, nute["nutr_desc"], amount, rdas[id]["units"], None]
+                row = [id, n[id][1], amount, n[id][3], None]
 
             rows.append(row)
 
         # Print table
-        nutrients = tabulate(rows, headers=headers, tablefmt="presto")
-        print(nutrients)
-        nutrients_tables.append(nutrients)
+        table = tabulate(rows, headers=headers, tablefmt="presto")
+        print(table)
+        nutrients_tables.append(table)
 
     return nutrients_tables, servings_tables
 
@@ -145,7 +146,6 @@ def day_analyze(day_csv_paths, rda_csv_path=None):
     e.g.  nutra day ~/.nutra/rocky.csv -r ~/.nutra/dog-rdas-18lbs.csv
     TODO: Should be a subset of foods_analyze
     """
-
     rda = []
     if rda_csv_path:
         rda_csv_input = csv.DictReader(open(rda_csv_path))
