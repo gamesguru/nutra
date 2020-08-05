@@ -31,7 +31,6 @@ import shutil
 from colorama import Fore, Style
 from tabulate import tabulate
 
-from .utils import remote
 from .utils.settings import (
     COLOR_CRIT,
     COLOR_DEFAULT,
@@ -46,7 +45,12 @@ from .utils.settings import (
     THRESH_OVER,
     THRESH_WARN,
 )
-from .utils.sqlfuncs import analyze_foods, food_details, nutrients, servings
+from .utils.sqlfuncs import (
+    analyze_foods,
+    food_details,
+    nutrients as _nutrients,
+    servings,
+)
 
 
 def foods_analyze(food_ids):
@@ -65,7 +69,7 @@ def foods_analyze(food_ids):
     serving = servings(food_ids)[1]
     food_des = food_details(food_ids)[1]
     food_des = {x[0]: x for x in food_des}
-    n = {x[0]: x for x in nutrients()[1]}
+    n = {x[0]: x for x in _nutrients()[1]}
     rdas = {x[0]: x[2] for x in n.values()}
 
     # --------------------------------------
@@ -149,25 +153,67 @@ def day_analyze(day_csv_paths, rda_csv_path=None):
     rda = []
     if rda_csv_path:
         rda_csv_input = csv.DictReader(open(rda_csv_path))
-        for row in rda_csv_input:
-            rda.append(row)
+        rda = list(rda_csv_input)
 
     logs = []
-    analyses = []
+    food_ids = set()
     for day_csv_path in day_csv_paths:
         day_csv_input = csv.DictReader(open(day_csv_path))
         log = list(day_csv_input)
+        for entry in log:
+            try:
+                food_ids.add(int(entry["id"]))
+            except:
+                pass
         logs.append(log)
+
+    # Inject user RDAs
+    nutrients = [list(x) for x in _nutrients()[1]]
+    for r in rda:
+        id = int(r["id"])
+        rda = float(r["rda"])
+        for n in nutrients:
+            if n[0] == id:
+                n[2] = rda
+
+    # Analyze foods
+    _foods_analysis = analyze_foods(food_ids)[1]
+    foods_analysis = {}
+    for f in _foods_analysis:
+        id = f[0]
+        anl = f[1], f[2]
+        if id not in foods_analysis:
+            foods_analysis[id] = [anl]
+        else:
+            foods_analysis[id].append(anl)
+
+    # Compute totals
+    nutrients_totals = []
+    for log in logs:
+        nutrient_totals = {}
+        for entry in log:
+            if entry["id"]:
+                id = int(entry["id"])
+                grams = float(entry["grams"])
+                for n in foods_analysis[id]:
+                    nutr_id = n[0]
+                    nutr_per_100g = n[1]
+                    nutr_val = grams / 100 * nutr_per_100g
+                    if nutr_id not in nutrient_totals:
+                        nutrient_totals[nutr_id] = nutr_val
+                    else:
+                        nutrient_totals[nutr_id] += nutr_val
+        nutrients_totals.append(nutrient_totals)
 
     response = remote.request("/day/analyze", body={"logs": logs, "rda": rda})
     results = response.json()["data"]
     # TODO: if err
     totals = results["nutrients_totals"]
-    nutrients = results["nutrients"]
+    # nutrients = results["nutrients"]
 
     # JSON doesn't support int keys
     analyses = [{int(k): v for k, v in total.items()} for total in totals]
-    nutrients = {int(k): v for k, v in nutrients.items()}
+    # nutrients = {int(k): v for k, v in nutrients.items()}
 
     #######
     # Print

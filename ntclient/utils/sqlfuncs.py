@@ -6,19 +6,63 @@ Created on Tue Aug  4 21:23:47 2020
 @author: shane
 """
 
+import lzma
 import os
 import sqlite3
+import sys
+import tarfile
+import time
+import urllib.request
 
-os.chdir(os.path.dirname(os.path.abspath(__file__)))
+os.chdir(os.path.expanduser("~/.nutra"))
+if "nutra.db" not in os.listdir():
+    """Downloads and unpacks the nt-sqlite3 db"""
+
+    def reporthook(count, block_size, total_size):
+        """ Shows download progress """
+        global start_time
+        if count == 0:
+            start_time = time.time()
+            time.sleep(0.01)
+            return
+        duration = time.time() - start_time
+        progress_size = int(count * block_size)
+        speed = int(progress_size / (1024 * duration))
+        percent = int(count * block_size * 100 / total_size)
+        sys.stdout.write(
+            "\r...%d%%, %d MB, %d KB/s, %d seconds passed"
+            % (percent, progress_size / (1024 * 1024), speed, duration)
+        )
+        sys.stdout.flush()
+
+    if "nutra.db.tar.xz" not in os.listdir():
+        # Download nutra.db.tar.xz
+        file = urllib.request.urlretrieve(
+            "https://bitbucket.org/dasheenster/nutra-utils/downloads/nutra.db.tar.xz",
+            "nutra.db.tar.xz",
+            reporthook,
+        )
+    # Extract
+    with tarfile.open("nutra.db.tar.xz", mode="r:xz") as f:
+        f.extractall()
+    print("==> done downloading nutra.db")
+
+# Connect to DB
 conn = sqlite3.connect("nutra.db")
 # conn.row_factory = sqlite3.Row  # see: https://chrisostrouchov.com/post/python_sqlite/
 c = conn.cursor()
 
 
 def _sql(query):
+    """Executes a SQL command to nutra.db"""
     result = c.execute(query)
     keys = [x[0] for x in result.description]
     return keys, result.fetchall()
+
+
+# ----------------------
+# SQL syntax functions
+# ----------------------
 
 
 def nutrients():
