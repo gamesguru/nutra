@@ -175,6 +175,7 @@ def day_analyze(day_csv_paths, rda_csv_path=None):
         for n in nutrients:
             if n[0] == id:
                 n[2] = rda
+    nutrients = {x[0]: x for x in nutrients}
 
     # Analyze foods
     _foods_analysis = analyze_foods(food_ids)[1]
@@ -205,23 +206,23 @@ def day_analyze(day_csv_paths, rda_csv_path=None):
                         nutrient_totals[nutr_id] += nutr_val
         nutrients_totals.append(nutrient_totals)
 
-    response = remote.request("/day/analyze", body={"logs": logs, "rda": rda})
-    results = response.json()["data"]
-    # TODO: if err
-    totals = results["nutrients_totals"]
-    # nutrients = results["nutrients"]
+    # response = remote.request("/day/analyze", body={"logs": logs, "rda": rda})
+    # results = response.json()["data"]
+    # # TODO: if err
+    # totals = results["nutrients_totals"]
+    # # nutrients = results["nutrients"]
 
     # JSON doesn't support int keys
-    analyses = [{int(k): v for k, v in total.items()} for total in totals]
+    # analyses = [{int(k): v for k, v in total.items()} for total in nutrients_totals]
     # nutrients = {int(k): v for k, v in nutrients.items()}
 
     #######
     # Print
     w = shutil.get_terminal_size()[0]
     buffer = w - 4 if w > 4 else w
-    for analysis in analyses:
+    for analysis in nutrients_totals:
         day_format(analysis, nutrients, buffer=buffer)
-    return analyses
+    return nutrients_totals
 
 
 def day_format(analysis, nutrients, buffer=None):
@@ -275,10 +276,10 @@ def day_format(analysis, nutrients, buffer=None):
 
     def print_nute_bar(n_id, amount, nutrients):
         n = nutrients[n_id]
-        rda = n.get("rda")
-        tag = n["tagname"]
-        unit = n["units"]
-        anti = n["anti_nutrient"]
+        rda = n[2]
+        tag = n[4]
+        unit = n[3]
+        anti = n[5]
 
         if not rda:
             return False, n
@@ -314,10 +315,10 @@ def day_format(analysis, nutrients, buffer=None):
     kcals_449 = round(4 * pro + 4 * net_carb + 9 * fat)
 
     # Desired values
-    kcals_rda = round(nutrients[NUTR_ID_KCAL]["rda"])
-    pro_rda = nutrients[NUTR_ID_PROTEIN]["rda"]
-    net_carb_rda = nutrients[NUTR_ID_CARBS]["rda"] - nutrients[NUTR_ID_FIBER]["rda"]
-    fat_rda = nutrients[NUTR_ID_FAT_TOT]["rda"]
+    kcals_rda = round(nutrients[NUTR_ID_KCAL][2])
+    pro_rda = nutrients[NUTR_ID_PROTEIN][2]
+    net_carb_rda = nutrients[NUTR_ID_CARBS][2] - nutrients[NUTR_ID_FIBER][2]
+    fat_rda = nutrients[NUTR_ID_FAT_TOT][2]
 
     # Print calories and macronutrient bars
     print_header("Macronutrients")
