@@ -43,8 +43,12 @@ __dbsha__ = "3cd2087cdb7a104e62d708c58eb6036fdcf1365562d3b03d483656625b568560"
 # Onboarding function
 def verify_db():
     cwd = os.path.expanduser("~/.nutra")
+
+    # TODO: put this in main __init__? Require License agreement?
     if not os.path.exists(cwd):
         os.makedirs(cwd, mode=0o755)
+
+    # TODO: require db_ver() >= __dbtarget__
     if "nutra.db" not in os.listdir(cwd):
         """Downloads and unpacks the nt-sqlite3 db"""
 
@@ -72,7 +76,8 @@ def verify_db():
                 f"{cwd}/nutra.db.tar.xz",
                 reporthook,
             )
-        # Extract
+
+        # TODO: verify sha
         with tarfile.open(f"{cwd}/nutra.db.tar.xz", mode="r:xz") as f:
             f.extractall(cwd)
         print("==> done downloading nutra.db")
