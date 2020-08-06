@@ -33,6 +33,10 @@ from dotenv import load_dotenv
 # Read in .env file if it exists locally, else look to env vars
 load_dotenv(verbose=False)
 
+# TODO: support more settings..
+# 1) either with .env VARs, e.g. DEBUG=1
+# 2) `~/.nutra/paramters.csv` file, or
+# 3) split off into config.py?
 NUTRA_DIR = os.path.join(os.path.expanduser("~"), ".nutra")
 
 REMOTE_HOST = "https://nutra-server.herokuapp.com"
@@ -52,6 +56,7 @@ THRESH_CRIT = 0.4
 COLOR_CRIT = Fore.RED
 
 THRESH_OVER = 1.9
+# COLOR_OVER = Fore.LIGHTBLACK_EX
 COLOR_OVER = Fore.LIGHTMAGENTA_EX
 
 COLOR_DEFAULT = Fore.BLUE

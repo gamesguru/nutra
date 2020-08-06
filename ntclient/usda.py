@@ -53,7 +53,7 @@ def sort_foods_by_nutrient_id(id, by_kcal=False):
 def sort_foods_by_kcal_nutrient_id(id):
     results = sort_foods_by_kcal(id)[1]
     print(results)
-    return
+    return results
 
     response = remote.request("/foods/sort", params={"nutr_id": id, "by_kcal": True})
     results = response.json()["data"]

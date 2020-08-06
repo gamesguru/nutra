@@ -209,16 +209,6 @@ def day_analyze(day_csv_paths, rda_csv_path=None):
                         nutrient_totals[nutr_id] += nutr_val
         nutrients_totals.append(nutrient_totals)
 
-    # response = remote.request("/day/analyze", body={"logs": logs, "rda": rda})
-    # results = response.json()["data"]
-    # # TODO: if err
-    # totals = results["nutrients_totals"]
-    # # nutrients = results["nutrients"]
-
-    # JSON doesn't support int keys
-    # analyses = [{int(k): v for k, v in total.items()} for total in nutrients_totals]
-    # nutrients = {int(k): v for k, v in nutrients.items()}
-
     #######
     # Print
     w = shutil.get_terminal_size()[0]
