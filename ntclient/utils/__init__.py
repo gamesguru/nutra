@@ -36,13 +36,15 @@ def git_sha():
 
 # Export for package level
 __sha__ = git_sha()
-__dbver__ = "0.0.0"
+__dbtarget__ = "0.0.2"
 __dbsha__ = "3cd2087cdb7a104e62d708c58eb6036fdcf1365562d3b03d483656625b568560"
 
 
 # Onboarding function
 def verify_db():
     cwd = os.path.expanduser("~/.nutra")
+    if not os.path.exists(cwd):
+        os.makedirs(cwd, mode=0o755)
     if "nutra.db" not in os.listdir(cwd):
         """Downloads and unpacks the nt-sqlite3 db"""
 
@@ -66,7 +68,7 @@ def verify_db():
         if "nutra.db.tar.xz" not in os.listdir(cwd):
             # Download nutra.db.tar.xz
             urllib.request.urlretrieve(
-                f"https://bitbucket.org/dasheenster/nutra-utils/downloads/nutra-{__dbver__}.db.tar.xz",
+                f"https://bitbucket.org/dasheenster/nutra-utils/downloads/nutra-{__dbtarget__}.db.tar.xz",
                 f"{cwd}/nutra.db.tar.xz",
                 reporthook,
             )

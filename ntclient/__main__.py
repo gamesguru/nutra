@@ -38,7 +38,7 @@ if sys.version_info < (3, 6, 5):
     print("HINT:  You're running Python " + ver)
     exit(1)
 else:
-    from . import __sha__, __title__, __version__
+    from . import __dbver__, __sha__, __title__, __version__
 
     # from .account import cmd_login
     from .parsers import analyze, day, nutrients, search, sort
@@ -62,7 +62,8 @@ def build_argparser():
         "-v",
         "--version",
         action="version",
-        version=f"{__title__} version " + f"{__version__}   ({__sha__})",
+        version=f"{__title__} version "
+        + f"{__version__}   ({__sha__})  [DB v{__dbver__}]",
     )
 
     # --------------------------

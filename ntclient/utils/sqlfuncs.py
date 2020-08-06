@@ -32,6 +32,12 @@ def _sql(query):
 # ----------------------
 
 
+def dbver():
+    query = "SELECT * FROM nt_ver;"
+    result = _sql(query)
+    return result[1][-1][1]
+
+
 def nutrients():
     """Nutrient details"""
     query = """
