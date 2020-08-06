@@ -134,8 +134,8 @@ def sort_foods_by_kcal(nutr_id, fdgrp_ids=None):
 SELECT
   nut_data.food_id,
   fdgrp_id,
-  ROUND((nut_data.nutr_val * 200 / kcal.nutr_val), 2),
-  kcal.nutr_val,
+  ROUND((nut_data.nutr_val * 200 / kcal.nutr_val), 2) AS nutr_val,
+  kcal.nutr_val AS kcal,
   long_desc
 FROM
   nut_data

@@ -24,7 +24,7 @@ def list_nutrients():
 def sort_foods_by_nutrient_id(id, by_kcal=False):
     results = sort_foods(id)[1]
     print(results)
-    # return
+    return results
 
     response = remote.request("/foods/sort", params={"nutr_id": id})
     results = response.json()["data"]
