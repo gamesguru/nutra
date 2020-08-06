@@ -56,6 +56,8 @@ COLOR_OVER = Fore.LIGHTMAGENTA_EX
 
 COLOR_DEFAULT = Fore.BLUE
 
+SEARCH_LIMIT = 150
+
 
 # ------------------------
 # Nutrient IDs

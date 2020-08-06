@@ -22,6 +22,7 @@ c = conn.cursor()
 
 def _sql(query):
     """Executes a SQL command to nutra.db"""
+    # TODO: DEBUG flag in properties.csv ... Print off all queries
     result = c.execute(query)
     keys = [x[0] for x in result.description]
     return keys, result.fetchall()

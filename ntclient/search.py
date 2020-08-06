@@ -27,17 +27,59 @@ along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 import shutil
 
+from fuzzywuzzy import fuzz
 from tabulate import tabulate
 
 from .utils import remote
-from .utils.settings import NUTR_ID_KCAL, NUTR_IDS_AMINOS, NUTR_IDS_FLAVONES
+from .utils.settings import (
+    NUTR_ID_KCAL,
+    NUTR_IDS_AMINOS,
+    NUTR_IDS_FLAVONES,
+    SEARCH_LIMIT,
+)
+from .utils.sqlfuncs import _sql, analyze_foods
 
 
 def search_results(words):
+    food_des = _sql("SELECT * FROM food_des;")[1]
 
-    params = dict(terms=",".join(words))
-    response = remote.request("/foods/search", params=params)
-    results = response.json()["data"]
+    query = " ".join(words)
+    scores = {f[0]: fuzz.token_set_ratio(query, f[2]) for f in food_des}
+    scores = sorted(scores.items(), key=lambda x: x[1], reverse=True)[:SEARCH_LIMIT]
+
+    food_ids = [s[0] for s in scores]
+    nut_data = analyze_foods(food_ids)[1]
+
+    # Tally foods
+    foods_nutrients = {}
+    for food_id, nutr_id, nutr_val in nut_data:
+        if food_id not in foods_nutrients:
+            foods_nutrients[food_id] = {nutr_id: nutr_val}  # init dict
+        else:
+            foods_nutrients[food_id][nutr_id] = nutr_val
+
+    results = []
+    food_des = {f[0]: f for f in food_des}
+    for score in scores:
+        food_id = score[0]
+        score = score[1]
+
+        food = food_des[food_id]
+        fdgrp_id = food[1]
+        long_desc = food[2]
+
+        nutrients = foods_nutrients[food_id]
+        result = {
+            "food_id": food_id,
+            "fdgrp_id": fdgrp_id,
+            # TODO: get more details from another function, maybe enhance food_details() ?
+            # "fdgrp_desc": cache.fdgrp[fdgrp_id]["fdgrp_desc"],
+            # "data_src": cache.data_src[data_src_id]["name"],
+            "long_desc": long_desc,
+            "score": score,
+            "nutrients": nutrients,
+        }
+        results.append(result)
 
     tabulate_search(results)
 
@@ -67,7 +109,8 @@ def tabulate_search(results):
         # food_name = r["long_desc"][:45]
         # food_name = r["long_desc"][:bufferwidth]
         food_name = r["long_desc"]
-        fdgrp_desc = r["fdgrp_desc"]
+        # fdgrp_desc = r["fdgrp_desc"]
+        fdgrp_desc = r["fdgrp_id"]
 
         nutrients = r["nutrients"]
         kcal = nutrients.get(str(NUTR_ID_KCAL))
