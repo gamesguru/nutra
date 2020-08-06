@@ -55,10 +55,9 @@ ORDER BY
     return _sql(query)
 
 
-def servings(food_ids=["None"]):
+def servings(food_ids):
     """Food servings"""
     # TODO: apply connective logic from `sort_foods()` IS ('None') ?
-    food_ids = ",".join([str(x) for x in set(food_ids)])
     query = """
 SELECT
   serv.food_id,
@@ -69,38 +68,38 @@ FROM
   serving serv
   LEFT JOIN serv_desc ON serv.msre_id = serv_desc.id
 WHERE
-  serv.food_id IN ({0}) OR '{0}' IS 'None';
+  serv.food_id IN (%s);
 """
-    return _sql(query.format(food_ids))
+    food_ids = ",".join(str(x) for x in set(food_ids))
+    return _sql(query % food_ids)
 
 
-def analyze_foods(food_ids_in):
+def analyze_foods(food_ids):
     """Nutrient analysis for foods"""
-    food_ids_in = ", ".join(str(x) for x in set(food_ids_in))
     query = """
 SELECT
   id,
   nutr_id,
   nutr_val
 FROM
-  food_des des
-  INNER JOIN nut_data ON des.id = nut_data.food_id
+  food_des
+  INNER JOIN nut_data ON food_des.id = nut_data.food_id
 WHERE
-  des.id IN (%s);
+  food_des.id IN (%s);
 """
-    return _sql(query % food_ids_in)
+    food_ids = ",".join(str(x) for x in set(food_ids))
+    return _sql(query % food_ids)
 
 
-def food_details(food_ids_in):
+def food_details(food_ids):
     """Readable human details for foods"""
-    food_ids_in = ", ".join(str(x) for x in set(food_ids_in))
     query = "SELECT * FROM food_des WHERE id in (%s)"
-    return _sql(query % food_ids_in)
+    food_ids = ",".join(str(x) for x in set(food_ids))
+    return _sql(query % food_ids)
 
 
-def sort_foods(nutr_id, fdgrp_id_in=["'None'"]):
+def sort_foods(nutr_id, fdgrp_ids=None):
     """Sort foods by nutr_id per 100 g"""
-    fdgrp_ids = ",".join([str(x) for x in set(fdgrp_id_in)])
     query = """
 SELECT
   nut_data.food_id,
@@ -116,19 +115,21 @@ FROM
   LEFT JOIN nut_data kcal ON food.id = kcal.food_id
     AND kcal.nutr_id = 208
 WHERE
-  nut_data.nutr_id = {0}
-  -- filter by food id, if supplied
-  AND (fdgrp_id IN ({1})
-    OR ({1}) IS ('None'))
+  nut_data.nutr_id = {0}"""
+    if fdgrp_ids:
+        query += """
+  AND (fdgrp_id IN ({1}))"""
+    query += """
 ORDER BY
-  nut_data.nutr_val DESC;
-"""
-    return _sql(query.format(nutr_id, fdgrp_ids))
+  nut_data.nutr_val DESC;"""
+    if fdgrp_ids:
+        fdgrp_ids = ",".join([str(x) for x in set(fdgrp_ids)])
+        return _sql(query.format(nutr_id, fdgrp_ids))
+    return _sql(query.format(nutr_id))
 
 
-def sort_foods_by_kcal(nutr_id, fdgrp_id_in=["'None'"]):
+def sort_foods_by_kcal(nutr_id, fdgrp_ids=None):
     """Sort foods by nutr_id per 200 kcal"""
-    fdgrp_ids = ",".join([str(x) for x in set(fdgrp_id_in)])
     query = """
 SELECT
   nut_data.food_id,
@@ -146,11 +147,14 @@ FROM
     AND kcal.nutr_id = 208
     AND kcal.nutr_val > 0
 WHERE
-  nut_data.nutr_id = {0}
-  -- filter by food id, if supplied
-  AND (fdgrp_id IN ({1})
-    OR ({1}) IS ('None'))
+  nut_data.nutr_id = {0}"""
+    if fdgrp_ids:
+        query += """
+  AND (fdgrp_id IN ({1}))"""
+    query += """
 ORDER BY
-  (nut_data.nutr_val / kcal.nutr_val) DESC;
-"""
-    return _sql(query.format(nutr_id, fdgrp_ids))
+  (nut_data.nutr_val / kcal.nutr_val) DESC;"""
+    if fdgrp_ids:
+        fdgrp_ids = ",".join([str(x) for x in set(fdgrp_ids)])
+        return _sql(query.format(nutr_id, fdgrp_ids))
+    return _sql(query.format(nutr_id))
