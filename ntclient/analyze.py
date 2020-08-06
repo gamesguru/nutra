@@ -41,6 +41,7 @@ from .utils.settings import (
     NUTR_ID_FIBER,
     NUTR_ID_KCAL,
     NUTR_ID_PROTEIN,
+    TESTING,
     THRESH_CRIT,
     THRESH_OVER,
     THRESH_WARN,
@@ -66,6 +67,7 @@ def foods_analyze(food_ids):
             analyses[id] = [anl]
         else:
             analyses[id].append(anl)
+    # serving = servings()[1]
     serving = servings(food_ids)[1]
     food_des = food_details(food_ids)[1]
     food_des = {x[0]: x for x in food_des}
@@ -163,8 +165,9 @@ def day_analyze(day_csv_paths, rda_csv_path=None):
         for entry in log:
             try:
                 food_ids.add(int(entry["id"]))
-            except:
-                pass
+            except Exception as e:
+                if TESTING:
+                    print(repr(e))
         logs.append(log)
 
     # Inject user RDAs

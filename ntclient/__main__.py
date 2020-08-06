@@ -149,6 +149,14 @@ def main(argv=None):
         #     "~/.nutra/rocky.csv",
         # ]
         # --------------------------------
+        sys.argv = [
+            "./nutra",
+            "day",
+            "resources/dog-simple.csv",
+            "-r",
+            "resources/dog-rdas-18lbs.csv",
+        ]
+        # --------------------------------
         # sys.argv = ["./nutra"]
         # sys.argv = ["./nutra", "sort"]
         # sys.argv = ["./nutra", "sort", "789"]

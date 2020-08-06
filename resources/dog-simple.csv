@@ -1,0 +1,14 @@
+meal,subcat,id,grams,notes,desired_kcal
+breakfast,base,20044,90,"rice, uncooked [55g cooked]",120
+breakfast,base,16042,50,"pinto beans, raw [cooked: ¼ cup or 56g]",60
+breakfast,base,5062,50,chicken breast,50
+breakfast,cooked (veg),11507,25,"sweet potato, raw",20
+breakfast,cooked (veg),11233,10,"kale, raw OR broccoli, boiled, w/o salt",5
+breakfast,soaked,12220,10,flax [½ tbsp],30
+breakfast,chopped,11297,3,"parsley, fresh",1
+breakfast,supplements,,0.075,milk thistle extract,
+breakfast,supplements,,0.15,"calcium citrate, [1/8 tsp]",
+,,,,,
+,,,,,
+,,,,,
+TOTAL,,,,,286

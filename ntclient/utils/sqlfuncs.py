@@ -8,46 +8,14 @@ Created on Tue Aug  4 21:23:47 2020
 
 import os
 import sqlite3
-import sys
-import tarfile
-import time
-import urllib.request
 
-os.chdir(os.path.expanduser("~/.nutra"))
-if "nutra.db" not in os.listdir():
-    """Downloads and unpacks the nt-sqlite3 db"""
+from . import verify_db
 
-    def reporthook(count, block_size, total_size):
-        """ Shows download progress """
-        global start_time
-        if count == 0:
-            start_time = time.time()
-            time.sleep(0.01)
-            return
-        duration = time.time() - start_time
-        progress_size = int(count * block_size)
-        speed = int(progress_size / (1024 * duration))
-        percent = int(count * block_size * 100 / total_size)
-        sys.stdout.write(
-            "\r...%d%%, %d MB, %d KB/s, %d seconds passed"
-            % (percent, progress_size / (1024 * 1024), speed, duration)
-        )
-        sys.stdout.flush()
-
-    if "nutra.db.tar.xz" not in os.listdir():
-        # Download nutra.db.tar.xz
-        file = urllib.request.urlretrieve(
-            "https://bitbucket.org/dasheenster/nutra-utils/downloads/nutra.db.tar.xz",
-            "nutra.db.tar.xz",
-            reporthook,
-        )
-    # Extract
-    with tarfile.open("nutra.db.tar.xz", mode="r:xz") as f:
-        f.extractall()
-    print("==> done downloading nutra.db")
+verify_db()
 
 # Connect to DB
-conn = sqlite3.connect("nutra.db")
+db_path = os.path.expanduser("~/.nutra/nutra.db")
+conn = sqlite3.connect(db_path)
 # conn.row_factory = sqlite3.Row  # see: https://chrisostrouchov.com/post/python_sqlite/
 c = conn.cursor()
 
@@ -87,7 +55,7 @@ ORDER BY
     return _sql(query)
 
 
-def servings(food_ids=["'None'"]):
+def servings(food_ids=["None"]):
     """Food servings"""
     # TODO: apply connective logic from `sort_foods()` IS ('None') ?
     food_ids = ",".join([str(x) for x in set(food_ids)])
@@ -101,7 +69,7 @@ FROM
   serving serv
   LEFT JOIN serv_desc ON serv.msre_id = serv_desc.id
 WHERE
-  serv.food_id IN ({0}) OR ({0}) IS ('None');
+  serv.food_id IN ({0}) OR '{0}' IS 'None';
 """
     return _sql(query.format(food_ids))
 
