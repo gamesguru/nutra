@@ -113,8 +113,7 @@ def tabulate_search(results):
         fdgrp_desc = r["fdgrp_id"]
 
         nutrients = r["nutrients"]
-        kcal = nutrients.get(str(NUTR_ID_KCAL))
-        kcal = kcal["nutr_val"] if kcal else None
+        kcal = nutrients.get(NUTR_ID_KCAL)
         len_aminos = len(
             [nutrients[n_id] for n_id in nutrients if int(n_id) in NUTR_IDS_AMINOS]
         )
