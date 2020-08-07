@@ -30,7 +30,7 @@ def _sql(query):
 
 
 # ----------------------
-# SQL syntax functions
+# SQL internal functions
 # ----------------------
 
 
@@ -58,7 +58,24 @@ except Exception as e:
     exit()
 
 
-def nutrients():
+# ----------------------
+# SQL nutra functions
+# ----------------------
+
+
+def nutrients_overview():
+    query = "SELECT * FROM nutr_def;"
+    result = _sql(query)
+    return {x[0]: x for x in result[1]}
+
+
+def fdgrp():
+    query = "SELECT * FROM fdgrp;"
+    result = _sql(query)
+    return {x[0]: x for x in result[1]}
+
+
+def nutrients_details():
     """Nutrient details"""
     query = """
 SELECT

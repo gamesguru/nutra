@@ -8,13 +8,19 @@ Created on Sat Jul 18 16:16:08 2020
 
 from tabulate import tabulate
 
-from .utils import remote
-from .utils.sqlfuncs import nutrients, sort_foods, sort_foods_by_kcal
+from .utils.settings import SEARCH_LIMIT
+from .utils.sqlfuncs import (
+    fdgrp,
+    nutrients_details,
+    nutrients_overview,
+    sort_foods,
+    sort_foods_by_kcal,
+)
 
 
 def list_nutrients():
 
-    n = nutrients()
+    n = nutrients_details()
 
     table = tabulate(n[1], headers=n[0], tablefmt="presto")
     print(table)
@@ -23,57 +29,39 @@ def list_nutrients():
 
 def sort_foods_by_nutrient_id(id, by_kcal=False):
     results = sort_foods(id)[1]
-    print(results)
-    return results
+    results = [list(x) for x in results][:SEARCH_LIMIT]
 
-    response = remote.request("/foods/sort", params={"nutr_id": id})
-    results = response.json()["data"]
-    # TODO: if err
+    nutrients = nutrients_overview()
+    nutrient = nutrients[id]
+    unit = nutrient[2]
 
-    sorted_foods = results["sorted_foods"]
+    fdgrps = fdgrp()
 
-    nutrients = results["nutrients"]
-    nutrient = nutrients[str(id)]
-    units = nutrient["units"]
+    headers = ["food_id", "fdgrp", f"value ({unit})", "kcal", "long_desc"]
+    for x in results:
+        _fdgrp = fdgrps[x[1]]
+        x.insert(1, _fdgrp[1])
 
-    fdgrp = results["fdgrp"]
-
-    for x in sorted_foods:
-        id = str(x["fdgrp"])
-        units = nutrient["units"]
-        x["fdgrp"] = f"{fdgrp[id]['fdgrp_desc']} [{id}]"
-        x[f"value ({units})"] = x["value"]
-        del x["value"]
-
-    table = tabulate(sorted_foods, headers="keys", tablefmt="presto")
+    table = tabulate(results, headers=headers, tablefmt="presto")
     print(table)
-    return table
+    return results
 
 
 def sort_foods_by_kcal_nutrient_id(id):
     results = sort_foods_by_kcal(id)[1]
-    print(results)
-    return results
+    results = [list(x) for x in results][:SEARCH_LIMIT]
 
-    response = remote.request("/foods/sort", params={"nutr_id": id, "by_kcal": True})
-    results = response.json()["data"]
-    # TODO: if err
+    nutrients = nutrients_overview()
+    nutrient = nutrients[id]
+    unit = nutrient[2]
 
-    sorted_foods = results["sorted_foods"]
+    fdgrps = fdgrp()
 
-    nutrients = results["nutrients"]
-    nutrient = nutrients[str(id)]
-    units = nutrient["units"]
+    headers = ["food_id", "fdgrp_desc", "fdgrp", f"value ({unit})", "kcal", "long_desc"]
+    for x in results:
+        _fdgrp = fdgrps[x[1]]
+        x.insert(1, _fdgrp[1])
 
-    fdgrp = results["fdgrp"]
-
-    for x in sorted_foods:
-        id = str(x["fdgrp"])
-        units = nutrient["units"]
-        x["fdgrp"] = f"{fdgrp[id]['fdgrp_desc']} [{id}]"
-        x[f"value ({units})"] = x["value"]
-        del x["value"]
-
-    table = tabulate(sorted_foods, headers="keys", tablefmt="presto")
+    table = tabulate(results, headers=headers, tablefmt="presto")
     print(table)
-    return table
+    return results

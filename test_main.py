@@ -31,7 +31,7 @@ from ntclient.utils import sqlfuncs
 
 
 def test_sqlfuncs():
-    result = sqlfuncs.nutrients()
+    result = sqlfuncs.nutrients_details()
     assert len(result[1]) == 186
 
     result = sqlfuncs.servings([9050, 9052])

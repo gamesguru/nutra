@@ -49,7 +49,7 @@ from .utils.settings import (
 from .utils.sqlfuncs import (
     analyze_foods,
     food_details,
-    nutrients as _nutrients,
+    nutrients_details as _nutrients,
     servings,
 )
 
