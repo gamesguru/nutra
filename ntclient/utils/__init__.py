@@ -47,6 +47,7 @@ def verify_db(force_install=False):
 
     # TODO: put this in main __init__? Require License agreement?
     if not os.path.exists(cwd):
+        print("mkdir -p ~/.nutra/db")
         os.makedirs(cwd, mode=0o755)
 
     # TODO: require db_ver() >= __dbtarget__
@@ -71,6 +72,9 @@ def verify_db(force_install=False):
             sys.stdout.flush()
 
         # Download nutra.db.tar.xz
+        print(
+            "curl -L https://bitbucket.org/dasheenster/nutra-utils/downloads/nutra-0.0.2.db.tar.xz -o nutra.db.tar.xz"
+        )
         urllib.request.urlretrieve(
             f"https://bitbucket.org/dasheenster/nutra-utils/downloads/nutra-{__dbtarget__}.db.tar.xz",
             f"{cwd}/nutra.db.tar.xz",
@@ -80,10 +84,12 @@ def verify_db(force_install=False):
         # TODO: verify db version
         with tarfile.open(f"{cwd}/nutra.db.tar.xz", mode="r:xz") as f:
             try:
+                print("tar xvf nutra.db.tar.xz")
                 f.extractall(cwd)
             except Exception as e:
                 print(repr(e))
                 print("ERROR: corrupt tarball, removing. Please try the download again")
+                print("rm -rf ~/.nutra/db")
                 shutil.rmtree(cwd)
                 exit()
         print("==> done downloading nutra.db")
