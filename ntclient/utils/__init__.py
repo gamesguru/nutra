@@ -1,5 +1,5 @@
-import hashlib
 import os
+import shutil
 import sys
 import tarfile
 import time
@@ -42,15 +42,15 @@ __dbsha__ = "36fb0ba513d75271e1540e03a5115b25b2b1c08464f4f7e9147cb5dc87e9b4e5"
 
 
 # Onboarding function
-def verify_db():
-    cwd = os.path.expanduser("~/.nutra")
+def verify_db(force_install=False):
+    cwd = os.path.expanduser("~/.nutra/db")
 
     # TODO: put this in main __init__? Require License agreement?
     if not os.path.exists(cwd):
         os.makedirs(cwd, mode=0o755)
 
     # TODO: require db_ver() >= __dbtarget__
-    if "nutra.db" not in os.listdir(cwd):
+    if "nutra.db" not in os.listdir(cwd) or force_install:
         """Downloads and unpacks the nt-sqlite3 db"""
 
         def reporthook(count, block_size, total_size):
@@ -70,18 +70,20 @@ def verify_db():
             )
             sys.stdout.flush()
 
-        if (
-            "nutra.db.tar.xz" not in os.listdir(cwd)
-            or hashlib.sha256(open(f"{cwd}/nutra.db.tar.xz")) != __dbsha__
-        ):
-            # Download nutra.db.tar.xz
-            urllib.request.urlretrieve(
-                f"https://bitbucket.org/dasheenster/nutra-utils/downloads/nutra-{__dbtarget__}.db.tar.xz",
-                f"{cwd}/nutra.db.tar.xz",
-                reporthook,
-            )
+        # Download nutra.db.tar.xz
+        urllib.request.urlretrieve(
+            f"https://bitbucket.org/dasheenster/nutra-utils/downloads/nutra-{__dbtarget__}.db.tar.xz",
+            f"{cwd}/nutra.db.tar.xz",
+            reporthook,
+        )
 
-        # TODO: verify sha
+        # TODO: verify db version
         with tarfile.open(f"{cwd}/nutra.db.tar.xz", mode="r:xz") as f:
-            f.extractall(cwd)
+            try:
+                f.extractall(cwd)
+            except Exception as e:
+                print(repr(e))
+                print("ERROR: corrupt tarball, removing. Please try the download again")
+                shutil.rmtree(cwd)
+                exit()
         print("==> done downloading nutra.db")

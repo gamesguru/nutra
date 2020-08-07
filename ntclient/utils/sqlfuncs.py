@@ -9,12 +9,13 @@ Created on Tue Aug  4 21:23:47 2020
 import os
 import sqlite3
 
-from . import verify_db
+from . import __dbtarget__, verify_db
 
 verify_db()
 
 # Connect to DB
-db_path = os.path.expanduser("~/.nutra/nutra.db")
+# TODO: support as parameter in parameters.csv
+db_path = os.path.expanduser("~/.nutra/db/nutra.db")
 conn = sqlite3.connect(db_path)
 # conn.row_factory = sqlite3.Row  # see: https://chrisostrouchov.com/post/python_sqlite/
 c = conn.cursor()
@@ -37,6 +38,24 @@ def dbver():
     query = "SELECT * FROM nt_ver;"
     result = _sql(query)
     return result[1][-1][1]
+
+
+# Verify version
+try:
+    __dbver__ = dbver()
+    if __dbtarget__ != __dbver__:
+        print(
+            f"NOTE: target db ({__dbtarget__}) differs from current ({__dbver__}).. downloading target"
+        )
+        verify_db(force_install=True)
+        print("NOTE: please run your command again now")
+        exit()
+except Exception as e:
+    print(repr(e))
+    print("ERROR: corrupt databasde.. downloading fresh")
+    verify_db(force_install=True)
+    print("NOTE: please run your command again now")
+    exit()
 
 
 def nutrients():
