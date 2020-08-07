@@ -1,3 +1,4 @@
+import hashlib
 import os
 import sys
 import tarfile
@@ -37,7 +38,7 @@ def git_sha():
 # Export for package level
 __sha__ = git_sha()
 __dbtarget__ = "0.0.2"
-__dbsha__ = "3cd2087cdb7a104e62d708c58eb6036fdcf1365562d3b03d483656625b568560"
+__dbsha__ = "36fb0ba513d75271e1540e03a5115b25b2b1c08464f4f7e9147cb5dc87e9b4e5"
 
 
 # Onboarding function
@@ -69,7 +70,10 @@ def verify_db():
             )
             sys.stdout.flush()
 
-        if "nutra.db.tar.xz" not in os.listdir(cwd):
+        if (
+            "nutra.db.tar.xz" not in os.listdir(cwd)
+            or hashlib.sha256(open(f"{cwd}/nutra.db.tar.xz")) != __dbsha__
+        ):
             # Download nutra.db.tar.xz
             urllib.request.urlretrieve(
                 f"https://bitbucket.org/dasheenster/nutra-utils/downloads/nutra-{__dbtarget__}.db.tar.xz",
