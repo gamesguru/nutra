@@ -75,6 +75,8 @@ def build_argparser():
         help="additional help",
     )
 
+    # TODO: init subcommand to onboard db and parameters.csv in ~/.nutra ??
+
     # Search subcommand
     search_parser = subparsers.add_parser(
         "search", help="use to search foods and recipes"

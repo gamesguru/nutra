@@ -38,7 +38,6 @@ def git_sha():
 # Export for package level
 __sha__ = git_sha()
 __dbtarget__ = "0.0.2"
-__dbsha__ = "36fb0ba513d75271e1540e03a5115b25b2b1c08464f4f7e9147cb5dc87e9b4e5"
 
 
 # Onboarding function
@@ -50,12 +49,11 @@ def verify_db(force_install=False):
         print("mkdir -p ~/.nutra/db")
         os.makedirs(cwd, mode=0o755)
 
-    # TODO: require db_ver() >= __dbtarget__
     if "nutra.db" not in os.listdir(cwd) or force_install:
         """Downloads and unpacks the nt-sqlite3 db"""
 
         def reporthook(count, block_size, total_size):
-            """ Shows download progress """
+            """Shows download progress"""
             global start_time
             if count == 0:
                 start_time = time.time()
@@ -81,7 +79,8 @@ def verify_db(force_install=False):
             reporthook,
         )
 
-        # TODO: verify db version
+        # Extract the archive
+        # NOTE: in sqlfuncs() we verify nt_ver == __dbtarget__, and if needed invoke this method with force_install=True
         with tarfile.open(f"{cwd}/nutra.db.tar.xz", mode="r:xz") as f:
             try:
                 print("tar xvf nutra.db.tar.xz")
