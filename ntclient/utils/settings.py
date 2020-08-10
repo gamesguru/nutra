@@ -33,18 +33,12 @@ from dotenv import load_dotenv
 # Read in .env file if it exists locally, else look to env vars
 load_dotenv(verbose=False)
 
-# TODO: support more settings..
-# 1) either with .env VARs, e.g. DEBUG=1
-# 2) `~/.nutra/paramters.csv` file, or
-# 3) split off into config.py?
 NUTRA_DIR = os.path.join(os.path.expanduser("~"), ".nutra")
 
-REMOTE_HOST = "https://nutra-server.herokuapp.com"
-SERVER_HOST = os.getenv("NUTRA_OVERRIDE_LOCAL_SERVER_HOST", REMOTE_HOST)
+TESTING = bool(int(os.getenv("NUTRA_CLI_NO_ARGS_INJECT_MOCKS", False)))
+# TODO: support more settings via parameters.csv
+VERBOSITY = 1
 
-# TODO: support via parameters.csv
-# TESTING = SERVER_HOST != REMOTE_HOST
-TESTING = False
 
 # ---------------------------
 # Colors and other settings

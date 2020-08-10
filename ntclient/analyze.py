@@ -45,11 +45,12 @@ from .utils.settings import (
     THRESH_CRIT,
     THRESH_OVER,
     THRESH_WARN,
+    VERBOSITY,
 )
 from .utils.sqlfuncs import (
     analyze_foods,
     food_details,
-    nutrients_details as _nutrients,
+    nutrients_overview,
     servings,
 )
 
@@ -58,7 +59,7 @@ def foods_analyze(food_ids):
     """Analyze a list of food_ids against stock RDA values"""
 
     # Get analysis
-    analysis = analyze_foods(food_ids)[1]
+    analysis = analyze_foods(food_ids)
     analyses = {}
     for a in analysis:
         id = a[0]
@@ -68,11 +69,11 @@ def foods_analyze(food_ids):
         else:
             analyses[id].append(anl)
     # serving = servings()[1]
-    serving = servings(food_ids)[1]
-    food_des = food_details(food_ids)[1]
+    serving = servings(food_ids)
+    food_des = food_details(food_ids)
     food_des = {x[0]: x for x in food_des}
-    n = {x[0]: x for x in _nutrients()[1]}
-    rdas = {x[0]: x[2] for x in n.values()}
+    nutrients = nutrients_overview()
+    rdas = {x[0]: x[1] for x in nutrients.values()}
 
     # --------------------------------------
     # Food-by-food analysis (w/ servings)
@@ -128,14 +129,14 @@ def foods_analyze(food_ids):
                 rda_ratio = round(amount / rdas[id] * 100, 1)
                 row = [
                     id,
-                    n[id][1],  # nutr_desc
+                    nutrients[id][1],  # nutr_desc
                     amount,
-                    n[id][3],  # unit
+                    nutrients[id][3],  # unit
                     f"{rda_ratio}%",
                 ]
             else:
                 # print(rdas[id])
-                row = [id, n[id][1], amount, n[id][3], None]
+                row = [id, nutrients[id][1], amount, nutrients[id][3], None]
 
             rows.append(row)
 
@@ -166,22 +167,24 @@ def day_analyze(day_csv_paths, rda_csv_path=None):
             try:
                 food_ids.add(int(entry["id"]))
             except Exception as e:
-                if TESTING:
+                if TESTING or VERBOSITY > 1:
                     print(repr(e))
         logs.append(log)
 
     # Inject user RDAs
-    nutrients = [list(x) for x in _nutrients()[1]]
+    nutrients = [list(x) for x in nutrients_overview().values()]
     for r in rda:
         id = int(r["id"])
-        rda = float(r["rda"])
+        _rda = float(r["rda"])
         for n in nutrients:
             if n[0] == id:
-                n[2] = rda
+                n[1] = _rda
+                if VERBOSITY > 1:
+                    print(f"INJECT RDA: {f'{_rda} {n[2]}'.ljust(12)} -->  {n[4]}")
     nutrients = {x[0]: x for x in nutrients}
 
     # Analyze foods
-    _foods_analysis = analyze_foods(food_ids)[1]
+    _foods_analysis = analyze_foods(food_ids)
     foods_analysis = {}
     for f in _foods_analysis:
         id = f[0]
@@ -268,14 +271,14 @@ def day_format(analysis, nutrients, buffer=None):
         )
 
     def print_nute_bar(n_id, amount, nutrients):
-        n = nutrients[n_id]
-        rda = n[2]
-        tag = n[4]
-        unit = n[3]
-        anti = n[5]
+        nutrient = nutrients[n_id]
+        rda = nutrient[1]
+        tag = nutrient[3]
+        unit = nutrient[2]
+        anti = nutrient[5]
 
         if not rda:
-            return False, n
+            return False, nutrient
         attain = amount / rda
         perc = round(100 * attain, 1)
 
@@ -308,10 +311,10 @@ def day_format(analysis, nutrients, buffer=None):
     kcals_449 = round(4 * pro + 4 * net_carb + 9 * fat)
 
     # Desired values
-    kcals_rda = round(nutrients[NUTR_ID_KCAL][2])
-    pro_rda = nutrients[NUTR_ID_PROTEIN][2]
-    net_carb_rda = nutrients[NUTR_ID_CARBS][2] - nutrients[NUTR_ID_FIBER][2]
-    fat_rda = nutrients[NUTR_ID_FAT_TOT][2]
+    kcals_rda = round(nutrients[NUTR_ID_KCAL][1])
+    pro_rda = nutrients[NUTR_ID_PROTEIN][1]
+    net_carb_rda = nutrients[NUTR_ID_CARBS][1] - nutrients[NUTR_ID_FIBER][1]
+    fat_rda = nutrients[NUTR_ID_FAT_TOT][1]
 
     # Print calories and macronutrient bars
     print_header("Macronutrients")

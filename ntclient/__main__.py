@@ -42,7 +42,7 @@ else:
 
     # from .account import cmd_login
     from .parsers import analyze, day, nutrients, search, sort
-    from .utils.settings import TESTING
+    from .utils.settings import TESTING, VERBOSITY
 
     colorama_init()  # colorama
 
@@ -163,10 +163,10 @@ def main(argv=None):
         # sys.argv = ["./nutra"]
         # sys.argv = ["./nutra", "sort"]
         # sys.argv = ["./nutra", "sort", "789"]
-        sys.argv = ["./nutra", "sort", "-c", "789"]
+        # sys.argv = ["./nutra", "sort", "-c", "789"]
         # sys.argv = ["./nutra", "anl", "9050", "9052"]
         # sys.argv = ["./nutra", "nt"]
-        # sys.argv = ["./nutra", "search", "grass", "fed", "beef"]
+        sys.argv = ["./nutra", "search", "grass", "fed", "beef"]
         # sys.argv = ["./nutra", "search", "grass"]
     try:
         args = arg_parser.parse_args()
@@ -185,7 +185,7 @@ def main(argv=None):
             arg_parser.print_help()
     except Exception as e:
         print("There was an unforseen error: ", repr(e))
-        if TESTING:
+        if TESTING or VERBOSITY > 0:
             trace = "\n".join(traceback.format_tb(e.__traceback__))
             print(trace)
         arg_parser.print_help()

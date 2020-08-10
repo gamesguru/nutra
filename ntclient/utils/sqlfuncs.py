@@ -21,12 +21,15 @@ conn = sqlite3.connect(db_path)
 c = conn.cursor()
 
 
-def _sql(query):
+def _sql(query, headers=False):
     """Executes a SQL command to nutra.db"""
     # TODO: DEBUG flag in properties.csv ... Print off all queries
     result = c.execute(query)
-    keys = [x[0] for x in result.description]
-    return keys, result.fetchall()
+    rows = result.fetchall()
+    if headers:
+        headers = [x[0] for x in result.description]
+        return headers, rows
+    return rows
 
 
 # ----------------------
@@ -37,7 +40,7 @@ def _sql(query):
 def dbver():
     query = "SELECT * FROM nt_ver;"
     result = _sql(query)
-    return result[1][-1][1]
+    return result[-1][1]
 
 
 # Verify version
@@ -66,13 +69,13 @@ except Exception as e:
 def nutrients_overview():
     query = "SELECT * FROM nutr_def;"
     result = _sql(query)
-    return {x[0]: x for x in result[1]}
+    return {x[0]: x for x in result}
 
 
 def fdgrp():
     query = "SELECT * FROM fdgrp;"
     result = _sql(query)
-    return {x[0]: x for x in result[1]}
+    return {x[0]: x for x in result}
 
 
 def nutrients_details():
@@ -80,10 +83,10 @@ def nutrients_details():
     query = """
 SELECT
   id,
-  nutr_desc,
   rda,
   unit,
   tagname,
+  nutr_desc,
   anti_nutrient,
   COUNT(nut_data.nutr_id) AS food_count,
   ROUND(avg(nut_data.nutr_val), 3) AS avg_val
@@ -95,7 +98,7 @@ GROUP BY
 ORDER BY
   id;
 """
-    return _sql(query)
+    return _sql(query, headers=True)
 
 
 def servings(food_ids):

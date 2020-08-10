@@ -40,14 +40,14 @@ from .utils.sqlfuncs import _sql, analyze_foods
 
 
 def search_results(words):
-    food_des = _sql("SELECT * FROM food_des;")[1]
+    food_des = _sql("SELECT * FROM food_des;")
 
     query = " ".join(words)
     scores = {f[0]: fuzz.token_set_ratio(query, f[2]) for f in food_des}
     scores = sorted(scores.items(), key=lambda x: x[1], reverse=True)[:SEARCH_LIMIT]
 
     food_ids = [s[0] for s in scores]
-    nut_data = analyze_foods(food_ids)[1]
+    nut_data = analyze_foods(food_ids)
 
     # Tally foods
     foods_nutrients = {}

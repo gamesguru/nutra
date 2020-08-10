@@ -20,15 +20,15 @@ from .utils.sqlfuncs import (
 
 def list_nutrients():
 
-    n = nutrients_details()
+    headers, nutrients = nutrients_details()
 
-    table = tabulate(n[1], headers=n[0], tablefmt="presto")
+    table = tabulate(nutrients, headers=headers, tablefmt="presto")
     print(table)
-    return table
+    return nutrients
 
 
 def sort_foods_by_nutrient_id(id, by_kcal=False):
-    results = sort_foods(id)[1]
+    results = sort_foods(id)
     results = [list(x) for x in results][:SEARCH_LIMIT]
 
     nutrients = nutrients_overview()
@@ -48,7 +48,7 @@ def sort_foods_by_nutrient_id(id, by_kcal=False):
 
 
 def sort_foods_by_kcal_nutrient_id(id):
-    results = sort_foods_by_kcal(id)[1]
+    results = sort_foods_by_kcal(id)
     results = [list(x) for x in results][:SEARCH_LIMIT]
 
     nutrients = nutrients_overview()

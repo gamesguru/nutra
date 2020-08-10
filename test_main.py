@@ -35,17 +35,17 @@ def test_sqlfuncs():
     assert len(result[1]) == 186
 
     result = sqlfuncs.servings([9050, 9052])
-    assert len(result[1]) == 3
+    assert len(result) == 3
 
     result = sqlfuncs.analyze_foods([23567, 23293])
-    assert len(result[1]) == 188
+    assert len(result) == 188
 
     result = sqlfuncs.sort_foods(789)
-    assert len(result[1]) == 415
+    assert len(result) == 415
     result = sqlfuncs.sort_foods(789, [100])
-    assert len(result[1]) == 1
+    assert len(result) == 1
 
     result = sqlfuncs.sort_foods_by_kcal(789)
-    assert len(result[1]) == 246
+    assert len(result) == 246
     result = sqlfuncs.sort_foods_by_kcal(789, [1100])
-    assert len(result[1]) == 127
+    assert len(result) == 127
