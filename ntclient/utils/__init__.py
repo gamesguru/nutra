@@ -105,6 +105,7 @@ def verify_db(force_install=False):
             f"{cwd}/nutra.db.tar.xz",
             reporthook,
         )
+        print()
 
         # Extract the archive
         # NOTE: in sqlfuncs() we verify nt_ver == __dbtarget__, and if needed invoke this method with force_install=True

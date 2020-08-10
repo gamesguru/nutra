@@ -155,13 +155,15 @@ def day_analyze(day_csv_paths, rda_csv_path=None):
     """
     rda = []
     if rda_csv_path:
-        rda_csv_input = csv.DictReader(open(rda_csv_path))
+        fp = open(rda_csv_path)
+        rda_csv_input = csv.DictReader(row for row in fp if not row.startswith("#"))
         rda = list(rda_csv_input)
 
     logs = []
     food_ids = set()
     for day_csv_path in day_csv_paths:
-        day_csv_input = csv.DictReader(open(day_csv_path))
+        fp = open(day_csv_path)
+        day_csv_input = csv.DictReader(row for row in fp if not row.startswith("#"))
         log = list(day_csv_input)
         for entry in log:
             try:
