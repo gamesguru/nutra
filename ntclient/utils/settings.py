@@ -8,8 +8,8 @@ This file is part of nutra, a nutrient analysis program.
     https://github.com/nutratech/cli
     https://pypi.org/project/nutra/
 
-nutra is an extensible nutraent analysis and composition application.
-Copyright (C) 2018  Shane Jaroch
+nutra is an extensible nutrient analysis and composition application.
+Copyright (C) 2018-2020  Shane Jaroch
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by

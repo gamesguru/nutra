@@ -8,8 +8,8 @@ This file is part of nutra, a nutrient analysis program.
     https://github.com/nutratech/cli
     https://pypi.org/project/nutra/
 
-nutra is an extensible nutraent analysis and composition application.
-Copyright (C) 2018  Shane Jaroch
+nutra is an extensible nutrient analysis and composition application.
+Copyright (C) 2018-2020  Shane Jaroch
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -85,7 +85,6 @@ def search_results(words):
 
 def tabulate_search(results):
     # Current terminal size
-    # TODO: dynamic buffer
     # TODO: display "nonzero/total" report nutrients, aminos, and flavones.. sometimes zero values are not useful
     # TODO: macros, ANDI score, and other metrics on preview
     # bufferwidth = shutil.get_terminal_size()[0]
@@ -105,9 +104,11 @@ def tabulate_search(results):
         if i == bufferheight - 4:
             break
         food_id = r["food_id"]
+        # TODO: dynamic buffer
         # food_name = r["long_desc"][:45]
         # food_name = r["long_desc"][:bufferwidth]
         food_name = r["long_desc"]
+        # TODO: decide on food group description?
         # fdgrp_desc = r["fdgrp_desc"]
         fdgrp_desc = r["fdgrp_id"]
 
