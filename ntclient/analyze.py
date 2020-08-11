@@ -114,7 +114,7 @@ def foods_analyze(food_ids):
 
         ################
         # Nutrient table
-        headers = ["id", "nutrient", "amount", "units", "rda"]
+        headers = ["id", "nutrient", "rda", "amount", "units"]
         rows = []
         # food_nutes = {x["nutr_id"]: x for x in food["nutrients"]}
         # for id, nute in food_nutes.items():
@@ -124,19 +124,16 @@ def foods_analyze(food_ids):
             if not amount:
                 continue
 
+            nutr_desc = nutrients[id][4] if nutrients[id][4] else nutrients[id][3]
+            unit = nutrients[id][2]
+
             # Insert RDA % into row
             if rdas[id]:
-                rda_ratio = round(amount / rdas[id] * 100, 1)
-                row = [
-                    id,
-                    nutrients[id][1],  # nutr_desc
-                    amount,
-                    nutrients[id][3],  # unit
-                    f"{rda_ratio}%",
-                ]
+                rda_perc = str(round(amount / rdas[id] * 100, 1)) + "%"
             else:
                 # print(rdas[id])
-                row = [id, nutrients[id][1], amount, nutrients[id][3], None]
+                rda_perc = None
+            row = [id, nutr_desc, rda_perc, round(amount, 2), unit]
 
             rows.append(row)
 

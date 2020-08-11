@@ -57,6 +57,7 @@ def search_results(words):
         else:
             foods_nutrients[food_id][nutr_id] = nutr_val
 
+    # TODO: include C/F/P macro ratios as column?
     results = []
     food_des = {f[0]: f for f in food_des}
     for score in scores:
@@ -66,6 +67,7 @@ def search_results(words):
         food = food_des[food_id]
         fdgrp_id = food[1]
         long_desc = food[2]
+        shrt_desc = food[3]
 
         nutrients = foods_nutrients[food_id]
         result = {
@@ -74,7 +76,7 @@ def search_results(words):
             # TODO: get more details from another function, maybe enhance food_details() ?
             # "fdgrp_desc": cache.fdgrp[fdgrp_id]["fdgrp_desc"],
             # "data_src": cache.data_src[data_src_id]["name"],
-            "long_desc": long_desc,
+            "long_desc": shrt_desc if shrt_desc else long_desc,
             "score": score,
             "nutrients": nutrients,
         }
@@ -91,13 +93,13 @@ def tabulate_search(results):
     bufferheight = shutil.get_terminal_size()[1]
 
     headers = [
-        "food_id",
-        "food_name",
+        "food",
+        "fdgrp",
         "kcal",
-        "# nutrients",
-        "Aminos",
-        "Flavones",
-        "fdgrp_desc",
+        "food_name",
+        "Nutr",
+        "Amino",
+        "Flav",
     ]
     rows = []
     for i, r in enumerate(results):
@@ -110,7 +112,7 @@ def tabulate_search(results):
         food_name = r["long_desc"]
         # TODO: decide on food group description?
         # fdgrp_desc = r["fdgrp_desc"]
-        fdgrp_desc = r["fdgrp_id"]
+        fdgrp = r["fdgrp_id"]
 
         nutrients = r["nutrients"]
         kcal = nutrients.get(NUTR_ID_KCAL)
@@ -123,12 +125,12 @@ def tabulate_search(results):
 
         row = [
             food_id,
-            food_name,
+            fdgrp,
             kcal,
+            food_name,
             len(nutrients),
             len_aminos,
             len_flavones,
-            fdgrp_desc,
         ]
         rows.append(row)
         # avail_buffer = bufferwidth - len(food_id) - 15
@@ -136,6 +138,6 @@ def tabulate_search(results):
         #     rows.append([food_id, food_name[:avail_buffer] + "..."])
         # else:
         #     rows.append([food_id, food_name])
-    table = tabulate(rows, headers=headers, tablefmt="presto")
+    table = tabulate(rows, headers=headers, tablefmt="simple")
     print(table)
-    return table
+    return rows

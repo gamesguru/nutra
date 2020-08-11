@@ -29,7 +29,7 @@ from .utils import __sha__
 from .utils.sqlfuncs import dbver
 
 __title__ = "nutra"
-__version__ = "0.1.0.dev1"
+__version__ = "0.1.0.dev2"
 __dbver__ = dbver()
 __sha__ = __sha__
 __author__ = "Shane Jaroch"

@@ -42,7 +42,7 @@ def list_nutrients():
 
     headers, nutrients = nutrients_details()
 
-    table = tabulate(nutrients, headers=headers, tablefmt="presto")
+    table = tabulate(nutrients, headers=headers, tablefmt="simple")
     print(table)
     return nutrients
 
@@ -55,14 +55,9 @@ def sort_foods_by_nutrient_id(id, by_kcal=False):
     nutrient = nutrients[id]
     unit = nutrient[2]
 
-    fdgrps = fdgrp()
+    headers = ["food", "fdgrp", f"val ({unit})", "kcal", "long_desc"]
 
-    headers = ["food_id", "fdgrp", f"value ({unit})", "kcal", "long_desc"]
-    for x in results:
-        _fdgrp = fdgrps[x[1]]
-        x.insert(1, _fdgrp[1])
-
-    table = tabulate(results, headers=headers, tablefmt="presto")
+    table = tabulate(results, headers=headers, tablefmt="simple")
     print(table)
     return results
 
@@ -75,13 +70,8 @@ def sort_foods_by_kcal_nutrient_id(id):
     nutrient = nutrients[id]
     unit = nutrient[2]
 
-    fdgrps = fdgrp()
+    headers = ["food", "fdgrp", f"val ({unit})", "kcal", "long_desc"]
 
-    headers = ["food_id", "fdgrp_desc", "fdgrp", f"value ({unit})", "kcal", "long_desc"]
-    for x in results:
-        _fdgrp = fdgrps[x[1]]
-        x.insert(1, _fdgrp[1])
-
-    table = tabulate(results, headers=headers, tablefmt="presto")
+    table = tabulate(results, headers=headers, tablefmt="simple")
     print(table)
     return results
