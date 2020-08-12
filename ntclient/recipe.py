@@ -30,6 +30,8 @@ def parse_recipes():
         csv_reader = csv.reader(f)
         rows = list(csv_reader)[1:]
         for row in rows:
+            if row[0] == "":
+                continue
             id = int(row[0])
             food_id = int(row[1])
             grams = float(row[2])
