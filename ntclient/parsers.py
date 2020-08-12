@@ -29,6 +29,7 @@ along with this program.  If not, see <https://www.gnu.org/licenses/>.
 import os
 
 from .analyze import day_analyze, foods_analyze
+from .recipe import parse_recipes, recipe_analyze, recipes_overview
 from .search import search_results
 from .usda import (
     list_nutrients,
@@ -67,6 +68,13 @@ def analyze(args, arg_parser=None, subparsers=None):
         subparsers["anl"].print_help()
     else:
         return foods_analyze(food_ids, grams)
+
+
+def recipe(args, arg_parser=None, subparsers=None):
+    if args.recipe_id:
+        return recipe_analyze(args.recipe_id)
+    else:
+        return recipes_overview()
 
 
 def day(args, arg_parser=None, subparsers=None):

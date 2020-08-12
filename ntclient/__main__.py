@@ -41,7 +41,7 @@ else:
     from . import __dbver__, __sha__, __title__, __version__
 
     # from .account import cmd_login
-    from .parsers import analyze, day, nutrients, search, sort
+    from .parsers import analyze, day, nutrients, recipe, search, sort
     from .utils import TESTING, VERBOSITY
 
     colorama_init()  # colorama
@@ -77,9 +77,11 @@ def build_argparser():
 
     # TODO: init subcommand to onboard db and parameters.csv in ~/.nutra ??
 
+    # --------------------------
     # Search subcommand
+    # --------------------------
     search_parser = subparsers.add_parser(
-        "search", help="use to search foods and recipes"
+        "search", help="search foods by name, list overview info"
     )
     search_parser.add_argument(
         "terms",
@@ -89,8 +91,10 @@ def build_argparser():
     )
     search_parser.set_defaults(func=search)
 
+    # --------------------------
     # Sort subcommand
-    sort_parser = subparsers.add_parser("sort", help="use to sort foods by nutrient ID")
+    # --------------------------
+    sort_parser = subparsers.add_parser("sort", help="sort foods by nutrient ID")
     sort_parser.add_argument(
         "--kcal",
         "-c",
@@ -100,10 +104,10 @@ def build_argparser():
     sort_parser.add_argument("nutr_id", type=int)
     sort_parser.set_defaults(func=sort)
 
+    # --------------------------
     # Analyze subcommand
-    analyze_parser = subparsers.add_parser(
-        "anl", help="use to analyze foods, recipes, logs"
-    )
+    # --------------------------
+    analyze_parser = subparsers.add_parser("anl", help="analyze food(s)")
     analyze_parser.add_argument("food_id", type=int, nargs="+")
     analyze_parser.add_argument(
         "-g",
@@ -114,8 +118,12 @@ def build_argparser():
     )
     analyze_parser.set_defaults(func=analyze)
 
+    # --------------------------
     # Day (analyze-day) subcommand
-    day_parser = subparsers.add_parser("day", help="use to sort foods by nutrient ID")
+    # --------------------------
+    day_parser = subparsers.add_parser(
+        "day", help="analyze a DAY.csv file, RDAs optional"
+    )
     day_parser.add_argument(
         "food_log", type=str, nargs="+", help="path to CSV file of food log"
     )
@@ -124,15 +132,22 @@ def build_argparser():
     )
     day_parser.set_defaults(func=day)
 
+    # --------------------------
+    # Recipe subcommand
+    # --------------------------
+    recipe_parser = subparsers.add_parser("recipe", help="list and analyze recipes")
+    recipe_parser.add_argument(
+        "recipe_id", type=int, help="analyze recipe by ID", nargs="?"
+    )
+    recipe_parser.set_defaults(func=recipe)
+
+    # --------------------------
     # Nutrient subcommand
+    # --------------------------
     nutrient_parser = subparsers.add_parser(
         "nt", help="list out nutrients and their info"
     )
     nutrient_parser.set_defaults(func=nutrients)
-
-    # # Login subcommand
-    # login_parser = subparsers.add_parser("login", help="log in to your account")
-    # login_parser.set_defaults(func=cmd_login)
 
     return arg_parser
 
@@ -172,7 +187,9 @@ def main(argv=None):
         # sys.argv = ["./nutra", "sort", "789"]
         # sys.argv = ["./nutra", "sort", "-c", "789"]
         # sys.argv = ["./nutra", "anl", "9050", "9052"]
-        sys.argv = ["./nutra", "anl", "-g", "85", "23294"]
+        # sys.argv = ["./nutra", "anl", "-g", "85", "23294"]
+        # sys.argv = ["./nutra", "recipe"]
+        sys.argv = ["./nutra", "recipe", "1"]
         # sys.argv = ["./nutra", "nt"]
         # sys.argv = ["./nutra", "search", "grass", "fed", "beef"]
         # sys.argv = ["./nutra", "search", "grass"]
