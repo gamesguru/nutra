@@ -96,10 +96,8 @@ def git_sha():
         from .__sha__ import __sha__
     except Exception as e1:
         import subprocess
-        from . import TESTING
 
-        if not TESTING:
-            print(repr(e1))
+        print(repr(e1))
         cwd = os.path.dirname(os.path.abspath(__file__))
 
         try:
