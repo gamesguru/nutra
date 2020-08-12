@@ -105,6 +105,14 @@ def build_argparser():
         "anl", help="use to analyze foods, recipes, logs"
     )
     analyze_parser.add_argument("food_id", type=int, nargs="+")
+    analyze_parser.add_argument(
+        "-g",
+        dest="grams",
+        metavar="grams",
+        type=float,
+        # nargs=1,
+        help="analyze for custom number of grams (default is 100g)",
+    )
     analyze_parser.set_defaults(func=analyze)
 
     # Day (analyze-day) subcommand
@@ -165,8 +173,9 @@ def main(argv=None):
         # sys.argv = ["./nutra", "sort", "789"]
         # sys.argv = ["./nutra", "sort", "-c", "789"]
         # sys.argv = ["./nutra", "anl", "9050", "9052"]
+        sys.argv = ["./nutra", "anl", "-g", "85", "23294"]
         # sys.argv = ["./nutra", "nt"]
-        sys.argv = ["./nutra", "search", "grass", "fed", "beef"]
+        # sys.argv = ["./nutra", "search", "grass", "fed", "beef"]
         # sys.argv = ["./nutra", "search", "grass"]
     try:
         args = arg_parser.parse_args()

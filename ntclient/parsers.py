@@ -60,12 +60,13 @@ def sort(args, arg_parser=None, subparsers=None):
 
 
 def analyze(args, arg_parser=None, subparsers=None):
-    food_id = args.food_id
+    food_ids = args.food_id
+    grams = args.grams
 
-    if not food_id:
+    if not food_ids:
         subparsers["anl"].print_help()
     else:
-        return foods_analyze(food_id)
+        return foods_analyze(food_ids, grams)
 
 
 def day(args, arg_parser=None, subparsers=None):

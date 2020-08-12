@@ -55,7 +55,7 @@ from .utils.sqlfuncs import (
 )
 
 
-def foods_analyze(food_ids):
+def foods_analyze(food_ids, grams=None):
     """Analyze a list of food_ids against stock RDA values"""
 
     # Get analysis
@@ -63,7 +63,10 @@ def foods_analyze(food_ids):
     analyses = {}
     for a in analysis:
         id = a[0]
-        anl = (a[1], a[2])
+        if grams is not None:
+            anl = (a[1], round(a[2] * grams / 100, 2))
+        else:
+            anl = (a[1], a[2])
         if id not in analyses:
             analyses[id] = [anl]
         else:
