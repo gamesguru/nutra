@@ -30,7 +30,7 @@ import shutil
 from fuzzywuzzy import fuzz
 from tabulate import tabulate
 
-from .utils.settings import (
+from .utils import (
     NUTR_ID_KCAL,
     NUTR_IDS_AMINOS,
     NUTR_IDS_FLAVONES,

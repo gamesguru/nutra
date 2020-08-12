@@ -31,7 +31,7 @@ import shutil
 from colorama import Fore, Style
 from tabulate import tabulate
 
-from .utils.settings import (
+from .utils import (
     COLOR_CRIT,
     COLOR_DEFAULT,
     COLOR_OVER,

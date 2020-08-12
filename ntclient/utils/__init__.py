@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """
-Created on Fri Jan 31 16:01:31 2020
+Created on Sat Mar 23 13:09:07 2019
 
 @author: shane
 
@@ -26,97 +26,122 @@ along with this program.  If not, see <https://www.gnu.org/licenses/>.
 """
 
 import os
-import shutil
-import sys
-import tarfile
-import time
-import urllib.request
 
+from colorama import Fore
+from dotenv import load_dotenv
 
-def git_sha():
-    """ Gets the git revision, if it exists in cwd """
-    cwd = os.getcwd()
-
-    try:
-        from .__sha__ import __sha__
-    except Exception as e1:
-        import subprocess
-        from .settings import TESTING
-
-        if not TESTING:
-            print(repr(e1))
-        cwd = os.path.dirname(os.path.abspath(__file__))
-
-        try:
-            __sha__ = (
-                subprocess.check_output(
-                    ["git", "rev-parse", "--short", "HEAD"], cwd=cwd
-                )
-                .decode()
-                .rstrip()
-            )
-        except Exception as e2:
-            print(repr(e2))
-            __sha__ = None
-
-    return __sha__
+from .gitutils import git_sha, verify_db
 
 
 # Export for package level
 __sha__ = git_sha()
 __dbtarget__ = "0.0.3"
 
+# Read in .env file if it exists locally, else look to env vars
+load_dotenv(verbose=False)
 
-# Onboarding function
-def verify_db(force_install=False):
-    cwd = os.path.expanduser("~/.nutra/db")
+NUTRA_DIR = os.path.join(os.path.expanduser("~"), ".nutra")
 
-    # TODO: put this in main __init__? Require License agreement?
-    if not os.path.exists(cwd):
-        print("mkdir -p ~/.nutra/db")
-        os.makedirs(cwd, mode=0o755)
+TESTING = bool(int(os.getenv("NUTRA_CLI_NO_ARGS_INJECT_MOCKS", False)))
+# TODO: support more settings via parameters.csv
+VERBOSITY = 1
 
-    if "nutra.db" not in os.listdir(cwd) or force_install:
-        """Downloads and unpacks the nt-sqlite3 db"""
 
-        def reporthook(count, block_size, total_size):
-            """Shows download progress"""
-            global start_time
-            if count == 0:
-                start_time = time.time()
-                time.sleep(0.01)
-                return
-            duration = time.time() - start_time
-            progress_size = int(count * block_size)
-            speed = int(progress_size / (1024 * duration))
-            percent = int(count * block_size * 100 / total_size)
-            sys.stdout.write(
-                "\r...%d%%, %d MB, %d KB/s, %d seconds passed"
-                % (percent, progress_size / (1024 * 1024), speed, duration)
-            )
-            sys.stdout.flush()
+# ---------------------------
+# Colors and other settings
+# ---------------------------
 
-        # Download nutra.db.tar.xz
-        print(
-            "curl -L https://bitbucket.org/dasheenster/nutra-utils/downloads/nutra-0.0.2.db.tar.xz -o nutra.db.tar.xz"
-        )
-        urllib.request.urlretrieve(
-            f"https://bitbucket.org/dasheenster/nutra-utils/downloads/nutra-{__dbtarget__}.db.tar.xz",
-            f"{cwd}/nutra.db.tar.xz",
-            reporthook,
-        )
-        print()
+THRESH_WARN = 0.7
+COLOR_WARN = Fore.YELLOW
 
-        # Extract the archive
-        # NOTE: in sqlfuncs() we verify version == __dbtarget__, and if needed invoke this method with force_install=True
-        with tarfile.open(f"{cwd}/nutra.db.tar.xz", mode="r:xz") as f:
-            try:
-                print("tar xvf nutra.db.tar.xz")
-                f.extractall(cwd)
-            except Exception as e:
-                print(repr(e))
-                print("ERROR: corrupt tarball, removing. Please try the download again")
-                print("rm -rf ~/.nutra/db")
-                shutil.rmtree(cwd)
-                exit()
-        print("==> done downloading nutra.db")
+THRESH_CRIT = 0.4
+COLOR_CRIT = Fore.RED
+
+THRESH_OVER = 1.9
+# COLOR_OVER = Fore.LIGHTBLACK_EX
+COLOR_OVER = Fore.LIGHTMAGENTA_EX
+
+COLOR_DEFAULT = Fore.BLUE
+
+SEARCH_LIMIT = 150
+
+
+# ------------------------
+# Nutrient IDs
+# ------------------------
+NUTR_ID_KCAL = 208
+
+NUTR_ID_PROTEIN = 203
+
+NUTR_ID_CARBS = 205
+NUTR_ID_SUGAR = 269
+NUTR_ID_FIBER = 291
+
+NUTR_ID_FAT_TOT = 204
+NUTR_ID_FAT_SAT = 606
+NUTR_ID_FAT_MONO = 645
+NUTR_ID_FAT_POLY = 646
+
+
+NUTR_IDS_FLAVONES = [
+    710,
+    711,
+    712,
+    713,
+    714,
+    715,
+    716,
+    734,
+    735,
+    736,
+    737,
+    738,
+    731,
+    740,
+    741,
+    742,
+    743,
+    745,
+    749,
+    750,
+    751,
+    752,
+    753,
+    755,
+    756,
+    758,
+    759,
+    762,
+    770,
+    773,
+    785,
+    786,
+    788,
+    789,
+    791,
+    792,
+    793,
+    794,
+]
+
+NUTR_IDS_AMINOS = [
+    501,
+    502,
+    503,
+    504,
+    505,
+    506,
+    507,
+    508,
+    509,
+    510,
+    511,
+    512,
+    513,
+    514,
+    515,
+    516,
+    517,
+    518,
+    521,
+]

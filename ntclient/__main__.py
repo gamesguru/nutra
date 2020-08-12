@@ -42,7 +42,7 @@ else:
 
     # from .account import cmd_login
     from .parsers import analyze, day, nutrients, search, sort
-    from .utils.settings import TESTING, VERBOSITY
+    from .utils import TESTING, VERBOSITY
 
     colorama_init()  # colorama
 

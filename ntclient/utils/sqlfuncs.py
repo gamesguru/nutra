@@ -31,7 +31,7 @@ import sqlite3
 
 from . import __dbtarget__, verify_db
 
-verify_db()
+verify_db(__dbtarget__)
 
 # Connect to DB
 # TODO: support as parameter in parameters.csv
@@ -70,13 +70,13 @@ try:
         print(
             f"NOTE: target db ({__dbtarget__}) differs from current ({__dbver__}).. downloading target"
         )
-        verify_db(force_install=True)
+        verify_db(__dbtarget__, force_install=True)
         print("NOTE: please run your command again now")
         exit()
 except Exception as e:
     print(repr(e))
     print("ERROR: corrupt databasde.. downloading fresh")
-    verify_db(force_install=True)
+    verify_db(__dbtarget__, force_install=True)
     print("NOTE: please run your command again now")
     exit()
 
