@@ -58,7 +58,7 @@ def _sql(query, headers=False):
 
 
 def dbver():
-    query = "SELECT * FROM nt_ver;"
+    query = "SELECT * FROM version;"
     result = _sql(query)
     return result[-1][1]
 

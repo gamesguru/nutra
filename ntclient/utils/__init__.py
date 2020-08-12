@@ -64,7 +64,7 @@ def git_sha():
 
 # Export for package level
 __sha__ = git_sha()
-__dbtarget__ = "0.0.2"
+__dbtarget__ = "0.0.3"
 
 
 # Onboarding function
@@ -108,7 +108,7 @@ def verify_db(force_install=False):
         print()
 
         # Extract the archive
-        # NOTE: in sqlfuncs() we verify nt_ver == __dbtarget__, and if needed invoke this method with force_install=True
+        # NOTE: in sqlfuncs() we verify version == __dbtarget__, and if needed invoke this method with force_install=True
         with tarfile.open(f"{cwd}/nutra.db.tar.xz", mode="r:xz") as f:
             try:
                 print("tar xvf nutra.db.tar.xz")
