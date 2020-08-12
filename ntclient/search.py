@@ -31,6 +31,7 @@ from fuzzywuzzy import fuzz
 from tabulate import tabulate
 
 from .utils import (
+    FOOD_NAME_TRUNC,
     NUTR_ID_KCAL,
     NUTR_IDS_AMINOS,
     NUTR_IDS_FLAVONES,
@@ -109,7 +110,7 @@ def tabulate_search(results):
         # TODO: dynamic buffer
         # food_name = r["long_desc"][:45]
         # food_name = r["long_desc"][:bufferwidth]
-        food_name = r["long_desc"]
+        food_name = r["long_desc"][:FOOD_NAME_TRUNC]
         # TODO: decide on food group description?
         # fdgrp_desc = r["fdgrp_desc"]
         fdgrp = r["fdgrp_id"]

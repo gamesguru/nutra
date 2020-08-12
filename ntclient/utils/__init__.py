@@ -31,6 +31,7 @@ from colorama import Fore
 from dotenv import load_dotenv
 
 from .gitutils import git_sha, verify_db
+from .csvutils import parse_parameters
 
 
 # Export for package level
@@ -41,6 +42,12 @@ __dbtarget__ = "0.0.3"
 load_dotenv(verbose=False)
 
 NUTRA_DIR = os.path.join(os.path.expanduser("~"), ".nutra")
+try:
+    parameters = parse_parameters(NUTRA_DIR)
+except Exception as e:
+    print(f"Warning: {repr(e)} ['~/.nutra/parameters.csv']")
+    parameters = dict()
+
 
 TESTING = bool(int(os.getenv("NUTRA_CLI_NO_ARGS_INJECT_MOCKS", False)))
 # TODO: support more settings via parameters.csv
@@ -64,6 +71,9 @@ COLOR_OVER = Fore.LIGHTMAGENTA_EX
 COLOR_DEFAULT = Fore.BLUE
 
 SEARCH_LIMIT = 150
+FOOD_NAME_TRUNC = (
+    int(parameters["FOOD_NAME_TRUNC"]) if "FOOD_NAME_TRUNC" in parameters else 200
+)
 
 
 # ------------------------

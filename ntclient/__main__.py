@@ -110,7 +110,6 @@ def build_argparser():
         dest="grams",
         metavar="grams",
         type=float,
-        # nargs=1,
         help="analyze for custom number of grams (default is 100g)",
     )
     analyze_parser.set_defaults(func=analyze)

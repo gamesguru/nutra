@@ -30,7 +30,6 @@ from tabulate import tabulate
 
 from .utils import SEARCH_LIMIT
 from .utils.sqlfuncs import (
-    fdgrp,
     nutrients_details,
     nutrients_overview,
     sort_foods,
@@ -48,6 +47,7 @@ def list_nutrients():
 
 
 def sort_foods_by_nutrient_id(id, by_kcal=False):
+    # TODO: sub shrt_desc for long if available, and support FOOD_NAME_TRUNC
     results = sort_foods(id)
     results = [list(x) for x in results][:SEARCH_LIMIT]
 

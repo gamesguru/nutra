@@ -277,7 +277,7 @@ def day_format(analysis, nutrients, buffer=None):
         rda = nutrient[1]
         tag = nutrient[3]
         unit = nutrient[2]
-        anti = nutrient[5]
+        # anti = nutrient[5]
 
         if not rda:
             return False, nutrient
