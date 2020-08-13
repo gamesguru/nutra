@@ -22,9 +22,9 @@ def parse_recipes():
     with open(f"{cwd}/names.csv") as f:
         csv_reader = csv.reader(f)
         rows = list(csv_reader)[1:]
-        for id, tag, name in rows:
+        for id, name in rows:
             id = int(id)
-            recipes[id] = [id, tag, name]
+            recipes[id] = [id, name]
 
     with open(f"{cwd}/food_amounts.csv") as f:
         csv_reader = csv.reader(f)
@@ -36,10 +36,10 @@ def parse_recipes():
             food_id = int(row[1])
             grams = float(row[2])
             recipe = recipes[id]
-            if len(recipe) == 3:
+            if len(recipe) == 2:
                 recipe.append([[food_id, grams]])
             else:
-                recipe[3].append([food_id, grams])
+                recipe[2].append([food_id, grams])
 
     return recipes
 
@@ -51,9 +51,8 @@ def recipes_overview():
     for recipe in recipes.values():
         result = {
             "id": recipe[0],
-            "tag": recipe[1],
-            "name": recipe[2],
-            "n_foods": len(recipe[3]),
+            "name": recipe[1],
+            "n_foods": len(recipe[2]),
         }
         results.append(result)
 
@@ -72,9 +71,9 @@ def recipe_analyze(id):
         return None
 
     id = recipe[0]
-    name = recipe[2]
+    name = recipe[1]
     # foods = {x[0]: x[1] for x in recipe[3]}
     # analyses = analyze_foods(foods)
-    print(f"{name} [id={id}]\n")
-    print("work in progres.. check back later.. need to re-use foods-analysis format")
+    print(f"{name}\n")
+    print("work in progress.. check back later.. need to re-use foods-analysis format")
     return recipe
