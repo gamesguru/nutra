@@ -40,6 +40,15 @@ from .utils.sqlfuncs import (
 def list_nutrients():
 
     headers, nutrients = nutrients_details()
+    headers.append("avg_rda")
+    nutrients = [list(x) for x in nutrients]
+    for n in nutrients:
+        rda = n[1]
+        val = n[7]
+        if rda:
+            n.append(round(100 * val / rda, 1))
+        else:
+            n.append(None)
 
     table = tabulate(nutrients, headers=headers, tablefmt="simple")
     print(table)
