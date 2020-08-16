@@ -38,7 +38,7 @@ CLASSIFIERS = [
     "Programming Language :: Python :: 3.8",
 ]
 
-REQUIREMENTS = ["colorama", "tabulate", "requests", "python-dotenv"]
+REQUIREMENTS = ["colorama", "fuzzywuzzy", "pytest", "python-dotenv", "python-Levenshtein", "requests", "tabulate"]
 
 README = open("README.rst").read()
 
