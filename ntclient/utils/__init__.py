@@ -3,26 +3,6 @@
 Created on Sat Mar 23 13:09:07 2019
 
 @author: shane
-
-This file is part of nutra, a nutrient analysis program.
-    https://github.com/nutratech/cli
-    https://pypi.org/project/nutra/
-
-nutra is an extensible nutrient analysis and composition application.
-Copyright (C) 2018-2020  Shane Jaroch
-
-This program is free software: you can redistribute it and/or modify
-it under the terms of the GNU General Public License as published by
-the Free Software Foundation, either version 3 of the License, or
-(at your option) any later version.
-
-This program is distributed in the hope that it will be useful,
-but WITHOUT ANY WARRANTY; without even the implied warranty of
-MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-GNU General Public License for more details.
-
-You should have received a copy of the GNU General Public License
-along with this program.  If not, see <https://www.gnu.org/licenses/>.
 """
 
 import os
@@ -30,15 +10,15 @@ import os
 from colorama import Fore
 from dotenv import load_dotenv
 
-from .gitutils import git_sha, verify_db
+from .gitutils import git_sha
 from .csvutils import parse_parameters
-from .sqlfuncs import dbver
+from .sqlfuncs import __dbversion__, __dbtarget__
 
 
 # Export for package level
 __sha__ = git_sha()
-__dbversion__ = dbver()
-__dbtarget__ = "0.0.3"
+__dbversion__ = __dbversion__
+__dbtarget__ = __dbtarget__
 
 # Read in .env file if it exists locally, else look to env vars
 load_dotenv(verbose=False)

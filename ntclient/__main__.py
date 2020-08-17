@@ -39,7 +39,7 @@ if sys.version_info < (3, 6, 5):
     exit(1)
 else:
     from . import __sha__, __title__, __version__
-    from .utils import __dbver__
+    from .utils import __dbversion__
 
     # from .account import cmd_login
     from .parsers import analyze, day, nutrients, recipe, search, sort
@@ -64,7 +64,7 @@ def build_argparser():
         "--version",
         action="version",
         version=f"{__title__} version "
-        + f"{__version__}   ({__sha__})  [DB v{__dbver__}]",
+        + f"{__version__}   ({__sha__})  [DB v{__dbversion__}]",
     )
 
     # --------------------------

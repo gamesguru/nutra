@@ -28,7 +28,7 @@ along with this program.  If not, see <https://www.gnu.org/licenses/>.
 from .__sha__ import __sha__
 
 __title__ = "nutra"
-__version__ = "0.1.0.dev12"
+__version__ = "0.1.0.dev13"
 __sha__ = __sha__
 __author__ = "Shane Jaroch"
 __license__ = "GPL v3"

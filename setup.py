@@ -16,7 +16,7 @@ from setuptools import setup
 # Includes the git sha on PyPI releases
 try:
     sha = (
-        subprocess.check_output(["gitt", "rev-parse", "--short", "HEAD"])
+        subprocess.check_output(["git", "rev-parse", "--short", "HEAD"])
         .decode()
         .rstrip()
     )
