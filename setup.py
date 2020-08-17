@@ -9,8 +9,24 @@ import os
 import shutil
 import subprocess
 import sys
+import traceback
 
 from setuptools import setup
+
+# Includes the git sha on PyPI releases
+try:
+    sha = (
+        subprocess.check_output(["gitt", "rev-parse", "--short", "HEAD"])
+        .decode()
+        .rstrip()
+    )
+    open("ntclient/__sha__.py", "w+").writelines([f'__sha__ = "{sha}"\n'])
+except Exception as e:
+    trace = "\n".join(traceback.format_tb(e.__traceback__))
+    print(trace)
+    print('WARN: Using "UNKNOWN" as git sha')
+    open("ntclient/__sha__.py", "w+").writelines(['__sha__ = "UNKNOWN"\n'])
+
 
 from ntclient import __version__
 
@@ -38,22 +54,19 @@ CLASSIFIERS = [
     "Programming Language :: Python :: 3.8",
 ]
 
-REQUIREMENTS = ["colorama", "fuzzywuzzy", "pytest", "python-dotenv", "python-Levenshtein", "requests", "tabulate"]
+REQUIREMENTS = [
+    "colorama",
+    "fuzzywuzzy",
+    "pytest",
+    "python-dotenv",
+    "python-Levenshtein",
+    "requests",
+    "tabulate",
+]
 
 README = open("README.rst").read()
 
 PKG_NAME = "nutra"
-
-# Includes the git sha on PyPI releases
-try:
-    sha = (
-        subprocess.check_output(["git", "rev-parse", "--short", "HEAD"])
-        .decode()
-        .rstrip()
-    )
-    open("ntclient/utils/__sha__.py", "w+").writelines([f'__sha__ = "{sha}"\n'])
-except Exception as e:
-    print(repr(e))
 
 setup(
     name=PKG_NAME,

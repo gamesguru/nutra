@@ -32,10 +32,12 @@ from dotenv import load_dotenv
 
 from .gitutils import git_sha, verify_db
 from .csvutils import parse_parameters
+from .sqlfuncs import dbver
 
 
 # Export for package level
 __sha__ = git_sha()
+__dbversion__ = dbver()
 __dbtarget__ = "0.0.3"
 
 # Read in .env file if it exists locally, else look to env vars
