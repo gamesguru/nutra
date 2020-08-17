@@ -31,7 +31,7 @@ except ImportError as e:
     __sha__ = "UNKNOWN"
 
 __title__ = "nutra"
-__version__ = "0.1.0.dev14"
+__version__ = "0.1.0.dev15"
 __sha__ = __sha__
 __author__ = "Shane Jaroch"
 __license__ = "GPL v3"
