@@ -44,7 +44,7 @@ def list_nutrients():
     nutrients = [list(x) for x in nutrients]
     for n in nutrients:
         rda = n[1]
-        val = n[7]
+        val = n[6]
         if rda:
             n.append(round(100 * val / rda, 1))
         else:

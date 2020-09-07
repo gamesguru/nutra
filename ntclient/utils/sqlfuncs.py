@@ -34,7 +34,7 @@ import tarfile
 import time
 import urllib.request
 
-__dbtarget__ = "0.0.3"
+__dbtarget__ = "0.0.4"
 
 
 # Onboarding function
@@ -165,8 +165,7 @@ SELECT
   unit,
   tagname,
   nutr_desc,
-  anti_nutrient,
-  COUNT(nut_data.nutr_id) AS food_count,
+  COUNT(nut_data.nutr_id) AS n_foods,
   ROUND(avg(nut_data.nutr_val), 3) AS avg_val
 FROM
   nutr_def
