@@ -67,7 +67,7 @@ def verify_db(__dbtarget__, force_install=False):
             sys.stdout.flush()
 
         # Download nutra.db.tar.xz
-        url = f"https://bitbucket.org/dasheenster/nutra-utils/downloads/nutra-{__dbtarget__}.db.tar.xz"
+        url = f"https://bitbucket.org/dasheenster/nutra-utils/downloads/nutra.db-{__dbtarget__}.tar.xz"
         print(f"curl -L {url} -o nutra.db.tar.xz")
         urllib.request.urlretrieve(
             url, f"{cwd}/nutra.db.tar.xz", reporthook,
