@@ -34,19 +34,19 @@ import tarfile
 import time
 import urllib.request
 
-__dbtarget__ = "0.0.4"
+__dbtarget__ = "0.0.5"
 
 
 # Onboarding function
 def verify_db(__dbtarget__, force_install=False):
-    cwd = os.path.expanduser("~/.nutra/db")
+    cwd = os.path.expanduser("~/.nutra/usda")
 
     # TODO: put this in main __init__? Require License agreement?
     if not os.path.exists(cwd):
-        print("mkdir -p ~/.nutra/db")
+        print("mkdir -p ~/.nutra/usda")
         os.makedirs(cwd, mode=0o755)
 
-    if "nutra.db" not in os.listdir(cwd) or force_install:
+    if "usda.db" not in os.listdir(cwd) or force_install:
         """Downloads and unpacks the nt-sqlite3 db"""
 
         def reporthook(count, block_size, total_size):
@@ -66,41 +66,41 @@ def verify_db(__dbtarget__, force_install=False):
             )
             sys.stdout.flush()
 
-        # Download nutra.db.tar.xz
-        url = f"https://bitbucket.org/dasheenster/nutra-utils/downloads/nutra.db-{__dbtarget__}.tar.xz"
-        print(f"curl -L {url} -o nutra.db.tar.xz")
+        # Download usda.db.tar.xz
+        url = f"https://bitbucket.org/dasheenster/nutra-utils/downloads/usda.db-{__dbtarget__}.tar.xz"
+        print(f"curl -L {url} -o usda.db.tar.xz")
         urllib.request.urlretrieve(
-            url, f"{cwd}/nutra.db.tar.xz", reporthook,
+            url, f"{cwd}/usda.db.tar.xz", reporthook,
         )
         print()
 
         # Extract the archive
         # NOTE: in sqlfuncs() we verify version == __dbtarget__, and if needed invoke this method with force_install=True
-        with tarfile.open(f"{cwd}/nutra.db.tar.xz", mode="r:xz") as f:
+        with tarfile.open(f"{cwd}/usda.db.tar.xz", mode="r:xz") as f:
             try:
-                print("tar xvf nutra.db.tar.xz")
+                print("tar xvf usda.db.tar.xz")
                 f.extractall(cwd)
             except Exception as e:
                 print(repr(e))
                 print("ERROR: corrupt tarball, removing. Please try the download again")
-                print("rm -rf ~/.nutra/db")
+                print("rm -rf ~/.nutra/usda")
                 shutil.rmtree(cwd)
                 exit()
-        print("==> done downloading nutra.db")
+        print("==> done downloading usda.db")
 
 
 verify_db(__dbtarget__)
 
 # Connect to DB
 # TODO: support as parameter in parameters.csv
-db_path = os.path.expanduser("~/.nutra/db/nutra.db")
+db_path = os.path.expanduser("~/.nutra/usda/usda.db")
 conn = sqlite3.connect(db_path)
 # conn.row_factory = sqlite3.Row  # see: https://chrisostrouchov.com/post/python_sqlite/
 c = conn.cursor()
 
 
 def _sql(query, headers=False):
-    """Executes a SQL command to nutra.db"""
+    """Executes a SQL command to usda.db"""
     # TODO: DEBUG flag in properties.csv ... Print off all queries
     result = c.execute(query)
     rows = result.fetchall()
