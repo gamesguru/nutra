@@ -1,0 +1,3 @@
+[submodule "ntsqlite"]
+	path = ntsqlite
+	url = git@github.com:nutratech/nt-sqlite.git
