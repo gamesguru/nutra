@@ -93,4 +93,3 @@ def day(args, arg_parser=None, subparsers=None):
 
 def sync(args, arg_parser=None, subparsers=None):
     pass
-
