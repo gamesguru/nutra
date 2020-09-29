@@ -89,3 +89,8 @@ def day(args, arg_parser=None, subparsers=None):
         return day_analyze(day_csv_paths)
     else:
         return day_analyze(day_csv_paths, rda_csv_path=rda_csv_path)
+
+
+def sync(args, arg_parser=None, subparsers=None):
+    pass
+

@@ -150,6 +150,18 @@ def build_argparser():
     )
     nutrient_parser.set_defaults(func=nutrients)
 
+    # --------------------------
+    # Sync subparsers
+    # --------------------------
+    sync_parser = arg_parser.add_subparsers()
+
+    # sync_parser.set_defaults(func=sync_parser.print_help)
+    # sync_subparsers = sync_parser.add_subparsers(
+    #     title="nutra subcommands",
+    #     description="valid subcommands",
+    #     help="additional help",
+    # )
+
     return arg_parser
 
 
