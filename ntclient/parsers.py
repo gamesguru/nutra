@@ -29,7 +29,13 @@ along with this program.  If not, see <https://www.gnu.org/licenses/>.
 import os
 
 from .analyze import day_analyze, foods_analyze
-from .recipe import recipe_analyze, recipes_overview
+from .recipe import (
+    biometric_add as _biometric_add,
+    recipe_add as _recipe_add,
+    recipe_edit as _recipe_edit,
+    recipe_overview,
+    recipes_overview,
+)
 from .search import search_results
 from .usda import (
     list_nutrients,
@@ -70,11 +76,32 @@ def analyze(args, arg_parser=None, subparsers=None):
         return foods_analyze(food_ids, grams)
 
 
+def biometrics(args, arg_parser=None, subparsers=None):
+    print("not implemented ;]")
+
+
+def biometric_add(args, arg_parser=None, subparsers=None):
+    bio_vals = {
+        int(x.split(",")[0]): float(x.split(",")[1]) for x in args.biometric_val
+    }
+
+    return _biometric_add(bio_vals)
+
+
 def recipe(args, arg_parser=None, subparsers=None):
     if args.recipe_id:
-        return recipe_analyze(args.recipe_id)
+        return recipe_overview(args.recipe_id)
     else:
         return recipes_overview()
+
+
+def recipe_add(args, arg_parser=None, subparsers=None):
+    food_amts = {int(x.split(",")[0]): float(x.split(",")[1]) for x in args.food_amt}
+    return _recipe_add(args.name, food_amts)
+
+
+def recipe_edit(args, arg_parser=None, subparsers=None):
+    return _recipe_edit(args.recipe_id)
 
 
 def day(args, arg_parser=None, subparsers=None):

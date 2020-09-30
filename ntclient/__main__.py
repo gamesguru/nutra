@@ -43,9 +43,13 @@ else:
     # from .account import cmd_login
     from .parsers import (
         analyze,
+        biometric_add,
+        biometrics,
         day,
         nutrients,
         recipe,
+        recipe_add,
+        recipe_edit,
         search,
         sort,
         sync,
@@ -142,11 +146,49 @@ def build_argparser():
     # Recipe subcommand
     # --------------------------
     recipe_parser = subparsers.add_parser("recipe", help="list and analyze recipes")
+
+    recipe_subparsers = recipe_parser.add_subparsers(title="recipe subcommands")
+
+    recipe_add_parser = recipe_subparsers.add_parser("add", help="add a recipe")
+    recipe_add_parser.add_argument("name")
+    recipe_add_parser.add_argument(
+        "food_amt", nargs="+", help="food_id,grams e.g. 1001,15 for 15 grams butter"
+    )
+    recipe_add_parser.set_defaults(func=recipe_add)
+
+    recipe_edit_parser = recipe_subparsers.add_parser("edit", help="edit a recipe")
+    recipe_edit_parser.add_argument(
+        "recipe_id", type=int, help="edit recipe by ID", nargs=1
+    )
+    recipe_edit_parser.set_defaults(func=recipe_edit)
+
+    # default case
     recipe_parser.add_argument(
         "recipe_id", type=int, help="analyze recipe by ID", nargs="?"
     )
     recipe_parser.set_defaults(func=recipe)
 
+    # --------------------------
+    # Biometric subcommand
+    # --------------------------
+
+    biometric_parser = subparsers.add_parser(
+        "bio", help="view, add, remove biometric logs"
+    )
+    biometric_subparsers = biometric_parser.add_subparsers(
+        title="biometric subcommands"
+    )
+
+    biometric_add_parser = biometric_subparsers.add_parser(
+        "add", help="add a biometric log"
+    )
+    biometric_add_parser.add_argument(
+        "biometric_val", help="id,value pairs, e.g. 22,59 23,110 24,65 ", nargs="+"
+    )
+    biometric_add_parser.set_defaults(func=biometric_add)
+
+    # default case
+    biometric_parser.set_defaults(func=biometrics)
     # --------------------------
     # Nutrient subcommand
     # --------------------------
@@ -161,7 +203,7 @@ def build_argparser():
     sync_parser = subparsers.add_parser(
         "sync", help="sync, authorizations and online account management"
     )
-    sync_parser.set_defaults(func=sync)
+
     sync_subparsers = sync_parser.add_subparsers(title="sync subcommands")
 
     sync_login_parser = sync_subparsers.add_parser(
@@ -173,6 +215,9 @@ def build_argparser():
         "register", help="register an account to set up sync"
     )
     sync_register_parser.set_defaults(func=sync_register)
+
+    # default case
+    sync_parser.set_defaults(func=sync)
 
     return arg_parser
 
@@ -213,8 +258,10 @@ def main(argv=None):
         # sys.argv = ["./nutra", "sort", "-c", "789"]
         # sys.argv = ["./nutra", "anl", "9050", "9052"]
         # sys.argv = ["./nutra", "anl", "-g", "85", "23294"]
-        sys.argv = ["./nutra", "recipe"]
+        # sys.argv = ["./nutra", "recipe"]
         # sys.argv = ["./nutra", "recipe", "1"]
+        # sys.argv = ["./nutra", "recipe", "add", "Test", "1001,15"]
+        sys.argv = ["./nutra", "bio", "add", "22,59", "23,110", "24,65"]
         # sys.argv = ["./nutra", "nt"]
         # sys.argv = ["./nutra", "search", "grass", "fed", "beef"]
         # sys.argv = ["./nutra", "search", "grass"]
@@ -229,7 +276,7 @@ def main(argv=None):
                 if isinstance(action, argparse._SubParsersAction)
             ]
             subparsers = subparsers_actions[0].choices
-            ######################
+
             # Run the cmd function
             args.func(args, arg_parser=arg_parser, subparsers=subparsers)
         else:

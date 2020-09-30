@@ -8,9 +8,13 @@ Created on Wed Aug 12 15:14:00 2020
 
 from tabulate import tabulate
 
-from .utils.sqlfuncs.nt import recipes as _recipes
-
-# from .utils.sqlfuncs.usda import analyze_foods
+from .utils.sqlfuncs.nt import (
+    analyze_recipe,
+    biometrics,
+    recipes as _recipes,
+    recipe_overview as _recipe_overview,
+)
+from .utils.sqlfuncs.usda import analyze_foods, food_details
 
 
 def recipes_overview():
@@ -23,8 +27,8 @@ def recipes_overview():
             "name": recipe[1],
             "n_foods": recipe[2],
             "weight": recipe[3],
-            "guid": recipe[4],
-            "created": recipe[5],
+            # "guid": recipe[4],
+            # "created": recipe[5],
         }
         results.append(result)
 
@@ -33,19 +37,70 @@ def recipes_overview():
     return results
 
 
-def recipe_analyze(id):
-    recipes = _recipes()
+def recipe_overview(id):
+
+    recipe = analyze_recipe(id)
 
     try:
-        recipe = recipes[id]
+        name = recipe[0][1]
     except Exception as e:
         print(repr(e))
         return None
 
-    id = recipe[0]
-    name = recipe[1]
-    # foods = {x[0]: x[1] for x in recipe[3]}
-    # analyses = analyze_foods(foods)
-    print(f"{name}\n")
-    print("work in progress.. check back later.. need to re-use foods-analysis format")
+    print(name)
+
+    food_ids = {x[2]: x[3] for x in recipe}
+    foods = analyze_foods(food_ids.keys())
     return recipe
+
+
+def recipe_add(name, food_amts):
+    print()
+    print("New recipe: " + name + "\n")
+
+    food_names = {x[0]: x[2] for x in food_details(food_amts.keys())}
+
+    results = []
+    for id, grams in food_amts.items():
+        results.append([id, food_names[id], grams])
+
+    table = tabulate(results, headers=["id", "food_name", "grams"], tablefmt="presto")
+    print(table)
+
+    confirm = input("\nCreate recipe? [Y/n] ")
+
+    if confirm.lower() == "y":
+        print("not implemented ;]")
+
+
+def recipe_edit(id):
+
+    recipe = _recipe_overview(id)
+
+    print(recipe[1])
+    confirm = input("Do you wish to edit? [Y/n] ")
+
+    if confirm.lower() == "y":
+        print("not implemented ;]")
+
+
+def biometric_add(bio_vals):
+    print()
+    # print("New biometric log: " + name + "\n")
+
+    bio_names = {x[0]: x for x in biometrics()}
+
+    results = []
+    for id, value in bio_vals.items():
+        bio = bio_names[id]
+        results.append({"id": id, "name": bio[1], "value": value, "unit": bio[2]})
+
+    table = tabulate(results, headers="keys", tablefmt="presto")
+    print(table)
+
+    # TODO: print current user and date?
+
+    confirm = input("\nConfirm add biometric? [Y/n] ")
+
+    if confirm.lower() == "y":
+        print("not implemented ;]")

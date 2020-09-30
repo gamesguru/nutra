@@ -34,28 +34,50 @@ def dbver():
 # ----------------------
 
 
+def recipe_add():
+    query = """
+"""
+    return _sql(query)
+
+
 def recipes():
     query = """
 SELECT
   id,
   name,
-  (
-    SELECT
-      COUNT()
-    FROM
-      recipe_dat
-    WHERE
-      recipe_id = recipes.id) AS n_foods,
-  (
-    SELECT
-      SUM(grams)
-    FROM
-      recipe_dat
-    WHERE
-      recipe_id = recipes.id) AS weight,
+  COUNT(recipe_id) AS n_foods,
+  SUM(grams) AS grams,
   guid,
   created
 FROM
-  recipes;
+  recipes
+  LEFT JOIN recipe_dat ON recipe_id = id
+GROUP BY
+  id;
 """
     return _sql(query, headers=True)
+
+
+def analyze_recipe(id):
+    query = f"""
+SELECT
+  id,
+  name,
+  food_id,
+  grams
+FROM
+  recipes
+  INNER JOIN recipe_dat ON recipe_id = id
+    AND id = {id};
+"""
+    return _sql(query)
+
+
+def recipe_overview(id):
+    query = f"SELECT * FROM recipes WHERE id={id};"
+    return _sql(query)
+
+
+def biometrics():
+    query = "SELECT * FROM biometrics;"
+    return _sql(query)
