@@ -47,7 +47,7 @@ from .utils import (
     THRESH_WARN,
     VERBOSITY,
 )
-from .utils.sqlfuncs import (
+from .utils.sqlfuncs.usda import (
     analyze_foods,
     food_details,
     nutrients_overview,

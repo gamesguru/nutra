@@ -39,11 +39,20 @@ if sys.version_info < (3, 6, 5):
     exit(1)
 else:
     from . import __sha__, __title__, __version__
-    from .utils import __dbversion__
 
     # from .account import cmd_login
-    from .parsers import analyze, day, nutrients, recipe, search, sort, sync, sync_login
-    from .utils import TESTING, VERBOSITY
+    from .parsers import (
+        analyze,
+        day,
+        nutrients,
+        recipe,
+        search,
+        sort,
+        sync,
+        sync_login,
+        sync_register,
+    )
+    from .utils import TESTING, VERBOSITY, __dbversion__
 
     colorama_init()  # colorama
 
@@ -154,10 +163,16 @@ def build_argparser():
     )
     sync_parser.set_defaults(func=sync)
     sync_subparsers = sync_parser.add_subparsers(title="sync subcommands")
+
     sync_login_parser = sync_subparsers.add_parser(
         "login", help="login and store token locally"
     )
     sync_login_parser.set_defaults(func=sync_login)
+
+    sync_register_parser = sync_subparsers.add_parser(
+        "register", help="register an account to set up sync"
+    )
+    sync_register_parser.set_defaults(func=sync_register)
 
     return arg_parser
 
@@ -198,12 +213,12 @@ def main(argv=None):
         # sys.argv = ["./nutra", "sort", "-c", "789"]
         # sys.argv = ["./nutra", "anl", "9050", "9052"]
         # sys.argv = ["./nutra", "anl", "-g", "85", "23294"]
-        # sys.argv = ["./nutra", "recipe"]
+        sys.argv = ["./nutra", "recipe"]
         # sys.argv = ["./nutra", "recipe", "1"]
         # sys.argv = ["./nutra", "nt"]
         # sys.argv = ["./nutra", "search", "grass", "fed", "beef"]
         # sys.argv = ["./nutra", "search", "grass"]
-        sys.argv = ["./nutra", "sync", "login"]
+        # sys.argv = ["./nutra", "sync", "login"]
     try:
         args = arg_parser.parse_args()
         # args, unknown = arg_parser.parse_known_args()
@@ -224,4 +239,4 @@ def main(argv=None):
         if TESTING or VERBOSITY > 0:
             trace = "\n".join(traceback.format_tb(e.__traceback__))
             print(trace)
-        arg_parser.print_help()
+        # arg_parser.print_help()

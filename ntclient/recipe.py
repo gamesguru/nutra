@@ -6,53 +6,25 @@ Created on Wed Aug 12 15:14:00 2020
 @author: shane
 """
 
-import csv
-
 from tabulate import tabulate
 
-from .utils import NUTRA_DIR
-from .utils.sqlfuncs import analyze_foods
+from .utils.sqlfuncs.nt import recipes as _recipes
 
-cwd = f"{NUTRA_DIR}/recipe"
-
-
-def parse_recipes():
-    recipes = {}
-
-    with open(f"{cwd}/names.csv") as f:
-        csv_reader = csv.reader(f)
-        rows = list(csv_reader)[1:]
-        for id, name in rows:
-            id = int(id)
-            recipes[id] = [id, name]
-
-    with open(f"{cwd}/food_amounts.csv") as f:
-        csv_reader = csv.reader(f)
-        rows = list(csv_reader)[1:]
-        for row in rows:
-            if row[0] == "":
-                continue
-            id = int(row[0])
-            food_id = int(row[1])
-            grams = float(row[2])
-            recipe = recipes[id]
-            if len(recipe) == 2:
-                recipe.append([[food_id, grams]])
-            else:
-                recipe[2].append([food_id, grams])
-
-    return recipes
+# from .utils.sqlfuncs.usda import analyze_foods
 
 
 def recipes_overview():
-    recipes = parse_recipes()
+    recipes = _recipes()[1]
 
     results = []
-    for recipe in recipes.values():
+    for recipe in recipes:
         result = {
             "id": recipe[0],
             "name": recipe[1],
-            "n_foods": len(recipe[2]),
+            "n_foods": recipe[2],
+            "weight": recipe[3],
+            "guid": recipe[4],
+            "created": recipe[5],
         }
         results.append(result)
 
@@ -62,7 +34,7 @@ def recipes_overview():
 
 
 def recipe_analyze(id):
-    recipes = parse_recipes()
+    recipes = _recipes()
 
     try:
         recipe = recipes[id]

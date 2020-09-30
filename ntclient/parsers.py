@@ -29,7 +29,7 @@ along with this program.  If not, see <https://www.gnu.org/licenses/>.
 import os
 
 from .analyze import day_analyze, foods_analyze
-from .recipe import parse_recipes, recipe_analyze, recipes_overview
+from .recipe import recipe_analyze, recipes_overview
 from .search import search_results
 from .usda import (
     list_nutrients,
@@ -95,6 +95,25 @@ def sync(args, arg_parser=None, subparsers=None):
     from .sync import sync as _sync
 
     _sync()
+
+
+def sync_register(args, arg_parser=None, subparsers=None):
+    from getpass import getpass
+    from .sync import register
+
+    print("not implemented ;]")
+    return
+
+    email = input("email: ")
+    confirm_email = input("confirm email: ")
+    password = getpass("password: ")
+    confirm_password = getpass("confirm password: ")
+
+    if email != confirm_email or password != confirm_password:
+        print("Try again, email and password must match")
+        return
+
+    register(email, password)
 
 
 def sync_login(args, arg_parser=None, subparsers=None):

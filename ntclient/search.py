@@ -37,7 +37,7 @@ from .utils import (
     NUTR_IDS_FLAVONES,
     SEARCH_LIMIT,
 )
-from .utils.sqlfuncs import _sql, analyze_foods
+from .utils.sqlfuncs.usda import _sql, analyze_foods
 
 
 def search_results(words):

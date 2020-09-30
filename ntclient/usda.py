@@ -29,7 +29,7 @@ along with this program.  If not, see <https://www.gnu.org/licenses/>.
 from tabulate import tabulate
 
 from .utils import SEARCH_LIMIT
-from .utils.sqlfuncs import (
+from .utils.sqlfuncs.usda import (
     nutrients_details,
     nutrients_overview,
     sort_foods,

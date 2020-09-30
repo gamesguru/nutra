@@ -9,6 +9,10 @@ def sync():
     print("not implemented ;]")
 
 
+def register(email, password):
+    print("not implemented ;]")
+
+
 def login(email, password):
 
     url = f"{SERVER_HOST}/login"
