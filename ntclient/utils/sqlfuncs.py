@@ -34,7 +34,7 @@ import tarfile
 import time
 import urllib.request
 
-__dbtarget__ = "0.0.6"
+__dbtarget__ = "0.0.7"
 
 
 # Onboarding function
