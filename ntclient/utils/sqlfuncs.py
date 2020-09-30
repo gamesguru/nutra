@@ -92,7 +92,7 @@ def verify_db(__dbtarget__, force_install=False):
 verify_db(__dbtarget__)
 
 # Connect to DB
-# TODO: support as parameter in parameters.csv
+# TODO: support as parameter in admin.json or nt.sqlite
 db_path = os.path.expanduser("~/.nutra/usda/usda.sqlite")
 conn = sqlite3.connect(db_path)
 # conn.row_factory = sqlite3.Row  # see: https://chrisostrouchov.com/post/python_sqlite/

@@ -42,7 +42,7 @@ else:
     from .utils import __dbversion__
 
     # from .account import cmd_login
-    from .parsers import analyze, day, nutrients, recipe, search, sort
+    from .parsers import analyze, day, nutrients, recipe, search, sort, sync, sync_login
     from .utils import TESTING, VERBOSITY
 
     colorama_init()  # colorama
@@ -70,11 +70,7 @@ def build_argparser():
     # --------------------------
     # Sub-command parsers
     # --------------------------
-    subparsers = arg_parser.add_subparsers(
-        title="nutra subcommands",
-        description="valid subcommands",
-        help="additional help",
-    )
+    subparsers = arg_parser.add_subparsers(title="nutra subcommands")
 
     # TODO: init subcommand to onboard db and parameters.csv in ~/.nutra ??
 
@@ -153,14 +149,15 @@ def build_argparser():
     # --------------------------
     # Sync subparsers
     # --------------------------
-    sync_parser = arg_parser.add_subparsers()
-
-    # sync_parser.set_defaults(func=sync_parser.print_help)
-    # sync_subparsers = sync_parser.add_subparsers(
-    #     title="nutra subcommands",
-    #     description="valid subcommands",
-    #     help="additional help",
-    # )
+    sync_parser = subparsers.add_parser(
+        "sync", help="sync, authorizations and online account management"
+    )
+    sync_parser.set_defaults(func=sync)
+    sync_subparsers = sync_parser.add_subparsers(title="sync subcommands")
+    sync_login_parser = sync_subparsers.add_parser(
+        "login", help="login and store token locally"
+    )
+    sync_login_parser.set_defaults(func=sync_login)
 
     return arg_parser
 
@@ -202,10 +199,11 @@ def main(argv=None):
         # sys.argv = ["./nutra", "anl", "9050", "9052"]
         # sys.argv = ["./nutra", "anl", "-g", "85", "23294"]
         # sys.argv = ["./nutra", "recipe"]
-        sys.argv = ["./nutra", "recipe", "1"]
+        # sys.argv = ["./nutra", "recipe", "1"]
         # sys.argv = ["./nutra", "nt"]
         # sys.argv = ["./nutra", "search", "grass", "fed", "beef"]
         # sys.argv = ["./nutra", "search", "grass"]
+        sys.argv = ["./nutra", "sync", "login"]
     try:
         args = arg_parser.parse_args()
         # args, unknown = arg_parser.parse_known_args()

@@ -11,7 +11,6 @@ from colorama import Fore
 from dotenv import load_dotenv
 
 from .gitutils import git_sha
-from .csvutils import parse_parameters
 from .sqlfuncs import __dbversion__, __dbtarget__
 
 
@@ -24,15 +23,13 @@ __dbtarget__ = __dbtarget__
 load_dotenv(verbose=False)
 
 NUTRA_DIR = os.path.join(os.path.expanduser("~"), ".nutra")
-try:
-    parameters = parse_parameters(NUTRA_DIR)
-except Exception as e:
-    print(f"Warning: {repr(e)} ['~/.nutra/parameters.csv']")
-    parameters = dict()
+
+REMOTE_HOST = "https://nutra-server.herokuapp.com"
+SERVER_HOST = os.getenv("NUTRA_OVERRIDE_LOCAL_SERVER_HOST", REMOTE_HOST)
 
 
 TESTING = bool(int(os.getenv("NUTRA_CLI_NO_ARGS_INJECT_MOCKS", False)))
-# TODO: support more settings via parameters.csv
+# TODO: support more settings via admin.json and nt.sqlite
 VERBOSITY = 1
 
 
@@ -53,9 +50,8 @@ COLOR_OVER = Fore.LIGHTMAGENTA_EX
 COLOR_DEFAULT = Fore.BLUE
 
 SEARCH_LIMIT = 150
-FOOD_NAME_TRUNC = (
-    int(parameters["FOOD_NAME_TRUNC"]) if "FOOD_NAME_TRUNC" in parameters else 200
-)
+FOOD_NAME_TRUNC = 200
+# int(parameters["FOOD_NAME_TRUNC"]) if "FOOD_NAME_TRUNC" in parameters else 200
 
 
 # ------------------------

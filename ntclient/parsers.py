@@ -92,4 +92,15 @@ def day(args, arg_parser=None, subparsers=None):
 
 
 def sync(args, arg_parser=None, subparsers=None):
-    pass
+    from .sync import sync as _sync
+
+    _sync()
+
+
+def sync_login(args, arg_parser=None, subparsers=None):
+    from getpass import getpass
+    from .sync import login
+
+    email = input("email: ")
+    password = getpass("password: ")
+    login(email, password)
