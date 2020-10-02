@@ -10,9 +10,8 @@ from tabulate import tabulate
 
 from .utils.sqlfuncs.nt import (
     analyze_recipe,
-    biometrics,
     recipes as _recipes,
-    recipe_overview as _recipe_overview,
+    recipe as _recipe_overview,
 )
 from .utils.sqlfuncs.usda import analyze_foods, food_details
 
@@ -79,28 +78,6 @@ def recipe_edit(id):
 
     print(recipe[1])
     confirm = input("Do you wish to edit? [Y/n] ")
-
-    if confirm.lower() == "y":
-        print("not implemented ;]")
-
-
-def biometric_add(bio_vals):
-    print()
-    # print("New biometric log: " + name + "\n")
-
-    bio_names = {x[0]: x for x in biometrics()}
-
-    results = []
-    for id, value in bio_vals.items():
-        bio = bio_names[id]
-        results.append({"id": id, "name": bio[1], "value": value, "unit": bio[2]})
-
-    table = tabulate(results, headers="keys", tablefmt="presto")
-    print(table)
-
-    # TODO: print current user and date?
-
-    confirm = input("\nConfirm add biometric? [Y/n] ")
 
     if confirm.lower() == "y":
         print("not implemented ;]")

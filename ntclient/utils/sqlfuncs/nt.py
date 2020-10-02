@@ -7,10 +7,16 @@ conn = sqlite3.connect(db_path)
 c = conn.cursor()
 
 
-def _sql(query, headers=False):
+def _sql(query, args=None, headers=False):
     """Executes a SQL command to usda.sqlite"""
     # TODO: DEBUG flag in properties.csv ... Print off all queries
-    result = c.execute(query)
+    if args:
+        if type(args) == list:
+            result = c.executemany(query, args)
+        else:
+            result = c.execute(query, args)
+    else:
+        result = c.execute(query)
     rows = result.fetchall()
     if headers:
         headers = [x[0] for x in result.description]
@@ -73,11 +79,20 @@ FROM
     return _sql(query)
 
 
-def recipe_overview(id):
-    query = f"SELECT * FROM recipes WHERE id={id};"
-    return _sql(query)
+def recipe(id):
+    query = "SELECT * FROM recipes WHERE id=?;"
+    return _sql(query, id)
 
 
 def biometrics():
     query = "SELECT * FROM biometrics;"
     return _sql(query)
+
+
+def biometric_add(bio_vals):
+    # TODO: get current user_id from __init__.py
+    user_id = 1
+    query1 = "INSERT INTO biometric_log(user_id, tags, notes) VALUES (?, ?, ?) RETURNING id;"
+    result = _sql(query1, (user_id, "", ""))
+    print(result)
+

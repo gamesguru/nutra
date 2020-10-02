@@ -122,7 +122,7 @@ def build_argparser():
     analyze_parser.add_argument(
         "-g",
         dest="grams",
-        metavar="grams",
+        # metavar="grams",
         type=float,
         help="analyze for custom number of grams (default is 100g)",
     )
@@ -157,14 +157,12 @@ def build_argparser():
     recipe_add_parser.set_defaults(func=recipe_add)
 
     recipe_edit_parser = recipe_subparsers.add_parser("edit", help="edit a recipe")
-    recipe_edit_parser.add_argument(
-        "recipe_id", type=int, help="edit recipe by ID", nargs=1
-    )
+    recipe_edit_parser.add_argument("recipe_id", type=int, help="edit recipe by ID")
     recipe_edit_parser.set_defaults(func=recipe_edit)
 
     # default case
     recipe_parser.add_argument(
-        "recipe_id", type=int, help="analyze recipe by ID", nargs="?"
+        "-n", dest="recipe_id", type=int, help="analyze recipe by ID"
     )
     recipe_parser.set_defaults(func=recipe)
 

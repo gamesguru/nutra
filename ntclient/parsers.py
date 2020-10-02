@@ -30,13 +30,13 @@ import os
 
 from .analyze import day_analyze, foods_analyze
 from .recipe import (
-    biometric_add as _biometric_add,
     recipe_add as _recipe_add,
     recipe_edit as _recipe_edit,
     recipe_overview,
     recipes_overview,
 )
 from .search import search_results
+from .services.biometrics import biometric_add as _biometric_add
 from .usda import (
     list_nutrients,
     sort_foods_by_kcal_nutrient_id,
