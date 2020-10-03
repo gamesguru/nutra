@@ -207,6 +207,7 @@ def build_argparser():
     sync_login_parser = sync_subparsers.add_parser(
         "login", help="login and store token locally"
     )
+    sync_login_parser.add_argument("email")
     sync_login_parser.set_defaults(func=sync_login)
 
     sync_register_parser = sync_subparsers.add_parser(

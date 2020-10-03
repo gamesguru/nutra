@@ -4,6 +4,8 @@ import sqlite3
 # Connect to DB
 db_path = os.path.expanduser("~/.nutra/nt/nt.sqlite")
 conn = sqlite3.connect(db_path)
+
+# move this
 c = conn.cursor()
 
 
@@ -92,7 +94,7 @@ def biometrics():
 def biometric_add(bio_vals):
     # TODO: get current user_id from __init__.py
     user_id = 1
-    query1 = "INSERT INTO biometric_log(user_id, tags, notes) VALUES (?, ?, ?) RETURNING id;"
+    query1 = "INSERT INTO biometric_log(user_id, tags, notes) VALUES (?, ?, ?)"
     result = _sql(query1, (user_id, "", ""))
-    print(result)
-
+    id = c.lastrowid
+    print(id)

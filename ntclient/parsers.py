@@ -147,6 +147,5 @@ def sync_login(args, arg_parser=None, subparsers=None):
     from getpass import getpass
     from .sync import login
 
-    email = input("email: ")
     password = getpass("password: ")
-    login(email, password)
+    login(args.email, password)
