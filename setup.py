@@ -11,7 +11,7 @@ import subprocess
 import sys
 import traceback
 
-from setuptools import setup
+from setuptools import setup, find_packages
 
 # Includes the git sha on PyPI releases
 try:
@@ -75,7 +75,7 @@ setup(
     classifiers=CLASSIFIERS,
     install_requires=REQUIREMENTS,
     python_requires=">=3.6.5",
-    packages=["ntclient", "ntclient/utils"],
+    packages=find_packages(),
     entry_points={"console_scripts": ["nutra=ntclient.__main__:main"]},
     description="Home and office nutrient tracking software",
     long_description=README,
@@ -89,7 +89,9 @@ setup(
 shutil.rmtree(f"{PKG_NAME}.egg-info", True)
 shutil.rmtree("__pycache__", True)
 shutil.rmtree("ntclient/__pycache__", True)
+shutil.rmtree("ntclient/services/__pycache__", True)
 shutil.rmtree("ntclient/utils/__pycache__", True)
+shutil.rmtree("ntclient/utils/sqlfuncs/__pycache__", True)
 shutil.rmtree(".pytest_cache", True)
 if os.path.exists("MANIFEST"):
     os.remove("MANIFEST")
