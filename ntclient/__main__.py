@@ -56,7 +56,7 @@ else:
         sync_login,
         sync_register,
     )
-    from .utils import TESTING, VERBOSITY, __dbversion__
+    from .utils import TESTING, VERBOSITY, __nt_db_version__, __usda_db_version__
 
     colorama_init()  # colorama
 
@@ -77,7 +77,7 @@ def build_argparser():
         "--version",
         action="version",
         version=f"{__title__} version "
-        + f"{__version__}   ({__sha__})  [DB v{__dbversion__}]",
+        + f"{__version__}   ({__sha__})  [DB usda v{__usda_db_version__}, nt v{__nt_db_version__}]",
     )
 
     # --------------------------
@@ -260,7 +260,8 @@ def main(argv=None):
         # sys.argv = ["./nutra", "recipe"]
         # sys.argv = ["./nutra", "recipe", "1"]
         # sys.argv = ["./nutra", "recipe", "add", "Test", "1001,15"]
-        sys.argv = ["./nutra", "bio", "add", "22,59", "23,110", "24,65"]
+        sys.argv = ["./nutra", "bio"]
+        # sys.argv = ["./nutra", "bio", "add", "22,59", "23,110", "24,65"]
         # sys.argv = ["./nutra", "nt"]
         # sys.argv = ["./nutra", "search", "grass", "fed", "beef"]
         # sys.argv = ["./nutra", "search", "grass"]

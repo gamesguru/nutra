@@ -25,7 +25,7 @@ You should have received a copy of the GNU General Public License
 along with this program.  If not, see <https://www.gnu.org/licenses/>.
 """
 
-from .utils import __dbtarget__, __dbversion__
+from .utils import __nt_db_version__, __usda_db_version__
 
 try:
     from .utils import __sha__
@@ -33,8 +33,8 @@ except ImportError as e:
     __sha__ = "UNKNOWN"
 
 
-__title__ = "nutra"
-__version__ = "0.1.0.dev15"
+__title__ = "nutra cli"
+__version__ = "0.2.0.dev0"
 __sha__ = __sha__
 __author__ = "Shane Jaroch"
 __license__ = "GPL v3"

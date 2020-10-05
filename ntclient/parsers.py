@@ -35,7 +35,10 @@ from .services.recipe import (
     recipe_overview,
     recipes_overview,
 )
-from .services.biometrics import biometric_add as _biometric_add
+from .services.biometrics import (
+    biometrics as _biometrics,
+    biometric_add as _biometric_add,
+)
 from .services.usda import (
     list_nutrients,
     search_results,
@@ -77,7 +80,8 @@ def analyze(args, arg_parser=None, subparsers=None):
 
 
 def biometrics(args, arg_parser=None, subparsers=None):
-    print("not implemented ;]")
+
+    return _biometrics()
 
 
 def biometric_add(args, arg_parser=None, subparsers=None):

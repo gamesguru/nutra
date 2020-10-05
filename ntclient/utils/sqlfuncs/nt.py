@@ -1,24 +1,26 @@
 import os
 import sqlite3
 
+# Set the usda.sqlite target version here
+__nt_db_target__ = "0.0.0"
+
 # Connect to DB
 db_path = os.path.expanduser("~/.nutra/nt/nt.sqlite")
 conn = sqlite3.connect(db_path)
 
-# move this
-c = conn.cursor()
-
 
 def _sql(query, args=None, headers=False):
-    """Executes a SQL command to usda.sqlite"""
+    """Executes a SQL command to nt.sqlite"""
+    cur = conn.cursor()
+
     # TODO: DEBUG flag in properties.csv ... Print off all queries
     if args:
         if type(args) == list:
-            result = c.executemany(query, args)
-        else:
-            result = c.execute(query, args)
+            result = cur.executemany(query, args)
+        else:  # tuple
+            result = cur.execute(query, args)
     else:
-        result = c.execute(query)
+        result = cur.execute(query)
     rows = result.fetchall()
     if headers:
         headers = [x[0] for x in result.description]
@@ -37,8 +39,11 @@ def dbver():
     return result[-1][1]
 
 
+# TODO: Verify version
+__nt_db_version__ = dbver()
+
 # ----------------------
-# SQL nutra functions
+# Recipe functions
 # ----------------------
 
 
@@ -83,7 +88,12 @@ FROM
 
 def recipe(id):
     query = "SELECT * FROM recipes WHERE id=?;"
-    return _sql(query, id)
+    return _sql(query, (id,))
+
+
+# ----------------------
+# Biometric functions
+# ----------------------
 
 
 def biometrics():
@@ -91,10 +101,16 @@ def biometrics():
     return _sql(query)
 
 
+def biometric_logs(profile_id):
+    query = "SELECT * FROM biometric_log WHERE profile_id=?"
+    return _sql(query, args=(profile_id,), headers=True)
+
+
 def biometric_add(bio_vals):
-    # TODO: get current user_id from __init__.py
-    user_id = 1
-    query1 = "INSERT INTO biometric_log(user_id, tags, notes) VALUES (?, ?, ?)"
-    result = _sql(query1, (user_id, "", ""))
-    id = c.lastrowid
+    cur = conn.cursor()
+    # TODO: get current profile_id from __init__.py and admin.json
+    profile_id = 1
+    query1 = "INSERT INTO biometric_log(profile_id, tags, notes) VALUES (?, ?, ?)"
+    result = _sql(query1, (profile_id, "", ""))
+    id = cur.lastrowid
     print(id)

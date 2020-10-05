@@ -35,11 +35,11 @@ import time
 import urllib.request
 
 # Set the usda.sqlite target version here
-__dbtarget__ = "0.0.7"
+__usda_db_target__ = "0.0.7"
 
 
 # Onboarding function
-def verify_db(__dbtarget__, force_install=False):
+def verify_db(__usda_db_target__, force_install=False):
     cwd = os.path.expanduser("~/.nutra/usda")
 
     # TODO: put this in main __init__? Require License agreement?
@@ -68,7 +68,7 @@ def verify_db(__dbtarget__, force_install=False):
             sys.stdout.flush()
 
         # Download usda.sqlite.tar.xz
-        url = f"https://bitbucket.org/dasheenster/nutra-utils/downloads/usda.sqlite-{__dbtarget__}.tar.xz"
+        url = f"https://bitbucket.org/dasheenster/nutra-utils/downloads/usda.sqlite-{__usda_db_target__}.tar.xz"
         print(f"curl -L {url} -o usda.sqlite.tar.xz")
         urllib.request.urlretrieve(
             url, f"{cwd}/usda.sqlite.tar.xz", reporthook,
@@ -76,7 +76,7 @@ def verify_db(__dbtarget__, force_install=False):
         print()
 
         # Extract the archive
-        # NOTE: in sqlfuncs() we verify version == __dbtarget__, and if needed invoke this method with force_install=True
+        # NOTE: in sqlfuncs() we verify version == __usda_db_target__, and if needed invoke this method with force_install=True
         with tarfile.open(f"{cwd}/usda.sqlite.tar.xz", mode="r:xz") as f:
             try:
                 print("tar xvf usda.sqlite.tar.xz")
@@ -90,7 +90,7 @@ def verify_db(__dbtarget__, force_install=False):
         print("==> done downloading usda.sqlite")
 
 
-verify_db(__dbtarget__)
+verify_db(__usda_db_target__)
 
 # Connect to DB
 # TODO: support as parameter in admin.json or nt.sqlite
@@ -124,18 +124,18 @@ def dbver():
 
 # Verify version
 try:
-    __dbversion__ = dbver()
-    if __dbtarget__ != __dbversion__:
+    __usda_db_version__ = dbver()
+    if __usda_db_target__ != __usda_db_version__:
         print(
-            f"NOTE: target db ({__dbtarget__}) differs from current ({__dbversion__}).. downloading target"
+            f"NOTE: target db ({__usda_db_target__}) differs from current ({__usda_db_version__}).. downloading target"
         )
-        verify_db(__dbtarget__, force_install=True)
+        verify_db(__usda_db_target__, force_install=True)
         print("NOTE: please run your command again now")
         exit()
 except Exception as e:
     print(repr(e))
     print("ERROR: corrupt databasde.. downloading fresh")
-    verify_db(__dbtarget__, force_install=True)
+    verify_db(__usda_db_target__, force_install=True)
     print("NOTE: please run your command again now")
     exit()
 
