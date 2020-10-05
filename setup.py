@@ -20,12 +20,12 @@ try:
         .decode()
         .rstrip()
     )
-    open("ntclient/__sha__.py", "w+").writelines([f'__sha__ = "{sha}"\n'])
+    open("ntclient/utils/__sha__.py", "w+").writelines([f'__sha__ = "{sha}"\n'])
 except Exception as e:
     trace = "\n".join(traceback.format_tb(e.__traceback__))
     print(trace)
     print('WARN: Using "UNKNOWN" as git sha')
-    open("ntclient/__sha__.py", "w+").writelines(['__sha__ = "UNKNOWN"\n'])
+    open("ntclient/utils/__sha__.py", "w+").writelines(['__sha__ = "UNKNOWN"\n'])
 
 
 from ntclient import __version__

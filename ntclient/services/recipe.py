@@ -8,12 +8,12 @@ Created on Wed Aug 12 15:14:00 2020
 
 from tabulate import tabulate
 
-from .utils.sqlfuncs.nt import (
+from ..utils.sqlfuncs.nt import (
     analyze_recipe,
     recipes as _recipes,
     recipe as _recipe_overview,
 )
-from .utils.sqlfuncs.usda import analyze_foods, food_details
+from ..utils.sqlfuncs.usda import analyze_foods, food_details
 
 
 def recipes_overview():

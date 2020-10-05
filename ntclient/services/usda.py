@@ -25,21 +25,84 @@ You should have received a copy of the GNU General Public License
 along with this program.  If not, see <https://www.gnu.org/licenses/>.
 """
 
+
 import shutil
 
 from fuzzywuzzy import fuzz
 from tabulate import tabulate
 
-from .utils import (
+from ..utils import (
     FOOD_NAME_TRUNC,
     NUTR_ID_KCAL,
     NUTR_IDS_AMINOS,
     NUTR_IDS_FLAVONES,
     SEARCH_LIMIT,
 )
-from .utils.sqlfuncs.usda import _sql, analyze_foods
+from ..utils.sqlfuncs.usda import (
+    _sql,
+    analyze_foods,
+    nutrients_details,
+    nutrients_overview,
+    sort_foods,
+    sort_foods_by_kcal,
+)
 
 
+def list_nutrients():
+
+    headers, nutrients = nutrients_details()
+    headers.append("avg_rda")
+    nutrients = [list(x) for x in nutrients]
+    for n in nutrients:
+        rda = n[1]
+        val = n[6]
+        if rda:
+            n.append(round(100 * val / rda, 1))
+        else:
+            n.append(None)
+
+    table = tabulate(nutrients, headers=headers, tablefmt="simple")
+    print(table)
+    return nutrients
+
+
+# -------------------------
+# Sort
+# -------------------------
+def sort_foods_by_nutrient_id(id, by_kcal=False):
+    # TODO: sub shrt_desc for long if available, and support FOOD_NAME_TRUNC
+    results = sort_foods(id)
+    results = [list(x) for x in results][:SEARCH_LIMIT]
+
+    nutrients = nutrients_overview()
+    nutrient = nutrients[id]
+    unit = nutrient[2]
+
+    headers = ["food", "fdgrp", f"val ({unit})", "kcal", "long_desc"]
+
+    table = tabulate(results, headers=headers, tablefmt="simple")
+    print(table)
+    return results
+
+
+def sort_foods_by_kcal_nutrient_id(id):
+    results = sort_foods_by_kcal(id)
+    results = [list(x) for x in results][:SEARCH_LIMIT]
+
+    nutrients = nutrients_overview()
+    nutrient = nutrients[id]
+    unit = nutrient[2]
+
+    headers = ["food", "fdgrp", f"val ({unit})", "kcal", "long_desc"]
+
+    table = tabulate(results, headers=headers, tablefmt="simple")
+    print(table)
+    return results
+
+
+# -------------------------
+# Search
+# -------------------------
 def search_results(words):
     food_des = _sql("SELECT * FROM food_des;")
 

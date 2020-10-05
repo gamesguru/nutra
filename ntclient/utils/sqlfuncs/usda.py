@@ -34,6 +34,7 @@ import tarfile
 import time
 import urllib.request
 
+# Set the usda.sqlite target version here
 __dbtarget__ = "0.0.7"
 
 

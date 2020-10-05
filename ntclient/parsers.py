@@ -28,17 +28,17 @@ along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 import os
 
-from .analyze import day_analyze, foods_analyze
-from .recipe import (
+from .services.analyze import day_analyze, foods_analyze
+from .services.recipe import (
     recipe_add as _recipe_add,
     recipe_edit as _recipe_edit,
     recipe_overview,
     recipes_overview,
 )
-from .search import search_results
 from .services.biometrics import biometric_add as _biometric_add
-from .usda import (
+from .services.usda import (
     list_nutrients,
+    search_results,
     sort_foods_by_kcal_nutrient_id,
     sort_foods_by_nutrient_id,
 )
@@ -119,14 +119,14 @@ def day(args, arg_parser=None, subparsers=None):
 
 
 def sync(args, arg_parser=None, subparsers=None):
-    from .sync import sync as _sync
+    from .services.sync import sync as _sync
 
     _sync()
 
 
 def sync_register(args, arg_parser=None, subparsers=None):
     from getpass import getpass
-    from .sync import register
+    from .services.sync import register
 
     print("not implemented ;]")
     return
@@ -145,7 +145,7 @@ def sync_register(args, arg_parser=None, subparsers=None):
 
 def sync_login(args, arg_parser=None, subparsers=None):
     from getpass import getpass
-    from .sync import login
+    from .services.sync import login
 
     password = getpass("password: ")
     login(args.email, password)

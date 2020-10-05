@@ -25,10 +25,13 @@ You should have received a copy of the GNU General Public License
 along with this program.  If not, see <https://www.gnu.org/licenses/>.
 """
 
+from .utils import __dbtarget__, __dbversion__
+
 try:
-    from .__sha__ import __sha__
+    from .utils import __sha__
 except ImportError as e:
     __sha__ = "UNKNOWN"
+
 
 __title__ = "nutra"
 __version__ = "0.1.0.dev15"

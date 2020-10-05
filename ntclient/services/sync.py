@@ -1,6 +1,6 @@
 import json
 
-from .utils import NUTRA_DIR, SERVER_HOST
+from ..utils import NUTRA_DIR, SERVER_HOST
 
 import requests
 

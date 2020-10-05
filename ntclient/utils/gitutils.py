@@ -33,7 +33,7 @@ def git_sha():
     cwd = os.getcwd()
 
     try:
-        from ..__sha__ import __sha__
+        from .__sha__ import __sha__
     except Exception as e1:
         import subprocess
 

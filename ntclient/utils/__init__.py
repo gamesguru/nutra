@@ -11,13 +11,10 @@ from colorama import Fore
 from dotenv import load_dotenv
 
 from .gitutils import git_sha
-from .sqlfuncs.usda import __dbversion__, __dbtarget__
-
+from .sqlfuncs.usda import __dbtarget__, __dbversion__
 
 # Export for package level
 __sha__ = git_sha()
-__dbversion__ = __dbversion__
-__dbtarget__ = __dbtarget__
 
 # Read in .env file if it exists locally, else look to env vars
 load_dotenv(verbose=False)
