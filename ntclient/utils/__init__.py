@@ -11,8 +11,8 @@ from colorama import Fore
 from dotenv import load_dotenv
 
 from .gitutils import git_sha
-from .sqlfuncs.nt import __nt_db_target__, __nt_db_version__
-from .sqlfuncs.usda import __usda_db_target__, __usda_db_version__
+from .sqlfuncs.nt import __db_target_nt__, __db_version_nt__
+from .sqlfuncs.usda import __db_target_usda__, __db_version_usda__
 
 # Export for package level
 __sha__ = git_sha()

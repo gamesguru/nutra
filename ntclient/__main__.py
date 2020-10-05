@@ -38,7 +38,13 @@ if sys.version_info < (3, 6, 5):
     print("HINT:  You're running Python " + ver)
     exit(1)
 else:
-    from . import __sha__, __title__, __version__
+    from . import (
+        __db_version_nt__,
+        __db_version_usda__,
+        __sha__,
+        __title__,
+        __version__,
+    )
 
     # from .account import cmd_login
     from .parsers import (
@@ -56,7 +62,7 @@ else:
         sync_login,
         sync_register,
     )
-    from .utils import TESTING, VERBOSITY, __nt_db_version__, __usda_db_version__
+    from .utils import TESTING, VERBOSITY
 
     colorama_init()  # colorama
 
@@ -77,7 +83,7 @@ def build_argparser():
         "--version",
         action="version",
         version=f"{__title__} version "
-        + f"{__version__}   ({__sha__})  [DB usda v{__usda_db_version__}, nt v{__nt_db_version__}]",
+        + f"{__version__}   ({__sha__})  [DB usda v{__db_version_usda__}, nt v{__db_version_nt__}]",
     )
 
     # --------------------------

@@ -2,7 +2,7 @@ import os
 import sqlite3
 
 # Set the usda.sqlite target version here
-__nt_db_target__ = "0.0.0"
+__db_target_nt__ = "0.0.0"
 
 # Connect to DB
 db_path = os.path.expanduser("~/.nutra/nt/nt.sqlite")
@@ -36,11 +36,11 @@ def _sql(query, args=None, headers=False):
 def dbver():
     query = "SELECT * FROM version;"
     result = _sql(query)
-    return result[-1][1]
+    return result[-1]
 
 
 # TODO: Verify version
-__nt_db_version__ = dbver()
+__db_version_nt__ = dbver()[1]
 
 # ----------------------
 # Recipe functions
