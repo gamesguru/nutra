@@ -6,7 +6,12 @@ __db_target_nt__ = "0.0.0"
 
 # Connect to DB
 db_path = os.path.expanduser("~/.nutra/nt/nt.sqlite")
-conn = sqlite3.connect(db_path)
+if os.path.isfile(db_path):
+    conn = sqlite3.connect(db_path)
+else:
+    print("error: nt database doesn't exist, please run init")
+    print("warn: init not implemented, manually build db with ntsqlite README")
+    exit()
 
 
 def _sql(query, args=None, headers=False):
@@ -89,6 +94,35 @@ FROM
 def recipe(id):
     query = "SELECT * FROM recipes WHERE id=?;"
     return _sql(query, (id,))
+
+
+# ----------------------------
+# Profile and Sync functions
+# ----------------------------
+
+
+def sql_last_sync():
+    query = """
+SELECT
+  max(
+    (SELECT IFNULL(max(last_sync), -1) FROM profiles),
+    (SELECT IFNULL(max(last_sync), -1) FROM biometric_log),
+    (SELECT IFNULL(max(last_sync), -1) FROM recipes),
+    (SELECT IFNULL(max(last_sync), -1) FROM food_log),
+    (SELECT IFNULL(max(last_sync), -1) FROM recipe_log),
+    (SELECT IFNULL(max(last_sync), -1) FROM rda)
+  ) AS last_sync;
+"""
+    return _sql(query)[0][0]
+
+
+def sql_inserted_or_updated_entities(last_sync):
+    query = f"SELECT * FROM profiles WHERE updated>{last_sync}"
+    profiles = _sql(query)
+    query = f"SELECT * FROM biometric_log WHERE updated>{last_sync}"
+    bio_logs = _sql(query)
+
+    return profiles, bio_logs
 
 
 # ----------------------

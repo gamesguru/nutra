@@ -1,12 +1,55 @@
 import json
 
 from ..utils import NUTRA_DIR, SERVER_HOST
+from ..utils.sqlfuncs.nt import sql_inserted_or_updated_entities, sql_last_sync
 
 import requests
 
 
 def sync():
-    print("not implemented ;]")
+    def get():
+        params = {"uid": profile_guid, "last_sync": last_sync}
+
+        print(f"GET {url}")
+        response = requests.get(
+            url, params=params, headers={"Authorization": f"Bearer {token}"}
+        )
+        res = response.json()
+        data = res["data"]
+        if "error" in data:
+            print("error: " + data["error"])
+            return
+
+        print(data)
+
+    def post():
+        profiles, bio_logs = sql_inserted_or_updated_entities(last_sync)
+        data = {
+            "uid": profile_guid,
+            "entities": {"profiles": profiles, "bio_logs": bio_logs},
+        }
+
+        print(f"POST {url}")
+        response = requests.post(
+            url, json=data, headers={"Authorization": f"Bearer {token}"}
+        )
+        res = response.json()
+        data = res["data"]
+        if "error" in data:
+            print("error: " + data["error"])
+            return
+
+        print(data)
+
+    # TODO: use real profile_id
+    url = f"{SERVER_HOST}/sync"
+    last_sync = sql_last_sync()
+
+    profile_id = 1
+    profile_guid = "a0fdac7ab369de43f029a460879c854f"
+    token = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MSwiYXV0aC1sZXZlbCI6MjAsImV4cGlyZXMiOjE5MTU5ODQyMjl9.L66fkA-9Yq6Y0AhqlEuZh8w1Hh0BJGkNjAJHv71kOHY"
+    get()
+    post()
 
 
 def register(email, password):

@@ -271,11 +271,12 @@ def main(argv=None):
         # sys.argv = ["./nutra", "recipe"]
         # sys.argv = ["./nutra", "recipe", "1"]
         # sys.argv = ["./nutra", "recipe", "add", "Test", "1001,15"]
-        sys.argv = ["./nutra", "bio"]
+        # sys.argv = ["./nutra", "bio"]
         # sys.argv = ["./nutra", "bio", "add", "22,59", "23,110", "24,65"]
         # sys.argv = ["./nutra", "nt"]
         # sys.argv = ["./nutra", "search", "grass", "fed", "beef"]
         # sys.argv = ["./nutra", "search", "grass"]
+        sys.argv = ["./nutra", "sync"]
         # sys.argv = ["./nutra", "sync", "login"]
     try:
         args = arg_parser.parse_args()
