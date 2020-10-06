@@ -96,17 +96,17 @@ def recipe(id):
 # ----------------------
 
 
-def biometrics():
+def sql_biometrics():
     query = "SELECT * FROM biometrics;"
-    return _sql(query)
+    return _sql(query, headers=True)
 
 
-def biometric_logs(profile_id):
+def sql_biometric_logs(profile_id):
     query = "SELECT * FROM biometric_log WHERE profile_id=?"
     return _sql(query, args=(profile_id,), headers=True)
 
 
-def biometric_add(bio_vals):
+def sql_biometric_add(bio_vals):
     cur = conn.cursor()
     # TODO: get current profile_id from __init__.py and admin.json
     profile_id = 1

@@ -2,3 +2,4 @@ include ntsqlite/LICENSE
 include ntsqlite/README.rst
 include ntsqlite/sql/*
 include ntsqlite/sql/data/*
+include ntsqlite/sql/upgrade_scripts/*

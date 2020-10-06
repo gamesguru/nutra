@@ -33,7 +33,7 @@ except ImportError as e:
     __sha__ = "UNKNOWN"
 
 
-__title__ = "nutra cli"
+__title__ = "nutra"
 __version__ = "0.2.0.dev0"
 __sha__ = __sha__
 __author__ = "Shane Jaroch"

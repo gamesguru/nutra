@@ -49,8 +49,9 @@ else:
     # from .account import cmd_login
     from .parsers import (
         analyze,
-        biometric_add,
-        biometrics,
+        bio,
+        bio_log,
+        bio_log_add,
         day,
         nutrients,
         recipe,
@@ -82,7 +83,7 @@ def build_argparser():
         "-v",
         "--version",
         action="version",
-        version=f"{__title__} version "
+        version=f"{__title__} cli version "
         + f"{__version__}   ({__sha__})  [DB usda v{__db_version_usda__}, nt v{__db_version_nt__}]",
     )
 
@@ -128,7 +129,6 @@ def build_argparser():
     analyze_parser.add_argument(
         "-g",
         dest="grams",
-        # metavar="grams",
         type=float,
         help="analyze for custom number of grams (default is 100g)",
     )
@@ -175,24 +175,27 @@ def build_argparser():
     # --------------------------
     # Biometric subcommand
     # --------------------------
+    bio_parser = subparsers.add_parser("bio", help="view, add, remove biometric logs")
+    bio_subparsers = bio_parser.add_subparsers(title="biometric subcommands")
 
-    biometric_parser = subparsers.add_parser(
-        "bio", help="view, add, remove biometric logs"
+    # Log
+    bio_log_parser = bio_subparsers.add_parser("log", help="manage biometric logs")
+    bio_log_subparsers = bio_log_parser.add_subparsers(
+        title="biometric log subcommands"
     )
-    biometric_subparsers = biometric_parser.add_subparsers(
-        title="biometric subcommands"
-    )
+    bio_log_parser.set_defaults(func=bio_log)
 
-    biometric_add_parser = biometric_subparsers.add_parser(
+    bio_log_add_parser = bio_log_subparsers.add_parser(
         "add", help="add a biometric log"
     )
-    biometric_add_parser.add_argument(
+    bio_log_add_parser.add_argument(
         "biometric_val", help="id,value pairs, e.g. 22,59 23,110 24,65 ", nargs="+"
     )
-    biometric_add_parser.set_defaults(func=biometric_add)
+    bio_log_add_parser.set_defaults(func=bio_log_add)
 
     # default case
-    biometric_parser.set_defaults(func=biometrics)
+    bio_parser.set_defaults(func=bio)
+
     # --------------------------
     # Nutrient subcommand
     # --------------------------
@@ -205,17 +208,19 @@ def build_argparser():
     # Sync subparsers
     # --------------------------
     sync_parser = subparsers.add_parser(
-        "sync", help="sync, authorizations and online account management"
+        "sync", help="sync, login and account management"
     )
 
     sync_subparsers = sync_parser.add_subparsers(title="sync subcommands")
 
+    # Login
     sync_login_parser = sync_subparsers.add_parser(
         "login", help="login and store token locally"
     )
     sync_login_parser.add_argument("email")
     sync_login_parser.set_defaults(func=sync_login)
 
+    # Register
     sync_register_parser = sync_subparsers.add_parser(
         "register", help="register an account to set up sync"
     )

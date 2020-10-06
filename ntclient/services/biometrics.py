@@ -1,20 +1,27 @@
-from ..utils.sqlfuncs.nt import (
-    biometric_add as _biometric_add,
-    biometric_logs,
-    biometrics as _biometrics,
-    conn,
-)
-
 from tabulate import tabulate
+
+from ..utils.sqlfuncs.nt import (
+    conn,
+    sql_biometric_add,
+    sql_biometric_logs,
+    sql_biometrics,
+)
 
 
 def biometrics():
-    # TODO: current profile
-    profile_id = 1
-    headers, log_rows = biometric_logs(profile_id)
-
-    table = tabulate(log_rows, headers=headers, tablefmt="presto")
+    headers, rows = sql_biometrics()
+    table = tabulate(rows, headers=headers, tablefmt="presto")
     print(table)
+    return rows
+
+
+def biometric_logs():
+    profile_id = 1  # TODO: current profile
+    headers, rows = sql_biometric_logs(profile_id)
+
+    table = tabulate(rows, headers=headers, tablefmt="presto")
+    print(table)
+    return rows
 
 
 def biometric_add(bio_vals):
@@ -22,7 +29,7 @@ def biometric_add(bio_vals):
     # print("New biometric log: " + name + "\n")
 
     cur = conn.cursor()
-    bio_names = {x[0]: x for x in _biometrics()}
+    bio_names = {x[0]: x for x in sql_biometrics()}
 
     results = []
     for id, value in bio_vals.items():
@@ -37,5 +44,5 @@ def biometric_add(bio_vals):
     confirm = input("\nConfirm add biometric? [Y/n] ")
 
     if confirm.lower() == "y":
-        _biometric_add(bio_vals)
+        sql_biometric_add(bio_vals)
         print("not implemented ;]")
