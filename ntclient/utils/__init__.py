@@ -7,6 +7,7 @@ Created on Sat Mar 23 13:09:07 2019
 
 import json
 import os
+from shutil import copyfile
 
 from colorama import Fore
 from dotenv import load_dotenv
@@ -22,7 +23,10 @@ load_dotenv(verbose=False)
 NUTRA_DIR = os.path.join(os.path.expanduser("~"), ".nutra")
 
 # TODO: init, handle when it doesn't exist yet
-prefs = json.load(open(f"{NUTRA_DIR}/prefs.json"))
+prefs_file = f"{NUTRA_DIR}/prefs.json"
+if not os.path.isfile(prefs_file):
+    copyfile("resources/prefs.json", prefs_file)
+prefs = json.load(open(prefs_file))
 
 REMOTE_HOST = "https://nutra-server.herokuapp.com"
 SERVER_HOST = prefs.get("NUTRA_CLI_OVERRIDE_LOCAL_SERVER_HOST", REMOTE_HOST)

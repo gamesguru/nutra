@@ -108,10 +108,6 @@ def sql_profile_guid_from_id(profile_id):
     return _sql(query)[0][0]
 
 
-# # Runs in __init__
-# profile_guid = sql_profile_guid_from_id(profile_id)
-
-
 def sql_last_sync():
     query = """
 SELECT
