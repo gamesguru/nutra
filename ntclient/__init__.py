@@ -25,7 +25,8 @@ You should have received a copy of the GNU General Public License
 along with this program.  If not, see <https://www.gnu.org/licenses/>.
 """
 
-from .utils import __db_version_nt__, __db_version_usda__
+from .utils.sqlfuncs.nt import __db_version_nt__
+from .utils.sqlfuncs.usda import __db_version_usda__
 
 try:
     from .utils import __sha__

@@ -5,14 +5,13 @@ Created on Sat Mar 23 13:09:07 2019
 @author: shane
 """
 
+import json
 import os
 
 from colorama import Fore
 from dotenv import load_dotenv
 
 from .gitutils import git_sha
-from .sqlfuncs.nt import __db_target_nt__, __db_version_nt__
-from .sqlfuncs.usda import __db_target_usda__, __db_version_usda__
 
 # Export for package level
 __sha__ = git_sha()
@@ -22,14 +21,19 @@ load_dotenv(verbose=False)
 
 NUTRA_DIR = os.path.join(os.path.expanduser("~"), ".nutra")
 
+# TODO: init, handle when it doesn't exist yet
+prefs = json.load(open(f"{NUTRA_DIR}/prefs.json"))
+
 REMOTE_HOST = "https://nutra-server.herokuapp.com"
-SERVER_HOST = os.getenv("NUTRA_OVERRIDE_LOCAL_SERVER_HOST", REMOTE_HOST)
+SERVER_HOST = prefs.get("NUTRA_CLI_OVERRIDE_LOCAL_SERVER_HOST", REMOTE_HOST)
+
+TESTING = prefs.get("NUTRA_CLI_NO_ARGS_INJECT_MOCKS", False)
+VERBOSITY = prefs.get("VERBOSITY", 1)
 
 
-TESTING = bool(int(os.getenv("NUTRA_CLI_NO_ARGS_INJECT_MOCKS", False)))
-# TODO: support more settings via admin.json and nt.sqlite
-VERBOSITY = 1
-
+profile_id = prefs["current_user"]  # guid computed by __init__ in .sqlfuncs
+email = prefs.get("email")
+login_token = prefs.get("token")
 
 # ---------------------------
 # Colors and other settings

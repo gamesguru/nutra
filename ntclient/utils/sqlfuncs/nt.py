@@ -1,6 +1,8 @@
 import os
 import sqlite3
 
+from .. import profile_id
+
 # Set the usda.sqlite target version here
 __db_target_nt__ = "0.0.0"
 
@@ -101,6 +103,15 @@ def recipe(id):
 # ----------------------------
 
 
+def sql_profile_guid_from_id(profile_id):
+    query = f"SELECT guid FROM profiles WHERE id={profile_id}"
+    return _sql(query)[0][0]
+
+
+# # Runs in __init__
+# profile_guid = sql_profile_guid_from_id(profile_id)
+
+
 def sql_last_sync():
     query = """
 SELECT
@@ -142,8 +153,8 @@ def sql_biometric_logs(profile_id):
 
 def sql_biometric_add(bio_vals):
     cur = conn.cursor()
-    # TODO: get current profile_id from __init__.py and admin.json
-    profile_id = 1
+
+    # TODO: finish up
     query1 = "INSERT INTO biometric_log(profile_id, tags, notes) VALUES (?, ?, ?)"
     result = _sql(query1, (profile_id, "", ""))
     id = cur.lastrowid

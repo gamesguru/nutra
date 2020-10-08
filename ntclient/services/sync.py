@@ -1,9 +1,10 @@
 import json
 
-from ..utils import NUTRA_DIR, SERVER_HOST
-from ..utils.sqlfuncs.nt import sql_inserted_or_updated_entities, sql_last_sync
-
 import requests
+
+from ..utils import NUTRA_DIR, SERVER_HOST, login_token
+from ..utils.sqlfuncs import profile_guid
+from ..utils.sqlfuncs.nt import sql_inserted_or_updated_entities, sql_last_sync
 
 
 def sync():
@@ -12,7 +13,7 @@ def sync():
 
         print(f"GET {url}")
         response = requests.get(
-            url, params=params, headers={"Authorization": f"Bearer {token}"}
+            url, params=params, headers={"Authorization": f"Bearer {login_token}"}
         )
         res = response.json()
         data = res["data"]
@@ -31,7 +32,7 @@ def sync():
 
         print(f"POST {url}")
         response = requests.post(
-            url, json=data, headers={"Authorization": f"Bearer {token}"}
+            url, json=data, headers={"Authorization": f"Bearer {login_token}"}
         )
         res = response.json()
         data = res["data"]
@@ -41,13 +42,9 @@ def sync():
 
         print(data)
 
-    # TODO: use real profile_id
+    # Make GET and POST reqeusts to /sync
     url = f"{SERVER_HOST}/sync"
     last_sync = sql_last_sync()
-
-    profile_id = 1
-    profile_guid = "a0fdac7ab369de43f029a460879c854f"
-    token = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MSwiYXV0aC1sZXZlbCI6MjAsImV4cGlyZXMiOjE5MTU5ODQyMjl9.L66fkA-9Yq6Y0AhqlEuZh8w1Hh0BJGkNjAJHv71kOHY"
     get()
     post()
 
@@ -83,11 +80,11 @@ def login(email, password):
         print("error: " + data["error"])
         return
 
-    with open(f"{NUTRA_DIR}/admin.json", "r") as f:
-        admin_json = json.load(f)
+    with open(f"{NUTRA_DIR}/prefs.json", "r") as f:
+        prefs_json = json.load(f)
 
-    with open(f"{NUTRA_DIR}/admin.json", "w+") as f:
-        admin_json["email"] = email
-        admin_json["token"] = data["token"]
-        f.write(json.dumps(admin_json, indent=4))
+    with open(f"{NUTRA_DIR}/prefs.json", "w+") as f:
+        prefs_json["email"] = email
+        prefs_json["token"] = data["token"]
+        f.write(json.dumps(prefs_json, indent=4))
     print("Logged in.")

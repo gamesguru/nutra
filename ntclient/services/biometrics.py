@@ -1,5 +1,6 @@
 from tabulate import tabulate
 
+from ..utils import profile_id
 from ..utils.sqlfuncs.nt import (
     conn,
     sql_biometric_add,
@@ -16,7 +17,6 @@ def biometrics():
 
 
 def biometric_logs():
-    profile_id = 1  # TODO: current profile
     headers, rows = sql_biometric_logs(profile_id)
 
     table = tabulate(rows, headers=headers, tablefmt="presto")
