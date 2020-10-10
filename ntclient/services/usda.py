@@ -31,14 +31,14 @@ import shutil
 from fuzzywuzzy import fuzz
 from tabulate import tabulate
 
-from ..utils import (
+from ..core import (
     FOOD_NAME_TRUNC,
     NUTR_ID_KCAL,
     NUTR_IDS_AMINOS,
     NUTR_IDS_FLAVONES,
     SEARCH_LIMIT,
 )
-from ..utils.sqlfuncs.usda import (
+from ..sql.funcs.usda import (
     _sql,
     analyze_foods,
     nutrients_details,

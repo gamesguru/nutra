@@ -1,8 +1,8 @@
 from tabulate import tabulate
 
 from ..utils import profile_id
-from ..utils.sqlfuncs.nt import (
-    conn,
+from ..sql.funcs.nt import (
+    con,
     sql_biometric_add,
     sql_biometric_logs,
     sql_biometrics,
@@ -28,8 +28,8 @@ def biometric_add(bio_vals):
     print()
     # print("New biometric log: " + name + "\n")
 
-    cur = conn.cursor()
-    bio_names = {x[0]: x for x in sql_biometrics()}
+    cur = con.cursor()
+    bio_names = {x[0]: x for x in sql_biometrics()[1]}
 
     results = []
     for id, value in bio_vals.items():

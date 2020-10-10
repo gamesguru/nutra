@@ -1,15 +1,14 @@
 import os
 import sqlite3
 
-from .. import profile_id
+from ..funcs import profile_id
 
-# Set the usda.sqlite target version here
-__db_target_nt__ = "0.0.0"
 
 # Connect to DB
 db_path = os.path.expanduser("~/.nutra/nt/nt.sqlite")
 if os.path.isfile(db_path):
-    conn = sqlite3.connect(db_path)
+    con = sqlite3.connect(db_path)
+    con.row_factory = sqlite3.Row
 else:
     print("error: nt database doesn't exist, please run init")
     print("warn: init not implemented, manually build db with ntsqlite README")
@@ -18,7 +17,7 @@ else:
 
 def _sql(query, args=None, headers=False):
     """Executes a SQL command to nt.sqlite"""
-    cur = conn.cursor()
+    cur = con.cursor()
 
     # TODO: DEBUG flag in properties.csv ... Print off all queries
     if args:
@@ -126,7 +125,15 @@ SELECT
 def sql_inserted_or_updated_entities(last_sync):
     query = f"SELECT * FROM profiles WHERE updated>{last_sync}"
     profiles = _sql(query)
-    query = f"SELECT * FROM biometric_log WHERE updated>{last_sync}"
+    query = f"""
+SELECT
+  *
+FROM
+  biometric_log
+  INNER JOIN bio_log_entry entry ON biometric_log.id = entry.log_id
+WHERE updated>{last_sync};
+"""
+    # SELECT * FROM biometric_log WHERE updated>{last_sync}"
     bio_logs = _sql(query)
 
     return profiles, bio_logs
@@ -148,7 +155,7 @@ def sql_biometric_logs(profile_id):
 
 
 def sql_biometric_add(bio_vals):
-    cur = conn.cursor()
+    cur = con.cursor()
 
     # TODO: finish up
     query1 = "INSERT INTO biometric_log(profile_id, tags, notes) VALUES (?, ?, ?)"

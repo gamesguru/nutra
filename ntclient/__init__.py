@@ -25,13 +25,14 @@ You should have received a copy of the GNU General Public License
 along with this program.  If not, see <https://www.gnu.org/licenses/>.
 """
 
-from .utils.sqlfuncs.nt import __db_version_nt__
-from .utils.sqlfuncs.usda import __db_version_usda__
-
 try:
-    from .utils import __sha__
+    from .core import __sha__
 except ImportError as e:
     __sha__ = "UNKNOWN"
+
+
+__db_target_usda__ = "0.0.7"
+__db_target_nt__ = "0.0.0"
 
 
 __title__ = "nutra"

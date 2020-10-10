@@ -27,7 +27,7 @@ along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 import pytest
 
-from ntclient.utils.sqlfuncs import usda
+from ntclient.sql.funcs import usda
 
 
 def test_sqlfuncs():

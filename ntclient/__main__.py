@@ -39,14 +39,13 @@ if sys.version_info < (3, 6, 5):
     exit(1)
 else:
     from . import (
-        __db_version_nt__,
-        __db_version_usda__,
+        __db_target_nt__,
+        __db_target_usda__,
         __sha__,
         __title__,
         __version__,
     )
 
-    # from .account import cmd_login
     from .parsers import (
         analyze,
         bio,
@@ -84,7 +83,7 @@ def build_argparser():
         "--version",
         action="version",
         version=f"{__title__} cli version "
-        + f"{__version__}   ({__sha__})  [DB usda v{__db_version_usda__}, nt v{__db_version_nt__}]",
+        + f"{__version__}   ({__sha__})  [DB usda v{__db_target_usda__}, nt v{__db_target_nt__}]",
     )
 
     # --------------------------
@@ -263,6 +262,8 @@ def main(argv=None):
         # ]
         # --------------------------------
         # sys.argv = ["./nutra"]
+        sys.argv = ["./nutra" "-h"]
+        # sys.argv = ["./nutra" "-v"]
         # sys.argv = ["./nutra", "sort"]
         # sys.argv = ["./nutra", "sort", "789"]
         # sys.argv = ["./nutra", "sort", "-c", "789"]
@@ -272,7 +273,7 @@ def main(argv=None):
         # sys.argv = ["./nutra", "recipe", "1"]
         # sys.argv = ["./nutra", "recipe", "add", "Test", "1001,15"]
         # sys.argv = ["./nutra", "bio"]
-        sys.argv = ["./nutra", "bio", "add", "22,59", "23,110", "24,65"]
+        # sys.argv = ["./nutra", "bio", "log", "add", "22,59", "23,110", "24,65"]
         # sys.argv = ["./nutra", "nt"]
         # sys.argv = ["./nutra", "search", "grass", "fed", "beef"]
         # sys.argv = ["./nutra", "search", "grass"]

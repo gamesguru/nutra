@@ -34,8 +34,7 @@ import tarfile
 import time
 import urllib.request
 
-# Set the usda.sqlite target version here
-__db_target_usda__ = "0.0.7"
+from ... import __db_target_usda__
 
 
 # Onboarding function
@@ -76,7 +75,7 @@ def verify_db(__db_target_usda__, force_install=False):
         print()
 
         # Extract the archive
-        # NOTE: in sqlfuncs() we verify version == __db_target_usda__, and if needed invoke this method with force_install=True
+        # NOTE: in sql.__init__() we verify version == __db_target_usda__, and if needed invoke this method with force_install=True
         with tarfile.open(f"{cwd}/usda.sqlite.tar.xz", mode="r:xz") as f:
             try:
                 print("tar xvf usda.sqlite.tar.xz")

@@ -31,7 +31,7 @@ import shutil
 from colorama import Fore, Style
 from tabulate import tabulate
 
-from ..utils import (
+from ..core import (
     COLOR_CRIT,
     COLOR_DEFAULT,
     COLOR_OVER,
@@ -41,13 +41,12 @@ from ..utils import (
     NUTR_ID_FIBER,
     NUTR_ID_KCAL,
     NUTR_ID_PROTEIN,
-    TESTING,
     THRESH_CRIT,
     THRESH_OVER,
     THRESH_WARN,
-    VERBOSITY,
 )
-from ..utils.sqlfuncs.usda import (
+from ..utils import TESTING, VERBOSITY
+from ..sql.funcs.usda import (
     analyze_foods,
     food_details,
     nutrients_overview,
