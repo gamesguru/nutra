@@ -34,10 +34,11 @@ def git_sha():
 
     try:
         from .__sha__ import __sha__
-    except Exception as e1:
+    except ImportError as e1:
         import subprocess
 
-        print(repr(e1))
+        # TODO: import VERBOSITY from utils, print on >1 ?
+        # print(repr(e1))
         cwd = os.path.dirname(os.path.abspath(__file__))
 
         try:
@@ -48,8 +49,8 @@ def git_sha():
                 .decode()
                 .rstrip()
             )
-        except Exception as e2:
-            print(repr(e2))
+        except FileNotFoundError as e2:
+            # print(repr(e2))
             __sha__ = None
 
     return __sha__

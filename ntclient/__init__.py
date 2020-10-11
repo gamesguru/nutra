@@ -25,11 +25,7 @@ You should have received a copy of the GNU General Public License
 along with this program.  If not, see <https://www.gnu.org/licenses/>.
 """
 
-try:
-    from .core import __sha__
-except ImportError as e:
-    __sha__ = "UNKNOWN"
-
+from .core import __sha__
 
 __db_target_usda__ = "0.0.7"
 __db_target_nt__ = "0.0.0"
@@ -37,7 +33,6 @@ __db_target_nt__ = "0.0.0"
 
 __title__ = "nutra"
 __version__ = "0.2.0.dev0"
-__sha__ = __sha__
 __author__ = "Shane Jaroch"
 __license__ = "GPL v3"
 __copyright__ = "Copyright 2018-2020 Shane Jaroch"
