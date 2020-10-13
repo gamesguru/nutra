@@ -1,38 +1,25 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Fri Jan 31 16:01:31 2020
-
-@author: shane
-
-This file is part of nutra, a nutrient analysis program.
-    https://github.com/nutratech/cli
-    https://pypi.org/project/nutra/
-
-nutra is an extensible nutrient analysis and composition application.
-Copyright (C) 2018-2020  Shane Jaroch
-
-This program is free software: you can redistribute it and/or modify
-it under the terms of the GNU General Public License as published by
-the Free Software Foundation, either version 3 of the License, or
-(at your option) any later version.
-
-This program is distributed in the hope that it will be useful,
-but WITHOUT ANY WARRANTY; without even the implied warranty of
-MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-GNU General Public License for more details.
-
-You should have received a copy of the GNU General Public License
-along with this program.  If not, see <https://www.gnu.org/licenses/>.
-"""
+import sys
 
 from .core import __sha__
 
+# Check Python version
+PY_MIN_VER = (3, 6, 5)
+PY_MIN_STR = ".".join(str(x) for x in PY_MIN_VER)
+if sys.version_info < PY_MIN_VER:
+    ver = ".".join([str(x) for x in sys.version_info[0:3]])
+    print("ERROR: nutra requires Python %s or later to run" % PY_MIN_STR)
+    print("HINT:  You're running Python " + ver)
+    exit(1)
+
+# Set DB versions here
 __db_target_usda__ = "0.0.7"
 __db_target_nt__ = "0.0.0"
 
 
+# Package info
 __title__ = "nutra"
 __version__ = "0.2.0.dev0"
+__sha__ = __sha__
 __author__ = "Shane Jaroch"
 __license__ = "GPL v3"
 __copyright__ = "Copyright 2018-2020 Shane Jaroch"

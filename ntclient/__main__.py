@@ -31,40 +31,33 @@ import traceback
 
 from colorama import init as colorama_init
 
-# Check Python version
-if sys.version_info < (3, 6, 5):
-    ver = ".".join([str(x) for x in sys.version_info[0:3]])
-    print("ERROR: nutra requires Python 3.6.5 or later to run")
-    print("HINT:  You're running Python " + ver)
-    exit(1)
-else:
-    from . import (
-        __db_target_nt__,
-        __db_target_usda__,
-        __sha__,
-        __title__,
-        __version__,
-    )
+from . import (
+    __db_target_nt__,
+    __db_target_usda__,
+    __sha__,
+    __title__,
+    __version__,
+)
 
-    from .parsers import (
-        analyze,
-        bio,
-        bio_log,
-        bio_log_add,
-        day,
-        nutrients,
-        recipe,
-        recipe_add,
-        recipe_edit,
-        search,
-        sort,
-        sync,
-        sync_login,
-        sync_register,
-    )
-    from .utils import TESTING, VERBOSITY
+from .parsers import (
+    analyze,
+    bio,
+    bio_log,
+    bio_log_add,
+    day,
+    nutrients,
+    recipe,
+    recipe_add,
+    recipe_edit,
+    search,
+    sort,
+    sync,
+    sync_login,
+    sync_register,
+)
+from .utils import TESTING, VERBOSITY
 
-    colorama_init()  # colorama
+colorama_init()  # colorama
 
 # TODO:
 # - display full food name in results
