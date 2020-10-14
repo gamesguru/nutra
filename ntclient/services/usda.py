@@ -38,7 +38,7 @@ from ..utils import (
     NUTR_IDS_FLAVONES,
     SEARCH_LIMIT,
 )
-from ..sql.funcs.usda import (
+from ..persistence.sql.usda.funcs import (
     _sql,
     analyze_foods,
     nutrients_details,

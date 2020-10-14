@@ -46,7 +46,7 @@ from ..utils import (
     THRESH_WARN,
 )
 from ..persistence import TESTING, VERBOSITY
-from ..sql.funcs.usda import (
+from ..persistence.sql.usda.funcs import (
     analyze_foods,
     food_details,
     nutrients_overview,

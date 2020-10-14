@@ -8,12 +8,12 @@ Created on Wed Aug 12 15:14:00 2020
 
 from tabulate import tabulate
 
-from ..sql.funcs.nt import (
+from ..persistence.sql.nt.funcs import (
     analyze_recipe,
     recipes as _recipes,
     recipe as _recipe_overview,
 )
-from ..sql.funcs.usda import analyze_foods, food_details
+from ..persistence.sql.usda.funcs import analyze_foods, food_details
 
 
 def recipes_overview():

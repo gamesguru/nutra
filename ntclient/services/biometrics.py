@@ -1,7 +1,7 @@
 from tabulate import tabulate
 
 from ..persistence import profile_id
-from ..sql.funcs.nt import (
+from ..persistence.sql.nt.funcs import (
     con,
     sql_biometric_add,
     sql_biometric_logs,

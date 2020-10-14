@@ -3,8 +3,8 @@ import json
 import requests
 
 from .. import NUTRA_DIR
-from ..sql.funcs import profile_guid
-from ..sql.funcs.nt import sql_inserted_or_updated_entities, sql_last_sync
+from ..persistence.sql import profile_guid
+from ..persistence.sql.nt import sql_inserted_or_updated_entities, sql_last_sync
 from ..persistence import SERVER_HOST, login_token
 
 

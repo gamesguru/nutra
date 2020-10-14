@@ -1,52 +1,15 @@
-import os
-import sqlite3
-
-from ..funcs import profile_id
+from . import con, _sql
+from .. import profile_id
 
 
-# Connect to DB
-db_path = os.path.expanduser("~/.nutra/nt/nt.sqlite")
-if os.path.isfile(db_path):
-    con = sqlite3.connect(db_path)
-    con.row_factory = sqlite3.Row
-else:
-    print("error: nt database doesn't exist, please run init")
-    print("warn: init not implemented, manually build db with ntsqlite README")
-    exit()
-
-
-def _sql(query, args=None, headers=False):
-    """Executes a SQL command to nt.sqlite"""
-    cur = con.cursor()
-
-    # TODO: DEBUG flag in properties.csv ... Print off all queries
-    if args:
-        if type(args) == list:
-            result = cur.executemany(query, args)
-        else:  # tuple
-            result = cur.execute(query, args)
-    else:
-        result = cur.execute(query)
-    rows = result.fetchall()
-    if headers:
-        headers = [x[0] for x in result.description]
-        return headers, rows
-    return rows
-
-
-# ----------------------
-# SQL internal functions
-# ----------------------
-
-
-def dbver():
+def nt_ver():
+    """Gets version string for nt.sqlite database"""
+    if con is None:
+        return None
     query = "SELECT * FROM version;"
     result = _sql(query)
-    return result[-1]
+    return result[-1][1]
 
-
-# TODO: Verify version
-__db_version_nt__ = dbver()[1]
 
 # ----------------------
 # Recipe functions
