@@ -1,6 +1,9 @@
+import os
 import sys
 
-from .core import __sha__
+from dotenv import load_dotenv
+
+from .utils.gitutils import git_sha
 
 # Check Python version
 PY_MIN_VER = (3, 6, 5)
@@ -11,6 +14,11 @@ if sys.version_info < PY_MIN_VER:
     print("HINT:  You're running Python " + ver)
     exit(1)
 
+# Read in .env file if it exists locally, else look to env vars
+load_dotenv(verbose=False)
+
+NUTRA_DIR = os.path.join(os.path.expanduser("~"), ".nutra")
+
 # Set DB versions here
 __db_target_usda__ = "0.0.7"
 __db_target_nt__ = "0.0.0"
@@ -19,7 +27,7 @@ __db_target_nt__ = "0.0.0"
 # Package info
 __title__ = "nutra"
 __version__ = "0.2.0.dev0"
-__sha__ = __sha__
+__sha__ = git_sha()
 __author__ = "Shane Jaroch"
 __license__ = "GPL v3"
 __copyright__ = "Copyright 2018-2020 Shane Jaroch"

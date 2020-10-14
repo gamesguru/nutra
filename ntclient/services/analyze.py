@@ -31,7 +31,7 @@ import shutil
 from colorama import Fore, Style
 from tabulate import tabulate
 
-from ..core import (
+from ..utils import (
     COLOR_CRIT,
     COLOR_DEFAULT,
     COLOR_OVER,
@@ -45,7 +45,7 @@ from ..core import (
     THRESH_OVER,
     THRESH_WARN,
 )
-from ..utils import TESTING, VERBOSITY
+from ..persistence import TESTING, VERBOSITY
 from ..sql.funcs.usda import (
     analyze_foods,
     food_details,

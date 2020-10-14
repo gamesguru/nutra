@@ -55,7 +55,7 @@ from .parsers import (
     sync_login,
     sync_register,
 )
-from .utils import TESTING, VERBOSITY
+from .persistence import TESTING, VERBOSITY
 
 colorama_init()  # colorama
 

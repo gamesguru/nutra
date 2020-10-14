@@ -1,6 +1,6 @@
 from tabulate import tabulate
 
-from ..utils import profile_id
+from ..persistence import profile_id
 from ..sql.funcs.nt import (
     con,
     sql_biometric_add,

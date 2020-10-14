@@ -31,7 +31,7 @@ import shutil
 from fuzzywuzzy import fuzz
 from tabulate import tabulate
 
-from ..core import (
+from ..utils import (
     FOOD_NAME_TRUNC,
     NUTR_ID_KCAL,
     NUTR_IDS_AMINOS,

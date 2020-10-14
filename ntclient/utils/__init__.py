@@ -1,18 +1,4 @@
-import os
-
-from ..core.gitutils import git_sha
-
 from colorama import Fore
-from dotenv import load_dotenv
-
-# Export for package level
-__sha__ = git_sha()
-
-# Read in .env file if it exists locally, else look to env vars
-load_dotenv(verbose=False)
-
-NUTRA_DIR = os.path.join(os.path.expanduser("~"), ".nutra")
-
 
 # ---------------------------
 # Colors and other settings

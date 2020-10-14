@@ -2,10 +2,10 @@ import json
 
 import requests
 
-from ..core import NUTRA_DIR
+from .. import NUTRA_DIR
 from ..sql.funcs import profile_guid
 from ..sql.funcs.nt import sql_inserted_or_updated_entities, sql_last_sync
-from ..utils import SERVER_HOST, login_token
+from ..persistence import SERVER_HOST, login_token
 
 
 def sync():
