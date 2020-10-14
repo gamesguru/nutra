@@ -66,7 +66,7 @@ verify_usda(__db_target_usda__)
 
 # Connect to DB
 # TODO: support as customizable env var ?
-db_path = os.path.expanduser("~/.nutra/usda/usda.sqlite")
+db_path = os.path.expanduser(f"{NUTRA_DIR}/usda/usda.sqlite")
 if os.path.isfile(db_path):
     con = sqlite3.connect(db_path)
     # con.row_factory = sqlite3.Row  # see: https://chrisostrouchov.com/post/python_sqlite/

@@ -29,18 +29,25 @@ except Exception as e:
 
 
 # ----------------------
-# SQL nutra functions
+# USDA  functions
 # ----------------------
-
-
-def nutrients_overview():
-    query = "SELECT * FROM nutr_def;"
-    result = _sql(query)
-    return {x[0]: x for x in result}
 
 
 def fdgrp():
     query = "SELECT * FROM fdgrp;"
+    result = _sql(query)
+    return {x[0]: x for x in result}
+
+
+def food_details(food_ids):
+    """Readable human details for foods"""
+    query = "SELECT * FROM food_des WHERE id in (%s)"
+    food_ids = ",".join(str(x) for x in set(food_ids))
+    return _sql(query % food_ids)
+
+
+def nutrients_overview():
+    query = "SELECT * FROM nutr_def;"
     result = _sql(query)
     return {x[0]: x for x in result}
 
@@ -99,13 +106,6 @@ FROM
 WHERE
   food_des.id IN (%s);
 """
-    food_ids = ",".join(str(x) for x in set(food_ids))
-    return _sql(query % food_ids)
-
-
-def food_details(food_ids):
-    """Readable human details for foods"""
-    query = "SELECT * FROM food_des WHERE id in (%s)"
     food_ids = ",".join(str(x) for x in set(food_ids))
     return _sql(query % food_ids)
 

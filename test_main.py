@@ -27,25 +27,25 @@ along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 import pytest
 
-from ntclient.persistence.sql import usda
+from ntclient.persistence.sql.usda import funcs as usda_funcs
 
 
 def test_sqlfuncs():
-    result = usda.nutrients_details()
+    result = usda_funcs.nutrients_details()
     assert len(result[1]) == 186
 
-    result = usda.servings([9050, 9052])
+    result = usda_funcs.servings([9050, 9052])
     assert len(result) == 3
 
-    result = usda.analyze_foods([23567, 23293])
+    result = usda_funcs.analyze_foods([23567, 23293])
     assert len(result) == 188
 
-    result = usda.sort_foods(789)
+    result = usda_funcs.sort_foods(789)
     assert len(result) == 415
-    result = usda.sort_foods(789, [100])
+    result = usda_funcs.sort_foods(789, [100])
     assert len(result) == 1
 
-    result = usda.sort_foods_by_kcal(789)
+    result = usda_funcs.sort_foods_by_kcal(789)
     assert len(result) == 246
-    result = usda.sort_foods_by_kcal(789, [1100])
+    result = usda_funcs.sort_foods_by_kcal(789, [1100])
     assert len(result) == 127

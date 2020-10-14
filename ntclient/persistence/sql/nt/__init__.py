@@ -5,7 +5,7 @@ from .... import __db_target_usda__
 from ... import NUTRA_DIR
 
 # Connect to DB
-db_path = os.path.expanduser("~/.nutra/nt/nt.sqlite")
+db_path = os.path.expanduser(f"{NUTRA_DIR}/nt/nt.sqlite")
 if os.path.isfile(db_path):
     con = sqlite3.connect(db_path)
     con.row_factory = sqlite3.Row
