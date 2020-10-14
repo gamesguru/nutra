@@ -11,10 +11,12 @@ from shutil import copyfile
 
 from ..core import NUTRA_DIR
 
+SCRIPT_DIR = os.path.abspath(os.path.dirname(__file__))
+
 # TODO: init, handle when it doesn't exist yet
 prefs_file = f"{NUTRA_DIR}/prefs.json"
 if not os.path.isfile(prefs_file):
-    copyfile("resources/prefs.json", prefs_file)
+    copyfile(f"{SCRIPT_DIR}/resources/prefs.json", prefs_file)
 prefs = json.load(open(prefs_file))
 
 REMOTE_HOST = "https://nutra-server.herokuapp.com"
