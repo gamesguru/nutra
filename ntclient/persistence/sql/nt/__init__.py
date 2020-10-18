@@ -10,10 +10,9 @@ if os.path.isfile(db_path):
     con = sqlite3.connect(db_path)
     con.row_factory = sqlite3.Row
 else:
-    print("warn: nt database doesn't exist, please run init")
-    print("info: init not implemented, manually build db with ntsqlite README")
+    # print("warn: nt database doesn't exist, please run init")
+    # print("info: init not implemented, manually build db with ntsqlite README")
     con = None
-    # exit()
 
 
 def _sql(query, args=None, headers=False):

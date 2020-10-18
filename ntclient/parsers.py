@@ -1,5 +1,6 @@
 import os
 
+from .services import _init
 from .services.analyze import day_analyze, foods_analyze
 from .services.recipe import (
     recipe_add as _recipe_add,
@@ -20,6 +21,13 @@ from .services.usda import (
 )
 
 
+def init(args, arg_parser=None, **kwargs):
+    _init()
+
+
+# --------------------------
+# Nutrients, search and sort
+# --------------------------
 def nutrients(args, arg_parser=None, **kwargs):
     return list_nutrients()
 
@@ -42,6 +50,9 @@ def sort(args, arg_parser=None, subparsers=None):
         return sort_foods_by_nutrient_id(nutr_id)
 
 
+# --------------------------
+# Analysis and Day scoring
+# --------------------------
 def analyze(args, arg_parser=None, subparsers=None):
     food_ids = args.food_id
     grams = args.grams
@@ -50,38 +61,6 @@ def analyze(args, arg_parser=None, subparsers=None):
         subparsers["anl"].print_help()
     else:
         return foods_analyze(food_ids, grams)
-
-
-def bio(args, arg_parser=None, subparsers=None):
-    return biometrics()
-
-
-def bio_log(args, arg_parser=None, subparsers=None):
-    return biometric_logs()
-
-
-def bio_log_add(args, arg_parser=None, subparsers=None):
-    bio_vals = {
-        int(x.split(",")[0]): float(x.split(",")[1]) for x in args.biometric_val
-    }
-
-    return biometric_add(bio_vals)
-
-
-def recipe(args, arg_parser=None, subparsers=None):
-    if args.recipe_id:
-        return recipe_overview(args.recipe_id)
-    else:
-        return recipes_overview()
-
-
-def recipe_add(args, arg_parser=None, subparsers=None):
-    food_amts = {int(x.split(",")[0]): float(x.split(",")[1]) for x in args.food_amt}
-    return _recipe_add(args.name, food_amts)
-
-
-def recipe_edit(args, arg_parser=None, subparsers=None):
-    return _recipe_edit(args.recipe_id)
 
 
 def day(args, arg_parser=None, subparsers=None):
@@ -98,6 +77,47 @@ def day(args, arg_parser=None, subparsers=None):
         return day_analyze(day_csv_paths, rda_csv_path=rda_csv_path)
 
 
+# --------------------------
+# Biometrics
+# --------------------------
+def bio(args, arg_parser=None, subparsers=None):
+    return biometrics()
+
+
+def bio_log(args, arg_parser=None, subparsers=None):
+    return biometric_logs()
+
+
+def bio_log_add(args, arg_parser=None, subparsers=None):
+    bio_vals = {
+        int(x.split(",")[0]): float(x.split(",")[1]) for x in args.biometric_val
+    }
+
+    return biometric_add(bio_vals)
+
+
+# --------------------------
+# Recipes
+# --------------------------
+def recipe(args, arg_parser=None, subparsers=None):
+    if args.recipe_id:
+        return recipe_overview(args.recipe_id)
+    else:
+        return recipes_overview()
+
+
+def recipe_add(args, arg_parser=None, subparsers=None):
+    food_amts = {int(x.split(",")[0]): float(x.split(",")[1]) for x in args.food_amt}
+    return _recipe_add(args.name, food_amts)
+
+
+def recipe_edit(args, arg_parser=None, subparsers=None):
+    return _recipe_edit(args.recipe_id)
+
+
+# --------------------------
+# Sync
+# --------------------------
 def sync(args, arg_parser=None, subparsers=None):
     from .services.sync import sync as _sync
 

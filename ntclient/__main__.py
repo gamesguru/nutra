@@ -45,6 +45,7 @@ from .parsers import (
     bio_log,
     bio_log_add,
     day,
+    init,
     nutrients,
     recipe,
     recipe_add,
@@ -84,7 +85,13 @@ def build_argparser():
     # --------------------------
     subparsers = arg_parser.add_subparsers(title="nutra subcommands")
 
-    # TODO: init subcommand to onboard db and parameters.csv in ~/.nutra ??
+    # --------------------------
+    # Init subcommand
+    # --------------------------
+    init_parser = subparsers.add_parser(
+        "init", help="setup profiles, USDA and NT database"
+    )
+    init_parser.set_defaults(func=init)
 
     # --------------------------
     # Search subcommand

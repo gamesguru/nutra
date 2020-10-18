@@ -62,7 +62,7 @@ def verify_usda(__db_target_usda__, force_install=False):
         print("==> done downloading usda.sqlite")
 
 
-verify_usda(__db_target_usda__)
+# verify_usda(__db_target_usda__)
 
 # Connect to DB
 # TODO: support as customizable env var ?
@@ -71,8 +71,8 @@ if os.path.isfile(db_path):
     con = sqlite3.connect(db_path)
     # con.row_factory = sqlite3.Row  # see: https://chrisostrouchov.com/post/python_sqlite/
 else:
-    print("warn: nt database doesn't exist, please run init")
-    print("info: init not implemented, manually build db with ntsqlite README")
+    # print("warn: usda database doesn't exist, please run init")
+    # print("info: init not implemented, manually copy")
     con = None
 
 

@@ -7,25 +7,25 @@ def usda_ver():
         return None
     query = "SELECT * FROM version;"
     result = _sql(query)
-    return result[-1]
+    return result[-1][1]
 
 
 # Verify version
-try:
-    __db_version_usda__ = usda_ver()[1]
-    if __db_target_usda__ != __db_version_usda__:
-        print(
-            f"NOTE: target db ({__db_target_usda__}) differs from current ({__db_version_usda__}).. downloading target"
-        )
-        verify_usda(__db_target_usda__, force_install=True)
-        print("NOTE: please run your command again now")
-        exit()
-except Exception as e:
-    print(repr(e))
-    print("ERROR: corrupt databasde.. downloading fresh")
-    verify_usda(__db_target_usda__, force_install=True)
-    print("NOTE: please run your command again now")
-    exit()
+# try:
+#     __db_version_usda__ = usda_ver()
+#     if __db_target_usda__ != __db_version_usda__:
+#         print(
+#             f"NOTE: target db ({__db_target_usda__}) differs from current ({__db_version_usda__}).. downloading target"
+#         )
+#         verify_usda(__db_target_usda__, force_install=True)
+#         print("NOTE: please run your command again now")
+#         exit()
+# except Exception as e:
+#     print(repr(e))
+#     print("ERROR: corrupt database.. downloading fresh")
+#     verify_usda(__db_target_usda__, force_install=True)
+#     print("NOTE: please run your command again now")
+#     exit()
 
 
 # ----------------------
