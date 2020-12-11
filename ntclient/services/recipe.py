@@ -49,7 +49,15 @@ def recipe_overview(id):
     print(name)
 
     food_ids = {x[2]: x[3] for x in recipe}
+    food_names = {x[0]: x[3] for x in food_details(food_ids.keys())}
     foods = analyze_foods(food_ids.keys())
+
+    table = tabulate(
+        [[food_names[id], grams] for id, grams in food_ids.items()],
+        headers=["food", "g"],
+    )
+    print(table)
+
     return recipe
 
 

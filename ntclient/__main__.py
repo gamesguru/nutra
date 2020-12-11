@@ -262,7 +262,7 @@ def main(argv=None):
         # ]
         # --------------------------------
         # sys.argv = ["./nutra"]
-        sys.argv = ["./nutra" "-h"]
+        # sys.argv = ["./nutra" "-h"]
         # sys.argv = ["./nutra" "-v"]
         # sys.argv = ["./nutra", "sort"]
         # sys.argv = ["./nutra", "sort", "789"]
@@ -270,7 +270,7 @@ def main(argv=None):
         # sys.argv = ["./nutra", "anl", "9050", "9052"]
         # sys.argv = ["./nutra", "anl", "-g", "85", "23294"]
         # sys.argv = ["./nutra", "recipe"]
-        # sys.argv = ["./nutra", "recipe", "1"]
+        sys.argv = ["./nutra", "recipe", "-n", "1"]
         # sys.argv = ["./nutra", "recipe", "add", "Test", "1001,15"]
         # sys.argv = ["./nutra", "bio"]
         # sys.argv = ["./nutra", "bio", "log", "add", "22,59", "23,110", "24,65"]
